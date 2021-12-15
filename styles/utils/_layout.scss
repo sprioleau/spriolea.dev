@@ -1,0 +1,16 @@
+.container {
+  --container-padding: 2rem;
+  max-width: calc(var(--max-width) + var(--container-padding));
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+  min-height: 40vh;
+}

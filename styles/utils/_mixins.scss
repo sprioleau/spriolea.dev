@@ -1,0 +1,59 @@
+// Breakpoints
+$bp-x-small: 350px;
+$bp-small: 576px;
+$bp-medium: 900px;
+$bp-large: 1200px;
+
+@mixin xsm {
+  @media (max-width: #{$bp-x-small}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: #{$bp-small}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: #{$bp-medium}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: #{$bp-large}) {
+    @content;
+  }
+}
+
+@mixin ff-body {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-light);
+}
+
+@mixin ff-body-bold {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+}
+
+@mixin ff-mono {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin cursor-default {
+  cursor: url("/cursor.svg"), default;
+  width: 100px;
+  height: 100px;
+}
+
+@mixin cursor-pointer {
+  cursor: url("/cursor-hovered.svg"), pointer;
+}

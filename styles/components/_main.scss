@@ -1,0 +1,8 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: var(--nav-height);
+  width: 100%;
+}

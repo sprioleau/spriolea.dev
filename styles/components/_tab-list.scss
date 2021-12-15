@@ -1,0 +1,96 @@
+.tab-list {
+  --indicator-width: 2px;
+  position: relative;
+  display: flex;
+  margin-bottom: 3rem;
+
+  &__tabs {
+    margin-right: var(--tab-list-gap);
+    flex-basis: var(--tab-list-width);
+  }
+
+  &__labels {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-left: var(--indicator-width) solid rgba(var(--ui-text-rgb), 0.25);
+  }
+
+  &__label {
+    @include transition;
+    padding: 1rem 1.5rem;
+    font-size: 0.9em;
+    white-space: nowrap;
+
+    h3 {
+      font-weight: 400;
+    }
+    
+    &:hover {
+      @include cursor-pointer;
+      background-color: var(--ui-bg-hover);
+      color: var(--ui-text-hover);
+      padding-left: 2rem;
+    }
+    
+    &.active {
+      color: var(--ui-text-hover);
+      padding-left: 2rem;
+
+      h3 {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__tabs-indicator {
+    @include transition;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--indicator-width);
+    height: 49px;
+    background-color: var(--ui-accent-1);
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__role {
+    color: var(--ui-text-hover);
+  }
+
+  &__employer {
+    color: var(--ui-accent-1);
+  }
+
+  &__dates {
+    @include ff-mono;
+  }
+
+  &__work-list {
+    & > :not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__work-list-item {
+    @include transition;
+    position: relative;
+    padding-left: 1.75rem;
+
+    &:hover {
+      color: var(--ui-text-hover);
+    }
+
+    &::before {
+      content: "\2736";
+      position: absolute;
+      color: var(--ui-accent-1);
+      top: 12px;
+      left: 0.5rem;
+      font-size: 0.8em;
+      transform: translateY(-50%);
+    }
+  }
+}

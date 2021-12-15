@@ -1,0 +1,9 @@
+@keyframes float {
+  from { transform: translateY(-5px); }
+  to { transform: translateY(3px); }
+}
+
+@keyframes wave {
+  from { transform: rotate(15deg); }
+  to { transform: rotate(55deg); }
+}

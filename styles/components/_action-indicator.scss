@@ -1,0 +1,13 @@
+@keyframes floating {
+  from {transform: translateY(-5px); }
+  to {transform: translateY(3px); }
+}
+
+.action-indicator {
+  @include transition;
+  color: var(--ui-accent-1);
+
+  svg {
+    animation: floating 0.75s ease-in-out alternate infinite;
+  }
+}

@@ -1,0 +1,60 @@
+.hero {
+  --headline-size: clamp(2rem, 5vw, 4rem);
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  position: relative;
+  
+  .container {
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  &__overline {
+    @include ff-mono;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--ui-accent-1);
+    margin-bottom: 0.5rem;
+  }
+
+  .wave {
+    position: relative;
+    display: inline-block;
+    animation: wave 0.35s ease-out alternate infinite;
+    font-size: 1.5rem;
+  }
+
+  &__greeting {
+    margin-left: 0.5rem;
+  }
+
+  &__headline, 
+  &__vocation {
+    @include ff-body-bold;
+    font-size: var(--headline-size);
+    max-width: 25ch;
+    line-height: 1.3;
+  }
+
+  &__headline {
+    color: var(--ui-text-hover);
+  }
+
+  &__vocation {
+    color: var(--ui-text);
+    margin-bottom: 0.75rem;
+  }
+
+  &__brief {
+    font-size: 1rem;
+    color: var(--ui-text);
+    line-height: 2;
+  }
+
+  &__cta-button {
+    margin-top: 2rem;
+  }
+
+}
+

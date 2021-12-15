@@ -1,0 +1,31 @@
+.section-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+
+  &__title {
+    color: var(--ui-text-hover);
+    background-color: var(--ui-bg);
+    padding-right: 1.5rem;
+
+    &::before {
+      @include ff-mono;
+      counter-increment: section;
+      content: "0" counter(section) ". ";
+      font-size: 0.8em;
+      letter-spacing: 1px;
+      color: var(--ui-accent-1);
+    }
+  }
+
+  &__accent-line {
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 60%;
+    padding-right: 1rem;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.8);
+    z-index: -1;
+  }
+}

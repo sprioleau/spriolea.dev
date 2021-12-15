@@ -1,0 +1,17 @@
+:root {
+  --ui-bg: #0e021d;
+  --ui-bg-rgb: 14, 4, 26;
+  --ui-bg-hover: #1f053f;
+  --ui-text: #a39cad;
+  --ui-text-rgb: 163, 156, 173;
+  --ui-text-hover: #f8f8f8;
+  --ui-accent-1: #ffc400;
+  --ui-accent-1-rgb: 255, 196, 0;
+  --ui-accent-2: #ff00aa;
+  --max-width: 1100px;
+  --nav-padding: 1.5rem;
+  --nav-logo-height: 3rem;
+  --nav-height: calc(var(--nav-logo-height) + 2 * var(--nav-padding));
+  --tab-list-width: 225px;
+  --tab-list-gap: 2rem;
+}
