@@ -12,7 +12,7 @@ const TabList = ({ tabData }) => {
 
 	// TODO: Memoize
 	// TODO: Get IDs with array index and reduce method
-  const tabDetails = tabData.filter(({ id }) => id === currentTab)[0];
+	const tabDetails = tabData[currentTab];
 	const { employer, title, dates, works } = tabDetails;
 	
 	const parseMarkup = (string, openingTag) => {
@@ -20,16 +20,15 @@ const TabList = ({ tabData }) => {
 		return {__html: string.replaceAll(openingTag, `<span class="highlight">`).replaceAll(closingTag, `</span>`)}
 	}
 
-
   return (
 	<div className="tab-list">
 		<div className="tab-list__tabs">
 			<ul className="tab-list__labels">
-				{tabData.map(({id, label}) => (
+				{tabData.map(({label}, index) => (
 					<li
-            key={id}
-            className={["tab-list__label", currentTab === id ? "active" : ""].join(" ").trimEnd()}
-            data-tab-id={id}
+            key={index}
+            className={["tab-list__label", currentTab === index ? "active" : ""].join(" ").trimEnd()}
+            data-tab-id={index}
             onClick={handleSelect}
           >
 						<h3>

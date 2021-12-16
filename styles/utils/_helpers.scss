@@ -14,10 +14,10 @@
     left: 0;
     width: 100%;
     height: 0.5rem;
-    background-image: url("/zig-zag.svg");
+    background-image: url("/images/zig-zag.svg");
   }
 
   &.smooth::after {
-    background-image: url("/squiggle.svg");
+    background-image: url("/images/squiggle.svg");
   }
 }

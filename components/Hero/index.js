@@ -12,7 +12,7 @@ const Hero = () => {
 	<section className="hero section">
 		<div className="container">
 			<header className="hero__header">
-				<p className="hero__overline"><Image src="/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" /><span className="hero__greeting"> Hello, my name is</span></p>
+				<p className="hero__overline"><Image src="/images/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" /><span className="hero__greeting"> Hello, my name is</span></p>
 				<h1 className="hero__headline"><Name /></h1>
 				<h2 className="hero__vocation">I build <span className="emoji" role="img">🛠</span> for the web.</h2>
 				<p className="hero__brief">

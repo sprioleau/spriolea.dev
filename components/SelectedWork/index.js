@@ -2,21 +2,21 @@
 import React from "react"
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
-import { selectedWorks } from "../../constants"
+import { selectedWork } from "../../constants"
 
 const SelectedWork = () => {
   return (
 	<div className="selected-work">
 		<ul className="selected-work__works">
-			{selectedWorks.map(({id, imageSrc, title, description, deployedUrl, tags, gitHubUrl, sourceCodeUrl}) => (
-				<li key={id} className="selected-work__work">
+			{selectedWork.map(({imageSrc, title, description, tags, links: {gitHubUrl, sourceCodeUrl, deployedUrl}, emoji}, index) => (
+				<li key={index} className="selected-work__work">
 					<div className="selected-work__image">
 						<a href={deployedUrl} className="button" target="_blank" rel="noreferrer">
 							<img src={imageSrc} alt={title} />
 						</a>
 					</div>
 					<div className="selected-work__details">
-						<h3 className="selected-work__title">{title}</h3>
+						<h3 className="selected-work__title">{title}{emoji && <span className="emoji" role="img"> {emoji}</span>}</h3>
 						<p className="selected-work__description">{description}</p>
 						<ul className="selected-work__tags">
 							{tags.map((tag) => (
@@ -30,7 +30,7 @@ const SelectedWork = () => {
 						</div>
 					</div>
 				</li>
-          ))}
+			))}
 		</ul>
 	</div>
   )

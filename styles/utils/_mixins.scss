@@ -50,13 +50,13 @@ $bp-large: 1200px;
 }
 
 @mixin cursor-default {
-  cursor: url("/cursor.svg"), default;
+  cursor: url("/images/cursors/cursor.svg"), default;
   width: 100px;
   height: 100px;
 }
 
 @mixin cursor-pointer {
-  cursor: url("/cursor-hovered.svg"), pointer;
+  cursor: url("/images/cursors/cursor-hovered.svg"), pointer;
 }
 
 @mixin center {

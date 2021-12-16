@@ -17,10 +17,10 @@ const DataTable = ({ data: { sectionTitle, employers } }) => {
 				<span className="data-table__expand-collapse icon"><FiArrowDown /></span>
 			</div>
 		</header>
-		{expanded && employers.map(({name, roles}) => (
+		{expanded && employers.map(({name, roles, employerLogo}) => (
 			<section key={name} className="data-table__employer-wrapper">
 				<div className="data-table__employer-name">
-					<img src="/chevron_logo.svg" alt="chevron logo" width={18} height={18} className="data-table__employer-logo" /> 
+					<span className="data-table__employer-logo">{employerLogo}</span>
 					<h4>{name}</h4>
 				</div>
 				<ul className="data-table__list">

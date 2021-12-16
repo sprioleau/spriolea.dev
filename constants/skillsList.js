@@ -73,7 +73,7 @@ const skillsList = [
     icon: <FaGitAlt />,
   },
   {
-    techName: "Asynchronous JavaScript",
+    techName: "Async JS",
     experienceYears: 3,
     category: "Core Concept",
     icon: <TiArrowSync />,

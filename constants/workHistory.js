@@ -1,6 +1,5 @@
 const workHistory = [
   {
-    id: 0,
     label: "Dartmouth College II",
     employer: "Dartmouth College",
     title: "Frontend Web Developer",
@@ -12,7 +11,6 @@ const workHistory = [
     ]
   },
   {
-    id: 1,
     label: "Dartmouth College I",
     employer: "Dartmouth College",
     title: "User Experience & Visual Designer",
@@ -24,7 +22,6 @@ const workHistory = [
     ]
   },
   {
-    id: 2,
     label: "Studio 1816 Designs",
     employer: "Studio 1816 Designs",
     title: "Graphic Designer",

@@ -1,8 +1,11 @@
+import Chevron from "../components/Icons/Chevron";
+
 const engineeringWorkHistory = {
   sectionTitle: "Engineering Experience",
   employers: [
     {
       name: "Chevron",
+      employerLogo: <Chevron />,
       roles: [
         {
           id: 0,
