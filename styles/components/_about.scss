@@ -5,9 +5,9 @@
 
   &__image {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    flex: 1;
+    flex: 1 0;
   }
 
   &__bio-text {

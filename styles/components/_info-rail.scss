@@ -1,0 +1,53 @@
+.info-rail {
+  --accent-line-length: 200px;
+  @include ff-mono;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  bottom: 0;
+  width: calc(var(--section-x-padding) / 2);
+  z-index: 10;
+
+  &.left {
+    left: calc(var(--section-x-padding) / 4);
+  }
+
+  &.right {
+    right: calc(var(--section-x-padding) / 4);
+  }
+
+  &__link-list-item {
+    transform: translateY(calc(-1 * var(--accent-line-length) - 1rem));
+  }
+
+  &__link {
+    position: relative;
+    padding: 1rem;
+    font-size: 1.25rem;
+
+    &:hover {
+      color: var(--ui-accent-1);
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &.text-link {
+      font-size: 0.9em;
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      transform: rotate(90deg) translateX(-1rem);
+      transform-origin: right;
+    }
+  }
+
+  &__accent-line {
+    position: absolute;
+    height: var(--accent-line-length);
+    width: 2px;
+    background-color: var(--ui-accent-1);
+  }
+}

@@ -28,4 +28,20 @@
     background-color: rgba(var(--ui-accent-1-rgb), 0.8);
     z-index: -1;
   }
+
+  &.center {
+    flex-direction: column;
+
+    .section-header {
+      &__title {
+        padding: 0 3rem 1rem;
+        border-bottom: 2px solid var(--ui-accent-1);
+        margin-bottom: 1rem;
+      }
+
+      &__accent-line {
+        display: none;
+      }
+    }
+  }
 }
