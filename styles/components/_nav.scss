@@ -19,9 +19,7 @@
 
   &__logo {
     @include transition;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center;
     height: var(--nav-logo-height);
     color: var(--ui-accent-1);
     padding: 0.5rem;

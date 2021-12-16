@@ -58,3 +58,9 @@ $bp-large: 1200px;
 @mixin cursor-pointer {
   cursor: url("/cursor-hovered.svg"), pointer;
 }
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

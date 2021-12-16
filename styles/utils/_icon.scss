@@ -1,5 +1,6 @@
 .icon {
-  font-size: 120%;
+  @include center;
+  padding: 0.5rem;
 
   svg, path {
     stroke: currentColor;
