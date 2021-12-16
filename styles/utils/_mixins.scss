@@ -42,6 +42,7 @@ $bp-large: 1200px;
   font-family: var(--font-mono);
   font-size: 0.85em;
   letter-spacing: 0.5px;
+  font-weight: 400;
 }
 
 @mixin transition($property: all, $duration: 0.3s) {
