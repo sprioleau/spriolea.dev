@@ -1,9 +1,8 @@
 .info-rail {
   --accent-line-length: 200px;
   @include ff-mono;
+  @include center;
   position: fixed;
-  display: flex;
-  justify-content: center;
   align-items: flex-end;
   bottom: 0;
   width: calc(var(--section-x-padding) / 2);
@@ -17,18 +16,28 @@
     right: calc(var(--section-x-padding) / 4);
   }
 
-  &__link-list-item {
-    transform: translateY(calc(-1 * var(--accent-line-length) - 1rem));
+  &__link-list {
+    transform: translateY(calc(-1 * var(--accent-line-length) - 0.5rem));
   }
-
-  &__link {
-    position: relative;
-    padding: 1rem;
-    font-size: 1.25rem;
+  
+  &__link-list-item {
+    @include transition;
 
     &:hover {
-      color: var(--ui-accent-1);
+      transform: translateY(-0.25rem);
+      
+      .info-rail__link {
+        color: var(--ui-accent-1);
+      }
     }
+  }
+  
+  &__link {
+    @include transition;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 1.5rem;
 
     &::after {
       display: none;
@@ -41,6 +50,7 @@
       display: inline-block;
       transform: rotate(90deg) translateX(-1rem);
       transform-origin: right;
+      padding-bottom: 5px;
     }
   }
 
