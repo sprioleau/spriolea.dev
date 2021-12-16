@@ -1,36 +1,24 @@
 import React from "react"
+import { skillsList } from "../../constants"
 import SectionHeader from "../SectionHeader"
 
 const Skills = () => {
-	const skillsList = [
-		{
-			techName: "Adobe Illustrator",
-			experienceYears: 10, 
-		},
-		{
-			techName: "Adobe Photoshop",
-			experienceYears: 10, 
-		},
-		{
-			techName: "React",
-			experienceYears: 3, 
-		},
-		{
-			techName: "Next.js",
-			experienceYears: 2, 
-		},
-	]
-
   return (
 	<section id="skills" className="skills section">
 		<div className="container">
-			<SectionHeader sectionTitle="Skills" />
+			<SectionHeader sectionTitle="Relevant Skills" />
+			<h3 className="skills__subtitle">Years of Experience</h3>
 			<div className="skills__main-content">
 				<ul className="skills__list">
-					{skillsList.map(({techName, experienceYears}) => (
+					{skillsList.map(({techName, experienceYears, icon}) => (
 						<li key={techName} className="skills__list-item">
-							<p className="skills__label">{ techName}</p>
-							<p className="skills__label">{experienceYears}yrs</p>
+							{icon && <div className="skills__icon">
+								{icon}
+							</div>}
+							<div className="skills__detail">
+								<p className="skills__label">{techName}</p>
+								<p className="skills__experience">{experienceYears} <span className="skills__symbol">{Array(experienceYears).fill("✶")}</span></p>
+							</div>
 						</li>
 						))}
 				</ul>

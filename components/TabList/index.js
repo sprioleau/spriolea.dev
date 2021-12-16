@@ -11,6 +11,7 @@ const TabList = ({ tabData }) => {
   }
 
 	// TODO: Memoize
+	// TODO: Get IDs with array index and reduce method
   const tabDetails = tabData.filter(({ id }) => id === currentTab)[0];
 	const { employer, title, dates, works } = tabDetails;
 	
@@ -18,6 +19,7 @@ const TabList = ({ tabData }) => {
 		const closingTag = openingTag.split("").reverse().join("");
 		return {__html: string.replaceAll(openingTag, `<span class="highlight">`).replaceAll(closingTag, `</span>`)}
 	}
+
 
   return (
 	<div className="tab-list">

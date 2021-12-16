@@ -1,5 +1,6 @@
 export { default as Main } from "./Main";
 export { default as Nav } from "./Nav";
+export { default as InfoRails } from "./InfoRails";
 export { default as Name } from "./Name";
 export { default as Footer } from "./Footer";
 export { default as Hero } from "./Hero";
@@ -12,3 +13,5 @@ export { default as TabList } from "./TabList";
 export { default as DataTable } from "./DataTable";
 export { default as Skills } from "./Skills";
 export { default as ActionIndicator } from "./ActionIndicator";
+export { default as SelectedWork } from "./SelectedWork";
+export { default as OtherWork } from "./OtherWork";

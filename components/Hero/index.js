@@ -23,7 +23,7 @@ const Hero = () => {
 				<span className="icon">🚧</span>See some of my work
 			</button>
 		</div>
-		<div style={{ position: "absolute", bottom: "3rem", right: "3rem" }}>
+		<div className="hero__view-more">
 			<ActionIndicator />	
 		</div>
 	</section>
