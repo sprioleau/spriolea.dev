@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Main, Nav } from "../components";
+import { InfoRails, Main, Nav } from "../components";
 
 const Home = () => {
 	return (
@@ -9,6 +9,7 @@ const Home = () => {
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 			<Nav />
+			<InfoRails />
 			<Main />
 		</div>
 	);
