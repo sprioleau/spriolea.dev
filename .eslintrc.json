@@ -24,6 +24,7 @@
 		"react/jsx-indent": [1, "tab"],
 		"react/react-in-jsx-scope": 0,
 		"react/prop-types": 0,
+		"react/no-array-index-key": 0,
 		"react/destructuring-assignment": 0,
 		"react/jsx-first-prop-new-line": 0,
 		"react/jsx-filename-extension": 0,
