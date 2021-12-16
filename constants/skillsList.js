@@ -1,5 +1,5 @@
 import { FaFigma, FaGitAlt, FaNodeJs, FaNpm, FaReact, FaSass } from "react-icons/fa"
-import { SiCss3, SiCypress, SiExpress, SiGraphql, SiHtml5, SiJavascript, SiNextdotjs, SiRedux, SiTypescript } from "react-icons/si"
+import { SiCss3, SiCypress, SiExpress, SiGraphql, SiHtml5, SiJavascript, SiJest, SiNextdotjs, SiRedux, SiTypescript } from "react-icons/si"
 import { TiArrowSync } from "react-icons/ti"
 import { AdobeXd } from "../components/Icons";
 import AdobePhotoshop from "../components/Icons/AdobePhotoshop";
@@ -113,6 +113,12 @@ const skillsList = [
     experienceYears: 1,
     category: "Testing",
     icon: <SiCypress />,
+  },
+  {
+    techName: "Jest",
+    experienceYears: 2,
+    category: "Testing",
+    icon: <SiJest />,
   },
   {
     techName: "Sass",
