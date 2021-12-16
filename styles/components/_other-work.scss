@@ -1,3 +1,54 @@
 .other-work {
-  text-align: center;
+  &__section-title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__header-row {
+    :hover {
+      background-color: transparent;
+    }
+  }
+
+  &__row {
+    @include transition;
+    
+    &:hover {
+      background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+      color: var(--ui-text-hover);
+    }
+  }
+
+  &__header-row {
+    th {
+      white-space: nowrap;
+    }
+  }
+
+  &__year {
+    color: var(--ui-accent-1);
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__icon-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--ui-accent-1);
+      transform: translatey(-3px);
+    }
+    
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
 }
