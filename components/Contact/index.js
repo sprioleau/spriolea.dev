@@ -19,33 +19,3 @@ const Contact = () => {
 }
 
 export default Contact;
-
-// export const ConcactAlt = () => {
-//   const ref = React.useRef(null)
-//   const mouse = useMouse(ref, {
-//     enterDelay: 100,
-//     leaveDelay: 100,
-//   })
-
-//   return (
-// 	<section id="contact" className="contact-alt section">
-// 		<div className="container">
-// 			<header>
-// 				<h2>Contact</h2>
-// 				<div ref={ref} className="contact-alt__effects-wrapper">
-// 					<div className="contact-alt__card">
-// 						<h4>Hello</h4>
-// 					</div>
-// 					<div
-//             className="contact-alt__mouse"
-//             style={{
-//               top: mouse.y,
-//               left: mouse.x,
-//             }}
-//           />
-// 				</div>
-// 			</header>
-// 		</div>
-// 	</section>
-//   )
-// }
