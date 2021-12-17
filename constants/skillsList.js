@@ -33,37 +33,37 @@ const skillsList = [
   {
     techName: "React",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <FaReact />,
   },
   {
     techName: "Next.js",
     experienceYears: 2,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiNextdotjs />,
   },
   {
     techName: "Node",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <FaNodeJs />,
   },
   {
     techName: "Express",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiExpress />,
   },
   {
     techName: "NPM",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <FaNpm />,
   },
   {
     techName: "Git",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <FaGitAlt />,
   },
   {
@@ -75,37 +75,37 @@ const skillsList = [
   {
     techName: "Async JS",
     experienceYears: 3,
-    category: "Core Concept",
+    category: "Core Concepts",
     icon: <TiArrowSync />,
   },
   {
     techName: "TypeScript",
     experienceYears: 1,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiTypescript />,
   },
   {
     techName: "JavaScript/ES6",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiJavascript />,
   },
   {
     techName: "HTML",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiHtml5 />,
   },
   {
     techName: "CSS",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiCss3 />,
   },
   {
     techName: "GraphQL",
     experienceYears: 1,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiGraphql />,
   },
   {
@@ -123,13 +123,13 @@ const skillsList = [
   {
     techName: "Sass",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <FaSass />,
   },
   {
     techName: "Redux",
     experienceYears: 3,
-    category: "Technology",
+    category: "Technologies",
     icon: <SiRedux />,
   },
 ];

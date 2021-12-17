@@ -13,10 +13,10 @@ const Hero = () => {
 		<div className="container">
 			<header className="hero__header">
 				<p className="hero__overline"><Image src="/images/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" /><span className="hero__greeting"> Hello, my name is</span></p>
-				<h1 className="hero__headline"><Name /></h1>
-				<h2 className="hero__vocation">I build <span className="emoji" role="img">🛠</span> for the web.</h2>
+				<h1 className="hero__headline"><Name />.</h1>
+				<h2 className="hero__vocation">I design and build for the web.</h2>
 				<p className="hero__brief">
-					I&apos;m a <span className="highlight">frontend web developer</span> with an eye for good design. I&apos;ve done <span className="highlight">graphic design</span>, <span className="highlight">UX design</span> and now <span className="highlight">web development</span>. I love combining ideas to create new things.
+					I&apos;m a <span className="highlight">frontend web developer</span> with an eye for good design. I&apos;ve done <span className="highlight">engineering</span>, <span className="highlight">user experience (UX)</span> and <span className="highlight">graphic gesign</span> and now <span className="highlight">web development</span>. I love combining ideas to create new things.
 				</p>
 			</header>
 			<button type="button" className="hero__cta-button button" onClick={() => router.push("#work")}>

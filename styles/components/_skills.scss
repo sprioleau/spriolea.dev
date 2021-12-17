@@ -32,6 +32,10 @@
     }
   }
 
+  &__category {
+    margin-bottom: 2rem;
+  }
+
   &__icon {
     display: flex;
     align-items: flex-end;
@@ -56,5 +60,12 @@
 
   &__symbol {
     letter-spacing: 0.25rem;
+  }
+}
+
+.skills-2 {
+  .skills__icon {
+    align-items: center;
+    margin-bottom: 2px;
   }
 }

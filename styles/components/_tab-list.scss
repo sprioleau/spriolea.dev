@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   margin-bottom: 3rem;
+  width: 100%;
 
   &__tabs {
     margin-right: var(--tab-list-gap);
@@ -24,21 +25,25 @@
     h3 {
       font-weight: 400;
     }
-    
-    &:hover {
-      @include cursor-pointer;
-      background-color: var(--ui-bg-hover);
-      color: var(--ui-text-hover);
-      padding-left: 2rem;
-    }
-    
+
     &.active {
       color: var(--ui-text-hover);
+      // color: var(--ui-accent-1);
+      background-color: rgba(var(--ui-accent-1-rgb), 0.15);
       padding-left: 2rem;
+      position: relative;
 
       h3 {
         font-weight: 700;
       }
+
+    }
+
+    &:hover {
+      @include cursor-pointer;
+      background-color: rgba(var(--ui-accent-1-rgb), 0.2);
+      color: var(--ui-text-hover);
+      padding-left: 2rem;
     }
   }
 
