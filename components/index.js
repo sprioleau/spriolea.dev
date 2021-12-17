@@ -1,5 +1,6 @@
 export { default as Main } from "./Main";
 export { default as Nav } from "./Nav";
+export { default as SkipToMainContent } from "./SkipToMainContent";
 export { default as InfoRails } from "./InfoRails";
 export { default as Name } from "./Name";
 export { default as Footer } from "./Footer";

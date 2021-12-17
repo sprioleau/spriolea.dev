@@ -1,6 +1,7 @@
 import { CgFileDocument } from "react-icons/cg"
 import Link from "next/link"
 import { navLinks } from "../../constants";
+import SkipToMainContent from "../SkipToMainContent/index";
 
 const Nav = () => {
 	return (
@@ -18,9 +19,10 @@ const Nav = () => {
 				</div>
 				<div className="nav__links-wrapper">
 					<ol className="nav__links">
+						<li><SkipToMainContent /></li>
 						{navLinks.map(({ label, link }) => (
 							<li key={label} className="nav__link">
-								<a href={link} className="nav__link__link">
+								<a href={link} className="nav__link__link" tabIndex={0}>
 									{label}
 								</a>
 							</li>
