@@ -5,8 +5,8 @@ import Experience from "../Experience";
 import Work from "../Work";
 import Contact from "../Contact";
 import Footer from "../Footer";
+// import Skills from "../Skills";
 import { Skills2 } from "../Skills";
-// import Skills, { Skills2 } from "../Skills";
 import { FadeInWhenVisible } from "../AnimationLibrary";
 
 const Main = () => {
