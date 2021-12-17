@@ -8,7 +8,13 @@ const TabList = ({ tabData }) => {
   const handleSelect = (e) => {
     const selectedTabId = parseInt(e.currentTarget.dataset.tabId, 10);
     setCurrentTab(selectedTabId);
-  }
+	}
+	
+  const handleKeyDown = (e) => {
+    if (!["Enter", " "].includes(e.key)) return;
+    if (e.key === " ") e.preventDefault();
+    handleSelect(e);
+  };
 
 	// TODO: Memoize
 	// TODO: Get IDs with array index and reduce method
@@ -29,7 +35,11 @@ const TabList = ({ tabData }) => {
             key={index}
             className={["tab-list__label", currentTab === index ? "active" : ""].join(" ").trimEnd()}
             data-tab-id={index}
-            onClick={handleSelect}
+						onClick={handleSelect}
+						onKeyDown={handleKeyDown}
+						// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+						role="button"
+						tabIndex={0}
           >
 						<h3>
 							{label}
