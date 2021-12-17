@@ -28,7 +28,7 @@ const About = () => {
 					</div>
 				</div>
 				<div className="about__image">
-					<Image src="/images/s_prioleau_headshot.png" width="400px" height="400px" />
+					<Image src="/images/s_prioleau_headshot.png" width="400px" height="400px" alt="San'Quan Prioleau headshot" />
 				</div>
 			</div>
 		</div>

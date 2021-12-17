@@ -1,0 +1,18 @@
+.skip-to-main-content {
+  --translateY: -6rem;
+	@include transition;
+	position: fixed;
+	display: flex;
+	transform: translateY(var(--translateY));
+	z-index: 50;
+
+	&__label {
+		margin: 0;
+		margin-right: 0.5rem;
+	}
+	
+	&:focus {
+		--translateY: 0;
+		box-shadow: 0 0 0 0.35rem rgba(var(--ui-accent-1-rgb), 0.8);
+	}
+}

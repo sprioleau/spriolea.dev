@@ -22,7 +22,7 @@ const TabList = ({ tabData }) => {
 
   return (
 	<div className="tab-list">
-		<div className="tab-list__tabs">
+		<nav className="tab-list__tabs">
 			<ul className="tab-list__labels">
 				{tabData.map(({label}, index) => (
 					<li
@@ -38,7 +38,7 @@ const TabList = ({ tabData }) => {
         ))}
 			</ul>
 			<div className="tab-list__tabs-indicator" style={{transform: `translateY(${49 * (currentTab)}px)`}} />
-		</div>
+		</nav>
 
 		<div className="tab-list__details">
 			<header className="tab-list__header">

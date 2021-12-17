@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react"
+import Image from "next/image"
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
 import { selectedWork } from "../../constants"
@@ -12,7 +12,7 @@ const SelectedWork = () => {
 				<li key={index} className="selected-work__work">
 					<div className="selected-work__image">
 						<a href={deployedUrl} className="button" target="_blank" rel="noreferrer">
-							<img src={imageSrc} alt={title} />
+							<Image src={imageSrc} layout="fill" alt={title} />
 						</a>
 					</div>
 					<div className="selected-work__details">

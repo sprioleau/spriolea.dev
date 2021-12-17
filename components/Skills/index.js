@@ -39,9 +39,6 @@ export const Skills2 = () => {
 		return skillsObject;
 	}, {});
 
-	console.log({skillsListObject})
-
-
 	return (
 		<section id="skills" className="skills section skills-2">
 			<div className="container">
@@ -50,7 +47,7 @@ export const Skills2 = () => {
 					<ul className="skills__categories">
 						{Object.entries(skillsListObject).map(([category, skills]) => (
 							<li key={category} className="skills__category">
-								<h4>{category}</h4>
+								<h3 className="skills__category-name">{category}</h3>
 								<ul className="skills__list">
 									{skills.sort((a, b) => (a.techName > b.techName) ? 1 : -1).map(({techName, icon}) => (
 										<li key={techName} className="skills__list-item">

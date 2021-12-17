@@ -10,7 +10,7 @@ const Contact = () => {
 			<SectionHeader sectionTitle="Get in touch" variant="center" />
 			<div className="contact__card">
 				<span className="icon mail-icon"><MdOutlineMarkEmailRead /></span>
-				<h4 className="contact__card-heading">You can find me at</h4>
+				<h3 className="contact__card-heading">You can find me at</h3>
 				<a href="mailto:sq.prioleau@gmail.com" className="a contact__card-email">sq.prioleau@gmail.com</a>
 			</div>
 		</div>
