@@ -1,22 +1,16 @@
-;
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion as m } from "framer-motion";
 import ActionIndicator from "../ActionIndicator";
 import { FadeInAndUp, StaggeredReveal } from "../AnimationLibrary";
+import { handleKeyDown } from "../../utils";
 
 const Hero = () => {
   const router = useRouter();
 	const iconSize = 32;
 	
 	const handleAdvanceSection = () => router.push("#about");
-
-	const handleKeyDown = (e) => {
-    if (!["Enter", " "].includes(e.key)) return;
-    if (e.key === " ") e.preventDefault();
-    handleAdvanceSection();
-  };
-
+	
   return (
 	<section className="hero section">
 		<div className="container">
@@ -63,7 +57,7 @@ const Hero = () => {
 				tabIndex={0}
 				role="button"
 				onClick={handleAdvanceSection}
-				onKeyDown={handleKeyDown}
+				onKeyDown={(e) => handleKeyDown(e, handleAdvanceSection)}
 			>
 				<ActionIndicator size="5rem" variant="big" />	
 			</div>

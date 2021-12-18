@@ -2,18 +2,23 @@ import React from "react"
 import { FiArrowDown } from "react-icons/fi"
 import { AnimatePresence } from "framer-motion";
 import { FadeInAndUp } from "../AnimationLibrary";
+import { handleKeyDown } from "../../utils";
 
 const DataTable = ({ data: { sectionTitle, employers } }) => {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpand = () => {
-    setExpanded(!expanded);
-	}
+  const handleExpand = () => setExpanded(!expanded);
 	
 	return (
 		<div className={["data-table", expanded ? "expanded" : ""].join(" ").trimEnd()}>
 				<header className="data-table__header">
-					<div className="data-table__section-title" role="button" tabIndex={0} onClick={handleExpand}>
+					<div
+						className="data-table__section-title"
+						role="button"
+						tabIndex={0}
+						onClick={handleExpand}
+						onKeyDown={(e) => handleKeyDown(e, handleExpand)}
+					>
 					<h3 className="a section-subheading">{sectionTitle}</h3>
 						<span className="data-table__expand-collapse icon"><FiArrowDown /></span>
 					</div>

@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 import React from "react"
 import { motion as m } from "framer-motion"
+import { handleKeyDown } from "../../utils";
 
 const TabList = ({ tabData }) => {
   const [currentTab, setCurrentTab] = React.useState(0);
@@ -9,13 +10,7 @@ const TabList = ({ tabData }) => {
     const selectedTabId = parseInt(e.currentTarget.dataset.tabId, 10);
     setCurrentTab(selectedTabId);
 	}
-	
-  const handleKeyDown = (e) => {
-    if (!["Enter", " "].includes(e.key)) return;
-    if (e.key === " ") e.preventDefault();
-    handleSelect(e);
-	};
-	
+
 	const parseMarkup = (string, openingTag) => {
 		const closingTag = openingTag.split("").reverse().join("");
 		return { __html: string.replaceAll(openingTag, "<span class=\"highlight\">").replaceAll(closingTag, "</span>") }
@@ -46,7 +41,7 @@ const TabList = ({ tabData }) => {
             className={["tab-list__label", currentTab === index ? "active" : ""].join(" ").trimEnd()}
             data-tab-id={index}
 						onClick={handleSelect}
-						onKeyDown={handleKeyDown}
+						onKeyDown={(e) => handleKeyDown(e, handleSelect)}
 						// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
 						role="button"
 						tabIndex={0}
@@ -57,7 +52,7 @@ const TabList = ({ tabData }) => {
 					</li>
         ))}
         </ul>
-        <div className="tab-list__tabs-indicator" style={{ transform: `translateY(${49 * (currentTab)}px)` }} />
+        <div className="tab-list__tabs-indicator" style={{ transform: `translateY(${48 * (currentTab)}px)` }} />
       </nav>
 				<div className="tab-list__details">
 					<header className="tab-list__header">

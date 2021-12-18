@@ -36,7 +36,7 @@ const OtherWork = () => {
 				</tr>
 			</thead>
 			<tbody>
-				{otherWork.map(({ year, title, tags, builtFor, links}) => (
+				{otherWork.map(({ year, title, tags, builtFor, links }) => (
 					<tr key={title} className="other-work__row">
 						<td className="other-work__year">{year}</td>
 						<td>{title}</td>
