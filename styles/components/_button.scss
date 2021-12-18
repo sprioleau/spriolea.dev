@@ -1,21 +1,21 @@
 button,
 .button {
   @include center;
+  @include ff-ss;
   @include transition(all, 0.2s);
   position: relative;
   color: var(--ui-accent-1);
   border: none;
   appearance: none;
   box-shadow: 0 5px 10px -5px rgba(var(--ui-accent-1-rgb), 0.3);
-  letter-spacing: 0.5px;
   margin: 0.5rem 0;
   padding: 1.25rem 2rem;
   transform: scale(1);
   border: 1px solid var(--ui-accent-1);
   background-color: transparent;
-  font-family: Mali, sans-serif;
+  letter-spacing: 0;
+  font-size: 0.9rem;
   font-weight: 700;
-  font-size: 1rem;
   letter-spacing: 1px;
   white-space: nowrap;
   z-index: 1;
