@@ -1,4 +1,4 @@
-import React from "react"
+
 import { FiGithub } from "react-icons/fi";
 import { HiOutlineCode } from "react-icons/hi";
 

@@ -1,14 +1,11 @@
-import React from "react"
 import Image from "next/image"
-import SectionHeader from "../SectionHeader"
 import Name from "../Name";
 import technologiesList from "../../constants/technologiesList";
+import PageSectionLayout from "../PageSectionLayout";
 
 const About = () => {
   return (
-	<section id="about" className="about section">
-		<div className="container">
-			<SectionHeader sectionTitle="About Me" />
+		<PageSectionLayout sectionId="about" sectionTitle="About Me">
 			<div className="about__main-content">
 				<div className="about__bio">
 					<div className="about__bio-text">
@@ -28,11 +25,10 @@ const About = () => {
 					</div>
 				</div>
 				<div className="about__image">
-					<Image src="/images/s_prioleau_headshot.png" width="400px" height="400px" alt="San'Quan Prioleau headshot" />
+					<Image src="/images/s_prioleau_headshot.png" width="400px" height="400px" alt="San'Quan Prioleau headshot"/>
 				</div>
 			</div>
-		</div>
-	</section>
+		</PageSectionLayout>
   )
 }
 

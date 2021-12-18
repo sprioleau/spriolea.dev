@@ -43,6 +43,7 @@
 
   &__vocation {
     color: var(--ui-text);
+    font-size: calc(0.8 * var(--headline-size));
     margin-bottom: 0.75rem;
   }
 
@@ -57,9 +58,11 @@
   }
 
   &__view-more {
+    @include cursor-pointer;
     position: absolute;
     bottom: 3rem;
     right: 5rem;
+    padding: 0.5rem;
   }
 }
 

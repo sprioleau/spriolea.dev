@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import React from "react"
+import { useRouter } from "next/router";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const SkipToMainContent = ({ sectionId = "#about" }) => {

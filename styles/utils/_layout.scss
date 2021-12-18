@@ -10,5 +10,16 @@
   padding: 6rem var(--section-x-padding);
   min-height: 40vh;
   width: 100%;
-  max-width: calc(var(--max-width) + var(--section-x-padding));
+  // margin: 0 auto;
+  // max-width: calc(var(--max-width) + var(--section-x-padding));
+  position: relative;
+}
+
+.section-subheading {
+  margin-bottom: 1.5rem;
+}
+
+.marker {
+  position: absolute;
+  top: -2rem;
 }

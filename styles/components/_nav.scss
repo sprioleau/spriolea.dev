@@ -4,7 +4,7 @@
   z-index: 10;
   font-size: 0.8em;
   letter-spacing: 1px;
-  padding: var(--nav-padding) 0;
+  padding: var(--nav-padding);
   background: linear-gradient(to bottom, rgba(var(--ui-bg-rgb), 0.95), rgba(var(--ui-bg-rgb), 0));
   backdrop-filter: blur(10px);
   border-top: 2px solid var(--ui-accent-1);
@@ -14,19 +14,22 @@
   .container {
     flex-direction: row;
     justify-content: space-between;
-    max-width: var(--max-width);
+    max-width: calc(var(--max-width) - var(--section-x-padding));
   }
 
   &__logo {
+    --rotation: 0deg;
     @include transition;
     @include center;
     height: var(--nav-logo-height);
     color: var(--ui-accent-1);
-    padding: 0.5rem;
+    margin-left: -1rem;
+    padding: 1rem;
+    transform: rotate(var(--rotation));
 
     &:hover {
+      --rotation: 45deg;
       @include cursor-pointer;
-      transform: rotate(45deg);
     }
   }
 
@@ -48,7 +51,12 @@
   }
 
   &__link {
+    @include center;
     @include cursor-pointer;
+    
+    a {
+      padding: 0.5rem 0.25rem;
+    }
 
     &::before {
       counter-increment: nav-link;

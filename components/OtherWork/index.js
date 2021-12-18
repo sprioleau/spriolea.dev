@@ -1,4 +1,4 @@
-import React from "react"
+
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
 import { otherWork } from "../../constants"

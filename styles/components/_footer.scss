@@ -1,20 +1,20 @@
 .footer {
-  font-size: 0.7rem;
+  @include ff-mono;
   font-weight: 300;
   letter-spacing: 1px;
   padding: var(--nav-padding) 0;
   background-color: rgba(var(--ui-bg-rgb), 0.8);
   border-bottom: 2px solid var(--ui-accent-1);
   width: 100%;
-
+  
   .container {
-    @include ff-mono;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
+  
   &__message {
+    font-size: 0.9em;
     margin-bottom: 0;
   }
 }

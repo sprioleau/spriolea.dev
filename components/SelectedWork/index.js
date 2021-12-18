@@ -1,5 +1,5 @@
-import React from "react"
-import Image from "next/image"
+/* eslint-disable @next/next/no-img-element */
+
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
 import { selectedWork } from "../../constants"
@@ -8,11 +8,11 @@ const SelectedWork = () => {
   return (
 	<div className="selected-work">
 		<ul className="selected-work__works">
-			{selectedWork.map(({imageSrc, title, description, tags, links: {gitHubUrl, sourceCodeUrl, deployedUrl}, emoji}, index) => (
+			{selectedWork.map(({ imageSrc, title, description, tags, links: { gitHubUrl, sourceCodeUrl, deployedUrl }, emoji }, index) => (
 				<li key={index} className="selected-work__work">
 					<div className="selected-work__image">
 						<a href={deployedUrl} className="button" target="_blank" rel="noreferrer">
-							<Image src={imageSrc} layout="fill" alt={title} />
+							<img src={imageSrc} alt={title} />
 						</a>
 					</div>
 					<div className="selected-work__details">

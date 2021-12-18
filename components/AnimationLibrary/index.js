@@ -2,41 +2,92 @@ import { motion as m } from "framer-motion";
 
 // Reference: https://stackoverflow.com/questions/58958972/framer-motion-animate-when-element-is-in-view-when-you-scroll-to-element
 
-const defaultWrapperProps = {
-  width: "100%",
-  margin: "0 auto"
-}
+export const FadeInWhenVisible = ({ offset = "-30%", children }) => {
+	const variants = {
+		hidden: { opacity: 0, translateY: 100 },
+		visible: { opacity: 1, translateY: 0 },
+	}
 
-export const FadeInWhenVisible = ({ children }) => {
   return (
 	<m.div
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, margin: "200px" }}
-    transition={{ duration: 1 }}
-    variants={{
-      hidden: { opacity: 0, translateY: 100, ...defaultWrapperProps },
-      visible: { opacity: 1, translateY: 0, ...defaultWrapperProps },
-    }}
+    viewport={{ once: true, margin: offset }}
+    transition={{ duration: 0.5 }}
+    variants={variants}
   >
 		{children}
 	</m.div>
   );
 }
 
-export const FadeInAndUpWhenVisible = ({ children }) => {
+export const FadeInAndUp = ({ children, delay, distance = 20, reverseOnExit = false }) => {
   return (
-	<m.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    transition={{ duration: 0.3 }}
-    variants={{
-      visible: { opacity: 1, scale: 1 },
-      hidden: { opacity: 0, scale: 0 }
-    }}
-  >
-		{children}
-	</m.div>
+		<m.div
+			initial="hidden"
+			animate="animate"
+			exit={reverseOnExit ? "exit" : null}
+			transition={{ duration: 0.3, delay }}
+			variants={{
+				hidden: { opacity: 0, translateY: distance },
+				animate: { opacity: 1, translateY: 0 },
+				exit: { opacity: 0, translateY: distance }
+			}}
+		>
+			{children}
+		</m.div>
   );
+}
+
+export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, speed = 1, delayIncrement = 0.1, delay = 0, subtitle = false }) => {
+	const variants = {
+		initial: {
+			opacity: 0,
+			top: "3rem",
+		},
+		animate: {
+			opacity: 1,
+			top: 0,
+		},
+	}
+
+	const styles = {
+		wrapperSpan: {
+			display: "flex",
+		},
+		letter: {
+			position: "relative",
+			display: "inline-block",
+		}
+	}
+
+	const adjustedDelay = subtitle ? 0.5 + delay : delay;
+	
+	return (
+		<Tag className={wrapperClass}>
+			<m.span
+				initial="initial"
+				animate="animate"
+				style={styles.wrapperSpan}
+			>
+				{text.split("").map((letter, index) => (
+					<m.span
+						key={index}
+						variants={variants}
+						transition={{
+							delay: adjustedDelay + (index * delayIncrement) / speed,
+							duration: (delayIncrement * 3) / speed,
+							type: "spring",
+							damping: 20,
+							stiffness: 500,
+						}}
+						style={{
+							...styles.letter,
+							marginRight: letter === " " ? "0.25em" : null,
+						}}
+					>{letter}</m.span>
+				))}
+			</m.span>
+		</Tag>
+	)
 }

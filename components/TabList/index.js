@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
-/* eslint-disable quotes */
 import React from "react"
+import { motion as m } from "framer-motion"
 
 const TabList = ({ tabData }) => {
   const [currentTab, setCurrentTab] = React.useState(0);
@@ -14,24 +14,34 @@ const TabList = ({ tabData }) => {
     if (!["Enter", " "].includes(e.key)) return;
     if (e.key === " ") e.preventDefault();
     handleSelect(e);
-  };
-
-	// TODO: Memoize
-	// TODO: Get IDs with array index and reduce method
-	const tabDetails = tabData[currentTab];
-	const { employer, title, dates, works } = tabDetails;
+	};
 	
 	const parseMarkup = (string, openingTag) => {
 		const closingTag = openingTag.split("").reverse().join("");
-		return {__html: string.replaceAll(openingTag, `<span class="highlight">`).replaceAll(closingTag, `</span>`)}
+		return { __html: string.replaceAll(openingTag, "<span class=\"highlight\">").replaceAll(closingTag, "</span>") }
 	}
 
+	const variants = {
+		initial: {
+			opacity: 0,
+			translateY: 20,
+		},
+		animate: {
+			opacity: 1,
+			translateY: 0,
+		},
+	}
+
+	// TODO: Memoize
+	// TODO: Get IDs with array index and reduce method
+	const { employer, title, dates, works } = tabData[currentTab];	
+
   return (
-	<div className="tab-list">
-		<nav className="tab-list__tabs">
-			<ul className="tab-list__labels">
-				{tabData.map(({label}, index) => (
-					<li
+    <div className="tab-list">
+      <nav className="tab-list__tabs">
+        <ul className="tab-list__labels">
+          {tabData.map(({ label }, index) => (
+            <li
             key={index}
             className={["tab-list__label", currentTab === index ? "active" : ""].join(" ").trimEnd()}
             data-tab-id={index}
@@ -41,31 +51,39 @@ const TabList = ({ tabData }) => {
 						role="button"
 						tabIndex={0}
           >
-						<h3>
+						<h4>
 							{label}
-						</h3>
+						</h4>
 					</li>
         ))}
-			</ul>
-			<div className="tab-list__tabs-indicator" style={{transform: `translateY(${49 * (currentTab)}px)`}} />
-		</nav>
-
-		<div className="tab-list__details">
-			<header className="tab-list__header">
-				<h3>
-					<span className="tab-list__role">{title}</span> <span className="tab-list__employer">@ {employer}</span>
-				</h3>
-				<p className="tab-list__dates">{dates}</p>
-			</header>
-			<ul className="tab-list__work-list">
-				{works.map((work) => (
-					<li key={work} className="tab-list__work-list-item">
-						<p dangerouslySetInnerHTML={parseMarkup(work, "_|")} />
-					</li>
-          ))}
-			</ul>
-		</div>
-	</div>
+        </ul>
+        <div className="tab-list__tabs-indicator" style={{ transform: `translateY(${49 * (currentTab)}px)` }} />
+      </nav>
+				<div className="tab-list__details">
+					<header className="tab-list__header">
+						<h4>
+							<span className="tab-list__role">{title}</span> <span className="tab-list__employer">@ {employer}</span>
+						</h4>
+						<p className="tab-list__dates">{dates}</p>
+					</header>
+						<m.ul
+							className="tab-list__work-list"
+							initial="initial"
+							animate="animate"							
+						>
+							{works.map((work, index) => (
+								<m.li
+									key={work}
+									className="tab-list__work-list-item"
+									variants={variants}
+									transition={{ delay: index * 0.15, duration: 0.3 }}
+								>
+									<p dangerouslySetInnerHTML={parseMarkup(work, "_|")} />
+								</m.li>
+							))}
+						</m.ul>
+				</div>
+    </div>
   )
 }
 
