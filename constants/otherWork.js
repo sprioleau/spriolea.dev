@@ -1,5 +1,16 @@
 const otherWork = [
   {
+    title: "Outlive", 
+    year: "2021",
+    builtFor: "Coursera Course",
+    tags: ["HTML", "CSS"],
+    links: {
+      gitHubUrl: "https://github.com/sprioleau/mini-project-landing-page",
+      sourceCodeUrl: "https://vscode.dev/github/sprioleau/mini-project-landing-page",
+      deployedUrl: "https://outlive-mini-project.netlify.app/",
+    }
+  },
+  {
     title: "Structured Style", 
     year: "2021",
     builtFor: "CS52 Course",

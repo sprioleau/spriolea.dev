@@ -5,6 +5,17 @@ import { handleKeyDown } from "../../utils";
 
 const TabList = ({ tabData }) => {
   const [currentTab, setCurrentTab] = React.useState(0);
+  const [indicatorHeight, setIndicatorHeight] = React.useState(0);
+	const labelsRef = React.useRef();
+	
+	React.useEffect(() => {
+		if (labelsRef) {
+			setIndicatorHeight(labelsRef.current.clientHeight / tabData.length)
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+  
+	if (labelsRef) console.log("labelsRef:", labelsRef.current?.clientHeight)
 
   const handleSelect = (e) => {
     const selectedTabId = parseInt(e.currentTarget.dataset.tabId, 10);
@@ -34,25 +45,28 @@ const TabList = ({ tabData }) => {
   return (
     <div className="tab-list">
       <nav className="tab-list__tabs">
-        <ul className="tab-list__labels">
-          {tabData.map(({ label }, index) => (
+				<ul ref={labelsRef} className="tab-list__labels">
+					{/* eslint-disable-next-line no-shadow */}
+          {tabData.map(({ title }, index) => (
             <li
-            key={index}
-            className={["tab-list__label", currentTab === index ? "active" : ""].join(" ").trimEnd()}
-            data-tab-id={index}
-						onClick={handleSelect}
-						onKeyDown={(e) => handleKeyDown(e, handleSelect)}
-						// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-						role="button"
-						tabIndex={0}
-          >
-						<h4>
-							{label}
-						</h4>
-					</li>
-        ))}
+							key={index}
+							className={["tab-list__label", currentTab === index ? "active" : ""].join(" ").trimEnd()}
+							data-tab-id={index}
+							onClick={handleSelect}
+							onKeyDown={(e) => handleKeyDown(e, handleSelect)}
+							// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+							role="button"
+							tabIndex={0}
+						>
+							<h4 className="tab-list__label-title">{title}</h4>
+							{/* <span className="tab-list__label-dates">{dates}</span> */}
+						</li>
+       	 	))}
         </ul>
-        <div className="tab-list__tabs-indicator" style={{ transform: `translateY(${48 * (currentTab)}px)` }} />
+				<div className="tab-list__tabs-indicator" style={{
+					transform: `translateY(${indicatorHeight * (currentTab)}px)`,
+					height: indicatorHeight
+				}} />
       </nav>
 				<div className="tab-list__details">
 					<header className="tab-list__header">

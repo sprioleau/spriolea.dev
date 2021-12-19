@@ -1,13 +1,24 @@
 import React from "react"
+import { motion as m , AnimatePresence } from "framer-motion"
 import { FiArrowDown } from "react-icons/fi"
-import { AnimatePresence } from "framer-motion";
 import { FadeInAndUp } from "../AnimationLibrary";
 import { handleKeyDown } from "../../utils";
 
 const DataTable = ({ data: { sectionTitle, employers } }) => {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpand = () => setExpanded(!expanded);
+	const handleExpand = () => setExpanded(!expanded);
+	
+	const variants = {
+		initial: {
+			opacity: 0,
+			translateY: 20,
+		},
+		animate: {
+			opacity: 1,
+			translateY: 0,
+		},
+	}
 	
 	return (
 		<div className={["data-table", expanded ? "expanded" : ""].join(" ").trimEnd()}>
@@ -31,23 +42,34 @@ const DataTable = ({ data: { sectionTitle, employers } }) => {
 								<span className="data-table__employer-logo">{employerLogo}</span>
 								<h4>{name}</h4>
 							</div>
-							<ul className="data-table__list">
+							<m.ul
+								className="data-table__list"
+								initial="initial"
+								animate="animate"
+								transition={{
+									staggerChildren: 0.15,
+								}}
+							>
 								{roles.map(({ id, works, dates, title, location }) => (
-									<li key={id} className="data-table__list-item">
+									<m.li
+										key={id}
+										className="data-table__list-item"
+										variants={variants}
+									>
 										<header className="data-table__list-header">
 											<h4 className="data-table__title">{title}, <span className="data-table__location">{location}</span></h4>
 											<p className="data-table__dates">{dates}</p>
 										</header>
-										<ul className="data-table__work-list">
+										<ul className="data-table__work-list" >
 											{works.map((work) => (
 												<li key={work} className="data-table__work">
 													<p>{work}</p>
 												</li>
 											))}
 										</ul>
-									</li>
+									</m.li>
 								))}
-							</ul>
+							</m.ul>
 						</section>
 					</FadeInAndUp>
 				))}

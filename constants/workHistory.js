@@ -1,5 +1,14 @@
 const workHistory = [
   {
+    label: "Dartmouth College III",
+    employer: "DALI Lab at Dartmouth",
+    title: "Frontend Mentor",
+    dates: "June 2021 - Present",
+    works: [
+      "_|Mentor and advise|_ student teams in delivering quality web applications to their project sponsors",
+    ]
+  },
+  {
     label: "Dartmouth College II",
     employer: "Dartmouth College",
     title: "Frontend Web Developer",
@@ -13,7 +22,7 @@ const workHistory = [
   {
     label: "Dartmouth College I",
     employer: "Dartmouth College",
-    title: "User Experience & Visual Designer",
+    title: "UX & Visual Designer",
     dates: "January 2019 - Present",
     works: [
       "_|Design and develop|_ new features for existing Dartmouth websites",
