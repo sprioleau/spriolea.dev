@@ -1,5 +1,6 @@
 .contact {
   &__card {
+    display: block;
     text-align: center;
     padding: 6rem;
     width: min-content;
@@ -18,13 +19,24 @@
       inset: 1rem;
       border: 1px solid var(--ui-accent-1);
     }
+
+    &:hover {
+      .contact__card-email::after {
+        --scaleX: 1;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
   }
 
   &__card-heading {
     @include ff-mono;
   }
 
-  a.contact__card-email {
+  &__card-email {
+    @include ff-body;
     font-size: 1.5rem;
   }
 
