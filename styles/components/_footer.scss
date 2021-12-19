@@ -1,5 +1,4 @@
 .footer {
-  @include ff-mono;
   font-weight: 300;
   letter-spacing: 1px;
   padding: var(--nav-padding) 0;
@@ -14,7 +13,8 @@
   }
   
   &__message {
-    font-size: 0.9em;
+    @include ff-mono;
+    font-size: 0.8em;
     margin-bottom: 0;
   }
 }
