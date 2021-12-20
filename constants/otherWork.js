@@ -65,6 +65,17 @@ const otherWork = [
       deployedUrl: "https://www.c19insider.com/",
     }
   },
+  {
+    title: "Staticly Generated Blog", 
+    year: "2020",
+    builtFor: "",
+    tags: ["SSG", "Next.js", "React"],
+    links: {
+      gitHubUrl: "https://github.com/sprioleau/SSG-Blog",
+      sourceCodeUrl: "https://vscode.dev/github/sprioleau/SSG-Blog",
+      deployedUrl: "https://ssg-markdown-blog.netlify.app",
+    }
+  },
 ]
 
 export default otherWork;
