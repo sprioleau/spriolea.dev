@@ -1,0 +1,26 @@
+.Toastify {
+  &__toast-theme--dark {
+    background-color: var(--ui-bg-hover) !important;
+    border-radius: 0 !important;
+    padding: 1rem !important;
+  }
+
+  &__toast-body {
+    @include ff-mono;
+  }
+
+  &__close-button--dark {
+    &:hover {
+      transform: none;
+      background-color: transparent;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__progress-bar-theme--dark {
+    background-color: var(--ui-accent-1) !important;
+  }
+}

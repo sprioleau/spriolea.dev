@@ -64,6 +64,10 @@ $bp-large: 1200px;
   cursor: url("/images/cursors/cursor-hovered.svg"), pointer;
 }
 
+@mixin cursor-copy {
+  cursor: url("/images/cursors/cursor-copy.svg"), copy;
+}
+
 @mixin center {
   display: flex;
   align-items: center;

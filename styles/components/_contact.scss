@@ -1,5 +1,6 @@
 .contact {
   &__card {
+    @include cursor-copy;
     display: block;
     text-align: center;
     padding: 6rem;
