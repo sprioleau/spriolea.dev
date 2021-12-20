@@ -15,8 +15,6 @@ const TabList = ({ tabData }) => {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
   
-	if (labelsRef) console.log("labelsRef:", labelsRef.current?.clientHeight)
-
   const handleSelect = (e) => {
     const selectedTabId = parseInt(e.currentTarget.dataset.tabId, 10);
     setCurrentTab(selectedTabId);
