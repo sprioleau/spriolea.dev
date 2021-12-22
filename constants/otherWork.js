@@ -1,5 +1,16 @@
 const otherWork = [
   {
+    title: "Swatches", 
+    year: "2021",
+    builtFor: "",
+    tags: ["Next.js", "React", "SSG", "APIs"],
+    links: {
+      gitHubUrl: "https://github.com/sprioleau/swatches",
+      sourceCodeUrl: "https://vscode.dev/github/sprioleau/swatches",
+      deployedUrl: "https://html-swatches.vercel.app/",
+    }
+  },
+  {
     title: "Outlive", 
     year: "2021",
     builtFor: "Coursera Course",
