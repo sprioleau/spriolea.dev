@@ -11,7 +11,7 @@
   }
 
   &__labels {
-    width: 235px;
+    width: var(--tab-list-width);
     font-size: 0.85rem;
     letter-spacing: 0.5px;
     border-left: var(--indicator-width) solid rgba(var(--ui-text-rgb), 0.25);
@@ -32,7 +32,6 @@
       .tab-list__label-title {
         font-weight: 700;
       }
-
     }
 
     &:hover {
@@ -41,6 +40,11 @@
       color: var(--ui-text-hover);
       padding-left: 2rem;
     }
+  }
+
+  &__label-dates {
+    @include ff-mono;
+    opacity: 0.8;
   }
 
   &__label-title {

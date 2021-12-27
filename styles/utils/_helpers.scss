@@ -1,23 +1,3 @@
 .m0 {
   margin: 0;
 }
-
-.highlight {
-  display: inline-block;
-  color: var(--ui-text-hover);
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -0.25rem;
-    left: 0;
-    width: 100%;
-    height: 0.5rem;
-    background-image: url("/images/zig-zag.svg");
-  }
-
-  &.smooth::after {
-    background-image: url("/images/squiggle.svg");
-  }
-}

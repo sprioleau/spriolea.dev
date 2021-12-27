@@ -42,7 +42,7 @@ const Hero = () => {
 				/>
 				<FadeInAndUp delay={1.5} distanct={50}>
 					<p className="hero__brief">
-						I&apos;m a <span className="highlight">frontend web developer</span> with an eye for good design. I&apos;ve done <span className="highlight">engineering</span>, <span className="highlight">user experience (UX)</span> and <span className="highlight">graphic gesign</span> and now <span className="highlight">web development</span>. I love combining ideas to create new things.
+						I&apos;m a <em>frontend web developer</em> with an eye for good design. I&apos;ve done <em>engineering</em>, <em>user experience (UX)</em> and <em>graphic gesign</em> and now <em>web development</em>. I love combining ideas to create new things.
 					</p>
 				</FadeInAndUp>
 				</header>

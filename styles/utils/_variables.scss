@@ -13,7 +13,10 @@
   --nav-padding: 1.5rem;
   --nav-logo-height: 4rem;
   --nav-height: calc(var(--nav-logo-height) + 2 * var(--nav-padding));
-  --tab-list-width: 225px;
+  --tab-list-width: 235px;
   --tab-list-gap: 2rem;
   --section-x-padding: 6rem;
+  --h1: clamp(2rem, 5vw, 4rem);
+  --h2: clamp(2rem, 3vw, 2.25rem);
+  --h3: clamp(1.125rem, 3vw, 1.25rem);
 }
