@@ -30,7 +30,7 @@ const DataTable = ({ data: { sectionTitle, employers } }) => {
 						onClick={handleExpand}
 						onKeyDown={(e) => handleKeyDown(e, handleExpand)}
 					>
-					<h3 className="a section-subheading">{sectionTitle}</h3>
+						<h3 className="a section-subheading">{sectionTitle}</h3>
 						<span className="data-table__expand-collapse icon"><FiArrowDown /></span>
 					</div>
 			</header>
