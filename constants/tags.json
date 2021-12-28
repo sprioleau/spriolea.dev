@@ -1,0 +1,38 @@
+[
+  {
+    "name": "React",
+    "_type": "tag"
+  },
+  {
+    "name": "API",
+    "_type": "tag"
+  },
+  {
+    "name": "Sass",
+    "_type": "tag"
+  },
+  {
+    "name": "Next.js",
+    "_type": "tag"
+  },
+  {
+    "name": "Server-side rendering",
+    "_type": "tag"
+  },
+  {
+    "name": "Redux",
+    "_type": "tag"
+  },
+  {
+    "name": "Webflow",
+    "_type": "tag"
+  },
+  {
+    "name": "CSS",
+    "_type": "tag"
+  },
+  {
+    "name": "CMS",
+    "_type": "tag"
+  }
+]

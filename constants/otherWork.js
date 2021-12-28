@@ -77,7 +77,7 @@ const otherWork = [
     }
   },
   {
-    title: "Staticly Generated Blog", 
+    title: "Statically Generated Blog", 
     year: "2020",
     builtFor: "",
     tags: ["SSG", "Next.js", "React"],

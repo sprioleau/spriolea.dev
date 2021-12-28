@@ -1,0 +1,32 @@
+[
+  {
+    "navLabel": "About",
+    "sectionTitle": "About Me",
+    "sectionSlug": "about",
+    "_type": "navLink"
+  },
+  {
+    "navLabel": "Experience",
+    "sectionTitle": "Experience",
+    "sectionSlug": "experience",
+    "_type": "navLink"
+  },
+  {
+    "navLabel": "Work",
+    "sectionTitle": "Selected Work",
+    "sectionSlug": "work",
+    "_type": "navLink"
+  },
+  {
+    "navLabel": "Skills",
+    "sectionTitle": "Relevant Skills",
+    "sectionSlug": "skills",
+    "_type": "navLink"
+  },
+  {
+    "navLabel": "Contact",
+    "sectionTitle": "Get in Touch",
+    "sectionSlug": "contact",
+    "_type": "navLink"
+  }
+]

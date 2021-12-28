@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Webflow",
+    "_type": "technology"
+  },
+  {
+    "name": "Next.js",
+    "_type": "technology"
+  },
+  {
+    "name": "React",
+    "_type": "technology"
+  },
+  {
+    "name": "SSG",
+    "_type": "technology"
+  },
+  {
+    "name": "Unsplash API",
+    "_type": "technology"
+  },
+  {
+    "name": "HTML",
+    "_type": "technology"
+  },
+  {
+    "name": "CSS",
+    "_type": "technology"
+  },
+  {
+    "name": "Adobe Dimension",
+    "_type": "technology"
+  },
+  {
+    "name": "JS",
+    "_type": "technology"
+  },
+  {
+    "name": "Redux",
+    "_type": "technology"
+  },
+  {
+    "name": "YouTube API",
+    "_type": "technology"
+  },
+  {
+    "name": "Sass",
+    "_type": "technology"
+  },
+  {
+    "name": "MongoDB",
+    "_type": "technology"
+  },
+  {
+    "name": "Express",
+    "_type": "technology"
+  }
+]
