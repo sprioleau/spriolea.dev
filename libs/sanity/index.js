@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import sanityClient from "@sanity/client";
 
 const client = sanityClient({
@@ -8,33 +9,40 @@ const client = sanityClient({
 })
 
 const queries = {
-  employers: {
-    all: "*[_type == \"employer\"]",
-  },
-  experience: {
-    all: "*[_type == \"experience\"]{ ..., employer-> }",
-  },
+  employers: "*[_type == \"employer\"]",
+  experience: "*[_type == \"experience\"] | order(fromDate desc) { ..., employer->, jobType-> }",
+  hero: "*[_type == \"hero\"]",
+  navLinks: "*[_type == \"navLink\"]",
+  projects: "*[_type == \"project\"] { ..., builtWith->, builtFor->, tags-> }",
+  skills: "*[_type == \"skill\"]",
+  contact: "*[_type == \"contact\"]",
+  footer: "*[_type == \"footer\"]",
 }
 
-const getData = async (query) => {
+const getDataByKey = async (query, key) => {
   try {
     const data = await client.fetch(query);
     return { 
-      data,
-      error: null,
+      key,
+      data
     }
   } catch (error) {
     return {
-      data: null,
+      [key]: null,
       error
     }
   }
 }
 
-export const getEmployers = async () => {
-  return getData(queries.employers.all)
+const getData = async () => {
+  const promises = Object.entries(queries).map(([key, query]) => getDataByKey(query, key));
+  const unformattedData = await Promise.all(promises);
+
+  const data = unformattedData.reduce((result, dataset) => {
+    result[dataset.key] = dataset.data;
+    return result;
+  }, {})
+  return { data };
 }
 
-export const getExperience = async () => {
-  return getData(queries.experience.all)
-}
+export default getData;

@@ -1,17 +1,17 @@
 import React from "react"
 import Head from "next/head";
+import axios from "axios";
 import { Footer, InfoRails, Nav, Main } from "../components";
-import { getEmployers, getExperience } from "../libs/sanity";
+import getData from "../libs/sanity";
 import useStore from "../store";
 import { selectUpdateData } from "../store/selectors";
+import CONFIG from "../config";
 
 const Home = ({ data }) => {
 	const updateData = useStore(selectUpdateData);
 		
 	React.useEffect(() => {
-		if (data) {
-			updateData(data);
-		}
+		if (data) updateData(data);
 	}, [data, updateData]);
 
 	return (
@@ -22,7 +22,7 @@ const Home = ({ data }) => {
 			</Head>
 			<Nav />
 			<InfoRails />
-			<Main data={data} />
+			<Main />
 			<Footer />
 		</div>
 	);
@@ -31,17 +31,22 @@ const Home = ({ data }) => {
 export default Home;
 
 export const getStaticProps = async (context) => {
-	const { data: employers } = await getEmployers();
-	const { data: experience } = await getExperience();
-
-	const data = {
-		employers,
-		experience,
+	const isDevelopment = process.env.NODE_ENV === "development";
+	
+	const fetchData = () => {
+		if (isDevelopment && !CONFIG.USE_API) {
+			return axios.get("http://localhost:3000/data/apiSampleData.json");
+		} else {
+			return getData()
+		}
 	}
+
+	const { data } = await fetchData();
 
   return {
 		props: { 
-			data
+			data,
 		},
   }
 }
+
