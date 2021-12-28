@@ -35,7 +35,7 @@ export default {
 
   preview: {
     select: {
-      title: "entityName",
+      title: "name",
       media: "logo",
     },
   },

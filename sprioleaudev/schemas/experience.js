@@ -22,6 +22,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "jobType",
+      title: "Job Type",
+      type: "reference",
+      to: { type: "jobType" }
+    },
+    {
       name: "fromDate",
       title: "From",
       type: "date",
