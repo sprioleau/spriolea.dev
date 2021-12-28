@@ -2,6 +2,11 @@ import { motion as m } from "framer-motion";
 
 // Reference: https://stackoverflow.com/questions/58958972/framer-motion-animate-when-element-is-in-view-when-you-scroll-to-element
 
+const defaultStyles = {
+	display: "block",
+	width: "100%",
+}
+
 export const FadeInWhenVisible = ({ offset = "-30%", children }) => {
 	const variants = {
 		hidden: { opacity: 0, translateY: 100 },
@@ -14,7 +19,8 @@ export const FadeInWhenVisible = ({ offset = "-30%", children }) => {
     whileInView="visible"
     viewport={{ once: true, margin: offset }}
     transition={{ duration: 0.5 }}
-    variants={variants}
+		variants={variants}
+		style={defaultStyles}
   >
 		{children}
 	</m.div>
@@ -33,6 +39,7 @@ export const FadeInAndUp = ({ children, delay, distance = 20, reverseOnExit = fa
 				animate: { opacity: 1, translateY: 0 },
 				exit: { opacity: 0, translateY: distance }
 			}}
+			style={defaultStyles}
 		>
 			{children}
 		</m.div>
