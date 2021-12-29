@@ -1,5 +1,5 @@
 .info-rail {
-  --accent-line-length: 100px;
+  --accent-line-length: clamp(80px, 15vh, 180px);
   @include ff-mono;
   @include center;
   position: fixed;

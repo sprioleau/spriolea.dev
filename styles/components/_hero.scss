@@ -1,12 +1,11 @@
 .hero {
-  // --headline-size: clamp(2rem, 5vw, 4rem);
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   position: relative;
   
   .container {
     align-items: flex-start;
-    margin-bottom: 3rem;
+    margin-bottom: 10vh;
   }
 
   &__overline {
