@@ -1,5 +1,5 @@
 const CONFIG = {
-  USE_API: true,
+  USE_API: false,
 }
 
 export default CONFIG;

@@ -750,9 +750,10 @@
         {
             "_createdAt": "2021-12-27T18:44:19Z",
             "_id": "9d79c115-1fcc-4336-9e40-2d28325dcf33",
-            "_rev": "5HHceZ3LuAltt4AEKlOwLX",
+            "_rev": "5HHceZ3LuAltt4AEKlXRxL",
             "_type": "hero",
-            "_updatedAt": "2021-12-28T19:50:52Z",
+            "_updatedAt": "2021-12-28T20:32:34Z",
+            "advanceToSectionSlug": "about",
             "brief": [
                 {
                     "_key": "184d595099bd",
@@ -996,291 +997,67 @@
     "navLinks": [
         {
             "_createdAt": "2021-12-28T10:56:49Z",
-            "_id": "Oysj875UTxs0artuxZXJwh",
-            "_rev": "Oysj875UTxs0artuxZXJvR",
+            "_id": "iW9E2VHPSn2pdpAHvZNIym",
+            "_rev": "5HHceZ3LuAltt4AEKlWJSI",
             "_type": "navLink",
-            "_updatedAt": "2021-12-28T10:56:49Z",
-            "navLabel": "Contact",
-            "sectionSlug": "contact",
-            "sectionTitle": "Get in Touch"
+            "_updatedAt": "2021-12-28T20:27:42Z",
+            "navLabel": "About",
+            "order": 1,
+            "sectionSlug": "about",
+            "sectionTitle": "About Me"
         },
         {
             "_createdAt": "2021-12-28T10:56:49Z",
             "_id": "Oysj875UTxs0artuxZXJzD",
-            "_rev": "Oysj875UTxs0artuxZXJxx",
+            "_rev": "iW9E2VHPSn2pdpAHvbQzTK",
             "_type": "navLink",
-            "_updatedAt": "2021-12-28T10:56:49Z",
+            "_updatedAt": "2021-12-28T20:27:52Z",
             "navLabel": "Experience",
+            "order": 2,
             "sectionSlug": "experience",
             "sectionTitle": "Experience"
         },
         {
             "_createdAt": "2021-12-28T10:56:49Z",
             "_id": "Oysj875UTxs0artuxZXK1j",
-            "_rev": "Oysj875UTxs0artuxZXK0T",
+            "_rev": "iW9E2VHPSn2pdpAHvbR21q",
             "_type": "navLink",
-            "_updatedAt": "2021-12-28T10:56:49Z",
+            "_updatedAt": "2021-12-28T20:28:02Z",
             "navLabel": "Work",
+            "order": 3,
             "sectionSlug": "work",
             "sectionTitle": "Selected Work"
         },
         {
             "_createdAt": "2021-12-28T10:56:49Z",
-            "_id": "iW9E2VHPSn2pdpAHvZNIym",
-            "_rev": "iW9E2VHPSn2pdpAHvZNIv0",
+            "_id": "iW9E2VHPSn2pdpAHvZNJ6K",
+            "_rev": "iW9E2VHPSn2pdpAHvbR3J6",
             "_type": "navLink",
-            "_updatedAt": "2021-12-28T10:56:49Z",
-            "navLabel": "About",
-            "sectionSlug": "about",
-            "sectionTitle": "About Me"
+            "_updatedAt": "2021-12-28T20:28:07Z",
+            "navLabel": "Skills",
+            "order": 4,
+            "sectionSlug": "skills",
+            "sectionTitle": "Relevant Skills"
         },
         {
             "_createdAt": "2021-12-28T10:56:49Z",
-            "_id": "iW9E2VHPSn2pdpAHvZNJ6K",
-            "_rev": "iW9E2VHPSn2pdpAHvZNJ2Y",
+            "_id": "Oysj875UTxs0artuxZXJwh",
+            "_rev": "iW9E2VHPSn2pdpAHvbRO7s",
             "_type": "navLink",
-            "_updatedAt": "2021-12-28T10:56:49Z",
-            "navLabel": "Skills",
-            "sectionSlug": "skills",
-            "sectionTitle": "Relevant Skills"
+            "_updatedAt": "2021-12-28T20:29:49Z",
+            "navLabel": "Contact",
+            "order": 5,
+            "sectionSlug": "contact",
+            "sectionTitle": "Get in Touch"
         }
     ],
     "projects": [
         {
             "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "5HHceZ3LuAltt4AEKgf0HD",
-            "_rev": "iW9E2VHPSn2pdpAHvY0TOg",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T02:07:42Z",
-            "builtFor": {
-                "_createdAt": "2021-12-27T21:04:33Z",
-                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
-                "_rev": "Oysj875UTxs0artuxYnt9x",
-                "_type": "association",
-                "_updatedAt": "2021-12-27T21:04:33Z",
-                "name": "CS52 Course"
-            },
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "ebe473bc5d50",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "b553d3d2f3e1",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "A BuzzFeed-esque quiz website, where you can contribute and play."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "isFeatured": false,
-            "links": {
-                "deployedUrl": "https://quizzd.netlify.app/",
-                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/lab2-sprioleau",
-                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/lab2-sprioleau"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-79fd1023046f3316b45b7436faed5292c520c855-2560x1440-png",
-                    "_type": "reference"
-                }
-            },
-            "tags": null,
-            "title": "Quizzd",
-            "yearBuilt": "2021-01-01"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "5HHceZ3LuAltt4AEKgf0Pp",
-            "_rev": "iW9E2VHPSn2pdpAHvY0VDu",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T02:07:51Z",
-            "builtFor": {
-                "_createdAt": "2021-12-27T21:04:33Z",
-                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
-                "_rev": "Oysj875UTxs0artuxYnt9x",
-                "_type": "association",
-                "_updatedAt": "2021-12-27T21:04:33Z",
-                "name": "CS52 Course"
-            },
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "4de58d213740",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "4f658bbe222d",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Make yourself a Pokémon. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem voluptate doloremque rem aut provident accusantium."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "isFeatured": false,
-            "links": {
-                "deployedUrl": "https://pokeme-cards.netlify.app/",
-                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/platform-client-sprioleau",
-                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/platform-client-sprioleau"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-c5158608fc32da2d9da43e458e12a7a7d30725ec-1201x676-png",
-                    "_type": "reference"
-                }
-            },
-            "tags": null,
-            "title": "PokéMe",
-            "yearBuilt": "2021-01-01"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "5HHceZ3LuAltt4AEKgf0h3",
-            "_rev": "Oysj875UTxs0artuxZ605F",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T02:07:58Z",
-            "builtFor": {
-                "_createdAt": "2021-12-27T21:04:48Z",
-                "_id": "aef9ac12-3b08-48a4-bb77-1674bacb303b",
-                "_rev": "iW9E2VHPSn2pdpAHvX98xa",
-                "_type": "association",
-                "_updatedAt": "2021-12-27T21:04:48Z",
-                "name": "Coursera Course"
-            },
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "cd9afcb11130",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "21fe840ca370",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Don't just exist. Live now! Outlive encourages us to become the fullest version of ourselves through discovery in the great outdoors."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "emoji": "🧗🏽‍♀️",
-            "isFeatured": false,
-            "links": {
-                "deployedUrl": "https://outlive-mini-project.netlify.app/",
-                "gitHubUrl": "https://github.com/sprioleau/mini-project-landing-page",
-                "vsCodeUrl": "https://vscode.dev/github/sprioleau/mini-project-landing-page"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-6498472463442caebc094b887e53aa461a149fd0-2562x1430-png",
-                    "_type": "reference"
-                }
-            },
-            "tags": null,
-            "title": "Outlive",
-            "yearBuilt": "2021-01-01"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "5HHceZ3LuAltt4AEKgf0pf",
-            "_rev": "iW9E2VHPSn2pdpAHvY1uDE",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T02:16:50Z",
-            "builtFor": null,
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "67477506140c",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "effd008bb8c7",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "A simple blog starter created with Next.js."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "isFeatured": false,
-            "links": {
-                "deployedUrl": "https://ssg-markdown-blog.netlify.app",
-                "gitHubUrl": "https://github.com/sprioleau/SSG-Blog",
-                "vsCodeUrl": "https://vscode.dev/github/sprioleau/SSG-Blog"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-922c3f3e8a780704fb5cafe1e516df1ad8b94a9a-2560x1440-png",
-                    "_type": "reference"
-                }
-            },
-            "tags": null,
-            "title": "Statically Generated Blog",
-            "yearBuilt": "2020-01-01"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "Oysj875UTxs0artuxYpZXR",
-            "_rev": "Oysj875UTxs0artuxZ53uN",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T01:48:34Z",
-            "builtFor": null,
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "55d5a0c0d848",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "d37de5dffd81",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Make your code beautiful. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, dignissimos inventore? Veniam, excepturi. Quam quibusdam deleniti maxime mollitia."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "emoji": "✨",
-            "isFeatured": true,
-            "links": {
-                "deployedUrl": "https://code-adorn.netlify.app/",
-                "gitHubUrl": "https://github.com/sprioleau/code-adorn",
-                "vsCodeUrl": "https://vscode.dev/github/sprioleau/code-adorn"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-136661dd91d1065dae59e75c87900132fa5f5ade-3200x1796-png",
-                    "_type": "reference"
-                }
-            },
-            "publishedAt": "2021-12-27T21:24:46.754Z",
-            "tags": null,
-            "title": "Code Adorn - A Cobalt Clone",
-            "yearBuilt": "2021"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
             "_id": "Oysj875UTxs0artuxYpZYh",
-            "_rev": "iW9E2VHPSn2pdpAHvY0YRw",
+            "_rev": "5HHceZ3LuAltt4AEKq27Ij",
             "_type": "project",
-            "_updatedAt": "2021-12-28T02:08:19Z",
+            "_updatedAt": "2021-12-29T16:58:51Z",
             "builtFor": {
                 "_createdAt": "2021-12-27T21:41:24Z",
                 "_id": "5ae7066c-6eba-4932-8aaf-9abc6f01cfc3",
@@ -1289,7 +1066,24 @@
                 "_updatedAt": "2021-12-27T21:41:24Z",
                 "name": "Dartmouth"
             },
-            "builtWith": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuahU",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuadi",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Sass"
+                }
+            ],
             "description": [
                 {
                     "_key": "b8fcac6f7b9a",
@@ -1318,109 +1112,78 @@
                     "_type": "reference"
                 }
             },
+            "order": 1,
             "publishedAt": "2021-12-27T21:24:46.754Z",
-            "tags": null,
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQZz",
+                    "_rev": "Oysj875UTxs0artuxYoQWD",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "API"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQXT",
+                    "_rev": "Oysj875UTxs0artuxYoQUx",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Sass"
+                }
+            ],
             "title": "Dartmouth Dining Menu",
             "yearBuilt": "2020"
         },
         {
             "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "Oysj875UTxs0artuxYpZZx",
-            "_rev": "iW9E2VHPSn2pdpAHvY9YEs",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T03:10:26Z",
-            "builtFor": null,
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "7f81891f950e",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "a96b8a6af948",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "The most beautiful way to see HTML colors in context."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "emoji": "🎨",
-            "links": {
-                "deployedUrl": "https://html-swatches.vercel.app/",
-                "gitHubUrl": "https://github.com/sprioleau/swatches",
-                "vsCodeUrl": "https://vscode.dev/github/sprioleau/swatches"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-c47e8c5ec0fac7d0cf9b1c0caa6c81e0b58cd27c-2560x1440-png",
-                    "_type": "reference"
-                }
-            },
-            "tags": null,
-            "title": "Swatches",
-            "yearBuilt": "2021-01-01"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "Oysj875UTxs0artuxYpZdj",
-            "_rev": "iW9E2VHPSn2pdpAHvY1s8u",
-            "_type": "project",
-            "_updatedAt": "2021-12-28T02:16:39Z",
-            "builtFor": {
-                "_createdAt": "2021-12-27T21:04:33Z",
-                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
-                "_rev": "Oysj875UTxs0artuxYnt9x",
-                "_type": "association",
-                "_updatedAt": "2021-12-27T21:04:33Z",
-                "name": "CS52 Course"
-            },
-            "builtWith": null,
-            "description": [
-                {
-                    "_key": "162174095fa2",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "0a754cc61819",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Built a learning website where users can sign up for courses on learning the basic building blocks of the web, HTML, CSS and JS."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "isFeatured": false,
-            "links": {
-                "deployedUrl": "https://structured-style.netlify.app/",
-                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/lab1-landingpage-sprioleau",
-                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/lab1-landingpage-sprioleau"
-            },
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-9d882e6f3fa9723dcc60922e3c01e9d022ae8bf8-2560x1440-png",
-                    "_type": "reference"
-                }
-            },
-            "tags": null,
-            "title": "Structured Style",
-            "year": "2021",
-            "yearBuilt": "2021-01-01"
-        },
-        {
-            "_createdAt": "2021-12-27T21:32:37Z",
             "_id": "Oysj875UTxs0artuxYpZez",
-            "_rev": "5HHceZ3LuAltt4AEKhamY9",
+            "_rev": "5HHceZ3LuAltt4AEKq29jS",
             "_type": "project",
-            "_updatedAt": "2021-12-28T02:08:11Z",
+            "_updatedAt": "2021-12-29T16:59:01Z",
             "builtFor": null,
-            "builtWith": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaso",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuap2",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42k1",
+                    "_rev": "Oysj875UTxs0artuxZ42gF",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "SSG"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:59:27Z",
+                    "_id": "a8a9664d-10ad-417e-9fec-08653ecc9e70",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzKIQ",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:59:27Z",
+                    "name": "SSR"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuahU",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuadi",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Sass"
+                }
+            ],
             "description": [
                 {
                     "_key": "7cbb06964a68",
@@ -1451,34 +1214,153 @@
                     "_type": "reference"
                 }
             },
+            "order": 2,
             "publishedAt": "2021-12-27T21:24:46.754Z",
-            "tags": null,
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFF4",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFAl",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQin",
+                    "_rev": "Oysj875UTxs0artuxYoQcV",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Server-side rendering"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQXT",
+                    "_rev": "Oysj875UTxs0artuxYoQUx",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Sass"
+                }
+            ],
             "title": "Entitease",
             "yearBuilt": "2021"
         },
         {
             "_createdAt": "2021-12-27T21:32:37Z",
-            "_id": "iW9E2VHPSn2pdpAHvXELAO",
-            "_rev": "iW9E2VHPSn2pdpAHvXEL6c",
+            "_id": "Oysj875UTxs0artuxYpZXR",
+            "_rev": "iW9E2VHPSn2pdpAHvfIcaK",
             "_type": "project",
-            "_updatedAt": "2021-12-27T21:32:37Z",
+            "_updatedAt": "2021-12-29T16:59:26Z",
             "builtFor": null,
-            "builtWith": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42lH",
+                    "_rev": "Oysj875UTxs0artuxZ42hV",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Redux"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuahU",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuadi",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Sass"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:48:19Z",
+                    "_id": "43ef1a43-39a9-4448-b7ee-8cd0e64ac56b",
+                    "_rev": "5HHceZ3LuAltt4AEKhXcOj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:48:19Z",
+                    "name": "Puppeteer"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "55d5a0c0d848",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "d37de5dffd81",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Make your code beautiful. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, dignissimos inventore? Veniam, excepturi. Quam quibusdam deleniti maxime mollitia."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "✨",
+            "isFeatured": true,
             "links": {
-                "deployedUrl": "https://videwhoa.netlify.app/",
-                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/react-intro-sprioleau",
-                "sourceCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/react-intro-sprioleau"
+                "deployedUrl": "https://code-adorn.netlify.app/",
+                "gitHubUrl": "https://github.com/sprioleau/code-adorn",
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/code-adorn"
             },
-            "tags": null,
-            "title": "Videwhoa",
-            "year": "2021"
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-136661dd91d1065dae59e75c87900132fa5f5ade-3200x1796-png",
+                    "_type": "reference"
+                }
+            },
+            "order": 3,
+            "publishedAt": "2021-12-27T21:24:46.754Z",
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFNg",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFJN",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Redux"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQXT",
+                    "_rev": "Oysj875UTxs0artuxYoQUx",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Sass"
+                }
+            ],
+            "title": "Code Adorn - A Cobalt Clone",
+            "yearBuilt": "2021"
         },
         {
             "_createdAt": "2021-12-27T21:32:37Z",
             "_id": "iW9E2VHPSn2pdpAHvXELHw",
-            "_rev": "5HHceZ3LuAltt4AEKhUekT",
+            "_rev": "Oysj875UTxs0artuxbWb8N",
             "_type": "project",
-            "_updatedAt": "2021-12-28T01:36:54Z",
+            "_updatedAt": "2021-12-29T16:59:39Z",
             "builtFor": {
                 "_createdAt": "2021-12-27T21:05:00Z",
                 "_id": "6281af5a-d70c-4437-99a8-7fc9174980fa",
@@ -1487,7 +1369,24 @@
                 "_updatedAt": "2021-12-27T21:05:00Z",
                 "name": "Client"
             },
-            "builtWith": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUAsh",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAXA",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Webflow"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaOc",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuaKq",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "CSS"
+                }
+            ],
             "description": [
                 {
                     "_key": "108566bb4ae2",
@@ -1516,10 +1415,888 @@
                     "_type": "reference"
                 }
             },
+            "order": 4,
             "publishedAt": "2021-12-27T21:24:46.754Z",
-            "tags": null,
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQbF",
+                    "_rev": "Oysj875UTxs0artuxYoQYj",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Webflow"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB7Fw",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB7CA",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CMS"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFWI",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFRz",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CSS"
+                }
+            ],
             "title": "Augmented Health Lab",
-            "yearBuilt": "2020"
+            "yearBuilt": "2020-10-30"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "Oysj875UTxs0artuxYpZZx",
+            "_rev": "iW9E2VHPSn2pdpAHvY9YEs",
+            "_type": "project",
+            "_updatedAt": "2021-12-28T03:10:26Z",
+            "builtFor": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaso",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuap2",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42k1",
+                    "_rev": "Oysj875UTxs0artuxZ42gF",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "SSG"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:59:27Z",
+                    "_id": "a8a9664d-10ad-417e-9fec-08653ecc9e70",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzKIQ",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:59:27Z",
+                    "name": "SSR"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuahU",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuadi",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Sass"
+                },
+                {
+                    "_createdAt": "2021-12-28T03:09:25Z",
+                    "_id": "d0ce5a00-d25c-4ad7-bc84-03261c448df5",
+                    "_rev": "5HHceZ3LuAltt4AEKhlHaW",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T03:10:10Z",
+                    "name": "Web scraping"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "7f81891f950e",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "a96b8a6af948",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "The most beautiful way to see HTML colors in context."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "🎨",
+            "links": {
+                "deployedUrl": "https://html-swatches.vercel.app/",
+                "gitHubUrl": "https://github.com/sprioleau/swatches",
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/swatches"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-c47e8c5ec0fac7d0cf9b1c0caa6c81e0b58cd27c-2560x1440-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFF4",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFAl",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-28T03:10:00Z",
+                    "_id": "d2e98d8c-6dd9-4a88-8c0f-047b3f74d40b",
+                    "_rev": "Oysj875UTxs0artuxZ8oO1",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-28T03:10:00Z",
+                    "name": "Web scraping"
+                }
+            ],
+            "title": "Swatches",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-29T11:22:55Z",
+            "_id": "1e28064a-7f17-4f9d-870c-4ad35feca295",
+            "_rev": "iW9E2VHPSn2pdpAHve1f1u",
+            "_type": "project",
+            "_updatedAt": "2021-12-29T11:22:55Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:33Z",
+                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
+                "_rev": "Oysj875UTxs0artuxYnt9x",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:33Z",
+                "name": "CS52 Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-29T11:21:48Z",
+                    "_id": "869eb5ce-ecf5-49c5-b200-dd91e5e44af4",
+                    "_rev": "Oysj875UTxs0artuxb5Xlj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-29T11:21:48Z",
+                    "name": "Firebase"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuahU",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuadi",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Sass"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "180b55e13e2e",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "6d9b0b8b76ad",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "A handy note keeper for you and the world."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "📝",
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://kept.netlify.app/",
+                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/react-notes-sprioleau",
+                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/react-notes-sprioleau"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-611fcdd61e8d3fb325596fcf4b4e1a96eeadf865-2560x1440-png",
+                    "_type": "reference"
+                }
+            },
+            "publishedAt": "2021-12-29T01:42:47.500Z",
+            "tags": [
+                {
+                    "_createdAt": "2021-12-29T11:22:30Z",
+                    "_id": "1ee59ccd-9b3e-4d0c-8388-21c3313a8d93",
+                    "_rev": "5HHceZ3LuAltt4AEKoUmHO",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-29T11:22:30Z",
+                    "name": "Firebase"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                }
+            ],
+            "title": "Kept",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "5HHceZ3LuAltt4AEKgf0HD",
+            "_rev": "iW9E2VHPSn2pdpAHvY0TOg",
+            "_type": "project",
+            "_updatedAt": "2021-12-28T02:07:42Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:33Z",
+                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
+                "_rev": "Oysj875UTxs0artuxYnt9x",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:33Z",
+                "name": "CS52 Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42mX",
+                    "_rev": "Oysj875UTxs0artuxZ42il",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Adobe Dimension"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaOc",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuaKq",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "CSS"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUB5c",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAx0",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "HTML"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUASr",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAKF",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "JS"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "ebe473bc5d50",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "b553d3d2f3e1",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "A BuzzFeed-esque quiz website, where you can contribute and play."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://quizzd.netlify.app/",
+                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/lab2-sprioleau",
+                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/lab2-sprioleau"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-79fd1023046f3316b45b7436faed5292c520c855-2560x1440-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-28T02:00:26Z",
+                    "_id": "4edde80a-9f89-42b7-93cf-73b8ac15e5b6",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzSVw",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-28T02:00:26Z",
+                    "name": "HTML"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFWI",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFRz",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CSS"
+                },
+                {
+                    "_createdAt": "2021-12-28T02:07:20Z",
+                    "_id": "02b38a10-55e2-4812-9926-dbb855c1e8ed",
+                    "_rev": "Oysj875UTxs0artuxZ5yAz",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-28T02:07:20Z",
+                    "name": "JS"
+                }
+            ],
+            "title": "Quizzd",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "5HHceZ3LuAltt4AEKgf0Pp",
+            "_rev": "iW9E2VHPSn2pdpAHvY0VDu",
+            "_type": "project",
+            "_updatedAt": "2021-12-28T02:07:51Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:33Z",
+                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
+                "_rev": "Oysj875UTxs0artuxYnt9x",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:33Z",
+                "name": "CS52 Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUB9v",
+                    "_rev": "5HHceZ3LuAltt4AEKhUB1J",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Express"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUAbT",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAOY",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "MongoDB"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42lH",
+                    "_rev": "Oysj875UTxs0artuxZ42hV",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Redux"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuahU",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuadi",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Sass"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "4de58d213740",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "4f658bbe222d",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Make yourself a Pokémon. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem voluptate doloremque rem aut provident accusantium."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://pokeme-cards.netlify.app/",
+                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/platform-client-sprioleau",
+                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/platform-client-sprioleau"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-c5158608fc32da2d9da43e458e12a7a7d30725ec-1201x676-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQXT",
+                    "_rev": "Oysj875UTxs0artuxYoQUx",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Sass"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T02:01:32Z",
+                    "_id": "a2cb2896-831a-4b7b-8714-914b53500cfc",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzdEC",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-28T02:01:32Z",
+                    "name": "Express"
+                }
+            ],
+            "title": "PokéMe",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "5HHceZ3LuAltt4AEKgf0h3",
+            "_rev": "Oysj875UTxs0artuxZ605F",
+            "_type": "project",
+            "_updatedAt": "2021-12-28T02:07:58Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:48Z",
+                "_id": "aef9ac12-3b08-48a4-bb77-1674bacb303b",
+                "_rev": "iW9E2VHPSn2pdpAHvX98xa",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:48Z",
+                "name": "Coursera Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaOc",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuaKq",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "CSS"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUB5c",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAx0",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "HTML"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "cd9afcb11130",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "21fe840ca370",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Don't just exist. Live now! Outlive encourages us to become the fullest version of ourselves through discovery in the great outdoors."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "🧗🏽‍♀️",
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://outlive-mini-project.netlify.app/",
+                "gitHubUrl": "https://github.com/sprioleau/mini-project-landing-page",
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/mini-project-landing-page"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-6498472463442caebc094b887e53aa461a149fd0-2562x1430-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-28T02:00:26Z",
+                    "_id": "4edde80a-9f89-42b7-93cf-73b8ac15e5b6",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzSVw",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-28T02:00:26Z",
+                    "name": "HTML"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFWI",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFRz",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CSS"
+                }
+            ],
+            "title": "Outlive",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-29T15:28:45Z",
+            "_id": "5bd14bae-5994-4acf-8d64-41342b0152c5",
+            "_rev": "Oysj875UTxs0artuxbQNXN",
+            "_type": "project",
+            "_updatedAt": "2021-12-29T15:28:45Z",
+            "builtFor": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-29T15:27:45Z",
+                    "_id": "2a06512e-0c25-4e58-aac7-9f0343b06c8a",
+                    "_rev": "iW9E2VHPSn2pdpAHvf0siC",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-29T15:27:45Z",
+                    "name": "Chakra UI"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaso",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuap2",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "de9b14032b69",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "2be6d4d9dd91",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "A fun way to see your password strength, visually."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "🧐",
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://password-clarity.vercel.app",
+                "gitHubUrl": "https://github.com/sprioleau/password-clarity",
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/password-clarity"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-a55bab0a6019c6da41ab79b635846b33ec4f6f54-1280x720-png",
+                    "_type": "reference"
+                }
+            },
+            "publishedAt": "2021-12-29T01:42:47.500Z",
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFF4",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFAl",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-29T15:28:33Z",
+                    "_id": "887b509e-bc86-4bf8-97c1-47173d00b2ed",
+                    "_rev": "Oysj875UTxs0artuxbQMuN",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-29T15:28:33Z",
+                    "name": "Chakra UI"
+                }
+            ],
+            "title": "Password Clarity",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "Oysj875UTxs0artuxYpZdj",
+            "_rev": "iW9E2VHPSn2pdpAHvY1s8u",
+            "_type": "project",
+            "_updatedAt": "2021-12-28T02:16:39Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:33Z",
+                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
+                "_rev": "Oysj875UTxs0artuxYnt9x",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:33Z",
+                "name": "CS52 Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42mX",
+                    "_rev": "Oysj875UTxs0artuxZ42il",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Adobe Dimension"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaOc",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuaKq",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "CSS"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUB5c",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAx0",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "HTML"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "162174095fa2",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "0a754cc61819",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Built a learning website where users can sign up for courses on learning the basic building blocks of the web, HTML, CSS and JS."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://structured-style.netlify.app/",
+                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/lab1-landingpage-sprioleau",
+                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/lab1-landingpage-sprioleau"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-9d882e6f3fa9723dcc60922e3c01e9d022ae8bf8-2560x1440-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-28T02:00:26Z",
+                    "_id": "4edde80a-9f89-42b7-93cf-73b8ac15e5b6",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzSVw",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-28T02:00:26Z",
+                    "name": "HTML"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFWI",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFRz",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CSS"
+                }
+            ],
+            "title": "Structured Style",
+            "year": "2021",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "iW9E2VHPSn2pdpAHvXELAO",
+            "_rev": "Oysj875UTxs0artuxbQ2sf",
+            "_type": "project",
+            "_updatedAt": "2021-12-29T15:23:29Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:33Z",
+                "_id": "fa3b4d6c-7bdc-4763-854a-9abd101a0137",
+                "_rev": "Oysj875UTxs0artuxYnt9x",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:33Z",
+                "name": "CS52 Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42lH",
+                    "_rev": "Oysj875UTxs0artuxZ42hV",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Redux"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42u5",
+                    "_rev": "Oysj875UTxs0artuxZ42sp",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "YouTube API"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "f3666ff3ae5f",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "6e4c713f6a8e",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "A single page app for searching videos, powered by the YouTube API."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "📹",
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://videwhoa.netlify.app/",
+                "gitHubUrl": "https://github.com/dartmouth-cs52-21S/react-intro-sprioleau",
+                "vsCodeUrl": "https://vscode.dev/github/dartmouth-cs52-21S/react-intro-sprioleau"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-835c996bd444d7ed5af0fd57fdb4aadac0329d75-2560x1440-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFNg",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFJN",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Redux"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQZz",
+                    "_rev": "Oysj875UTxs0artuxYoQWD",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "API"
+                }
+            ],
+            "title": "Videwhoa!",
+            "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2021-12-27T21:32:37Z",
+            "_id": "5HHceZ3LuAltt4AEKgf0pf",
+            "_rev": "iW9E2VHPSn2pdpAHvY1uDE",
+            "_type": "project",
+            "_updatedAt": "2021-12-28T02:16:50Z",
+            "builtFor": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaso",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuap2",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42k1",
+                    "_rev": "Oysj875UTxs0artuxZ42gF",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "SSG"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:59:27Z",
+                    "_id": "a8a9664d-10ad-417e-9fec-08653ecc9e70",
+                    "_rev": "iW9E2VHPSn2pdpAHvXzKIQ",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:59:27Z",
+                    "name": "SSR"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "67477506140c",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "effd008bb8c7",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "A simple blog starter created with Next.js."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://ssg-markdown-blog.netlify.app",
+                "gitHubUrl": "https://github.com/sprioleau/SSG-Blog",
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/SSG-Blog"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-922c3f3e8a780704fb5cafe1e516df1ad8b94a9a-2560x1440-png",
+                    "_type": "reference"
+                }
+            },
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFF4",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFAl",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Next.js"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQin",
+                    "_rev": "Oysj875UTxs0artuxYoQcV",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Server-side rendering"
+                }
+            ],
+            "title": "Statically Generated Blog",
+            "yearBuilt": "2020-01-01"
         },
         {
             "_createdAt": "2021-12-27T21:32:37Z",
@@ -1535,7 +2312,24 @@
                 "_updatedAt": "2021-12-27T21:05:00Z",
                 "name": "Client"
             },
-            "builtWith": null,
+            "builtWith": [
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXuaOc",
+                    "_rev": "iW9E2VHPSn2pdpAHvXuaKq",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "CSS"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "5HHceZ3LuAltt4AEKhUAsh",
+                    "_rev": "5HHceZ3LuAltt4AEKhUAXA",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Webflow"
+                }
+            ],
             "description": [
                 {
                     "_key": "df6caf3bdcba",
@@ -1564,12 +2358,65 @@
                     "_type": "reference"
                 }
             },
-            "tags": null,
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQbF",
+                    "_rev": "Oysj875UTxs0artuxYoQYj",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Webflow"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFWI",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFRz",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CSS"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB7Fw",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB7CA",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "CMS"
+                }
+            ],
             "title": "C19 Inside Scoop",
             "yearBuilt": "2019-01-01"
         }
     ],
     "skills": [
+        {
+            "_createdAt": "2021-12-29T01:48:53Z",
+            "_id": "344cb3bf-9bbe-4bcf-94f0-3c322040a68c",
+            "_rev": "5HHceZ3LuAltt4AEKml0tC",
+            "_type": "skill",
+            "_updatedAt": "2021-12-29T01:48:53Z",
+            "category": [
+                "Technologies"
+            ],
+            "experienceYears": 1,
+            "iconKey": "api",
+            "publishedAt": "2021-12-29T01:42:47.500Z",
+            "techName": "Sanity.io"
+        },
+        {
+            "_createdAt": "2021-12-29T01:46:28Z",
+            "_id": "3bb33a91-c468-43c4-a0c4-3b9435e6844e",
+            "_rev": "Oysj875UTxs0artuxaaLor",
+            "_type": "skill",
+            "_updatedAt": "2021-12-29T01:46:28Z",
+            "category": [
+                "Technologies"
+            ],
+            "experienceYears": 1,
+            "iconKey": "socketio",
+            "publishedAt": "2021-12-29T01:42:47.500Z",
+            "techName": "Socket.io"
+        },
         {
             "_createdAt": "2021-12-27T20:31:46Z",
             "_id": "5HHceZ3LuAltt4AEKgRVIT",
@@ -1708,15 +2555,15 @@
         {
             "_createdAt": "2021-12-27T20:31:46Z",
             "_id": "Oysj875UTxs0artuxYlncT",
-            "_rev": "5HHceZ3LuAltt4AEKgYsCJ",
+            "_rev": "iW9E2VHPSn2pdpAHvcSlQW",
             "_type": "skill",
-            "_updatedAt": "2021-12-27T21:02:31Z",
+            "_updatedAt": "2021-12-29T01:42:31Z",
             "category": [
                 "Technologies"
             ],
             "experienceYears": 3,
             "fullName": "",
-            "iconKey": "javasctipt",
+            "iconKey": "javascript",
             "publishedAt": "2021-12-27T20:28:40.224Z",
             "techName": "JavaScript"
         },
@@ -1901,16 +2748,45 @@
             "techName": "Sass"
         }
     ],
+    "siteDetails": [
+        {
+            "_createdAt": "2021-12-29T17:29:25Z",
+            "_id": "b3416224-64a1-45a6-a9fd-5633cbf0eeda",
+            "_rev": "5HHceZ3LuAltt4AEKqIK5r",
+            "_type": "siteDetails",
+            "_updatedAt": "2021-12-29T18:02:03Z",
+            "creator": {
+                "email": "sq.prioleau@gmail.com",
+                "links": {
+                    "gitHubUrl": "https://github.com/sprioleau"
+                },
+                "name": "San'Quan Prioleau"
+            },
+            "meta": {
+                "deployedUrl": "https://sprioleau.dev",
+                "description": "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
+                "gitHubUrl": "https://github.com/sprioleau/sprioleau.dev",
+                "mainImage": {
+                    "_type": "image",
+                    "asset": {
+                        "_ref": "image-7c50613fb3e78ff3d0c7de170a3ac976f989704f-1200x628-png",
+                        "_type": "reference"
+                    }
+                },
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/sprioleau.dev"
+            },
+            "siteName": "S. Prioleau"
+        }
+    ],
     "contact": [
         {
             "_createdAt": "2021-12-28T03:11:32Z",
             "_id": "f95ad184-b4c4-4e3d-9e31-2a44ef42d3f5",
-            "_rev": "Oysj875UTxs0artuxZ8yPV",
+            "_rev": "5HHceZ3LuAltt4AEKlbBK8",
             "_type": "contact",
-            "_updatedAt": "2021-12-28T03:11:32Z",
+            "_updatedAt": "2021-12-28T20:39:01Z",
             "email": "sq.prioleau@gmail.com",
-            "gitHubUrl": "https://github.com/sprioleau",
-            "name": "San'Quan Prioleau"
+            "overline": "You can find me at"
         }
     ],
     "footer": [
