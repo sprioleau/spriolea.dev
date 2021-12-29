@@ -19,6 +19,7 @@ import association from "./association"
 import skill from "./skill"
 import contact from "./contact"
 import footer from "./footer"
+import siteDetails from "./siteDetails"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,5 +39,6 @@ export default createSchema({
     skill,
     contact,
     footer,
+    siteDetails
   ]),
 })

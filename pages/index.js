@@ -6,7 +6,7 @@ import getData from "../libs/sanity";
 import CONFIG from "../config";
 
 const Home = ({ data }) => {
-	const { navLinks, footer } = data;
+	const { navLinks, footer, siteDetails } = data;
 
 	return (
 		<div className="app">
@@ -15,7 +15,7 @@ const Home = ({ data }) => {
 				<title>San&apos;Quan Prioleau</title>
 			</Head>
 			<Nav navLinks={navLinks} />
-			<InfoRails />
+			<InfoRails siteDetails={siteDetails} />
 			<Main data={data} />
 			<Footer content={footer} />
 		</div>

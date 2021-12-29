@@ -29,6 +29,11 @@ export default {
       type: "boolean",
     },
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+    },
+    {
       name: "links",
       title: "Links",
       type: "object",
@@ -78,7 +83,7 @@ export default {
       name: "yearBuilt",
       title: "Year Built",
       type: "date",
-      options: { dateFormat: "YYYY" }
+      options: { dateFormat: "MMM YYYY" }
     },
     {
       name: "publishedAt",
