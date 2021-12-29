@@ -4,18 +4,18 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import PageSectionLayout from "../PageSectionLayout";
 
-const Contact = () => {
-	const EMAIL_ADDRESS = "sq.prioleau@gmail.com";
+const Contact = ({ content }) => {
+	const { email, overline } = content[0];
 
 	const handleToast = () => toast.dark("Email address successfully copied!", { toastId: "email" });
 	
   return (
 		<PageSectionLayout sectionId="contact" sectionTitle="Get in touch" center offset="0px">
-			<CopyToClipboard text={EMAIL_ADDRESS} onCopy={handleToast}>
+			<CopyToClipboard text={email} onCopy={handleToast}>
 				<div className="contact__card">
 					<span className="icon mail-icon"><MdOutlineMarkEmailRead /></span>
-					<h3 className="contact__card-heading">You can find me at</h3>
-						<p className="a contact__card-email">{EMAIL_ADDRESS}</p>
+					<h3 className="contact__card-heading">{overline}</h3>
+						<p className="a contact__card-email">{email}</p>
 				</div>
 			</CopyToClipboard>
 		</PageSectionLayout>

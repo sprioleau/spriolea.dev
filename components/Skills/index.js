@@ -1,20 +1,20 @@
+/* eslint-disable no-param-reassign */
 
 import { motion as m } from "framer-motion"
-import { skillsList } from "../../constants"
 import { sortAlphaByKey } from "../../utils"
 import PageSectionLayout from "../PageSectionLayout"
+import icons from "../Icons";
 
-const Skills = ({ delay = 0.25 }) => {
-	const skillsListObject = skillsList.sort((a, b) => (b.category > a.category) ? 1 : -1).reduce((skillsObject, skill) => {
+const Skills = ({ skills, delay = 0.25 }) => {
+	const skillsListObject = skills.map((skill) => ({ ...skill, category: skill.category[0] })).sort((a, b) => (b.category > a.category) ? 1 : -1).reduce((skillsObject, skill) => {
 		if (!skillsObject[skill.category]) {
-			// eslint-disable-next-line no-param-reassign
 			skillsObject[skill.category] = [skill];
 		} else {
 			skillsObject[skill.category].push(skill);
 		}
 		return skillsObject;
 	}, {});
-
+			
 	const variants = {
 		initial: {
 			opacity: 0,
@@ -34,7 +34,7 @@ const Skills = ({ delay = 0.25 }) => {
 					initial="initial"
 					animate="animate"
 				>
-					{Object.entries(skillsListObject).map(([category, skills], index) => (
+					{Object.entries(skillsListObject).map(([category, skillsData], index) => (
 						<m.li
 							key={category}
 							className="skills__category"
@@ -47,14 +47,14 @@ const Skills = ({ delay = 0.25 }) => {
 								initial="initial"
 								animate="animate"
 							>
-								{skills.sort((a, b) => sortAlphaByKey(a, b, "techName")).map(({ techName, icon }) => (
+								{skillsData.sort((a, b) => sortAlphaByKey(a, b, "techName")).map(({ techName, iconKey }) => (
 									<m.li
 										key={techName}
 										className="skills__list-item"
 										variants={variants}
 										transition={{ duration: 0.5, delay: delay + index * 0.15 }}
 									>
-										{icon && <div className="skills__icon">{icon}</div>}
+										{iconKey && <div className="skills__icon">{icons[iconKey]}</div>}
 										<p className="skills__label">{techName}</p>
 									</m.li>
 								))}

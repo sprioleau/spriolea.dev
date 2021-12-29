@@ -2,30 +2,33 @@
 
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
-import { selectedWork } from "../../constants"
+import { urlFor } from "../../libs/sanity";
+import PortableTextBlock from "../PortableTextBlock";
 
-const SelectedWork = () => {
+const SelectedWork = ({ projects }) => {
   return (
 	<div className="selected-work">
 		<ul className="selected-work__works">
-			{selectedWork.map(({ imageSrc, title, description, tags, links: { gitHubUrl, sourceCodeUrl, deployedUrl }, emoji }, index) => (
-				<li key={index} className="selected-work__work">
+			{projects.map(({ _id, mainImage, title, tags, description, links: { gitHubUrl, vsCodeUrl, deployedUrl }, emoji }) => (
+				<li key={_id} className="selected-work__work">
 					<div className="selected-work__image">
-						<a href={deployedUrl} className="button" target="_blank" rel="noreferrer">
-							<img src={imageSrc} alt={title} />
+						<a href={deployedUrl} className="button" target="_blank" rel="noreferrer">Image goes here
+							<img src={urlFor(mainImage).width(400).url()} alt={title} />
 						</a>
 					</div>
 					<div className="selected-work__details">
 						<h3 className="selected-work__title">{title}{emoji && <span className="emoji" role="img"> {emoji}</span>}</h3>
-						<p className="selected-work__description">{description}</p>
-						<ul className="selected-work__tags">
-							{tags.map((tag) => (
-								<li key={tag} className="selected-work__tag"><p>{tag}</p></li>
+						<p className="selected-work__description">{description.map(({ _key, children, markDefs }) => (
+							<PortableTextBlock key={_key} childrenContent={children} markDefs={markDefs}  />
+						))}</p>
+						{tags && <ul className="selected-work__tags">
+							{tags.map(({ _id: tagKey, name }) => (
+								<li key={tagKey} className="selected-work__tag"><p>{name}</p></li>
 							))}
-						</ul>
+						</ul>}
 						<div className="selected-work__icon-links">
 							{gitHubUrl && <a aria-label="link" href={gitHubUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><FiGithub /></a>}
-							{sourceCodeUrl && <a aria-label="link" href={sourceCodeUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><HiOutlineCode /></a>}
+							{vsCodeUrl && <a aria-label="link" href={vsCodeUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><HiOutlineCode /></a>}
 							{deployedUrl && <a aria-label="link" href={deployedUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><FiExternalLink /></a>}
 						</div>
 					</div>

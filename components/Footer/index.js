@@ -1,12 +1,16 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import Name from "../Name";
+import PortableTextBlock from "../PortableTextBlock";
 
-const Footer = () => {
+const Footer = ({ content }) => {
+	const { body } = content[0]; 
+
 	return (
 		<footer className="footer">
 			<div className="container">
-				<p className="footer__message">Designed and Built by <a href="https://github.com/sprioleau"><Name /></a>.</p>
-				<p className="footer__message">Inspired by <a href="https://brittanychiang.com/">brittanychiang.com</a>.</p>
+				{body.map(({ _key, children, markDefs }) => (
+					<p key={_key} className="footer__message">
+						<PortableTextBlock childrenContent={children} markDefs={markDefs} />
+					</p>
+				))}
 			</div>
 		</footer>
 	);

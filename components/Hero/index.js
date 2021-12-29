@@ -4,12 +4,15 @@ import { motion as m } from "framer-motion";
 import ActionIndicator from "../ActionIndicator";
 import { FadeInAndUp, StaggeredReveal } from "../AnimationLibrary";
 import { handleKeyDown } from "../../utils";
+import PortableTextBlock from "../PortableTextBlock";
 
-const Hero = () => {
+const Hero = ({ content }) => {
   const router = useRouter();
 	const iconSize = 32;
+
+	const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } = content[0];
 	
-	const handleAdvanceSection = () => router.push("#about");
+	const handleAdvanceSection = () => router.push(`#${advanceToSectionSlug}`);
 	
   return (
 	<section className="hero section">
@@ -21,11 +24,11 @@ const Hero = () => {
 					animate={{ opacity: 1 }}
 				>
 					<Image src="/images/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" />
-					<span className="hero__greeting"> Hello, my name is</span>
+					<span className="hero__greeting"> {overline}</span>
 				</m.p>
 				{/* <h1 className="hero__headline"><Name />.</h1> */}
 				<StaggeredReveal
-					text="San'Quan Prioleau."
+					text={heading}
 					speed={4}
 					wrapperClass="hero__headline"
 					delay={0.5}
@@ -33,22 +36,22 @@ const Hero = () => {
 				/>
 				{/* <h2 className="hero__vocation">I design and build for the web.</h2> */}
 				<StaggeredReveal
-					text="I design and build for the web."
+					text={subHeading}
 					speed={4}
 					wrapperClass="hero__vocation"
 					delay={0.5}
 					tag="h2"
 					subtitle
 				/>
-				<FadeInAndUp delay={1.5} distanct={50}>
-					<p className="hero__brief">
-						I&apos;m a <em>frontend web developer</em> with an eye for good design. I&apos;ve done <em>engineering</em>, <em>user experience (UX)</em> and <em>graphic gesign</em> and now <em>web development</em>. I love combining ideas to create new things.
-					</p>
+					<FadeInAndUp delay={1.5} distanct={50}>
+						<p className="hero__brief">
+							<PortableTextBlock childrenContent={brief[0].children} markDefs={brief[0].markDefs} />
+						</p>
 				</FadeInAndUp>
 				</header>
 				<FadeInAndUp delay={1.75}>
-					<button type="button" className="hero__cta-button button" onClick={() => router.push("#work")}>
-						<span className="icon">🚧</span>See some of my work
+					<button type="button" className="hero__cta-button button" onClick={() => router.push(`#${cta.linkTarget}`)}>
+						<span className="icon">🚧</span>{cta.label}
 					</button>
 				</FadeInAndUp>
 			</div>

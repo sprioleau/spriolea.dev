@@ -4,6 +4,7 @@ import { motion as m } from "framer-motion"
 import { FiArrowDown } from "react-icons/fi";
 import { formatJobDates } from "../../utils";
 import TabLabel from "./components/TabLabel";
+import PortableTextBlock from "../PortableTextBlock";
 
 const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
@@ -16,11 +17,9 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 	
 	React.useEffect(() => {
 		const activeTab = document.querySelector(`#${id} .tab-list__label.active`);
-		console.log("activeTab:", activeTab)
 		
 		if (activeTab) {
 			const currentTabHeight = activeTab.clientHeight;
-			console.log("currentTabHeight:", currentTabHeight)
 			setIndicatorHeight(currentTabHeight);
 		}
 	}, [id])
@@ -81,7 +80,7 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 								initial="initial"
 								animate="animate"							
 							>
-								{experience[currentTabIndex].workHighlights.map(({ _key, children }, index) => (
+								{experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }, index) => (
 									<m.li
 										key={_key}
 										className="tab-list__work-list-item"
@@ -89,15 +88,7 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 										transition={{ delay: index * 0.15, duration: 0.3 }}
 									>
 										<p>
-											{children.map(({ _key: childKey, text, marks }) => (
-												<React.Fragment key={childKey}>
-													{marks.includes("em") ? (
-														<em>{text}</em>
-													) : (
-														<span>{text}</span>
-													)}
-												</React.Fragment>
-											))}
+											<PortableTextBlock childrenContent={children} markDefs={markDefs} />
 										</p>
 									</m.li>
 								))}

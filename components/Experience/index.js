@@ -1,15 +1,11 @@
 import TabList from "../TabList";
 import PageSectionLayout from "../PageSectionLayout";
-import { selectData } from "../../store/selectors";
-import useStore from "../../store";
 import { organizeByKey } from "../../utils";
 
-const Experience = () => {
-	const data = useStore(selectData);
+const Experience = ({ experience }) => {
+	if (!experience) return null;
 
-	if (!data) return null;
-
-	const experienceByType = organizeByKey(data.experience, "jobType.type")
+	const experienceByType = organizeByKey(experience, "jobType.type")
 
 	const tabListData = [
 		{

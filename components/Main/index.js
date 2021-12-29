@@ -5,17 +5,26 @@ import Work from "../Work";
 import Skills from "../Skills";
 import Contact from "../Contact";
 
-;
+const Main = ({ data }) => {
+	if (!data) return null;
 
-const Main = () => {
+	const {
+		hero,
+		about,
+		experience,
+		skills,
+		projects,
+		contact,
+	} = data;
+	
 	return (
 		<main className="main">
-			<Hero />
-			<About />
-			<Experience />
-			<Work />
-			<Skills />
-			<Contact /> 
+			<Hero content={hero} />
+			<About content={about} />
+			<Experience experience={experience} />
+			<Work projects={projects} />
+			<Skills skills={skills} />
+			<Contact content={contact} /> 
 		</main>
 	);
 };

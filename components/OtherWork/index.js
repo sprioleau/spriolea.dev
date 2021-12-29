@@ -1,10 +1,10 @@
 
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
-import { otherWork } from "../../constants"
-import { sortByYearAndTitle } from "../../utils";
+import { formatIsoDate, sortByYearAndTitle } from "../../utils";
+import sortAlphaByKey from "../../utils/sortAlphaByKey";
 
-const OtherWork = () => {
+const OtherWork = ({ projects }) => {
 	const renderLinks = (links) => {
 		return Object.entries(links).map(([key, url]) => {
 			if (!url) return null;
@@ -12,7 +12,7 @@ const OtherWork = () => {
 			let icon = null;
 
 			if (key.includes("gitHub")) icon = <FiGithub />;
-			if (key.includes("sourceCode")) icon = <HiOutlineCode />;
+			if (key.includes("vsCode")) icon = <HiOutlineCode />;
 			if (key.includes("deployed")) icon = <FiExternalLink />;
 
 			return (
@@ -37,12 +37,12 @@ const OtherWork = () => {
 				</tr>
 			</thead>
 			<tbody>
-				{otherWork.sort(sortByYearAndTitle).map(({ year, title, tags, builtFor, links }) => (
+				{projects.sort(sortByYearAndTitle).map(({ yearBuilt, title, builtFor, builtWith, links }) => (
 					<tr key={title} className="other-work__row">
-						<td className="other-work__year">{year}</td>
+						<td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
 						<td>{title}</td>
-						<td>{builtFor.length > 0 ? builtFor : <span>&mdash;</span>}</td>
-						<td>{tags.join(", ")}</td>
+						<td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>
+						<td>{builtWith.sort((a, b) => sortAlphaByKey(a, b, "name")).map(({ name }) => name).join(", ")}</td>
 						<td>
 							<ul className="other-work__links">
 								{renderLinks(links)}
