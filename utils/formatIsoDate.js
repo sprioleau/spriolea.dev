@@ -1,5 +1,6 @@
-const formatIsoDate = (isoDate) => {
-  const [year, month] = isoDate.split("-")
+const formatIsoDate = (isoDate, format = null) => {
+  const [year, month] = isoDate.split("-");
+  if (format === "YYYY") return year;
   return `${month}-${year}`
 }
 
