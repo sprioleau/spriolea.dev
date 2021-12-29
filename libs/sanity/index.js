@@ -21,8 +21,9 @@ const queries = {
   hero: "*[_type == \"hero\"]",
   about: "*[_type == \"about\"]",
   navLinks: "*[_type == \"navLink\"] | order(order asc)",
-  projects: "*[_type == \"project\"] { ..., builtWith->, builtFor->, tags-> }",
+  projects: "*[_type == \"project\"] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }",
   skills: "*[_type == \"skill\"]",
+  siteDetails: "*[_type == \"siteDetails\"]",
   contact: "*[_type == \"contact\"]",
   footer: "*[_type == \"footer\"]",
 }
