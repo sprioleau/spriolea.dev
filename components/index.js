@@ -17,3 +17,4 @@ export { default as ActionIndicator } from "./ActionIndicator";
 export { default as SelectedWork } from "./SelectedWork";
 export { default as OtherWork } from "./OtherWork";
 export { default as PageSectionLayout } from "./PageSectionLayout";
+export { default as PortableTextBlock } from "./PortableTextBlock";
