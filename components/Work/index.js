@@ -16,8 +16,6 @@ const Work = ({ projects }) => {
 		notFeatured: []
 	})
 	
-	// console.log("allProjects:", allProjects)
-
   return (
 		<PageSectionLayout sectionId="work" sectionTitle="Selected Work">
 			<SelectedWork projects={allProjects.isFeatured} />
