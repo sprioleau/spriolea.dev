@@ -1,18 +1,26 @@
 /* eslint-disable no-param-reassign */
 import sanityClient from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url"
 
 const client = sanityClient({
-  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
-  dataset:  process.env.SANITY_STUDIO_API_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_PROJECT_ID,
+  dataset:  process.env.NEXT_PUBLIC_SANITY_STUDIO_API_DATASET,
   apiVersion: "2021-12-24",
   useCdn: true,
 })
+
+const builder = imageUrlBuilder(client)
+
+export const urlFor = (source) => {
+  return builder.image(source)
+}
 
 const queries = {
   employers: "*[_type == \"employer\"]",
   experience: "*[_type == \"experience\"] | order(fromDate desc) { ..., employer->, jobType-> }",
   hero: "*[_type == \"hero\"]",
-  navLinks: "*[_type == \"navLink\"]",
+  about: "*[_type == \"about\"]",
+  navLinks: "*[_type == \"navLink\"] | order(order asc)",
   projects: "*[_type == \"project\"] { ..., builtWith->, builtFor->, tags-> }",
   skills: "*[_type == \"skill\"]",
   contact: "*[_type == \"contact\"]",

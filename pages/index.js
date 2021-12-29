@@ -1,18 +1,12 @@
 import React from "react"
 import Head from "next/head";
 import axios from "axios";
-import { Footer, InfoRails, Nav, Main } from "../components";
+import { InfoRails, Nav, Main, Footer } from "../components";
 import getData from "../libs/sanity";
-import useStore from "../store";
-import { selectUpdateData } from "../store/selectors";
 import CONFIG from "../config";
 
 const Home = ({ data }) => {
-	const updateData = useStore(selectUpdateData);
-		
-	React.useEffect(() => {
-		if (data) updateData(data);
-	}, [data, updateData]);
+	const { navLinks, footer } = data;
 
 	return (
 		<div className="app">
@@ -20,10 +14,10 @@ const Home = ({ data }) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>San&apos;Quan Prioleau</title>
 			</Head>
-			<Nav />
+			<Nav navLinks={navLinks} />
 			<InfoRails />
-			<Main />
-			<Footer />
+			<Main data={data} />
+			<Footer content={footer} />
 		</div>
 	);
 };
