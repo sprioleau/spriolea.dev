@@ -4,25 +4,20 @@ export default {
   type: "document",
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
-    },
-    {
       name: "email",
       title: "Email",
       type: "string",
     },
     {
-      name: "gitHubUrl",
-      title: "GitHub URL",
-      type: "url",
+      name: "overline",
+      title: "Overline",
+      type: "string",
     },
   ],
 
   preview: {
     select: {
-      title: "name",
+      title: "email",
     },
   },
 }

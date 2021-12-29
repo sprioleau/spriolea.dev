@@ -10,6 +10,7 @@ import employer from "./employer"
 import blockContent from "./blockContent"
 import jobType from "./jobType"
 import hero from "./hero"
+import about from "./about"
 import navLink from "./navLink"
 import project from "./project"
 import tag from "./tag"
@@ -28,6 +29,7 @@ export default createSchema({
     blockContent,
     jobType,
     hero,
+    about,
     navLink,
     project,
     tag,

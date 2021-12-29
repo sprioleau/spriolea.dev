@@ -15,7 +15,7 @@ export default {
     },
     {
       name: "subHeading",
-      title: "Sub-Heading",
+      title: "Sub-heading",
       type: "string",
     },
     {
@@ -24,9 +24,26 @@ export default {
       type: "blockContent",
     },
     {
-      name: "ctaLinkTarget",
-      title: "CTA Link Target",
+      name: "advanceToSectionSlug",
+      title: "Advance to Section Slug",
       type: "string",
+    },
+    {
+      name: "cta",
+      title: "CTA",
+      type: "object",
+      fields: [
+        {
+          name: "linkTarget",
+          title: "Link Target",
+          type: "string",
+        },
+        {
+          name: "label",
+          title: "Label",
+          type: "string",
+        },
+      ]
     },
   ], 
   preview: {

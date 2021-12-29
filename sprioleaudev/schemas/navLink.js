@@ -18,6 +18,11 @@ export default {
       title: "Section Slug",
       type: "string",
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+    },
   ], 
   preview: {
     select: {
