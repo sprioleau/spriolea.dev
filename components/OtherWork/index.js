@@ -1,10 +1,16 @@
 
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { HiOutlineCode } from "react-icons/hi"
+import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 import { formatIsoDate, sortByYearAndTitle } from "../../utils";
 import sortAlphaByKey from "../../utils/sortAlphaByKey";
 
 const OtherWork = ({ projects }) => {
+	const { windowSize } = useWindowSize();
+
+	const smallerThanSmall = windowSize <= bp.sm;
+	const smallerThanMedium = windowSize <= bp.md;
+
 	const renderLinks = (links) => {
 		return Object.entries(links).map(([key, url]) => {
 			if (!url) return null;
@@ -31,8 +37,8 @@ const OtherWork = ({ projects }) => {
 				<tr className="other-work__header-row">
 					<th>Year</th>
 					<th>Project</th>
-					<th>Built for</th>
-					<th>Built with</th>
+					{!smallerThanMedium && <th>Built for</th>}
+					{!smallerThanSmall && <th>Built with</th>}
 					<th>Links</th>
 				</tr>
 			</thead>
@@ -41,8 +47,8 @@ const OtherWork = ({ projects }) => {
 					<tr key={title} className="other-work__row">
 						<td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
 						<td>{title}</td>
-						<td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>
-						<td>{builtWith.sort((a, b) => sortAlphaByKey(a, b, "name")).map(({ name }) => name).join(", ")}</td>
+						{!smallerThanMedium && <td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>}
+						{!smallerThanSmall && <td>{builtWith.sort((a, b) => sortAlphaByKey(a, b, "name")).map(({ name }) => name).join(", ")}</td>}
 						<td>
 							<ul className="other-work__links">
 								{renderLinks(links)}

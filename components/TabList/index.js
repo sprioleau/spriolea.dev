@@ -5,11 +5,16 @@ import { FiArrowDown } from "react-icons/fi";
 import { formatJobDates } from "../../utils";
 import TabLabel from "./components/TabLabel";
 import PortableTextBlock from "../PortableTextBlock";
+import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 
 const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
 	const [indicatorHeight, setIndicatorHeight] = React.useState(0);
 	const [expanded, setExpanded] = React.useState(expandByDefault);
+
+	const { windowSize } = useWindowSize();
+
+	const isSmallScreen = windowSize <= bp.md;
 	
 	const handleExpand = () => {
 		if (!expandByDefault) setExpanded(!expanded);
@@ -64,8 +69,8 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 						))}
 					</ul>
 					<div className="tab-list__tabs-indicator" style={{
-						transform: `translateY(${indicatorHeight * (currentTabIndex)}px)`,
-						height: indicatorHeight
+						transform: isSmallScreen ? "transform: none" : `translateY(${indicatorHeight * (currentTabIndex)}px)`,
+						height: indicatorHeight,
 					}} />
 				</nav>
 					<div className="tab-list__details">

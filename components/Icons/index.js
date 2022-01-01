@@ -2,6 +2,7 @@ import { FaFigma, FaGitAlt, FaNodeJs, FaNpm, FaReact, FaSass } from "react-icons
 import { SiCss3, SiCypress, SiExpress, SiGraphql, SiHtml5, SiJavascript, SiJest, SiNextdotjs, SiRedux, SiTypescript, SiSocketdotio } from "react-icons/si"
 import { TiArrowSync } from "react-icons/ti"
 import { VscJson } from "react-icons/vsc"
+import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
 import AdobeXd from "./AdobeXd";
 import AdobePhotoshop from "./AdobePhotoshop";
 import AdobeIllustrator from "./AdobeIllustrator";
@@ -30,6 +31,8 @@ const icons = {
   photoshop: <AdobePhotoshop />, 
   illustrator: <AdobeIllustrator />,
   socketio: <SiSocketdotio />,
+  menu: <RiMenu3Line />,
+  close: <RiCloseLine />,
 }
 
 export default icons;

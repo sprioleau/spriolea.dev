@@ -1,3 +1,4 @@
+import React from "react"
 import { motion as m } from "framer-motion";
 
 // Reference: https://stackoverflow.com/questions/58958972/framer-motion-animate-when-element-is-in-view-when-you-scroll-to-element
@@ -46,7 +47,11 @@ export const FadeInAndUp = ({ children, delay, distance = 20, reverseOnExit = fa
   );
 }
 
-export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, speed = 1, delayIncrement = 0.1, delay = 0, subtitle = false }) => {
+export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, speed = 1, delayIncrement = 0.1, delay = 0, subtitle = false, animate = true }) => {
+	const [animationComplete, setAnimationComplete] = React.useState(false);
+
+	const handleAnimationComplete = () => setAnimationComplete(true);
+
 	const variants = {
 		initial: {
 			opacity: 0,
@@ -69,6 +74,10 @@ export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, sp
 	}
 
 	const adjustedDelay = subtitle ? 0.5 + delay : delay;
+
+	if (animationComplete || !animate) return (
+		<Tag className={wrapperClass}>{text}</Tag>
+	)
 	
 	return (
 		<Tag className={wrapperClass}>
@@ -76,6 +85,7 @@ export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, sp
 				initial="initial"
 				animate="animate"
 				style={styles.wrapperSpan}
+				onAnimationComplete={handleAnimationComplete}
 			>
 				{text.split("").map((letter, index) => (
 					<m.span
@@ -90,7 +100,7 @@ export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, sp
 						}}
 						style={{
 							...styles.letter,
-							marginRight: letter === " " ? "0.25em" : null,
+							marginRight: letter === " " ? "0.22em" : null,
 						}}
 					>{letter}</m.span>
 				))}

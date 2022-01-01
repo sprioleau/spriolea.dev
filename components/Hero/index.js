@@ -5,9 +5,12 @@ import ActionIndicator from "../ActionIndicator";
 import { FadeInAndUp, StaggeredReveal } from "../AnimationLibrary";
 import { handleKeyDown } from "../../utils";
 import PortableTextBlock from "../PortableTextBlock";
+import useWindowSize from "../../hooks/useWindowSize"
 
 const Hero = ({ content }) => {
   const router = useRouter();
+	const { windowSize } = useWindowSize();
+	const animateCondition = windowSize >= 400;
 	const iconSize = 32;
 
 	const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } = content[0];
@@ -33,6 +36,7 @@ const Hero = ({ content }) => {
 					wrapperClass="hero__headline"
 					delay={0.5}
 					tag="h1"
+					animate={animateCondition}
 				/>
 				{/* <h2 className="hero__vocation">I design and build for the web.</h2> */}
 				<StaggeredReveal
@@ -42,6 +46,7 @@ const Hero = ({ content }) => {
 					delay={0.5}
 					tag="h2"
 					subtitle
+					animate={animateCondition}
 				/>
 					<FadeInAndUp delay={1.5} distanct={50}>
 						<p className="hero__brief">

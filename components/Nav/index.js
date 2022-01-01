@@ -1,8 +1,37 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React from "react"
 import { CgFileDocument } from "react-icons/cg"
 import Link from "next/link"
-import SkipToMainContent from "../SkipToMainContent/index";
+import { useRouter } from "next/router"
+import FocusTrap from "focus-trap-react";
+import SkipToMainContent from "../SkipToMainContent";
+import icons from "../Icons";
+import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize"
 
-const Nav = ({ navLinks }) => {
+const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
+	const { windowSize } = useWindowSize();
+	const aboveBreakpoint = windowSize > bp.md;
+	const tabIndex = aboveBreakpoint || navExpanded ? 0 : -1;
+	const router = useRouter();
+
+	const close = () => setNavExpanded(false);
+	const open = () => setNavExpanded(true);
+	
+	const navigateToSection = (slug) => {
+		close();
+		router.push(`#${slug}`);
+	}
+
+	const renderNavLinks = () => (
+		<>
+			{navLinks.map(({ _id, navLabel, sectionSlug }) => (
+				<li key={_id} className="nav__link">
+					<a href={`#${sectionSlug}`}className="nav__link__link" tabIndex={tabIndex} onClick={() => navigateToSection(sectionSlug)}>{navLabel}</a>
+				</li>
+			))}
+		</>
+	)
+	
 	return (
 		<nav className="nav">
 			<div className="container">
@@ -16,18 +45,25 @@ const Nav = ({ navLinks }) => {
 						</svg>
 					</Link>
 				</div>
-				<div className="nav__links-wrapper">
-					<ol className="nav__links">
-						<li><SkipToMainContent /></li>
-						{navLinks.map(({ _id, navLabel, sectionSlug }) => (
-							<li key={_id} className="nav__link">
-								<a href={`#${sectionSlug}`} className="nav__link__link" tabIndex={0}>
-									{navLabel}
-								</a>
-							</li>
-						))}
-					</ol>
-					<button type="button" className="m0 sm"><span className="icon"><CgFileDocument /></span>Resume</button>
+				<div className="nav__main-content">
+					<SkipToMainContent />
+					<FocusTrap active={navExpanded && windowSize <= bp.md}>
+						<div>
+							<div className="nav__links-wrapper">
+								<ol className="nav__links">
+									{renderNavLinks()}
+								</ol>
+								<button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon"><CgFileDocument /></span>Resume</button>
+								<button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
+									{icons.close}
+								</button>
+							</div>
+							<button id="open" className="nav__icon nav__icon--menu no-frame" type="button" tabIndex={0} onClick={open}>
+								{icons.menu}
+							</button>
+							<div className="nav__dismiss" onClick={close} role="button" tabIndex={-1} />
+						</div>
+					</FocusTrap>
 				</div>
 			</div>
 		</nav>

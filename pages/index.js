@@ -7,17 +7,19 @@ import CONFIG from "../config";
 
 const Home = ({ data }) => {
 	const { navLinks, footer, siteDetails } = data;
+	const [navExpanded, setNavExpanded] = React.useState(false);
 
 	return (
-		<div className="app">
+		<div className={["app", navExpanded ? "nav-expanded" : ""].join(" ").trim()}>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>San&apos;Quan Prioleau</title>
 			</Head>
-			<Nav navLinks={navLinks} />
+			<Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
 			<InfoRails siteDetails={siteDetails} />
 			<Main data={data} />
 			<Footer content={footer} />
+			<div className="accent-line" />
 		</div>
 	);
 };
