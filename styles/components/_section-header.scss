@@ -55,6 +55,7 @@
 
     .section-header {
       &__title {
+        text-align: center;
         padding: 0 3rem 1rem;
         border-bottom: 2px solid var(--ui-accent-1);
         margin-bottom: 1rem;
@@ -73,6 +74,28 @@
           color: rgba(var(--ui-text-rgb), 0.5);
           transform: translate(-50%, -50%);
           opacity: var(--opacity);
+        }
+      }
+    }
+  }
+}
+
+@include md {
+  .section-header {
+    max-width: var(--p-max-width);
+
+    &__title {
+      padding: 0 5vw;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &.center {
+      .section-header {
+        &__title {
+          padding-inline: 5vw;
         }
       }
     }

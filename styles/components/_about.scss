@@ -1,6 +1,7 @@
 .about {
   &__main-content {
     display: flex;
+    width: 100%;
   }
 
   &__image {
@@ -9,7 +10,7 @@
     justify-content: center;
     flex: 1 0;
   }
-
+  
   &__bio-text {
     margin-bottom: 1.5rem;
 
@@ -47,5 +48,19 @@
   &__tech-intro {
     margin-bottom: 0.5rem;
     color: var(--ui-text-hover);
+  }
+}
+
+@include md {
+  .about {
+    margin-right: 0;
+
+    &__main-content {
+      flex-direction: column;
+    }
+
+    &__bio {
+      @include center;
+    }
   }
 }

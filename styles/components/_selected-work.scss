@@ -4,6 +4,11 @@
   &__details {
     display: flex;
     flex-direction: column;
+    margin: 0 var(--tab-list-gap);
+
+    & > :not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
   
   &__works {
@@ -39,14 +44,6 @@
     }
   }
 
-  &__details {
-    margin: 0 calc(1.5 * var(--tab-list-gap));
-
-    & > :not(:last-child) {
-      margin-bottom: 1rem;
-    }
-  }
-
   &__deployed-url {
     display: flex;
     
@@ -63,6 +60,7 @@
   &__title {
     margin-top: 0.5rem;
     color: var(--ui-text-hover);
+    font-size: calc(0.75 * var(--h2));
   }
 
   &__icon-links {
@@ -78,6 +76,7 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 0.5rem;
   }
 
   &__tag {
@@ -109,6 +108,41 @@
 
     &::after {
       display: none;
+    }
+  }
+}
+
+@include md {
+  .selected-work {
+    &__work {
+      flex-direction: column;
+
+      &:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+
+    &__image {
+      flex-basis: 100%;
+      margin-bottom: 1rem;
+    }
+
+    &__details {
+      margin: 0;
+    }
+
+    &__meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__tags {
+      margin-bottom: 0;
+    }
+
+    &__tag {
+      margin-block: 0.5rem;
     }
   }
 }

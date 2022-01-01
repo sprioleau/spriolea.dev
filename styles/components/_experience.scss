@@ -1,0 +1,13 @@
+.experience {
+  .container {
+    align-items: unset;
+  }
+}
+
+@include md {
+  .experience {
+    .section-header {
+      align-self: center;
+    }
+  }
+}

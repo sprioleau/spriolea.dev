@@ -1,6 +1,5 @@
 // Breakpoints
-$bp-x-small: 350px;
-$bp-small: 576px;
+$bp-small: 600px;
 $bp-medium: 900px;
 $bp-large: 1200px;
 
@@ -28,6 +27,12 @@ $bp-large: 1200px;
   }
 }
 
+@mixin mq($width: #{$bp-large}) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
 @mixin ff-body {
   font-family: var(--font-body);
   font-weight: var(--font-weight-light);
@@ -51,7 +56,7 @@ $bp-large: 1200px;
 }
 
 @mixin transition($property: all, $duration: 0.3s) {
-  transition: $property $duration cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: $property $duration var(--curve);
 }
 
 @mixin cursor-default {
@@ -72,4 +77,10 @@ $bp-large: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin hover-wrapper {
+  @media (hover: hover) {
+    @content;
+  }
 }

@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @include md {
+    align-items: center;
+  }
 }
 
 .section {
@@ -10,8 +14,6 @@
   padding: 6rem var(--section-x-padding);
   min-height: 40vh;
   width: 100%;
-  // margin: 0 auto;
-  // max-width: calc(var(--max-width) + var(--section-x-padding));
   position: relative;
 }
 
@@ -22,4 +24,14 @@
 .marker {
   position: absolute;
   top: -2rem;
+}
+
+.accent-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 2px;
+  background-color: var(--ui-accent-1);
+  z-index: 15;
 }

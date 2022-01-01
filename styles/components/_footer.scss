@@ -1,7 +1,8 @@
 .footer {
+  text-align: center;
   font-weight: 300;
   letter-spacing: 1px;
-  padding: var(--nav-padding) 0;
+  padding: var(--nav-padding) 5vw;
   background-color: rgba(var(--ui-bg-rgb), 0.8);
   border-bottom: 2px solid var(--ui-accent-1);
   width: 100%;
@@ -14,7 +15,7 @@
   
   &__message {
     @include ff-mono;
-    font-size: 0.8em;
+    font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
     margin-bottom: 0;
   }
 }
