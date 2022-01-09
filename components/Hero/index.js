@@ -1,62 +1,58 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { motion as m } from "framer-motion";
 import ActionIndicator from "../ActionIndicator";
 import { FadeInAndUp, StaggeredReveal } from "../AnimationLibrary";
 import { handleKeyDown } from "../../utils";
 import PortableTextBlock from "../PortableTextBlock";
-import useWindowSize from "../../hooks/useWindowSize"
 
 const Hero = ({ content }) => {
-  const router = useRouter();
-	const { windowSize } = useWindowSize();
-	const animateCondition = windowSize >= 400;
+	const router = useRouter();
 	const iconSize = 32;
-
 	const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } = content[0];
 	
 	const handleAdvanceSection = () => router.push(`#${advanceToSectionSlug}`);
+
+	const sectionDelay = 1.1;
 	
   return (
 	<section className="hero section">
 		<div className="container">
 			<header className="hero__header">
-				<m.p
+				<FadeInAndUp
 					className="hero__overline"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
+					tag="p"
+					useDefaultStyles={false}
+					delay={sectionDelay}
 				>
 					<Image src="/images/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" />
 					<span className="hero__greeting"> {overline}</span>
-				</m.p>
-				{/* <h1 className="hero__headline"><Name />.</h1> */}
-				<StaggeredReveal
-					text={heading}
-					speed={4}
-					wrapperClass="hero__headline"
-					delay={0.5}
-					tag="h1"
-					animate={animateCondition}
-				/>
-				{/* <h2 className="hero__vocation">I design and build for the web.</h2> */}
-				<StaggeredReveal
-					text={subHeading}
-					speed={4}
-					wrapperClass="hero__vocation"
-					delay={0.5}
-					tag="h2"
-					subtitle
-					animate={animateCondition}
-				/>
-					<FadeInAndUp delay={1.5} distanct={50}>
+				</FadeInAndUp>
+					{/* <h1 className="hero__headline"><Name />.</h1> */}
+					<StaggeredReveal
+						text={heading}
+						speed={4}
+						wrapperClass="hero__headline"
+						delay={sectionDelay + 0.5}
+						tag="h1"
+					/>
+					{/* <h2 className="hero__vocation">I design and build for the web.</h2> */}
+					<StaggeredReveal
+						text={subHeading}
+						speed={4}
+						wrapperClass="hero__vocation"
+						delay={sectionDelay + 0.5}
+						tag="h2"
+						subtitle
+					/>
+					<FadeInAndUp delay={sectionDelay + 1.5} distanct={50}>
 						<p className="hero__brief">
 							<PortableTextBlock childrenContent={brief[0].children} markDefs={brief[0].markDefs} />
 						</p>
 				</FadeInAndUp>
 				</header>
-				<FadeInAndUp delay={1.75}>
+				<FadeInAndUp delay={sectionDelay + 1.75}>
 					<button type="button" className="hero__cta-button button" onClick={() => router.push(`#${cta.linkTarget}`)}>
-						<span className="icon">🚧</span>{cta.label}
+						{cta.label}
 					</button>
 				</FadeInAndUp>
 			</div>

@@ -7,6 +7,7 @@ import FocusTrap from "focus-trap-react";
 import SkipToMainContent from "../SkipToMainContent";
 import icons from "../Icons";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize"
+import { Stagger } from "../AnimationLibrary";
 
 const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 	const { windowSize } = useWindowSize();
@@ -21,20 +22,9 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 		close();
 		router.push(`#${slug}`);
 	}
-
-	const renderNavLinks = () => (
-		<>
-			{navLinks.map(({ _id, navLabel, sectionSlug }) => (
-				<li key={_id} className="nav__link">
-					<a href={`#${sectionSlug}`}className="nav__link__link" tabIndex={tabIndex} onClick={() => navigateToSection(sectionSlug)}>{navLabel}</a>
-				</li>
-			))}
-		</>
-	)
 	
 	return (
 		<nav className="nav">
-			<div className="container">
 				<div className="nav__logo">
 					<Link passHref href="/" className="nav__logo-link">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 537.4" width="100%" height="100%">
@@ -50,9 +40,25 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 					<FocusTrap active={navExpanded && windowSize <= bp.md}>
 						<div>
 							<div className="nav__links-wrapper">
-								<ol className="nav__links">
-									{renderNavLinks()}
-								</ol>
+								<Stagger
+									parent={{ tag: "ul", className: "nav__links" }}
+									child={{ tag: "li", className: "nav__link" }}
+									staggerBy={0.25}
+									staggerDelay={0.5}
+								>
+									{navLinks.map(({ _id, navLabel, sectionSlug }) => (
+										<a
+											data-key={_id}
+											key={_id}
+											href={`#${sectionSlug}`}
+											className="nav__link__link"
+											tabIndex={tabIndex}
+											onClick={() => navigateToSection(sectionSlug)}
+										>
+											{navLabel}
+										</a>
+									))}
+								</Stagger>
 								<button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon"><CgFileDocument /></span>Resume</button>
 								<button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
 									{icons.close}
@@ -65,7 +71,6 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 						</div>
 					</FocusTrap>
 				</div>
-			</div>
 		</nav>
 	);
 };

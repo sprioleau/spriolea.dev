@@ -27,7 +27,7 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 			const currentTabHeight = activeTab.clientHeight;
 			setIndicatorHeight(currentTabHeight);
 		}
-	}, [id])
+	}, [id]);
 	
   const handleSelect = (index) => setCurrentTabIndex(index);
 	
@@ -69,7 +69,7 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 						))}
 					</ul>
 					<div className="tab-list__tabs-indicator" style={{
-						transform: isSmallScreen ? "transform: none" : `translateY(${indicatorHeight * (currentTabIndex)}px)`,
+						transform: isSmallScreen ? "none" : `translateY(${indicatorHeight * (currentTabIndex)}px)`,
 						height: indicatorHeight,
 					}} />
 				</nav>

@@ -1,49 +1,178 @@
 import React from "react"
 import { motion as m } from "framer-motion";
 
-// Reference: https://stackoverflow.com/questions/58958972/framer-motion-animate-when-element-is-in-view-when-you-scroll-to-element
-
 const defaultStyles = {
 	display: "block",
 	width: "100%",
 }
 
-export const FadeInWhenVisible = ({ offset = "-30%", children }) => {
-	const variants = {
-		hidden: { opacity: 0, translateY: 100 },
-		visible: { opacity: 1, translateY: 0 },
+const variantsLibrary = {
+	fadeInWhenVisible: {
+		initial: { opacity: 0, translateY: 100 },
+		whileInView: { opacity: 1, translateY: 0 },
+	}, 
+	fadeInAndUp: {
+		initial: { opacity: 0, translateY: 20 },
+		animate: { opacity: 1, translateY: 0 },
+	},
+	fadeInAndDown: {
+		initial: { opacity: 0, translateY: 20 },
+		animate: { opacity: 1, translateY: 0 },
+	},
+	stagger: {
+		initial: { opacity: 0, translateY: -20 },
+		animate: { opacity: 1, translateY: 0 },
+	},
+	staggeredReveal: {
+		initial: { opacity: 0, top: "3rem" },
+		animate: { opacity: 1, top: 0 },
 	}
+}
+
+export const FadeInWhenVisible = ({
+	tag = "div",
+	className,
+	useDefaultStyles = true,
+	offset = "-30%",
+	distance = 100,
+	children
+}) => {
+	const variants = variantsLibrary.fadeInWhenVisible;
+	variants.initial.translateY = distance;
+
+	const Tag = m[tag];
+
+	const styles = useDefaultStyles ? defaultStyles : null;
 
   return (
-	<m.div
-    initial="hidden"
-    whileInView="visible"
+	<Tag
+    initial="initial"
+    whileInView="whileInView"
     viewport={{ once: true, margin: offset }}
     transition={{ duration: 0.5 }}
 		variants={variants}
-		style={defaultStyles}
+		style={styles}
+		className={className}
   >
 		{children}
-	</m.div>
+	</Tag>
   );
 }
 
-export const FadeInAndUp = ({ children, delay, distance = 20, reverseOnExit = false }) => {
+export const FadeInRowWhenVisible = ({
+	tag = "div", 
+	offset = "0%", 
+	useDefaultStyles = true, 
+	className, 
+	distance = 25, 
+	children
+}) => {
+	const variants = variantsLibrary.fadeInWhenVisible;
+	variants.initial.translateY = distance;
+
+	const Tag = m[tag];
+
+	const styles = useDefaultStyles ? defaultStyles : null;
+
   return (
-		<m.div
-			initial="hidden"
+		<Tag
+			initial="initial"
+			whileInView="whileInView"
+			viewport={{ once: true, margin: offset }}
+			transition={{ duration: 0.5 }}
+			variants={variants}
+			style={styles}
+			className={className}
+		>
+			{children}
+		</Tag>
+  );
+}
+
+export const FadeInAndUp = ({
+	tag = "div", 
+	className, 
+	children, 
+	delay, 
+	useDefaultStyles = true, 
+	distance = 20
+}) => {
+	const Tag = m[tag];
+
+	const styles = useDefaultStyles ? defaultStyles : null;
+
+	const variants = variantsLibrary.fadeInAndUp;
+	variants.initial.translateY = distance;
+
+  return (
+		<Tag
+			initial="initial"
 			animate="animate"
-			exit={reverseOnExit ? "exit" : null}
 			transition={{ duration: 0.3, delay }}
-			variants={{
-				hidden: { opacity: 0, translateY: distance },
-				animate: { opacity: 1, translateY: 0 },
-				exit: { opacity: 0, translateY: distance }
-			}}
+			className={className}
+			variants={variants}
+			style={styles}
+		>
+			{children}
+		</Tag>
+  );
+}
+
+export const FadeInAndDown = ({
+	tag = "div", 
+	children, 
+	delay, 
+	distance = 20
+}) => {
+	const Tag = m[tag];
+
+	const variants = variantsLibrary.fadeInAndDown;
+	variants.initial.translateY = distance;
+
+  return (
+		<Tag
+			initial="initial"
+			animate="animate"
+			transition={{ duration: 0.3, delay }}
+			variants={variants}
 			style={defaultStyles}
 		>
 			{children}
-		</m.div>
+		</Tag>
+  );
+}
+
+export const Stagger = ({
+	parent = { tag: "ul", className: null },
+	child = { tag: "li", className: null },
+	style = null,
+	staggerBy = 0.15,
+	staggerDelay = 0,
+	children
+}) => {
+	const ParentTag = m[parent.tag];
+	const ChildTag = m[child.tag];
+
+	const parentAttributes = {
+		style,
+		initial: "initial",
+		animate: "animate",
+		transition: { staggerChildren: staggerBy, delay: staggerDelay },
+		className: parent.className,
+	}
+
+	return (
+		<ParentTag {...parentAttributes}>
+			{children.map((childElement) =>  (
+				<ChildTag
+					variants={variantsLibrary.stagger}
+					key={childElement.props["data-key"]}
+					className={child.className}
+				>
+					{childElement}
+				</ChildTag>
+			))}
+		</ParentTag>
   );
 }
 
@@ -52,16 +181,7 @@ export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, sp
 
 	const handleAnimationComplete = () => setAnimationComplete(true);
 
-	const variants = {
-		initial: {
-			opacity: 0,
-			top: "3rem",
-		},
-		animate: {
-			opacity: 1,
-			top: 0,
-		},
-	}
+	const variants = variantsLibrary.staggeredReveal
 
 	const styles = {
 		wrapperSpan: {
