@@ -1,4 +1,160 @@
 {
+    "about": [
+        {
+            "_createdAt": "2021-12-28T18:42:53Z",
+            "_id": "78cc970e-5846-4a22-9e3c-02295de1e0bf",
+            "_rev": "Oysj875UTxs0artuxkUaLT",
+            "_type": "about",
+            "_updatedAt": "2022-01-04T11:49:53Z",
+            "body": [
+                {
+                    "_key": "9fb0a86abb06",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "16b6f3166672",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "I'm San'Quan Prioleau and I enjoy creating things. Now I get to build on the web!"
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                },
+                {
+                    "_key": "8decc6dc1d95",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "a8633837823f0",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "I studied "
+                        },
+                        {
+                            "_key": "a8633837823f1",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "engineering"
+                        },
+                        {
+                            "_key": "a8633837823f2",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " and started work in that industry following college. While working as an engineer, I was learning "
+                        },
+                        {
+                            "_key": "a8633837823f3",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "graphic design"
+                        },
+                        {
+                            "_key": "a8633837823f4",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " and ran a small design business."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                },
+                {
+                    "_key": "43c87ca9eaba",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "cfc960c87cc60",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "I then had an opportunity to build on my design background and gain "
+                        },
+                        {
+                            "_key": "cfc960c87cc61",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "UX design"
+                        },
+                        {
+                            "_key": "cfc960c87cc62",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " experience as part of the "
+                        },
+                        {
+                            "_key": "cfc960c87cc63",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "Web Services"
+                        },
+                        {
+                            "_key": "cfc960c87cc64",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " group for an academic institution. Thankfully, this gave me an opportunity to build on my interest for making things on the web."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                },
+                {
+                    "_key": "582ccb08fd2c",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "41a64c9ac5980",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Fast-forward to today and I am a "
+                        },
+                        {
+                            "_key": "41a64c9ac5981",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "frontend web developer"
+                        },
+                        {
+                            "_key": "41a64c9ac5982",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " designing and building web applications with JavaScript technologies."
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-7852aaab0f89a5714990c5c88d8069dea8fcb110-800x800-png",
+                    "_type": "reference"
+                }
+            },
+            "title": "About Section"
+        }
+    ],
+    "contact": [
+        {
+            "_createdAt": "2021-12-28T03:11:32Z",
+            "_id": "f95ad184-b4c4-4e3d-9e31-2a44ef42d3f5",
+            "_rev": "5HHceZ3LuAltt4AEKlbBK8",
+            "_type": "contact",
+            "_updatedAt": "2021-12-28T20:39:01Z",
+            "email": "sq.prioleau@gmail.com",
+            "overline": "You can find me at"
+        }
+    ],
     "employers": [
         {
             "_createdAt": "2021-12-24T23:12:34Z",
@@ -73,9 +229,9 @@
         {
             "_createdAt": "2021-12-25T02:18:04Z",
             "_id": "79320cc2-0a09-4f0a-9727-6cde838c876f",
-            "_rev": "5HHceZ3LuAltt4AEKgaaXU",
+            "_rev": "Oysj875UTxs0artuxkTkix",
             "_type": "experience",
-            "_updatedAt": "2021-12-27T21:12:19Z",
+            "_updatedAt": "2022-01-04T11:45:08Z",
             "currentlyInRole": true,
             "employer": {
                 "_createdAt": "2021-12-25T02:16:24Z",
@@ -120,7 +276,7 @@
                             "marks": [
                                 "em"
                             ],
-                            "text": "Mentor and advise"
+                            "text": "Mentored and advised"
                         },
                         {
                             "_key": "c60baa54b437",
@@ -133,15 +289,69 @@
                     "listItem": "bullet",
                     "markDefs": [],
                     "style": "normal"
+                },
+                {
+                    "_key": "ccad32901f12",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "e975c167767b",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "Implemented modern React patterns"
+                        },
+                        {
+                            "_key": "a48f61bd8e5a",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " (Hooks, Redux) to strengthen existing student codebases"
+                        }
+                    ],
+                    "level": 1,
+                    "listItem": "bullet",
+                    "markDefs": [],
+                    "style": "normal"
+                },
+                {
+                    "_key": "b2678e70cc75",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "0776cb46d2f6",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Contributed to "
+                        },
+                        {
+                            "_key": "38622159540d",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "development of end-to-end testing suite"
+                        },
+                        {
+                            "_key": "d7edab12bfcb",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " and review of full-stack instructional materials for forthcoming Coursera course in collaboration with Computer Science department"
+                        }
+                    ],
+                    "level": 1,
+                    "listItem": "bullet",
+                    "markDefs": [],
+                    "style": "normal"
                 }
             ]
         },
         {
             "_createdAt": "2021-12-24T23:17:20Z",
             "_id": "bc56b217-04d5-43a5-ab36-1db5349a992d",
-            "_rev": "iW9E2VHPSn2pdpAHvXAgpw",
+            "_rev": "5HHceZ3LuAltt4AELKAlHa",
             "_type": "experience",
-            "_updatedAt": "2021-12-27T21:12:48Z",
+            "_updatedAt": "2022-01-04T11:48:00Z",
             "currentlyInRole": true,
             "employer": {
                 "_createdAt": "2021-12-24T23:12:34Z",
@@ -179,7 +389,39 @@
                     "_type": "block",
                     "children": [
                         {
-                            "_key": "1f870c5fcf100",
+                            "_key": "4dda9f4ef586",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "Led user-centered design and development"
+                        },
+                        {
+                            "_key": "292b0d2f43dc",
+                            "_type": "span",
+                            "marks": [],
+                            "text": " process for replacing legacy Dartmouth account management technology, "
+                        },
+                        {
+                            "_key": "dc7571b1beeb",
+                            "_type": "span",
+                            "marks": [
+                                "em"
+                            ],
+                            "text": "improving account security and recoverabilty"
+                        }
+                    ],
+                    "level": 1,
+                    "listItem": "bullet",
+                    "markDefs": [],
+                    "style": "normal"
+                },
+                {
+                    "_key": "348ae7ce2a60",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "ffd77b5b5e54",
                             "_type": "span",
                             "marks": [
                                 "em"
@@ -236,7 +478,7 @@
                             "_key": "ebf2af1503d3",
                             "_type": "span",
                             "marks": [],
-                            "text": "Collaborate with developers using Git and other technologies to enhance functionality on existing Dartmouth websites"
+                            "text": "Collaborate with developers using Git and other collaboration technologies to enhance existing Dartmouth websites"
                         }
                     ],
                     "level": 1,
@@ -249,9 +491,9 @@
         {
             "_createdAt": "2021-12-25T02:09:51Z",
             "_id": "de26a5f4-dab5-472c-a637-ecc29abe29ba",
-            "_rev": "iW9E2VHPSn2pdpAHvXAcl4",
+            "_rev": "iW9E2VHPSn2pdpAHw60U4E",
             "_type": "experience",
-            "_updatedAt": "2021-12-27T21:12:31Z",
+            "_updatedAt": "2022-01-04T11:37:05Z",
             "currentlyInRole": true,
             "employer": {
                 "_createdAt": "2021-12-24T23:12:34Z",
@@ -746,13 +988,93 @@
             ]
         }
     ],
+    "footer": [
+        {
+            "_createdAt": "2021-12-28T03:16:17Z",
+            "_id": "3b91938b-1930-4af0-8d9f-28f451a08ead",
+            "_rev": "Oysj875UTxs0artuxZ9Bk3",
+            "_type": "footer",
+            "_updatedAt": "2021-12-28T03:17:41Z",
+            "body": [
+                {
+                    "_key": "b1790b9d1e45",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "d79eabe7517b",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Designed and Built by "
+                        },
+                        {
+                            "_key": "aa49ddf61a5e",
+                            "_type": "span",
+                            "marks": [
+                                "30452ddfec27"
+                            ],
+                            "text": "San'Quan Prioleau"
+                        },
+                        {
+                            "_key": "23f91bafe2a8",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "."
+                        }
+                    ],
+                    "markDefs": [
+                        {
+                            "_key": "30452ddfec27",
+                            "_type": "link",
+                            "href": "https://github.com/sprioleau"
+                        }
+                    ],
+                    "style": "normal"
+                },
+                {
+                    "_key": "d5a915d51f0b",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "74f2cd0627da0",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Inspired by "
+                        },
+                        {
+                            "_key": "74f2cd0627da1",
+                            "_type": "span",
+                            "marks": [
+                                "a22c74fc4fdd"
+                            ],
+                            "text": "brittanychiang.com"
+                        },
+                        {
+                            "_key": "6a0a470430be",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "."
+                        }
+                    ],
+                    "markDefs": [
+                        {
+                            "_key": "a22c74fc4fdd",
+                            "_type": "link",
+                            "href": "https://brittanychiang.com/"
+                        }
+                    ],
+                    "style": "normal"
+                }
+            ],
+            "sectionName": "Footer"
+        }
+    ],
     "hero": [
         {
             "_createdAt": "2021-12-27T18:44:19Z",
             "_id": "9d79c115-1fcc-4336-9e40-2d28325dcf33",
-            "_rev": "5HHceZ3LuAltt4AEKlXRxL",
+            "_rev": "iW9E2VHPSn2pdpAHvpD5Am",
             "_type": "hero",
-            "_updatedAt": "2021-12-28T20:32:34Z",
+            "_updatedAt": "2021-12-31T21:15:33Z",
             "advanceToSectionSlug": "about",
             "brief": [
                 {
@@ -849,151 +1171,6 @@
             "subHeading": "I design and build things for the web."
         }
     ],
-    "about": [
-        {
-            "_createdAt": "2021-12-28T18:42:53Z",
-            "_id": "78cc970e-5846-4a22-9e3c-02295de1e0bf",
-            "_rev": "iW9E2VHPSn2pdpAHvbGEeo",
-            "_type": "about",
-            "_updatedAt": "2021-12-28T19:36:23Z",
-            "body": [
-                {
-                    "_key": "9fb0a86abb06",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "16b6f3166672",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "I'm San'Quan Prioleau and I enjoy creating things. Now I get to build on the web!"
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                },
-                {
-                    "_key": "8decc6dc1d95",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "a8633837823f0",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "I studied "
-                        },
-                        {
-                            "_key": "a8633837823f1",
-                            "_type": "span",
-                            "marks": [
-                                "em"
-                            ],
-                            "text": "engineering"
-                        },
-                        {
-                            "_key": "a8633837823f2",
-                            "_type": "span",
-                            "marks": [],
-                            "text": " and started work in that industry following college. While working as an engineer, I was learning "
-                        },
-                        {
-                            "_key": "a8633837823f3",
-                            "_type": "span",
-                            "marks": [
-                                "em"
-                            ],
-                            "text": "graphic design"
-                        },
-                        {
-                            "_key": "a8633837823f4",
-                            "_type": "span",
-                            "marks": [],
-                            "text": " and ran a small design business."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                },
-                {
-                    "_key": "43c87ca9eaba",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "cfc960c87cc60",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "I then had an opportunity to build on my design background and gain "
-                        },
-                        {
-                            "_key": "cfc960c87cc61",
-                            "_type": "span",
-                            "marks": [
-                                "em"
-                            ],
-                            "text": "UX design"
-                        },
-                        {
-                            "_key": "cfc960c87cc62",
-                            "_type": "span",
-                            "marks": [],
-                            "text": " experience as part of the "
-                        },
-                        {
-                            "_key": "cfc960c87cc63",
-                            "_type": "span",
-                            "marks": [
-                                "em"
-                            ],
-                            "text": "Web Services"
-                        },
-                        {
-                            "_key": "cfc960c87cc64",
-                            "_type": "span",
-                            "marks": [],
-                            "text": " group for an academic institution. Thankfully, this gave me an opportunity to build on my interest for making things on the web."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                },
-                {
-                    "_key": "582ccb08fd2c",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "41a64c9ac5980",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Fast-forward to today and I am a "
-                        },
-                        {
-                            "_key": "41a64c9ac5981",
-                            "_type": "span",
-                            "marks": [
-                                "em"
-                            ],
-                            "text": "frontend web developer"
-                        },
-                        {
-                            "_key": "41a64c9ac5982",
-                            "_type": "span",
-                            "marks": [],
-                            "text": " designing and building web applications with JavaScript technologies."
-                        }
-                    ],
-                    "markDefs": [],
-                    "style": "normal"
-                }
-            ],
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_ref": "image-7852aaab0f89a5714990c5c88d8069dea8fcb110-800x800-png",
-                    "_type": "reference"
-                }
-            },
-            "title": "About Section"
-        }
-    ],
     "navLinks": [
         {
             "_createdAt": "2021-12-28T10:56:49Z",
@@ -1055,9 +1232,9 @@
         {
             "_createdAt": "2021-12-27T21:32:37Z",
             "_id": "Oysj875UTxs0artuxYpZYh",
-            "_rev": "5HHceZ3LuAltt4AEKq27Ij",
+            "_rev": "Oysj875UTxs0artuxkWVcN",
             "_type": "project",
-            "_updatedAt": "2021-12-29T16:58:51Z",
+            "_updatedAt": "2022-01-04T12:10:49Z",
             "builtFor": {
                 "_createdAt": "2021-12-27T21:41:24Z",
                 "_id": "5ae7066c-6eba-4932-8aaf-9abc6f01cfc3",
@@ -1093,7 +1270,7 @@
                             "_key": "cb7c5ae993c6",
                             "_type": "span",
                             "marks": [],
-                            "text": "I worked on this for a long time, averages ___ visits per week, built-in means for giving feedback. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, recusandae! Fuga illum eligendi suscipit reiciendis et dignissimos deleniti iure cupiditate."
+                            "text": "Designed and built a custom online dining menu experience to serve Dartmouth students. This site has rich set of features (including search, favorites and images) over and above the standard vendor-provided website and averages 5.8k visits per week."
                         }
                     ],
                     "markDefs": [],
@@ -1141,7 +1318,7 @@
                 }
             ],
             "title": "Dartmouth Dining Menu",
-            "yearBuilt": "2020"
+            "yearBuilt": "2021-09-01"
         },
         {
             "_createdAt": "2021-12-27T21:32:37Z",
@@ -1449,9 +1626,9 @@
         {
             "_createdAt": "2021-12-27T21:32:37Z",
             "_id": "Oysj875UTxs0artuxYpZZx",
-            "_rev": "iW9E2VHPSn2pdpAHvY9YEs",
+            "_rev": "5HHceZ3LuAltt4AELKILaZ",
             "_type": "project",
-            "_updatedAt": "2021-12-28T03:10:26Z",
+            "_updatedAt": "2022-01-04T12:15:18Z",
             "builtFor": null,
             "builtWith": [
                 {
@@ -1504,7 +1681,7 @@
                             "_key": "a96b8a6af948",
                             "_type": "span",
                             "marks": [],
-                            "text": "The most beautiful way to see HTML colors in context."
+                            "text": "The most beautiful way to see colors in context. This project is a reference for HTML colors (viewed as Pantone-like swatches). It combines Next.js static site generation with the Unsplash API to bring images that match the selected swatch."
                         }
                     ],
                     "markDefs": [],
@@ -1512,6 +1689,7 @@
                 }
             ],
             "emoji": "🎨",
+            "isFeatured": true,
             "links": {
                 "deployedUrl": "https://html-swatches.vercel.app/",
                 "gitHubUrl": "https://github.com/sprioleau/swatches",
@@ -1524,6 +1702,7 @@
                     "_type": "reference"
                 }
             },
+            "order": 5,
             "tags": [
                 {
                     "_createdAt": "2021-12-27T21:15:43Z",
@@ -1544,6 +1723,106 @@
             ],
             "title": "Swatches",
             "yearBuilt": "2021-01-01"
+        },
+        {
+            "_createdAt": "2022-01-04T14:51:27Z",
+            "_id": "a7fce4c8-448e-4287-96e3-16d3c71e43f1",
+            "_rev": "5HHceZ3LuAltt4AELLS10t",
+            "_type": "project",
+            "_updatedAt": "2022-01-04T14:51:27Z",
+            "builtFor": {
+                "_createdAt": "2021-12-27T21:04:48Z",
+                "_id": "aef9ac12-3b08-48a4-bb77-1674bacb303b",
+                "_rev": "iW9E2VHPSn2pdpAHvX98xa",
+                "_type": "association",
+                "_updatedAt": "2021-12-27T21:04:48Z",
+                "name": "Coursera Course"
+            },
+            "builtWith": [
+                {
+                    "_createdAt": "2022-01-04T14:44:47Z",
+                    "_id": "e4693af3-9ec1-41ab-86fe-25c28c69ddbe",
+                    "_rev": "5HHceZ3LuAltt4AELLNzvx",
+                    "_type": "technology",
+                    "_updatedAt": "2022-01-04T14:44:47Z",
+                    "name": "Giphy API"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42ez",
+                    "_rev": "Oysj875UTxs0artuxZ42dj",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-28T01:34:22Z",
+                    "_id": "Oysj875UTxs0artuxZ42lH",
+                    "_rev": "Oysj875UTxs0artuxZ42hV",
+                    "_type": "technology",
+                    "_updatedAt": "2021-12-28T01:34:22Z",
+                    "name": "Redux"
+                }
+            ],
+            "description": [
+                {
+                    "_key": "11db5bcb3b25",
+                    "_type": "block",
+                    "children": [
+                        {
+                            "_key": "f52b301d1810",
+                            "_type": "span",
+                            "marks": [],
+                            "text": "Search GIFs and Stickers to your ❤️'s content"
+                        }
+                    ],
+                    "markDefs": [],
+                    "style": "normal"
+                }
+            ],
+            "emoji": "🪐",
+            "isFeatured": false,
+            "links": {
+                "deployedUrl": "https://gifiverse.netlify.app/",
+                "gitHubUrl": "https://github.com/sprioleau/gifiverse",
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/gifiverse"
+            },
+            "mainImage": {
+                "_type": "image",
+                "asset": {
+                    "_ref": "image-4bf8928721d85902013abe66678ae9cf81dadea0-2560x1430-png",
+                    "_type": "reference"
+                }
+            },
+            "publishedAt": "2022-01-04T11:54:48.140Z",
+            "tags": [
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "iW9E2VHPSn2pdpAHvXB78O",
+                    "_rev": "iW9E2VHPSn2pdpAHvXB74c",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "React"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "5HHceZ3LuAltt4AEKgbFNg",
+                    "_rev": "5HHceZ3LuAltt4AEKgbFJN",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "Redux"
+                },
+                {
+                    "_createdAt": "2021-12-27T21:15:43Z",
+                    "_id": "Oysj875UTxs0artuxYoQZz",
+                    "_rev": "Oysj875UTxs0artuxYoQWD",
+                    "_type": "tag",
+                    "_updatedAt": "2021-12-27T21:15:43Z",
+                    "name": "API"
+                }
+            ],
+            "title": "Gifiverse",
+            "yearBuilt": "2021-09-21"
         },
         {
             "_createdAt": "2021-12-29T11:22:55Z",
@@ -2388,6 +2667,36 @@
             "yearBuilt": "2019-01-01"
         }
     ],
+    "siteDetails": [
+        {
+            "_createdAt": "2021-12-29T17:29:25Z",
+            "_id": "b3416224-64a1-45a6-a9fd-5633cbf0eeda",
+            "_rev": "5HHceZ3LuAltt4AEKqIK5r",
+            "_type": "siteDetails",
+            "_updatedAt": "2021-12-29T18:02:03Z",
+            "creator": {
+                "email": "sq.prioleau@gmail.com",
+                "links": {
+                    "gitHubUrl": "https://github.com/sprioleau"
+                },
+                "name": "San'Quan Prioleau"
+            },
+            "meta": {
+                "deployedUrl": "https://sprioleau.dev",
+                "description": "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
+                "gitHubUrl": "https://github.com/sprioleau/sprioleau.dev",
+                "mainImage": {
+                    "_type": "image",
+                    "asset": {
+                        "_ref": "image-7c50613fb3e78ff3d0c7de170a3ac976f989704f-1200x628-png",
+                        "_type": "reference"
+                    }
+                },
+                "vsCodeUrl": "https://vscode.dev/github/sprioleau/sprioleau.dev"
+            },
+            "siteName": "S. Prioleau"
+        }
+    ],
     "skills": [
         {
             "_createdAt": "2021-12-29T01:48:53Z",
@@ -2746,127 +3055,6 @@
             "iconKey": "sass",
             "publishedAt": "2021-12-27T20:28:40.224Z",
             "techName": "Sass"
-        }
-    ],
-    "siteDetails": [
-        {
-            "_createdAt": "2021-12-29T17:29:25Z",
-            "_id": "b3416224-64a1-45a6-a9fd-5633cbf0eeda",
-            "_rev": "5HHceZ3LuAltt4AEKqIK5r",
-            "_type": "siteDetails",
-            "_updatedAt": "2021-12-29T18:02:03Z",
-            "creator": {
-                "email": "sq.prioleau@gmail.com",
-                "links": {
-                    "gitHubUrl": "https://github.com/sprioleau"
-                },
-                "name": "San'Quan Prioleau"
-            },
-            "meta": {
-                "deployedUrl": "https://sprioleau.dev",
-                "description": "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
-                "gitHubUrl": "https://github.com/sprioleau/sprioleau.dev",
-                "mainImage": {
-                    "_type": "image",
-                    "asset": {
-                        "_ref": "image-7c50613fb3e78ff3d0c7de170a3ac976f989704f-1200x628-png",
-                        "_type": "reference"
-                    }
-                },
-                "vsCodeUrl": "https://vscode.dev/github/sprioleau/sprioleau.dev"
-            },
-            "siteName": "S. Prioleau"
-        }
-    ],
-    "contact": [
-        {
-            "_createdAt": "2021-12-28T03:11:32Z",
-            "_id": "f95ad184-b4c4-4e3d-9e31-2a44ef42d3f5",
-            "_rev": "5HHceZ3LuAltt4AEKlbBK8",
-            "_type": "contact",
-            "_updatedAt": "2021-12-28T20:39:01Z",
-            "email": "sq.prioleau@gmail.com",
-            "overline": "You can find me at"
-        }
-    ],
-    "footer": [
-        {
-            "_createdAt": "2021-12-28T03:16:17Z",
-            "_id": "3b91938b-1930-4af0-8d9f-28f451a08ead",
-            "_rev": "Oysj875UTxs0artuxZ9Bk3",
-            "_type": "footer",
-            "_updatedAt": "2021-12-28T03:17:41Z",
-            "body": [
-                {
-                    "_key": "b1790b9d1e45",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "d79eabe7517b",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Designed and Built by "
-                        },
-                        {
-                            "_key": "aa49ddf61a5e",
-                            "_type": "span",
-                            "marks": [
-                                "30452ddfec27"
-                            ],
-                            "text": "San'Quan Prioleau"
-                        },
-                        {
-                            "_key": "23f91bafe2a8",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "."
-                        }
-                    ],
-                    "markDefs": [
-                        {
-                            "_key": "30452ddfec27",
-                            "_type": "link",
-                            "href": "https://github.com/sprioleau"
-                        }
-                    ],
-                    "style": "normal"
-                },
-                {
-                    "_key": "d5a915d51f0b",
-                    "_type": "block",
-                    "children": [
-                        {
-                            "_key": "74f2cd0627da0",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "Inspired by "
-                        },
-                        {
-                            "_key": "74f2cd0627da1",
-                            "_type": "span",
-                            "marks": [
-                                "a22c74fc4fdd"
-                            ],
-                            "text": "brittanychiang.com"
-                        },
-                        {
-                            "_key": "6a0a470430be",
-                            "_type": "span",
-                            "marks": [],
-                            "text": "."
-                        }
-                    ],
-                    "markDefs": [
-                        {
-                            "_key": "a22c74fc4fdd",
-                            "_type": "link",
-                            "href": "https://brittanychiang.com/"
-                        }
-                    ],
-                    "style": "normal"
-                }
-            ],
-            "sectionName": "Footer"
         }
     ]
 }
