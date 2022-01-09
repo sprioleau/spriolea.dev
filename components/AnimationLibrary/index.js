@@ -45,36 +45,6 @@ export const FadeInWhenVisible = ({
 	const styles = useDefaultStyles ? defaultStyles : null;
 
   return (
-	<Tag
-    initial="initial"
-    whileInView="whileInView"
-    viewport={{ once: true, margin: offset }}
-    transition={{ duration: 0.5 }}
-		variants={variants}
-		style={styles}
-		className={className}
-  >
-		{children}
-	</Tag>
-  );
-}
-
-export const FadeInRowWhenVisible = ({
-	tag = "div", 
-	offset = "0%", 
-	useDefaultStyles = true, 
-	className, 
-	distance = 25, 
-	children
-}) => {
-	const variants = variantsLibrary.fadeInWhenVisible;
-	variants.initial.translateY = distance;
-
-	const Tag = m[tag];
-
-	const styles = useDefaultStyles ? defaultStyles : null;
-
-  return (
 		<Tag
 			initial="initial"
 			whileInView="whileInView"
@@ -95,7 +65,7 @@ export const FadeInAndUp = ({
 	children, 
 	delay, 
 	useDefaultStyles = true, 
-	distance = 20
+	distance = 20,
 }) => {
 	const Tag = m[tag];
 
@@ -148,6 +118,8 @@ export const Stagger = ({
 	style = null,
 	staggerBy = 0.15,
 	staggerDelay = 0,
+	delayWithIndex = false,
+	indexDelay = 0.15,
 	children
 }) => {
 	const ParentTag = m[parent.tag];
@@ -157,15 +129,17 @@ export const Stagger = ({
 		style,
 		initial: "initial",
 		animate: "animate",
-		transition: { staggerChildren: staggerBy, delay: staggerDelay },
+		whileInView: "whileInView",
+		transition: { staggerChildren: !delayWithIndex ? staggerBy : null, delay: staggerDelay },
 		className: parent.className,
 	}
 
 	return (
 		<ParentTag {...parentAttributes}>
-			{children.map((childElement) =>  (
+			{children.map((childElement, index) =>  (
 				<ChildTag
 					variants={variantsLibrary.stagger}
+					transition={{ delay: delayWithIndex ? index * indexDelay : null }}
 					key={childElement.props["data-key"]}
 					className={child.className}
 				>

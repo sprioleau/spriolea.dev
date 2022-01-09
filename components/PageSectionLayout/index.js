@@ -6,7 +6,7 @@ const PageSectionLayout = ({ sectionId, sectionTitle, center = false, offset, ch
   return (
     <section className={`${sectionId} section`}>
       <div id={sectionId} className="marker" />
-      <FadeInWhenVisible offset={offset} >
+      <FadeInWhenVisible offset={offset}>
           <div className="container">
             <SectionHeader sectionTitle={sectionTitle} center={center} />
             <div className={`${sectionId}__main-content`}>

@@ -1,11 +1,11 @@
 /* eslint-disable react/no-danger */
 import React from "react"
-import { motion as m } from "framer-motion"
 import { FiArrowDown } from "react-icons/fi";
 import { formatJobDates } from "../../utils";
 import TabLabel from "./components/TabLabel";
 import PortableTextBlock from "../PortableTextBlock";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
+import { Stagger } from "../AnimationLibrary";
 
 const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
@@ -33,17 +33,6 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 	
 	const handleUpdateCurrentTab = React.useCallback((index) => handleSelect(index), []);
 	  
-	const variants = {
-		initial: {
-			opacity: 0,
-			translateY: 20,
-		},
-		animate: {
-			opacity: 1,
-			translateY: 0,
-		},
-	}
-	
 	const { jobTitle, fromDate, toDate, currentlyInRole, employer } = experience[currentTabIndex];
 
 	const formattedDates = formatJobDates(fromDate, toDate, currentlyInRole);
@@ -79,25 +68,20 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 								<span className="tab-list__role">{jobTitle}</span> <span className="tab-list__employer">@ {employer.name}</span>
 							</h4>
 							<p className="tab-list__dates">{formattedDates}</p>
-						</header>
-							<m.ul
-								className="tab-list__work-list"
-								initial="initial"
-								animate="animate"							
-							>
-								{experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }, index) => (
-									<m.li
-										key={_key}
-										className="tab-list__work-list-item"
-										variants={variants}
-										transition={{ delay: index * 0.15, duration: 0.3 }}
-									>
-										<p>
-											<PortableTextBlock childrenContent={children} markDefs={markDefs} />
-										</p>
-									</m.li>
-								))}
-							</m.ul>
+					</header>
+						<Stagger
+							parent={{ tag: "ul", className: "tab-list__work-list" }}
+							child={{ tag: "li", className: "tab-list__work-list-item" }}
+							staggerBy={0.5}
+							staggerDelay={1}
+							delayWithIndex
+						>
+							{experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }, index) => (
+									<p key={_key} data-key={_key}> 
+										<PortableTextBlock childrenContent={children} markDefs={markDefs} />
+									</p>
+							))}
+						</Stagger>
 					</div>
 			</div>
 		</div>

@@ -4,7 +4,7 @@ import { HiOutlineCode } from "react-icons/hi"
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 import { formatIsoDate, sortByYearAndTitle } from "../../utils";
 import sortAlphaByKey from "../../utils/sortAlphaByKey";
-import { FadeInRowWhenVisible } from "../AnimationLibrary";
+import { FadeInWhenVisible } from "../AnimationLibrary";
 
 const OtherWork = ({ projects }) => {
 	const { windowSize } = useWindowSize();
@@ -45,7 +45,7 @@ const OtherWork = ({ projects }) => {
 			</thead>
 			<tbody>
 				{projects.sort(sortByYearAndTitle).map(({ yearBuilt, title, builtFor, builtWith, links }) => (
-					<FadeInRowWhenVisible key={title} tag="tr" className="other-work__row" useDefaultStyles={false}>
+					<FadeInWhenVisible key={title} tag="tr" className="other-work__row" useDefaultStyles={false} distance={25}>
 						<td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
 						<td>{title}</td>
 						{!smallerThanMedium && <td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>}
@@ -55,7 +55,7 @@ const OtherWork = ({ projects }) => {
 								{renderLinks(links)}
 							</ul>
 						</td>
-					</FadeInRowWhenVisible>
+					</FadeInWhenVisible>
 					))}
 			</tbody>
 		</table>
