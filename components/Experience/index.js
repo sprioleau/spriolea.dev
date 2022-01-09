@@ -10,11 +10,13 @@ const Experience = ({ experience }) => {
 	const tabListData = [
 		{
 			label: "Web Development",
+			id: "web-development",
 			showSublabel: true,
 			expandByDefault: true,
 		},
 		{
 			label: "Engineering",
+			id: "engineering",
 			showSublabel: false,
 			expandByDefault: false,
 		},
@@ -22,10 +24,10 @@ const Experience = ({ experience }) => {
 
   return (
 		<PageSectionLayout sectionId="experience" sectionTitle="Experience">
-			{tabListData.map(({ label, showSublabel, expandByDefault }) => (
+			{tabListData.map(({ id, label, showSublabel, expandByDefault }) => (
 				<TabList
 					key={label}
-					id={label.toLowerCase().replaceAll(" ", "-")}
+					id={id}
 					label={label}
 					experience={experienceByType[label]}
 					showSublabel={showSublabel}
