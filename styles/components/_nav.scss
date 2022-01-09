@@ -1,10 +1,12 @@
 .nav {
   @include ff-mono;
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   z-index: 10;
   font-size: 0.8em;
   letter-spacing: 1px;
-  padding: var(--nav-padding) var(--section-x-padding);
+  padding: var(--nav-padding) calc(var(--section-x-padding) / 2);
   background: linear-gradient(to bottom, rgba(var(--ui-bg-rgb), 0.95), rgba(var(--ui-bg-rgb), 0));
   backdrop-filter: blur(10px);
   margin-top: 2px;
@@ -130,6 +132,7 @@
     &__links-wrapper {
       --translateX: 100%;
       @include transition;
+      transition-property: transform;
       position: fixed;
       opacity: 0;
       flex-direction: column;

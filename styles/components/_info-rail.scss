@@ -6,7 +6,7 @@
   position: fixed;
   align-items: flex-end;
   bottom: 0;
-  width: calc(var(--section-x-padding) / 2);
+  width: calc(var(--section-x-padding) / var(--denominator));
   z-index: 10;
 
   &.left {
