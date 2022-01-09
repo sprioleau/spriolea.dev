@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React from "react";
 
 export const breakpoints = {
 	sm: 600,
@@ -21,24 +21,36 @@ const getBreakPoint = (windowWidth) => {
 };
 
 const useWindowSize = () => {
-	const isWindowClient = typeof window !== "undefined" && typeof window === "object";
+	// const initialState = { windowSize: null, breakpoint: "" }
+	const [hasMounted, setHasMounted] = React.useState(false);
+	const [windowSize, setWindowSize] = React.useState(hasMounted ? window.innerWidth : null);
+	const [breakpoint, setBreakpoint] = React.useState("");
+	// const [windowSize, setWindowSize] = React.useState(initialState.windowSize);
+	// const [breakpoint, setBreakpoint] = React.useState(initialState.breakpoint);
+  
+	React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+	// const isWindowClient = typeof window !== "undefined" && typeof window === "object";
+	// const [windowSize, setWindowSize] = React.useState(isWindowClient ? window.innerWidth : undefined);
 
-	const [windowSize, setWindowSize] = useState(isWindowClient ? window.innerWidth : undefined);
-	const [breakpoint, setBreakpoint] = useState("");
-
-	useEffect(() => {
+	React.useEffect(() => {
 		function setSize() {
 			setWindowSize(window.innerWidth);
 			setBreakpoint(getBreakPoint(window.innerWidth));
 		}
 
-		if (isWindowClient) {
+		// if (hasMounted) {
 			window.addEventListener("resize", setSize);
 			return () => window.removeEventListener("resize", setSize);
-		}
+		// }
 
-		return null;
-	}, [isWindowClient, setWindowSize]);
+		// return null;
+	}, [setWindowSize]);
+	// }, [setWindowSize, hasMounted]);
+
+	// if (!hasMounted) return { windowSize: initialState.windowSize, breakpoint: initialState.breakpoint };
+	// if (!hasMounted) return { windowSize: initialState.windowSize, breakpoint: initialState.breakpoint };
 
 	return { windowSize, breakpoint };
 };
