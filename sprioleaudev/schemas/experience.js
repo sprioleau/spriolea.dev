@@ -52,6 +52,11 @@ export default {
       type: "boolean",
     },
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+    },
+    {
       name: "location",
       title: "Location",
       type: "string",
