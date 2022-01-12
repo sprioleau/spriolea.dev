@@ -17,7 +17,7 @@ export const urlFor = (source) => {
 
 const queries = {
   employers: "*[_type == \"employer\"]",
-  experience: "*[_type == \"experience\"] | order(fromDate desc) { ..., employer->, jobType-> }",
+  experience: "*[_type == \"experience\"] | order(fromDate desc, order asc) { ..., employer->, jobType-> }",
   hero: "*[_type == \"hero\"]",
   about: "*[_type == \"about\"]",
   navLinks: "*[_type == \"navLink\"] | order(order asc)",

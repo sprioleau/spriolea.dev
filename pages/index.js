@@ -1,9 +1,9 @@
 import React from "react"
 import Head from "next/head";
-import axios from "axios";
 import { InfoRails, Nav, Main, Footer } from "../components";
 import getData from "../libs/sanity";
 import CONFIG from "../config";
+import apiStaticData from "../data/apiStaticData";
 
 const Home = ({ data }) => {
 	const { navLinks, footer, siteDetails } = data;
@@ -31,7 +31,7 @@ export const getStaticProps = async (context) => {
 	
 	const fetchData = () => {
 		if (isDevelopment && !CONFIG.USE_API) {
-			return axios.get("http://localhost:3000/data/apiSampleData.json");
+			return { data: apiStaticData };
 		} else {
 			return getData()
 		}
