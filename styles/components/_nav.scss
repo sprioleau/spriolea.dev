@@ -29,6 +29,7 @@
     padding: 1rem;
     transform: rotate(var(--rotation));
     z-index: 25;
+    width: 4rem;
 
     &::after {
       display: none;
@@ -137,10 +138,6 @@
   .nav {
     .nav-expanded & {
       backdrop-filter: none;
-    }
-
-    &__logo {
-      justify-self: flex-start;
     }
 
     &__links-wrapper {
