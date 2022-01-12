@@ -4,7 +4,6 @@
 
 # San'Quan Prioleau
 
-## About
 San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.
 
 🚀 [sprioleau.dev](https://sprioleau.dev/)
