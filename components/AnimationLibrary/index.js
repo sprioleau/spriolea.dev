@@ -113,8 +113,8 @@ export const FadeInAndDown = ({
 }
 
 export const Stagger = ({
-	parent = { tag: "ul", className: null },
-	child = { tag: "li", className: null },
+	parent = { tag: "ul", className: null, additionalProps: {} },
+	child = { tag: "li", className: null, additionalProps: {} },
 	style = null,
 	staggerBy = 0.15,
 	staggerDelay = 0,
@@ -132,16 +132,19 @@ export const Stagger = ({
 		whileInView: "whileInView",
 		transition: { staggerChildren: !delayWithIndex ? staggerBy : null, delay: staggerDelay },
 		className: parent.className,
+		...parent.additionalProps,
 	}
 
 	return (
 		<ParentTag {...parentAttributes}>
-			{children.map((childElement, index) =>  (
+			{children.map((childElement, index) => (
 				<ChildTag
 					variants={variantsLibrary.stagger}
 					transition={{ delay: delayWithIndex ? index * indexDelay : null }}
 					key={childElement.props["data-key"]}
+					title={childElement.props["data-title"]}
 					className={child.className}
+					{...child.additionalProps}
 				>
 					{childElement}
 				</ChildTag>
