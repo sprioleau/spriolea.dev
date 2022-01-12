@@ -1,13 +1,15 @@
 {
-  "name": "sprioleau",
+  "name": "sprioleau.dev",
   "private": true,
+  "version": "1.0.0",
+  "description": "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
+  "author": "San'Quan Prioleau <sq.prioleau@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sanity": "cd sprioleaudev && sanity start",
-    "all": "concurrently \"next dev\" \"cd sprioleaudev && sanity start\""
+    "sanity": "cd sprioleaudev && sanity start"
   },
   "dependencies": {
     "@sanity/client": "^2.23.2",
