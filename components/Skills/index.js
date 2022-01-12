@@ -27,6 +27,7 @@ const Skills = ({ skills }) => {
 									key={techName}
 									tag="li"
 									className="skills__list-item"
+									useDefaultStyles={false}
 								>
 									{iconKey && <div className="skills__icon">{icons[iconKey]}</div>}
 									<p className="skills__label">{techName}</p>
