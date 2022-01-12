@@ -60,6 +60,7 @@ const Hero = ({ content }) => {
 				className="hero__view-more"
 				tabIndex={0}
 				role="button"
+				aria-label="view more button"
 				onClick={handleAdvanceSection}
 				onKeyDown={(e) => handleKeyDown(e, handleAdvanceSection)}
 			>
