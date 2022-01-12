@@ -27,6 +27,19 @@ class MyDocument extends Document {
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 					<link rel="stylesheet" href="https://use.typekit.net/hnv6eep.css" />
 					<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
+					<script type="application/ld+json">{
+						`{
+							"@context": "http://schema.org/",
+							"@type": "WebSite",
+							"name": "S. Prioleau", 
+							"about": "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
+							"creator": {
+								"@type": "Person",
+								"givenName": "San'Quan",
+								"familyName": "Prioleau"
+							}
+						}`
+					}</script>
 				</Head>
 				<body>
 					<Main />
