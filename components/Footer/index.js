@@ -1,8 +1,9 @@
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import PortableTextBlock from "../PortableTextBlock";
 
-const Footer = ({ content, visits }) => {
-	const { body } = content[0]; 
+const Footer = ({ content, visits, pageViews }) => {
+	const { body } = content[0];
+	const views = pageViews ?? visits;
 
 	return (
 		<footer className="footer">
@@ -12,7 +13,7 @@ const Footer = ({ content, visits }) => {
 						<PortableTextBlock childrenContent={children} markDefs={markDefs} />
 					</p>
 				))}
-				<p className="footer__stat"><span>{visits}</span> <span className="icon visits-icon"><MdOutlineRemoveRedEye /></span></p>
+				{views && <p className="footer__stat"><span>{views}</span> <span className="icon visits-icon"><MdOutlineRemoveRedEye /></span></p>}
 			</div>
 		</footer>
 	);
