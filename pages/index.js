@@ -5,7 +5,7 @@ import getData from "../libs/sanity";
 import CONFIG from "../config";
 import apiStaticData from "../data/apiStaticData";
 
-const Home = ({ data }) => {
+const Home = ({ data, visits }) => {
 	const { navLinks, footer, siteDetails } = data;
 	const [navExpanded, setNavExpanded] = React.useState(false);
 
@@ -18,7 +18,7 @@ const Home = ({ data }) => {
 			<Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
 			<InfoRails siteDetails={siteDetails} />
 			<Main data={data} />
-			<Footer content={footer} />
+			<Footer content={footer} visits={visits} />
 			<div className="accent-line" />
 		</div>
 	);
@@ -36,12 +36,20 @@ export const getStaticProps = async (context) => {
 			return getData()
 		}
 	}
+	
+	const fetchVisits = async () => {
+		const response = await fetch(process.env.INCREMENT_VISITS_WORKER_URL);
+		const visits = await response.json();
+		return visits;
+	}
 
 	const { data } = await fetchData();
+	const { visits } = await fetchVisits();
 
   return {
 		props: { 
 			data,
+			visits
 		},
   }
 }

@@ -6,6 +6,10 @@
   background-color: rgba(var(--ui-bg-rgb), 0.8);
   border-bottom: 2px solid var(--ui-accent-1);
   width: 100%;
+
+  p {
+    @include ff-mono;
+  }
   
   .container {
     flex-direction: column;
@@ -14,8 +18,18 @@
   }
   
   &__message {
-    @include ff-mono;
     font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
     margin-bottom: 0;
+  }
+
+  &__stat {
+    display: flex;
+    align-items: center;
+  }
+
+  .visits-icon {
+    padding: 0;
+    margin-left: 0.5rem;
+    font-size: 1.1em;
   }
 }
