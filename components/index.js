@@ -18,3 +18,6 @@ export { default as SelectedWork } from "./SelectedWork";
 export { default as OtherWork } from "./OtherWork";
 export { default as PageSectionLayout } from "./PageSectionLayout";
 export { default as PortableTextBlock } from "./PortableTextBlock";
+export { default as StructuredData } from "./StructuredData";
+export { default as MetaTag } from "./MetaTag";
+
