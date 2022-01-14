@@ -13,7 +13,7 @@ const Hero = ({ content }) => {
 	const handleAdvanceSection = () => router.push(`#${advanceToSectionSlug}`);
 
 	const sectionDelay = 1.1;
-	
+
   return (
 	<section className="hero section">
 		<div className="container">
