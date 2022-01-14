@@ -48,8 +48,8 @@ export const fetchPageViews = async () => {
   return { pageViews };
 }
 
-export const fetchLikes = async () => {
+export const fetchClaps = async () => {
   const response = await fetch(process.env.CLOUDFLARE_WORKER_URL);
-  const likes = await response.json();
-  return likes;
+  const { claps } = await response.json();
+  return { claps };
 }

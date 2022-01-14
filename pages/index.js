@@ -1,7 +1,7 @@
 import React from "react"
 import Head from "next/head";
 import { InfoRails, Nav, Main, Footer } from "../components";
-import { fetchLikes, fetchPageViews } from "../libs/cloudflare";
+import { fetchClaps, fetchPageViews } from "../libs/cloudflare";
 import { fetchStaticSiteData } from "../libs/sanity";
 import { fetchContributions } from "../libs/github";
 
@@ -28,7 +28,7 @@ export default Home;
 
 export const getStaticProps = async (context) => {
 	const { data } = await fetchStaticSiteData();
-	const { likes } = await fetchLikes();
+	const { claps } = await fetchClaps();
 	const { pageViews } = await fetchPageViews();
 	const { contributionsInLastYear } = await fetchContributions();
 
@@ -36,7 +36,7 @@ export const getStaticProps = async (context) => {
 		props: { 
 			data,
 			footerData: {
-				likes,
+				claps,
 				pageViews,
 				contributionsInLastYear
 			}

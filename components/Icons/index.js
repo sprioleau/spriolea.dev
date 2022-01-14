@@ -10,6 +10,7 @@ import { CgFileDocument } from "react-icons/cg"
 import AdobeXd from "./AdobeXd";
 import AdobePhotoshop from "./AdobePhotoshop";
 import AdobeIllustrator from "./AdobeIllustrator";
+import Clap from "./Clap";
 
 const icons = {
   figma: <FaFigma />, 
@@ -39,6 +40,7 @@ const icons = {
   xd: <AdobeXd />, 
   photoshop: <AdobePhotoshop />, 
   illustrator: <AdobeIllustrator />,
+  clap: <Clap />,
   socketio: <SiSocketdotio />,
   menu: <RiMenu3Line />,
   close: <RiCloseLine />,
