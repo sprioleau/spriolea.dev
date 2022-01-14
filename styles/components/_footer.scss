@@ -9,6 +9,7 @@
 
   p {
     @include ff-mono;
+    font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
   }
   
   .container {
@@ -18,16 +19,36 @@
   }
   
   &__message {
-    font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
     margin-bottom: 0;
+
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__stats {
+    @include center;
+
+    & > :not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 
   &__stat {
     display: flex;
     align-items: center;
+
+    &:hover {
+      color: var(--ui-accent-1);
+    }
   }
 
-  .visits-icon {
+  &__stat-wrapper {
+    @include center;
+    margin-bottom: 0;
+  }
+
+  .views-icon {
     padding: 0;
     margin-left: 0.5rem;
     font-size: 1.1em;

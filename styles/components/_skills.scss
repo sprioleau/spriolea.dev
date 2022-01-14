@@ -66,9 +66,10 @@
   }
 }
 
-.skills-2 {
-  .skills__icon {
-    align-items: center;
-    margin-bottom: 2px;
+@include sm {
+  .skills {
+    &__list-item {
+      padding: 0.25rem 0.5rem;
+    }
   }
 }

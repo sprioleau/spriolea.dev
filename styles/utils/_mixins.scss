@@ -84,3 +84,39 @@ $bp-large: 1200px;
     @content;
   }
 }
+
+@mixin tooltip {
+  position: relative;
+  --scale: 0;
+  
+  &::after {
+    @include ff-mono;
+    @include transition;
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: var(--ui-accent-1);
+    backdrop-filter: blur(10px);
+    color: var(--ui-bg);
+    padding: 0.25rem 0.75rem;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%) scale(var(--scale));
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    width: max-content;
+    line-height: 1.7;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+
+  @include hover-wrapper {
+    &:hover {
+      &::before, 
+      &::after {
+        --scale: 1;
+        opacity: 1;
+      }
+    }
+  }
+}

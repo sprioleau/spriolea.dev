@@ -1,0 +1,3 @@
+[data-tooltip]:not([data-tooltip=""]) {
+  @include tooltip;
+}
