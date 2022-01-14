@@ -1,19 +1,20 @@
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import PortableTextBlock from "../PortableTextBlock";
+import ClapButton from "../ClapButton";
 
-const Footer = ({ content, visits, pageViews }) => {
+const Footer = ({ content, likes, pageViews }) => {
 	const { body } = content[0];
-	const views = pageViews ?? visits;
 
 	return (
 		<footer className="footer">
 			<div className="container">
+				<ClapButton count={likes} />
 				{body.map(({ _key, children, markDefs }) => (
 					<p key={_key} className="footer__message">
 						<PortableTextBlock childrenContent={children} markDefs={markDefs} />
 					</p>
 				))}
-				{views && <p className="footer__stat"><span>{views}</span> <span className="icon visits-icon"><MdOutlineRemoveRedEye /></span></p>}
+				{pageViews && <p className="footer__stat"><span>{pageViews}</span> <span className="icon visits-icon"><MdOutlineRemoveRedEye /></span></p>}
 			</div>
 		</footer>
 	);

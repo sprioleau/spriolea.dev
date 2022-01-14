@@ -2,7 +2,7 @@
   &__toast-theme--dark {
     background-color: var(--ui-bg-hover) !important;
     border-radius: 0 !important;
-    padding: 1rem !important;
+    padding: 0.5rem !important;
   }
 
   &__toast-body {
@@ -10,6 +10,8 @@
   }
 
   &__close-button--dark {
+    padding: 0.125rem !important;
+
     &:hover {
       transform: none;
       background-color: transparent;

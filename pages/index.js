@@ -12,7 +12,7 @@ import getData from "../libs/sanity";
 import CONFIG from "../config";
 import apiStaticData from "../data/apiStaticData";
 
-const Home = ({ data, visits, pageViews }) => {
+const Home = ({ data, likes, pageViews }) => {
 	const { navLinks, footer, siteDetails } = data;
 	const [navExpanded, setNavExpanded] = React.useState(false);
 
@@ -25,7 +25,7 @@ const Home = ({ data, visits, pageViews }) => {
 			<Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
 			<InfoRails siteDetails={siteDetails} />
 			<Main data={data} />
-			<Footer content={footer} visits={visits} pageViews={pageViews} />
+			<Footer content={footer} likes={likes} pageViews={pageViews}  />
 			<div className="accent-line" />
 		</div>
 	);
@@ -44,14 +44,14 @@ export const getStaticProps = async (context) => {
 		}
 	}
 	
-	const fetchVisits = async () => {
-		const response = await fetch(process.env.INCREMENT_VISITS_WORKER_URL);
-		const visits = await response.json();
-		return visits;
+	const fetchLikes = async () => {
+		const response = await fetch(process.env.CLOUDFLARE_WORKER_URL);
+		const likes = await response.json();
+		return likes;
 	}
 
 	const { data } = await fetchData();
-	const { visits } = await fetchVisits();
+	const { likes } = await fetchLikes();
 
 	const httpLink = createHttpLink({
 		uri: "https://api.cloudflare.com/client/v4/graphql",
@@ -95,7 +95,7 @@ export const getStaticProps = async (context) => {
   return {
 		props: { 
 			data,
-			visits,
+			likes,
 			pageViews,
 		},
   }

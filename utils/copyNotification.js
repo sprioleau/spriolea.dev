@@ -1,5 +1,5 @@
-import { toast } from "react-toastify";
+import toastMessage from "./toastMessage";
 
-const copyNotification = () => toast.dark("Email address successfully copied!", { toastId: "email" });
+const copyNotification = () => toastMessage("Email address successfully copied!", "email")
 
 export default copyNotification;
