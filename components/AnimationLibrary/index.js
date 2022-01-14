@@ -66,6 +66,7 @@ export const FadeInAndUp = ({
 	delay, 
 	useDefaultStyles = true, 
 	distance = 20,
+	dataTooltip = null,
 }) => {
 	const Tag = m[tag];
 
@@ -73,6 +74,10 @@ export const FadeInAndUp = ({
 
 	const variants = variantsLibrary.fadeInAndUp;
 	variants.initial.translateY = distance;
+
+	const attributes = {
+		"data-tooltip": dataTooltip,
+	}
 
   return (
 		<Tag
@@ -82,6 +87,7 @@ export const FadeInAndUp = ({
 			className={className}
 			variants={variants}
 			style={styles}
+			{...attributes}
 		>
 			{children}
 		</Tag>
