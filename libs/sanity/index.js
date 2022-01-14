@@ -1,6 +1,8 @@
 /* eslint-disable no-param-reassign */
 import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url"
+import CONFIG from "../../config";
+import apiStaticData from "../../data/apiStaticData";
 
 const client = sanityClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_PROJECT_ID,
@@ -43,7 +45,7 @@ const getDataByKey = async (query, key) => {
   }
 }
 
-const getData = async () => {
+export const getData = async () => {
   const promises = Object.entries(queries).map(([key, query]) => getDataByKey(query, key));
   const unformattedData = await Promise.all(promises);
 
@@ -54,4 +56,12 @@ const getData = async () => {
   return { data };
 }
 
-export default getData;
+const isDevelopment = process.env.NODE_ENV === "development";
+	
+export const fetchStaticSiteData = () => {
+  if (isDevelopment && !CONFIG.USE_API) {
+    return { data: apiStaticData };
+  } else {
+    return getData()
+  }
+}

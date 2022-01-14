@@ -3,6 +3,8 @@ import { SiCss3, SiCypress, SiExpress, SiGraphql, SiHtml5, SiJavascript, SiJest,
 import { TiArrowSync } from "react-icons/ti"
 import { VscJson } from "react-icons/vsc"
 import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { FiThumbsUp, FiGitCommit } from "react-icons/fi";
 import AdobeXd from "./AdobeXd";
 import AdobePhotoshop from "./AdobePhotoshop";
 import AdobeIllustrator from "./AdobeIllustrator";
@@ -33,6 +35,9 @@ const icons = {
   socketio: <SiSocketdotio />,
   menu: <RiMenu3Line />,
   close: <RiCloseLine />,
+  commit: <FiGitCommit />,
+  views: <MdOutlineRemoveRedEye />,
+  thumbsUp: <FiThumbsUp />,
 }
 
 export default icons;
