@@ -1,5 +1,3 @@
-
-
 const AdobeXd = () => {
   return (
 	<svg id="ps_x5F_cc_x5F_app_x5F_RGB.svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 234" width="1em" height="1em">

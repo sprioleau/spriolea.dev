@@ -1,5 +1,3 @@
-
-
 const Chevron = () => {
   return (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.2 97.48" width="1em" height="1em" fill="currentColor">
