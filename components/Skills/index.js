@@ -22,11 +22,12 @@ const Skills = ({ skills }) => {
 					<React.Fragment key={category}>
 						<h3 className="skills__category-name">{category}</h3>
 						<ul className="skills__list">
-						{skillsData.sort((a, b) => sortAlphaByKey(a, b, "techName")).map(({ techName, iconKey }) => (
+						{skillsData.sort((a, b) => sortAlphaByKey(a, b, "techName")).map(({ techName, fullName, iconKey }) => (
 								<FadeInAndUp
 									key={techName}
 									tag="li"
 									className="skills__list-item"
+									dataTooltip={fullName}
 									useDefaultStyles={false}
 								>
 									{iconKey && <div className="skills__icon">{icons[iconKey]}</div>}
