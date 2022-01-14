@@ -1,5 +1,4 @@
 /* eslint-disable import/no-named-default */
-/* eslint-disable react/no-unstable-nested-components */
 
 import React from "react";
 import { default as ReactClapButton } from "react-clap-button";
