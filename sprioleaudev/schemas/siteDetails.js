@@ -33,6 +33,11 @@ export default {
               title: "GitHub URL",
               type: "url",
             },
+            {
+              name: "linkedInUrl",
+              title: "LinkedIn URL",
+              type: "url",
+            },
           ]
         },
       ]

@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { FiGithub, FiExternalLink } from "react-icons/fi"
-import { HiOutlineCode } from "react-icons/hi"
 import { urlFor } from "../../libs/sanity";
 import { FadeInWhenVisible } from "../AnimationLibrary";
 import PortableTextBlock from "../PortableTextBlock";
+import icons from "../Icons";
 
 const SelectedWork = ({ projects }) => {
   return (
@@ -30,9 +29,9 @@ const SelectedWork = ({ projects }) => {
 								</ul>}
 								{(gitHubUrl || vsCodeUrl || deployedUrl) && (
 									<ul className="selected-work__icon-links">
-										{gitHubUrl && <li><a aria-label="link" href={gitHubUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><FiGithub /></a></li>}
-										{vsCodeUrl && <li><a aria-label="link" href={vsCodeUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><HiOutlineCode /></a></li>}
-										{deployedUrl && <li><a aria-label="link" href={deployedUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank"><FiExternalLink /></a></li>}
+									{gitHubUrl && <li><a aria-label="link" href={gitHubUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank">{icons.gitHub}</a></li>}
+										{vsCodeUrl && <li><a aria-label="link" href={vsCodeUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank">{icons.code}</a></li>}
+										{deployedUrl && <li><a aria-label="link" href={deployedUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank">{icons.externalLink}</a></li>}
 									</ul>
 								)}
 							</div>

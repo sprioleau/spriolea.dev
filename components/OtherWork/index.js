@@ -1,10 +1,9 @@
 
-import { FiGithub, FiExternalLink } from "react-icons/fi"
-import { HiOutlineCode } from "react-icons/hi"
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 import { formatIsoDate, sortByYearAndTitle } from "../../utils";
 import sortAlphaByKey from "../../utils/sortAlphaByKey";
 import { FadeInWhenVisible } from "../AnimationLibrary";
+import icons from "../Icons/index";
 
 const OtherWork = ({ projects }) => {
 	const { windowSize } = useWindowSize();
@@ -18,9 +17,9 @@ const OtherWork = ({ projects }) => {
 
 			let icon = null;
 
-			if (key.includes("gitHub")) icon = <FiGithub />;
-			if (key.includes("vsCode")) icon = <HiOutlineCode />;
-			if (key.includes("deployed")) icon = <FiExternalLink />;
+			if (key.includes("gitHub")) icon = icons.gitHub;
+			if (key.includes("vsCode")) icon = icons.code;
+			if (key.includes("deployed")) icon = icons.externalLink;
 
 			return (
 				<li key={key} className="other-work__link">

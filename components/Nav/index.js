@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react"
-import { CgFileDocument } from "react-icons/cg"
 import { useRouter } from "next/router"
 import FocusTrap from "focus-trap-react";
 import SkipToMainContent from "../SkipToMainContent";
@@ -76,7 +75,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 										</a>
 									))}
 								</Stagger>
-								<a href="/resume/resume.pdf" className="nav__resume-link" target="_blank" rel="noreferrer"><button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon"><CgFileDocument /></span>Resume</button></a>
+							<a href="/resume/resume.pdf" className="nav__resume-link" target="_blank" rel="noreferrer"><button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon">{icons.file}</span>Resume</button></a>
 								<button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
 									{icons.close}
 								</button>

@@ -1,11 +1,11 @@
 /* eslint-disable react/no-danger */
 import React from "react"
-import { FiArrowDown } from "react-icons/fi";
 import { formatJobDates } from "../../utils";
 import TabLabel from "./components/TabLabel";
 import PortableTextBlock from "../PortableTextBlock";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 import { Stagger } from "../AnimationLibrary";
+import icons from "../Icons";
 
 const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 	const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
@@ -41,7 +41,7 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 		<div className={["tab-list", expanded ? "expanded" : "", expandByDefault ? "" : "expandable"].join(" ").trimEnd()}>
 			<header className="tab-list__title-wrapper" onClick={handleExpand} tabIndex={0} role="button">
 				<h3 className="tab-list__title">{label} Experience</h3>
-				{!expandByDefault ? <span className="tab-list__expand-collapse icon"><FiArrowDown /></span> : null}
+				{!expandByDefault ? <span className="tab-list__expand-collapse icon">{icons.arrowDown}</span> : null}
 			</header>
 			<div id={id} className="tab-list__main-content">
 				<nav className="tab-list__tabs">

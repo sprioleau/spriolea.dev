@@ -1,7 +1,7 @@
 import React from "react"
 import { useRouter } from "next/router";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { handleKeyDown } from "../../utils";
+import icons from "../Icons";
 
 const SkipToMainContent = ({ sectionId = "#about" }) => {
   const router = useRouter();
@@ -22,7 +22,7 @@ const SkipToMainContent = ({ sectionId = "#about" }) => {
       onKeyDown={(e) => handleKeyDown(e, handleSkipToMainContent)}
     >
 		<p className="skip-to-main-content__label">Skip to main content</p>
-		<MdOutlineArrowRightAlt />
+    {icons.arrowRight}
 	</button>
   )
 }

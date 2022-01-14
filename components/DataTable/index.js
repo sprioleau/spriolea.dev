@@ -1,7 +1,7 @@
 import React from "react"
-import { FiArrowDown } from "react-icons/fi"
 import { FadeInAndUp, Stagger } from "../AnimationLibrary";
 import { handleKeyDown } from "../../utils";
+import icons from "../Icons";
 
 const DataTable = ({ data: { sectionTitle, employers } }) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -19,7 +19,7 @@ const DataTable = ({ data: { sectionTitle, employers } }) => {
 						onKeyDown={(e) => handleKeyDown(e, handleExpand)}
 					>
 						<h3 className="a section-subheading">{sectionTitle}</h3>
-						<span className="data-table__expand-collapse icon"><FiArrowDown /></span>
+					<span className="data-table__expand-collapse icon">{icons.arrowDown}</span>
 					</div>
 			</header>
 				{expanded && employers.map(({ name, roles, employerLogo }) => (

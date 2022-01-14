@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable @next/next/no-img-element */
 
-import { FiArrowDown } from "react-icons/fi"
+import React from "react";
+import icons from "../Icons";
 
 const ActionIndicator = ({ rotation = "0deg", size = "1em", variant = "" }) => {
   return (
@@ -17,7 +19,7 @@ const ActionIndicator = ({ rotation = "0deg", size = "1em", variant = "" }) => {
 						<path id="arrow" d="M155.43,278,3.21,125.82,38.67,90.36,130.35,182V2.27H180.5V182l91.69-91.68,35.46,35.46Z" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="4.54"/>
 					</svg>
 				) : (
-					<FiArrowDown />
+					<>{icons.arrowDown}</>
 				)}
 			</div>
 		</div>
