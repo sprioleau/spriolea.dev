@@ -11,18 +11,18 @@ const MAX_COUNT = 15;
 const ClapButton = ({ initialCount, clientClapCount, setClientClapCount }) => {
   const [serverClapCount, setServerClapCount] = React.useState(0);
 
-  const incrementCount = async () => {
-    await fetch(`/api/incrementCount?by=${clientClapCount - serverClapCount}`);
+  const incrementClaps = async () => {
+    await fetch(`/api/incrementClaps?by=${clientClapCount - serverClapCount}`);
     setServerClapCount(clientClapCount);
   }
 
-  const debouncedIncrementCount = useDebouncedCallback(incrementCount, 1000);
+  const debouncedIncrementClaps = useDebouncedCallback(incrementClaps, 1000);
 
   const handleIncrement = async () => { 
     if (clientClapCount === MAX_COUNT - 1) toastMessage("Thanks for the claps!", "claps");
     if (clientClapCount === MAX_COUNT) return null;
 
-    debouncedIncrementCount();
+    debouncedIncrementClaps();
     setClientClapCount(l => l + 1);
     return null;
   }

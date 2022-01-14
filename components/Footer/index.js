@@ -3,15 +3,21 @@ import PortableTextBlock from "../PortableTextBlock";
 import ClapButton from "../ClapButton";
 import icons from "../Icons";
 import { formatNumber } from "../../utils";
+import { getClaps } from "../../api";
 
-const Footer = ({ content, footerData: { claps, pageViews, contributionsInLastYear } }) => {
+const Footer = ({ content, footerData: { pageViews, contributionsInLastYear } }) => {
 	const [clientClapCount, setClientClapCount] = React.useState(0);
+	const [initialClaps, setInitialClaps] = React.useState(0);
+
+	React.useEffect(() => {
+		getClaps((claps) => setInitialClaps(claps));
+	}, []);
 	
 	const { body } = content[0];
 
 	const stats = [
 		{ key: "Page views", value: pageViews, icon: icons.views },
-		{ key: "Page claps", value: claps + clientClapCount, icon: icons.clap },
+		{ key: "Page claps", value: initialClaps + clientClapCount, icon: icons.clap },
 		{ key: "GitHub contributions in past year", value: contributionsInLastYear, icon: icons.commit },
 	]
 
@@ -19,7 +25,7 @@ const Footer = ({ content, footerData: { claps, pageViews, contributionsInLastYe
 		<footer className="footer">
 			<div className="container">
 				<ClapButton
-					initialCount={claps}
+					initialCount={initialClaps}
 					clientClapCount={clientClapCount}
 					setClientClapCount={setClientClapCount}
 				/>

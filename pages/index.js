@@ -1,13 +1,18 @@
 import React from "react"
 import Head from "next/head";
 import { InfoRails, Nav, Main, Footer } from "../components";
-import { fetchClaps, fetchPageViews } from "../libs/cloudflare";
+import { fetchPageViews } from "../libs/cloudflare";
 import { fetchStaticSiteData } from "../libs/sanity";
 import { fetchContributions } from "../libs/github";
 
-const Home = ({ data, footerData }) => {
+const Home = ({ data, pageViews, contributionsInLastYear }) => {
 	const { navLinks, footer, siteDetails } = data;
 	const [navExpanded, setNavExpanded] = React.useState(false);
+
+	const footerData = {
+		pageViews,
+		contributionsInLastYear,
+	}
 
 	return (
 		<div className={["app", navExpanded ? "nav-expanded" : ""].join(" ").trim()}>
@@ -28,19 +33,14 @@ export default Home;
 
 export const getStaticProps = async (context) => {
 	const { data } = await fetchStaticSiteData();
-	const { claps } = await fetchClaps();
 	const { pageViews } = await fetchPageViews();
 	const { contributionsInLastYear } = await fetchContributions();
 
   return {
 		props: { 
 			data,
-			footerData: {
-				claps,
-				pageViews,
-				contributionsInLastYear
-			}
+			pageViews,
+			contributionsInLastYear
 		},
   }
 }
-
