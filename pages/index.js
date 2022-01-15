@@ -1,18 +1,11 @@
 import React from "react"
 import Head from "next/head";
 import { InfoRails, Nav, Main, Footer } from "../components";
-import { fetchPageViews } from "../libs/cloudflare";
 import { fetchStaticSiteData } from "../libs/sanity";
-import { fetchContributions } from "../libs/github";
 
-const Home = ({ data, pageViews, contributionsInLastYear }) => {
+const Home = ({ data }) => {
 	const { navLinks, footer, siteDetails } = data;
 	const [navExpanded, setNavExpanded] = React.useState(false);
-
-	const footerData = {
-		pageViews,
-		contributionsInLastYear,
-	}
 
 	return (
 		<div className={["app", navExpanded ? "nav-expanded" : ""].join(" ").trim()}>
@@ -23,7 +16,7 @@ const Home = ({ data, pageViews, contributionsInLastYear }) => {
 			<Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
 			<InfoRails siteDetails={siteDetails} />
 			<Main data={data} />
-			<Footer content={footer} footerData={footerData} />
+			<Footer content={footer} />
 			<div className="accent-line" />
 		</div>
 	);
@@ -33,14 +26,10 @@ export default Home;
 
 export const getStaticProps = async (context) => {
 	const { data } = await fetchStaticSiteData();
-	const { pageViews } = await fetchPageViews();
-	const { contributionsInLastYear } = await fetchContributions();
 
   return {
 		props: { 
 			data,
-			pageViews,
-			contributionsInLastYear
 		},
   }
 }

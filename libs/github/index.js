@@ -45,7 +45,8 @@ export const fetchContributions = async () => {
     `
   });
 
-  const contributionsInLastYear = data.user.contributionsCollection.contributionCalendar.totalContributions;
+  // Contributions in the last year
+  const contributions = data.user.contributionsCollection.contributionCalendar.totalContributions;
 
-  return { contributionsInLastYear };
+  return { contributions };
 }
