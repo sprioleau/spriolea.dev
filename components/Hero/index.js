@@ -27,7 +27,6 @@ const Hero = ({ content }) => {
 					<Image src="/images/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" />
 					<span className="hero__greeting"> {overline}</span>
 				</FadeInAndUp>
-					{/* <h1 className="hero__headline"><Name />.</h1> */}
 					<StaggeredReveal
 						text={heading}
 						speed={4}
@@ -35,7 +34,6 @@ const Hero = ({ content }) => {
 						delay={sectionDelay + 0.5}
 						tag="h1"
 					/>
-					{/* <h2 className="hero__vocation">I design and build for the web.</h2> */}
 					<StaggeredReveal
 						text={subHeading}
 						speed={4}
@@ -48,7 +46,7 @@ const Hero = ({ content }) => {
 						<p className="hero__brief">
 							<PortableTextBlock childrenContent={brief[0].children} markDefs={brief[0].markDefs} />
 						</p>
-				</FadeInAndUp>
+					</FadeInAndUp>
 				</header>
 				<FadeInAndUp delay={sectionDelay + 1.75}>
 					<button type="button" className="hero__cta-button button" onClick={() => router.push(`#${cta.linkTarget}`)}>
