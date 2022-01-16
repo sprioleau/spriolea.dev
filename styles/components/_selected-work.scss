@@ -27,11 +27,10 @@
 
   &__image {
     flex: 0 0 45%;
-    
+    position: relative;
+
     .button {
-      height: 0;
-      padding-top: calc((9 / 16) * 100%);
-      position: relative;
+      padding: 0;
     }
     
     &:hover img {
@@ -39,11 +38,6 @@
     }
     
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       object-fit: cover;
       mix-blend-mode: multiply;
       filter: grayscale(100%) brightness(85%);

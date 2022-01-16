@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Image from "next/image";
 import { urlFor } from "../../libs/sanity";
 import { FadeInWhenVisible } from "../AnimationLibrary";
 import PortableTextBlock from "../PortableTextBlock";
@@ -13,7 +14,12 @@ const SelectedWork = ({ projects }) => {
 					<FadeInWhenVisible tag="li" key={_id} className="selected-work__work" useDefaultStyles={false}>
 						<div className="selected-work__image">
 							<a href={deployedUrl} className="button selected-work__link" target="_blank" rel="noreferrer">
-								<img src={urlFor(mainImage).width(800).url()} alt={title} />
+							<Image
+								src={urlFor(mainImage).format("webp").width(800).height(800 * 0.5625).url()}
+								alt={title}
+								width={800}
+								height={800 * 0.5625}
+							/>
 							</a>
 						</div>
 						<div className="selected-work__details">

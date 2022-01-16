@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import { urlFor } from "../../libs/sanity";
 import PageSectionLayout from "../PageSectionLayout";
 import PortableTextBlock from "../PortableTextBlock";
@@ -24,7 +25,12 @@ const About = ({ content }) => {
 				</div> */}
 			</div>
 			<div className="about__image">
-				<img src={urlFor(mainImage).width(400).url()} alt="San'Quan Prioleau headshot"/>
+				<Image
+					src={urlFor(mainImage).format("webp").width(400).height(400).url()}
+					alt="San'Quan Prioleau headshot"
+					width={400}
+					height={400}
+				/>
 			</div>
 		</PageSectionLayout>
   )
