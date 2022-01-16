@@ -15,14 +15,6 @@ const About = ({ content }) => {
 						<p key={_key}><PortableTextBlock childrenContent={children} markDefs={markDefs}/></p>
 					))}
 				</div>
-				{/* <div className="about__tech">
-					<h3 className="about__tech-intro">Technologies I enjoy</h3>
-					<ul className="about__tech-list">
-						{technologiesList.map((technology) => (
-							<li key={ technology} className="about__tech-list-item"><p>{technology}</p></li>
-							))}
-					</ul>
-				</div> */}
 			</div>
 			<div className="about__image">
 				<Image

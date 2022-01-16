@@ -18,37 +18,6 @@
       font-size: 1rem;
     }
   } 
-
-  &__tech-list {
-    column-count: 2;
-    column-gap: 1.5rem;
-    width: max-content;
-  }
-
-  &__tech-list-item {
-    @include ff-mono;
-    position: relative;
-    padding-left: 2.25rem;
-    margin-bottom: 0.75rem;
-
-    &:hover {
-      color: var(--ui-text-hover);
-    }
-
-    &::before {
-      content: "\2736";
-      color: var(--ui-accent-1);
-      position: absolute;
-      left: 1.5rem;
-      top: 2px;
-      transform: translate(-50%) rotate(45deg);
-    }
-  }
-
-  &__tech-intro {
-    margin-bottom: 0.5rem;
-    color: var(--ui-text-hover);
-  }
 }
 
 @include md {
