@@ -3,33 +3,35 @@ import PortableTextBlock from "../PortableTextBlock";
 import ClapButton from "../ClapButton";
 import icons from "../Icons";
 import { formatNumber } from "../../utils";
-import { getClaps, getContributions, getPageViews } from "../../api";
+import { getStats } from "../../api";
 
 const Footer = ({ content }) => {
 	const [clientClapCount, setClientClapCount] = React.useState(0);
-	const [initialClaps, setInitialClaps] = React.useState(0);
-	const [pageViews, setPageViews] = React.useState(0);
-	const [contributionsInLastYear, setContributionsInLastYear] = React.useState(0);
+	const [stats, setStats] = React.useState({
+		pageViews: 0,
+		claps: 0,
+		contributions: 0
+	});
 
-	React.useEffect(() => {
-		getClaps((claps) => setInitialClaps(claps));
-		getPageViews((views) => setPageViews(views));
-		getContributions((contributions) => setContributionsInLastYear(contributions));
-	}, []);
-	
 	const { body } = content[0];
+	const { pageViews, claps, contributions } = stats;
+	const shouldDisplayStats = Object.values(stats).some((stat) => stat > 0);
 
-	const stats = [
+	const statsData = [
 		{ key: "Page views", value: pageViews, icon: icons.views },
-		{ key: "Page claps", value: initialClaps + clientClapCount, icon: icons.clap },
-		{ key: "GitHub contributions in past year", value: contributionsInLastYear, icon: icons.commit },
+		{ key: "Page claps", value: claps + clientClapCount, icon: icons.clap },
+		{ key: "GitHub contributions in past year", value: contributions, icon: icons.commit },
 	]
 
+	React.useEffect(() => {
+		getStats((data) => setStats(data));
+	}, []);
+	
 	return (
 		<footer className="footer">
 			<div className="container">
 				<ClapButton
-					initialCount={initialClaps}
+					initialCount={claps}
 					clientClapCount={clientClapCount}
 					setClientClapCount={setClientClapCount}
 				/>
@@ -38,9 +40,9 @@ const Footer = ({ content }) => {
 						<PortableTextBlock childrenContent={children} markDefs={markDefs} />
 					</p>
 				))}
-				{pageViews || initialClaps || contributionsInLastYear ? (
+				{shouldDisplayStats ? (
 					<ul className="footer__stats">
-						{stats.map(({ key, value, icon }) => (
+						{statsData.map(({ key, value, icon }) => (
 							value ? (
 								<li key={key} className="footer__stat tooltip" data-tooltip={key}>
 									<p className="footer__stat-wrapper"><span>{formatNumber(value)}</span> <span className="icon">{icon}</span></p>
