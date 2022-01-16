@@ -19,7 +19,6 @@ class MyDocument extends Document {
 					<link rel="stylesheet" href="https://use.typekit.net/hnv6eep.css" />
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-					<link rel="stylesheet" href="https://use.typekit.net/hnv6eep.css" />
 					<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
 					<StructuredData data={websiteSchema} />
 				</Head>
