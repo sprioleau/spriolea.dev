@@ -44,7 +44,7 @@ const OtherWork = ({ projects }) => {
 			</thead>
 			<tbody>
 				{projects.sort(sortByYearAndTitle).map(({ yearBuilt, title, builtFor, builtWith, links }) => (
-					<FadeInWhenVisible key={title} tag="tr" className="other-work__row" useDefaultStyles={false} distance={25}>
+					<FadeInWhenVisible key={title} tag="tr" className="other-work__row" useDefaultStyles={false} distance={0}>
 						<td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
 						<td>{title}</td>
 						{!smallerThanMedium && <td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>}
