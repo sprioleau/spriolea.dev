@@ -50,7 +50,7 @@ const ProjectTable = ({ projects }) => {
 				))}
 				</tbody>
 		</table>
-		{currentImage ? (
+		{currentImage && !smallerThanSmall ? (
 			<div
 				className="other-work__image"
 				style={{

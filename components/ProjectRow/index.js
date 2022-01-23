@@ -24,8 +24,13 @@ const ProjectRow = ({ project, smallerThanSmall, smallerThanMedium, setCurrentIm
 		});
 	}
 
-	const handleMouseEnter = () => setCurrentImage(mainImage);
-	const handleMouseLeave = () => setCurrentImage(null);
+	const handleMouseEnter = () => {
+		if (smallerThanSmall) return;
+		setCurrentImage(mainImage);
+	}
+	const handleMouseLeave = () => {
+		setCurrentImage(null);
+	}
 
 	return (
 		<tr 
