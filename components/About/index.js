@@ -21,6 +21,7 @@ const About = ({ content }) => {
 					alt="San'Quan Prioleau headshot"
 					width={400}
 					height={400}
+					quality={100}
 				/>
 			</div>
 		</PageSectionLayout>
