@@ -11,10 +11,23 @@
 
   &__row {
     @include transition;
+    position: relative;
 
     &:hover {
       background-color: rgba(var(--ui-accent-1-rgb), 0.1);
       color: var(--ui-text-hover);
+    }
+  }
+
+  &__image {
+    @include styled-border;
+    position: fixed;
+    transform: rotate(-10deg);
+    z-index: 50;
+    outline: 1px solid var(--ui-accent-1);
+
+    & > span {
+      display: block !important;
     }
   }
 

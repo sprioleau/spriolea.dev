@@ -1,6 +1,6 @@
 
 import SelectedWork from "../SelectedWork"
-import OtherWork from "../OtherWork";
+import ProjectTable from "../ProjectTable";
 import PageSectionLayout from "../PageSectionLayout";
 
 const Work = ({ projects }) => {
@@ -19,7 +19,7 @@ const Work = ({ projects }) => {
   return (
 		<PageSectionLayout sectionId="work" sectionTitle="Selected Work">
 			<SelectedWork projects={allProjects.isFeatured} />
-			<OtherWork projects={allProjects.notFeatured} />
+			<ProjectTable projects={allProjects.notFeatured} />
 		</PageSectionLayout>
   )
 }

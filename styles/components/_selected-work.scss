@@ -1,27 +1,28 @@
 .selected-work {
   margin: 1.5rem 0 3rem;
-
-  &__details {
-    display: flex;
-    flex-direction: column;
-    margin: 0 var(--tab-list-gap);
-
-    & > :not(:last-child) {
-      margin-bottom: 1rem;
-    }
-  }
   
   &__works {
     display: flex;
     flex-direction: column;
   }
-
+  
   &__work {
     display: flex;
     margin-bottom: 3rem;
-
+    
     &:nth-child(even) {
       flex-direction: row-reverse;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    margin: 0 var(--tab-list-gap);
+    flex: 1;
+
+    & > :not(:last-child) {
+      margin-bottom: 1rem;
     }
   }
 

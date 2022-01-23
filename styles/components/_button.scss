@@ -21,19 +21,10 @@ button,
 
   &:not(.clap) {
     padding: 1.25rem 2rem;
-
+    @include styled-border;
+    
     &::after {
       @include transition;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: translate(0.5rem, 0.5rem);
-      border-right: 1px solid var(--ui-accent-1);
-      border-bottom: 1px solid var(--ui-accent-1);
-      z-index: -1;
     }
 
     &:hover {

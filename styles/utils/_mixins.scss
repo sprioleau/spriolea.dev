@@ -79,6 +79,21 @@ $bp-large: 1200px;
   justify-content: center;
 }
 
+@mixin styled-border {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0.5rem, 0.5rem);
+    border-right: 1px solid var(--ui-accent-1);
+    border-bottom: 1px solid var(--ui-accent-1);
+    z-index: -1;
+  }
+}
+
 @mixin hover-wrapper {
   @media (hover: hover) {
     @content;
