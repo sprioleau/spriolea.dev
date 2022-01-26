@@ -41,6 +41,10 @@
     @include ff-body;
     font-size: clamp(1rem, 0.6rem + 2vw, 1.5rem);
     line-height: 1.2;
+
+    &:hover {
+      @include cursor-copy;
+    }
   }
 
   .mail-icon {
