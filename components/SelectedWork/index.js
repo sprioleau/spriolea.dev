@@ -23,7 +23,10 @@ const SelectedWork = ({ projects }) => {
 							</a>
 						</div>
 						<div className="selected-work__details">
-							<h3 className="selected-work__title">{title}{emoji && <span className="emoji" role="img"> {emoji}</span>}</h3>
+						<h3 className="selected-work__title">
+							{title}
+							{/* {emoji && <span className="emoji" role="img"> {emoji}</span>} */}
+						</h3>
 							<p className="selected-work__description">{description.map(({ _key, children, markDefs }) => (
 								<PortableTextBlock key={_key} childrenContent={children} markDefs={markDefs}  />
 							))}</p>
