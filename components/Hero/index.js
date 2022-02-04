@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import ActionIndicator from "../ActionIndicator";
 import { FadeInAndUp, StaggeredReveal } from "../AnimationLibrary";
@@ -7,7 +6,6 @@ import PortableTextBlock from "../PortableTextBlock";
 
 const Hero = ({ content }) => {
 	const router = useRouter();
-	const iconSize = 32;
 	const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } = content[0];
 	
 	const handleAdvanceSection = () => router.push(`#${advanceToSectionSlug}`);
@@ -24,7 +22,6 @@ const Hero = ({ content }) => {
 					useDefaultStyles={false}
 					delay={sectionDelay}
 				>
-					<Image src="/images/wave.png" height={iconSize} width={iconSize} alt="waving hand" className="wave" />
 					<span className="hero__greeting"> {overline}</span>
 				</FadeInAndUp>
 					<StaggeredReveal

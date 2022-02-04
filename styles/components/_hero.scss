@@ -17,17 +17,6 @@
     margin-bottom: 0.5rem;
   }
 
-  .wave {
-    position: relative;
-    display: inline-block;
-    animation: wave 0.35s ease-out alternate infinite;
-    font-size: 1.5rem;
-  }
-
-  &__greeting {
-    margin-left: 0.5rem;
-  }
-
   &__headline, 
   &__vocation {
     @include ff-body-bold;
