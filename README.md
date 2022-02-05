@@ -8,7 +8,7 @@ San'Quan Prioleau is a frontend web developer with an eye for good design, who l
 
 ## 🔗 Links
 
-- 🚀 [Deployed Url][deployed-url]
+- 🚀 Deployed at [sprioleau.dev][deployed-url]
 
 ## Screenshots
 
