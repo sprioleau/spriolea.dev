@@ -127,19 +127,31 @@ em {
   display: inline-block;
   color: var(--ui-text-hover);
   position: relative;
-
+  padding-inline: 0.125em;
+  
+  &::before, 
   &::after {
+    --inset: 0.25em;
     content: "";
     position: absolute;
-    bottom: -0.125rem;
-    left: 0;
+    background-color: var(--ui-accent-1);
+  }
+  
+  &::before {
+    opacity: 0.125;
+    height: 75%;
     width: 100%;
-    height: 0.5rem;
-    background-image: url("/images/zig-zag.svg");
+    top: 50%;
+    bottom: var(--inset);
+    left: 0;
+    transform: translateY(-50%);
   }
 
-  &.smooth::after {
-    background-image: url("/images/squiggle.svg");
+  &::after {
+    bottom: calc(var(--inset) / 4);
+    left: 0;
+    width: 100%;
+    height: 2px;
   }
 }
 
