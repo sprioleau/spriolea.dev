@@ -37,7 +37,6 @@ const ClapButton = ({ initialCount, clientClapCount, setClientClapCount }) => {
         maxCount={MAX_COUNT}
         onCountChange={handleIncrement}
       />
-      <span className="clap-button__message">Clap</span>
     </div>
   )
 }

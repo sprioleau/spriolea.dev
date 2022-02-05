@@ -46,10 +46,10 @@
     }
   }
 
-  &__message {
-    @include ff-mono;
-    color: var(--ui-accent-1);
-    margin-top: 0.125rem;
-    font-size: 0.75rem;
-  }
+  // &__message {
+  //   @include ff-mono;
+  //   color: var(--ui-accent-1);
+  //   margin-top: 0.125rem;
+  //   font-size: 0.75rem;
+  // }
 }
