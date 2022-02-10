@@ -1,6 +1,5 @@
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { copyNotification } from "../../utils";
-import icons from "../Icons/index";
+import { handleCopyEmailToClipboard } from "../../utils";
+import icons from "../Icons";
 
 const InfoRails = ({ siteDetails }) => {
 	const { creator: { email, links: { gitHubUrl } }, meta: { vsCodeUrl } } = siteDetails[0];
@@ -24,9 +23,7 @@ const InfoRails = ({ siteDetails }) => {
 			<div className="info-rail right">
 				<ul className="info-rail__link-list">
 					<li className="info-rail__link-list-item">
-						<CopyToClipboard text={email} onCopy={copyNotification}>
-							<span className="info-rail__link text-link">{email}</span>
-						</CopyToClipboard>
+						<span className="info-rail__link text-link" role="button" tabIndex={0} onClick={() => handleCopyEmailToClipboard(email)}>{email}</span>
 					</li>
 				</ul>
 				<div className="info-rail__accent-line" />
