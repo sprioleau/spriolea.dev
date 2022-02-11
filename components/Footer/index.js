@@ -3,7 +3,7 @@ import PortableTextBlock from "../PortableTextBlock";
 import ClapButton from "../ClapButton";
 import icons from "../Icons";
 import { formatNumber } from "../../utils";
-import { getStats } from "../../api";
+import { getStats } from "../../apiUtils";
 
 const Footer = ({ content }) => {
 	const [clientClapCount, setClientClapCount] = React.useState(0);
