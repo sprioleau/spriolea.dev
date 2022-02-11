@@ -7,7 +7,7 @@ const About = ({ content }) => {
 	const { body, mainImage } = content[0];
 
   return (
-		<PageSectionLayout sectionId="about" sectionTitle="About Me">
+		<PageSectionLayout sectionId="about" sectionTitle="My Story">
 			<div className="about__bio">
 				<div className="about__bio-text">
 					{body.map(({ _key, children, markDefs }) => (
