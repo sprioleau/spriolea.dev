@@ -30,6 +30,10 @@
     flex: 0 0 45%;
     position: relative;
 
+    a::before {
+      --scaleY: 1;
+    }
+
     .button {
       padding: 0;
     }

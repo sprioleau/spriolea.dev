@@ -38,6 +38,10 @@
     display: flex;
     align-items: center;
 
+    &::after {
+      display: none;
+    }
+
     &:hover {
       color: var(--ui-accent-1);
     }

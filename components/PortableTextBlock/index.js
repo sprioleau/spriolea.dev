@@ -4,7 +4,7 @@ import React from "react"
 // Reference: https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
 const isTag = (text) => /^[a-z]+$/i.test(text);
 
-const PortableTextBlock = ({ childrenContent, markDefs }) => {
+const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => {
   const linkLookup = markDefs.reduce((links, link) => {
     const { _key: key, href } = link;
     links[key] = href;
@@ -18,7 +18,7 @@ const PortableTextBlock = ({ childrenContent, markDefs }) => {
       return <em>{text}</em>
     } else if (hasLinks) {
       const link = linkLookup[marks[0]];
-      return <a href={link} target="_blank" rel="noreferrer">{text}</a>
+      return <a href={link} target="_blank" rel="noreferrer" className={linksClass}>{text}</a>
     } else {
       return <span>{text}</span>
     }

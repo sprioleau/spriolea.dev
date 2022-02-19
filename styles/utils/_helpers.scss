@@ -18,4 +18,8 @@
   &:hover::after {
     --scaleX: 1;
   }
+
+  &::before {
+    display: none;
+  }
 }

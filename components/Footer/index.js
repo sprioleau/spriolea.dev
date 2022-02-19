@@ -37,7 +37,7 @@ const Footer = ({ content }) => {
 				/>
 				{body.map(({ _key, children, markDefs }) => (
 					<p key={_key} className="footer__message">
-						<PortableTextBlock childrenContent={children} markDefs={markDefs} />
+						<PortableTextBlock childrenContent={children} markDefs={markDefs} linksClass="shadow-link" />
 					</p>
 				))}
 				{shouldDisplayStats ? (

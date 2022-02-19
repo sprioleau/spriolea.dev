@@ -104,7 +104,7 @@ $bp-large: 1200px;
   position: relative;
   --scale: 0;
   
-  &::after {
+  &::before {
     @include ff-mono;
     @include transition;
     content: attr(data-tooltip);
@@ -123,6 +123,14 @@ $bp-large: 1200px;
     line-height: 1.7;
     font-size: 0.9em;
     font-weight: 500;
+  }
+
+  &::after {
+    content: "i";
+    font-size: 0.65em;
+    top: 0;
+    right: 0;
+    opacity: 0.75;
   }
 
   @include hover-wrapper {
