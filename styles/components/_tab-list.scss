@@ -117,10 +117,13 @@
 
   &__header {
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
   }
   
   &__header-title {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-right: 0.25em;
   }
@@ -132,6 +135,7 @@
   
   &__employer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     color: var(--ui-accent-1);
 
