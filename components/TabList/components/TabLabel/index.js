@@ -14,8 +14,10 @@ const TabLabel = ({
   currentTabIndex,
   showSublabel = true,
   subLabelAsDates = true,
-  handleUpdateCurrentTab
+  handleUpdateCurrentTab,
+  setIndicatorHeight
 }) => {
+  const tabLabelRef = React.useRef(null);
 
   const getLabelContents = () => {
     if (!showSublabel) return null; 
@@ -25,6 +27,24 @@ const TabLabel = ({
     return labelContents;
   }
 
+  React.useEffect(() => {
+    const hasWindowObject = typeof window !== "undefined";
+    
+    const handleUpdate = () => {
+      if (tabLabelRef && currentTabIndex === index) {
+        setIndicatorHeight(tabLabelRef.current.clientHeight);
+      }
+    }
+
+    handleUpdate();
+
+    if (hasWindowObject) window.addEventListener("resize", handleUpdate);
+
+    return () => {
+      if (hasWindowObject) window.addEventListener("resize", handleUpdate);
+    }
+   }, [index, setIndicatorHeight, currentTabIndex])
+
   return (
     <li
       key={_id}
@@ -33,6 +53,7 @@ const TabLabel = ({
       onKeyDown={(e) => handleKeyDown(e, () => handleUpdateCurrentTab(index))}
       role="button"
       tabIndex={0}
+      ref={tabLabelRef}
     >
       <h4 className="tab-list__label-title">{label}</h4>
       <span className="tab-list__sublabel">

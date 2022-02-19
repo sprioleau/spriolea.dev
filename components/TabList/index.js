@@ -20,15 +20,6 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 		if (!expandByDefault) setExpanded(!expanded);
 	};
 	
-	React.useEffect(() => {
-		const activeTab = document.querySelector(`#${id} .tab-list__label.active`);
-		
-		if (activeTab) {
-			const currentTabHeight = activeTab.clientHeight;
-			setIndicatorHeight(currentTabHeight);
-		}
-	}, [id]);
-	
   const handleSelect = (index) => setCurrentTabIndex(index);
 	
 	const handleUpdateCurrentTab = React.useCallback((index) => handleSelect(index), []);
@@ -73,6 +64,7 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 								currentTabIndex={currentTabIndex}
 								handleUpdateCurrentTab={handleUpdateCurrentTab}
 								showSublabel={showSublabel}
+								setIndicatorHeight={setIndicatorHeight}
 							/>
 						))}
 					</ul>

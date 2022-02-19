@@ -60,9 +60,10 @@
     letter-spacing: 0.5px;
     border-left: var(--indicator-width) solid rgba(var(--ui-text-rgb), 0.25);
   }
-
+  
   &__label {
     @include transition;
+    margin-top: 2px;
     padding: 1rem 1.5rem;
     font-size: 0.9em;
     white-space: nowrap;
