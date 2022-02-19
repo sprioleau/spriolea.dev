@@ -8,6 +8,7 @@ import SkipToMainContent from "../SkipToMainContent";
 import { Stagger } from "../AnimationLibrary";
 import { handleScrollToTop } from "../../utils";
 import icons from "../Icons";
+import ResumeButton from "../ResumeButton";
 
 const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 	const { windowSize } = useWindowSize();
@@ -77,10 +78,10 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 										</a>
 									))}
 								</Stagger>
-							<a href="/resume/resume.pdf" className="nav__resume-link shadow-link" target="_blank" rel="noreferrer"><button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon">{icons.file}</span>Resume</button></a>
-								<button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
-									{icons.close}
-								</button>
+							<ResumeButton tabIndex={tabIndex} />
+							<button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
+								{icons.close}
+							</button>
 							</div>
 							<button id="open" className="nav__icon nav__icon--menu no-frame" type="button" tabIndex={0} onClick={open} aria-label="open menu" >
 								{icons.menu}

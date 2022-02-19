@@ -22,3 +22,4 @@ export { default as StructuredData } from "./StructuredData";
 export { default as MetaTag } from "./MetaTag";
 export { default as ClapButton } from "./ClapButton";
 export { default as ProjectRow } from "./ProjectRow";
+export { default as ResumeButton } from "./ResumeButton";

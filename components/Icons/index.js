@@ -6,7 +6,7 @@ import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
 import { MdOutlineRemoveRedEye, MdOutlineMarkEmailRead, MdOutlineArrowRightAlt } from "react-icons/md";
 import { FiThumbsUp, FiGitCommit, FiGithub, FiArrowDown, FiExternalLink } from "react-icons/fi";
 import { HiOutlineCode, HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { CgFileDocument } from "react-icons/cg"
+import { CgFileDocument, CgSoftwareDownload } from "react-icons/cg"
 import AdobeXd from "./AdobeXd";
 import AdobePhotoshop from "./AdobePhotoshop";
 import AdobeIllustrator from "./AdobeIllustrator";
@@ -16,6 +16,7 @@ const icons = {
   figma: <FaFigma />, 
   git: <FaGitAlt />, 
   file: <CgFileDocument />,
+  download: <CgSoftwareDownload />,
   gitHub: <FiGithub />, 
   code: <HiOutlineCode />,
   externalLink: <FiExternalLink />,
