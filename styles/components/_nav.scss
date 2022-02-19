@@ -70,7 +70,7 @@
     @include center;
     @include cursor-pointer;
     
-    a {
+    &__link {
       padding: 0.5rem 0.25rem;
     }
 

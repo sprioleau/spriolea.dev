@@ -74,7 +74,7 @@ ul, li {
 }
 
 a, .a {
-  --scaleX: 0;
+  --scaleX: 1;
   @include transition;
   color: var(--ui-text);
   text-decoration: none;
@@ -98,9 +98,9 @@ a, .a {
     color: var(--ui-text-hover);
   }
 
-  &:hover::after {
-    --scaleX: 1;
-  }
+  // &:hover::after {
+  //   --scaleX: 1;
+  // }
 
   &.button::after {
     background-color: unset;
@@ -129,29 +129,19 @@ em {
   position: relative;
   padding-inline: 0.125em;
   
-  &::before, 
-  &::after {
+  &::before {
     --inset: 0.25em;
     content: "";
     position: absolute;
-    background-color: var(--ui-accent-1);
-  }
-  
-  &::before {
-    opacity: 0.125;
     height: 75%;
     width: 100%;
     top: 50%;
     bottom: var(--inset);
     left: 0;
     transform: translateY(-50%);
-  }
-
-  &::after {
-    bottom: calc(var(--inset) / 4);
-    left: 0;
-    width: 100%;
-    height: 2px;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.1825);
+    outline: 1px solid rgba(var(--ui-accent-1-rgb), 0.7);
+    z-index: -1;
   }
 }
 

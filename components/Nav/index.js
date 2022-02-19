@@ -68,7 +68,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 											data-key={_id}
 											key={_id}
 											href={`#${sectionSlug}`}
-											className="nav__link__link"
+											className="nav__link__link shadow-link"
 											tabIndex={tabIndex}
 											data-title={navLabel}
 											onClick={() => navigateToSection(sectionSlug)}

@@ -88,7 +88,10 @@
 
   &__sublabel {
     @include ff-mono;
+    display: flex;
+    align-items: center;
     opacity: 0.8;
+    overflow: hidden;
   }
 
   &__label-title {
@@ -113,17 +116,42 @@
   &__header {
     margin-bottom: 1rem;
   }
-
+  
+  &__header-title {
+    display: flex;
+    align-items: center;
+    margin-right: 0.25em;
+  }
+  
   &__role {
     color: var(--ui-text-hover);
+    margin-right: 0.5em;
+  }
+  
+  &__employer {
+    display: flex;
+    align-items: center;
+    color: var(--ui-accent-1);
+
+    a {
+      color: inherit;
+    }
   }
 
-  &__employer {
-    color: var(--ui-accent-1);
+  &__employer-link {
+    display: flex;
+    align-items: center;
+
+    & > :first-child {
+      margin-right: 0.25em;
+    }
   }
 
   &__dates {
     @include ff-mono;
+
+    display: flex;
+    align-items: center;
   }
 
   &__work-list {
@@ -136,11 +164,7 @@
     @include transition;
     position: relative;
     padding-left: 1.75rem;
-
-    &:hover {
-      color: var(--ui-text-hover);
-    }
-
+    
     &::before {
       content: "\2736";
       position: absolute;
@@ -172,10 +196,8 @@
       margin-right: 0;
       flex-basis: unset;
       align-self: flex-start;
-      // overflow-x: auto;
       position: relative;
       width: 100%;
-      // margin: 0 var(--section-x-padding);
 
       &::before,
       &::after {
@@ -206,7 +228,6 @@
       margin-left: var(--margin);
       margin-right: var(--margin);
       padding-inline: 0.5rem;
-      // width: calc(100% - 2 * var(--margin));
     }
 
     &__label {

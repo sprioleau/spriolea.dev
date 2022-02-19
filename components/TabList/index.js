@@ -37,6 +37,25 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 
 	const formattedDates = formatJobDates(fromDate, toDate, currentlyInRole);
 
+	const renderEmployerName = (employerObject) => { 
+		let employerName = null
+
+		if (employer.webAddress) {
+			employerName = (
+				<span className="tab-list__employer-link-wrapper">
+					<a href={employerObject.webAddress} target="_blank" rel="noreferrer" className="tab-list__employer-link shadow-link">
+						<span>{employer.name}</span>
+						<span className="icon p0">{icons.externalLink}</span>
+					</a>
+				</span>
+			)
+		} else {
+			employerName = employerObject.name
+		}
+
+		return employerName;
+	}
+
 	return (
 		<div className={["tab-list", expanded ? "expanded" : "", expandByDefault ? "" : "expandable"].join(" ").trimEnd()}>
 			<header className="tab-list__title-wrapper" onClick={handleExpand} tabIndex={0} role="button">
@@ -64,8 +83,8 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 				</nav>
 					<div className="tab-list__details">
 						<header className="tab-list__header">
-							<h4>
-								<span className="tab-list__role">{jobTitle}</span> <span className="tab-list__employer">@ {employer.name}</span>
+							<h4 className="tab-list__header-title">
+								<span className="tab-list__role">{jobTitle}</span> <span className="tab-list__employer">@ {renderEmployerName(employer)}</span>
 							</h4>
 							<p className="tab-list__dates">{formattedDates}</p>
 					</header>

@@ -5,7 +5,7 @@ import { VscJson } from "react-icons/vsc"
 import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
 import { MdOutlineRemoveRedEye, MdOutlineMarkEmailRead, MdOutlineArrowRightAlt } from "react-icons/md";
 import { FiThumbsUp, FiGitCommit, FiGithub, FiArrowDown, FiExternalLink } from "react-icons/fi";
-import { HiOutlineCode } from "react-icons/hi";
+import { HiOutlineCode, HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { CgFileDocument } from "react-icons/cg"
 import AdobeXd from "./AdobeXd";
 import AdobePhotoshop from "./AdobePhotoshop";
@@ -49,6 +49,7 @@ const icons = {
   thumbsUp: <FiThumbsUp />,
   arrowDown: <FiArrowDown />,
   arrowRight: <MdOutlineArrowRightAlt />,
+  arrowRightNarrow: <HiOutlineArrowNarrowRight />,
   email: <MdOutlineMarkEmailRead />,
 }
 
