@@ -4,8 +4,10 @@
   }
 
   &__header-row {
-    :hover {
-      background-color: transparent;
+    @include hover-wrapper {
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
 
@@ -13,9 +15,11 @@
     @include transition;
     position: relative;
 
-    &:hover {
-      background-color: rgba(var(--ui-accent-1-rgb), 0.1);
-      color: var(--ui-text-hover);
+    @include hover-wrapper {
+      &:hover {
+        background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+        color: var(--ui-text-hover);
+      }
     }
   }
 
@@ -55,9 +59,11 @@
       display: none;
     }
 
-    &:hover {
-      color: var(--ui-accent-1);
-      transform: translatey(-3px);
+    @include hover-wrapper {
+      &:hover {
+        color: var(--ui-accent-1);
+        transform: translatey(-3px);
+      }
     }
     
     &:not(:last-child) {

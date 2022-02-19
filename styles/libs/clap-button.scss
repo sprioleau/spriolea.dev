@@ -14,11 +14,13 @@
     color: var(--ui-accent-1);
     padding: 1rem;
 
-    &:hover, 
-    &:focus {
-      border-color: var(--ui-accent-1);
+    @include hover-wrapper {
+      &:hover, 
+      &:focus {
+        border-color: var(--ui-accent-1);
+      }
     }
-  
+    
     &::after {
       color: rgba(var(--ui-accent-1));
       border-color: rgba(var(--ui-accent-1));

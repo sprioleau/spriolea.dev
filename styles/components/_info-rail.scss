@@ -24,11 +24,13 @@
   &__link-list-item {
     @include transition;
 
-    &:hover {
-      transform: translateY(-0.25rem);
-      
-      .info-rail__link {
-        color: var(--ui-accent-1);
+    @include hover-wrapper {
+      &:hover {
+        transform: translateY(-0.25rem);
+        
+        .info-rail__link {
+          color: var(--ui-accent-1);
+        }
       }
     }
   }

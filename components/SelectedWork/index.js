@@ -38,9 +38,9 @@ const SelectedWork = ({ projects }) => {
 								</ul>}
 								{(gitHubUrl || vsCodeUrl || deployedUrl) && (
 									<ul className="selected-work__icon-links">
-									{gitHubUrl && <li><a aria-label="link" href={gitHubUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank">{icons.gitHub}</a></li>}
-										{vsCodeUrl && <li><a aria-label="link" href={vsCodeUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank">{icons.code}</a></li>}
-										{deployedUrl && <li><a aria-label="link" href={deployedUrl} rel="noreferrer" className="selected-work__icon-link" target="_blank">{icons.externalLink}</a></li>}
+										{gitHubUrl && <li><a aria-label="link" href={gitHubUrl} rel="noreferrer" className="selected-work__icon-link shadow-link" target="_blank">{icons.gitHub}</a></li>}
+										{vsCodeUrl && <li><a aria-label="link" href={vsCodeUrl} rel="noreferrer" className="selected-work__icon-link shadow-link" target="_blank">{icons.code}</a></li>}
+										{deployedUrl && <li><a aria-label="link" href={deployedUrl} rel="noreferrer" className="selected-work__icon-link shadow-link" target="_blank">{icons.externalLink}</a></li>}
 									</ul>
 								)}
 							</div>

@@ -22,9 +22,19 @@
       border: 1px solid var(--ui-accent-1);
     }
 
-    &:hover {
-      .contact__card-email::after {
-        --scaleX: 1;
+    @include hover-wrapper {
+      &:hover {
+        .contact__card-email {
+          color: var(--ui-text-hover);
+  
+          &::after {
+            --scaleX: 1;
+          }
+  
+          &::before {
+            --scaleY: 1;
+          }
+        }
       }
     }
 
@@ -42,8 +52,14 @@
     font-size: clamp(1rem, 0.6rem + 2vw, 1.5rem);
     line-height: 1.2;
 
-    &:hover {
-      @include cursor-copy;
+    &::after {
+      --scaleX: 0;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        @include cursor-copy;
+      }
     }
   }
 

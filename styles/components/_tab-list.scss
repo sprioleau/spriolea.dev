@@ -78,11 +78,13 @@
       }
     }
 
-    &:hover {
-      @include cursor-pointer;
-      background-color: rgba(var(--ui-text-hover-rgb), 0.1);
-      color: var(--ui-text-hover);
-      padding-left: 2rem;
+    @include hover-wrapper {
+      &:hover {
+        @include cursor-pointer;
+        background-color: rgba(var(--ui-text-hover-rgb), 0.1);
+        color: var(--ui-text-hover);
+        padding-left: 2rem;
+      }
     }
   }
 
@@ -234,8 +236,10 @@
       --padding: 1rem;
       padding: var(--padding);
 
-      &:hover {
-        padding: var(--padding);
+      @include hover-wrapper {
+        &:hover {
+          padding: var(--padding);
+        }
       }
       
       &.active {

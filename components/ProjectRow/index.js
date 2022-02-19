@@ -18,7 +18,7 @@ const ProjectRow = ({ project, smallerThanSmall, smallerThanMedium, setCurrentIm
 
 			return (
 				<li key={key} className="other-work__link">
-					<a aria-label="link" href={url} rel="noreferrer" className="other-work__icon-link" target="_blank">{icon}</a>
+					<a aria-label="link" href={url} rel="noreferrer" className="other-work__icon-link shadow-link" target="_blank">{icon}</a>
 				</li>
 				);
 		});

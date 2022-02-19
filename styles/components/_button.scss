@@ -27,19 +27,23 @@ button,
       @include transition;
     }
 
-    &:hover {
-      @include cursor-pointer;
-      color: var(--ui-text-hover);
-      background-color: rgba(var(--ui-accent-1-rgb), 0.2);
-      transform: translate(-0.25rem, -0.25rem);
+    @include hover-wrapper {
+      &:hover {
+        @include cursor-pointer;
+        color: var(--ui-text-hover);
+        background-color: rgba(var(--ui-accent-1-rgb), 0.2);
+        transform: translate(-0.25rem, -0.25rem);
+      }
     }
 
     &:active {
       transform: translate(0.5rem, 0.5rem);
     }
 
-    &:hover::after {
-      transform: translate(0.75rem, 0.75rem);
+    @include hover-wrapper {
+      &:hover::after {
+        transform: translate(0.75rem, 0.75rem);
+      }
     }
 
     &:active::after {
@@ -77,10 +81,12 @@ button,
       display: none;
     }
 
-    &:hover, &:active {
-      transform: none;
-      background-color: transparent;
-      color: var(--ui-accent-1);
+    @include hover-wrapper {
+      &:hover, &:active {
+        transform: none;
+        background-color: transparent;
+        color: var(--ui-accent-1);
+      }
     }
 
     &:focus {

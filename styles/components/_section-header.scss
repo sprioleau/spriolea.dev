@@ -34,9 +34,11 @@
       opacity: var(--opacity);
     }
 
-    &:hover::after,
-    &:focus::after {
-      --opacity: 1;
+    @include hover-wrapper {
+      &:hover::after,
+      &:focus::after {
+        --opacity: 1;
+      }
     }
   }
 

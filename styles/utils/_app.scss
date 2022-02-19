@@ -104,17 +104,19 @@ a, .a {
     transform: scaleX(var(--scaleX));
   }
 
-  &:hover {
-    @include cursor-pointer;
-    color: var(--ui-text-hover);
-  }
-
-  &:hover::before {
-    --scaleY: 1;
-  }
-
-  &:hover::after {
-    --scaleX: 1;
+  @include hover-wrapper {
+    &:hover {
+      @include cursor-pointer;
+      color: var(--ui-text-hover);
+    }
+  
+    &:hover::before {
+      --scaleY: 1;
+    }
+  
+    &:hover::after {
+      --scaleX: 1;
+    }
   }
 
   &.button::after {

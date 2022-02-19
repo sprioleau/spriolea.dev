@@ -27,12 +27,14 @@
     border-bottom: 1px solid var(--ui-accent-1);
     user-select: none;
     
-    &:hover {
-      transform: translateY(-3px);
-      background-color: rgba(var(--ui-accent-1-rgb), 0.1);
-
-      .skills__label {
-        color: var(--ui-text-hover);
+    @include hover-wrapper {
+      &:hover {
+        transform: translateY(-3px);
+        background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+  
+        .skills__label {
+          color: var(--ui-text-hover);
+        }
       }
     }
   }

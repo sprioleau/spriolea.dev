@@ -15,8 +15,10 @@
     --scaleX: 0;
   }
       
-  &:hover::after {
-    --scaleX: 1;
+  @include hover-wrapper {
+    &:hover::after {
+      --scaleX: 1;
+    }
   }
 
   &::before {

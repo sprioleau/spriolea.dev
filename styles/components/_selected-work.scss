@@ -38,8 +38,10 @@
       padding: 0;
     }
     
-    &:hover img {
-      filter: none;
+    @include hover-wrapper {
+      &:hover img {
+        filter: none;
+      }
     }
     
     img {
@@ -52,8 +54,10 @@
   &__link {
     position: relative;
 
-    &:hover::before {
-      opacity: 0;
+    @include hover-wrapper {
+      &:hover::before {
+        opacity: 0;
+      }
     }
 
     &::before {
@@ -124,9 +128,11 @@
     font-size: 1.5rem;
     padding: 0.5rem;
 
-    &:hover {
-      color: var(--ui-accent-1);
-      transform: translateY(-3px);
+    @include hover-wrapper {
+      &:hover {
+        color: var(--ui-accent-1);
+        transform: translateY(-3px);
+      }
     }
 
     &::after {

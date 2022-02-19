@@ -77,7 +77,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
 										</a>
 									))}
 								</Stagger>
-							<a href="/resume/resume.pdf" className="nav__resume-link" target="_blank" rel="noreferrer"><button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon">{icons.file}</span>Resume</button></a>
+							<a href="/resume/resume.pdf" className="nav__resume-link shadow-link" target="_blank" rel="noreferrer"><button type="button" className="m0 sm nav__button nav__button--resume" tabIndex={tabIndex}><span className="icon">{icons.file}</span>Resume</button></a>
 								<button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
 									{icons.close}
 								</button>

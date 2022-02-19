@@ -42,8 +42,10 @@
       display: none;
     }
 
-    &:hover {
-      color: var(--ui-accent-1);
+    @include hover-wrapper {
+      &:hover {
+        color: var(--ui-accent-1);
+      }
     }
   }
 
