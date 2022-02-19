@@ -63,7 +63,6 @@
   
   &__label {
     @include transition;
-    margin-top: 2px;
     padding: 1rem 1.5rem;
     font-size: 0.9em;
     white-space: nowrap;
@@ -240,6 +239,7 @@
     &__label {
       --padding: 1rem;
       padding: var(--padding);
+      margin-top: 2px;
 
       @include hover-wrapper {
         &:hover {

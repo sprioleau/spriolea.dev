@@ -145,6 +145,11 @@
   .selected-work {
     &__work {
       flex-direction: column;
+      padding-bottom: 3rem;
+
+      &:not(:last-child) {
+        border-bottom: 2px solid rgba(var(--ui-bg-hover-rgb), 0.7);
+      }
 
       &:nth-child(even) {
         flex-direction: column;
