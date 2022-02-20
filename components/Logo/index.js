@@ -8,7 +8,7 @@ const Logo = ({ fill = "currentColor", stroke = "transparent", strokeWidth = 0 }
         fill={fill}
         stroke={stroke}
         strokeWidth={strokeWidth}
-        strokeMiterLimit="10"
+        strokeMiterlimit="10"
       />
   </svg>
   )
