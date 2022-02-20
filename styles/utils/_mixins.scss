@@ -127,10 +127,11 @@ $bp-large: 1200px;
 
   &::after {
     content: "i";
+    color: var(--ui-accent-1);
+    font-weight: bold;
     font-size: 0.65em;
     top: 0;
     right: 0;
-    opacity: 0.75;
   }
 
   @include hover-wrapper {
