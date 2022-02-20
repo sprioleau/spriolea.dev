@@ -160,7 +160,17 @@ export const Stagger = ({
   );
 }
 
-export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, speed = 1, delayIncrement = 0.1, delay = 0, subtitle = false, animate = true }) => {
+export const StaggeredReveal = ({
+	tag: Tag = "h1", 
+	text, 
+	wrapperClass = null, 
+	speed = 1, 
+	delayIncrement = 0.1, 
+	delay = 0, 
+	subtitle = false, 
+	animate = true,
+	altTextOnHover = null,
+}) => {
 	const [animationComplete, setAnimationComplete] = React.useState(false);
 
 	const handleAnimationComplete = () => setAnimationComplete(true);
@@ -179,9 +189,9 @@ export const StaggeredReveal = ({ tag: Tag = "h1", text, wrapperClass = null, sp
 
 	const adjustedDelay = subtitle ? 0.5 + delay : delay;
 
-	if (animationComplete || !animate) return (
-		<Tag className={wrapperClass}>{text}</Tag>
-	)
+	if (animationComplete || !animate) {
+		return <Tag className={wrapperClass} data-alt-text={altTextOnHover ?? null}><span>{text}</span></Tag>
+	}
 	
 	return (
 		<Tag className={wrapperClass}>

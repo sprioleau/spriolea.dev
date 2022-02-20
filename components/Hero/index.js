@@ -30,6 +30,7 @@ const Hero = ({ content }) => {
 						wrapperClass="hero__headline"
 						delay={sectionDelay + 0.5}
 						tag="h1"
+						altTextOnHover="san-KWON pry-OH-low"
 					/>
 					<StaggeredReveal
 						text={subHeading}

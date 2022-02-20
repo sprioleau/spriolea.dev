@@ -17,6 +17,44 @@
     margin-bottom: 0.5rem;
   }
 
+  [data-alt-text] {
+    overflow: hidden;
+    position: relative;
+    
+    span {
+      --translateY: 0;
+      @include transition;
+      transform: translateY(var(--translateY));
+      display: block;
+    }
+
+    @include hover-wrapper {
+      &:hover span {
+        --translateY: -100%;
+      }
+  
+      &:hover::after {
+        --opacity: 1;
+        --translateY: -0.4em;
+      }
+    }
+
+    &::after {
+      --translateY:100%;
+      --opacity: 0;
+      @include transition;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 0.775em;
+      content: attr(data-alt-text);
+      display: block;
+      transform: perspective(2000px) translateY(calc(var(--translateY) + 0.5em));
+      opacity: var(--opacity);
+      transform-origin: top;
+    }
+  }
+
   &__headline, 
   &__vocation {
     @include ff-body-bold;
@@ -25,8 +63,15 @@
   &__headline {
     max-width: 25ch;
     color: var(--ui-text-hover);
-    margin-bottom: 0.75rem;
-    line-height: 1;
+    line-height: 1.1;
+
+    &.alt {
+      display: block;
+    }
+
+    &:last-child {
+      margin-bottom: 0.75rem;
+    }
   }
   
   &__vocation {
