@@ -11,7 +11,7 @@ const Home = ({ data }) => {
 		<div className={["app", navExpanded ? "nav-expanded" : ""].join(" ").trim()}>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<title>San&apos;Quan Prioleau</title>
+				<title>Test | San&apos;Quan Prioleau</title>
 			</Head>
 			<Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
 			<InfoRails siteDetails={siteDetails} />
