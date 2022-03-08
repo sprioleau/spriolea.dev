@@ -1,15 +1,20 @@
 import React from "react"
 import { FadeInAndUp, Stagger } from "../AnimationLibrary";
-import { handleKeyDown } from "../../utils";
+import { composeClasses, handleKeyDown } from "../../utils";
 import icons from "../Icons";
 
 const DataTable = ({ data: { sectionTitle, employers } }) => {
   const [expanded, setExpanded] = React.useState(false);
 
 	const handleExpand = () => setExpanded(!expanded);
+
+	const dataTableClasses = composeClasses({
+		"data-table": "",
+		expanded
+	});
 	
 	return (
-		<div className={["data-table", expanded ? "expanded" : ""].join(" ").trimEnd()}>
+		<div className={dataTableClasses}>
 				<header className="data-table__header">
 					<div
 						className="data-table__section-title"

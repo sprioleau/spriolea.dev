@@ -1,11 +1,14 @@
 /* eslint-disable no-param-reassign */
 import React from "react";
-import { sortAlphaByKey } from "../../utils"
+import { composeClasses, sortAlphaByKey } from "../../utils"
 import PageSectionLayout from "../PageSectionLayout"
 import icons from "../Icons";
 import { FadeInAndUp } from "../AnimationLibrary";
+import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 
 const Skills = ({ skills }) => {
+	const { windowSize } = useWindowSize();
+
 	const skillsListObject = skills.map((skill) => ({ ...skill, category: skill.category[0] })).sort((a, b) => (b.category > a.category) ? 1 : -1).reduce((skillsObject, skill) => {
 		if (!skillsObject[skill.category]) {
 			skillsObject[skill.category] = [skill];
@@ -14,6 +17,11 @@ const Skills = ({ skills }) => {
 		}
 		return skillsObject;
 	}, {});
+
+	const skillsListItemClasses = composeClasses({
+		"skills__list-item": "",
+		"no-hover": windowSize <= bp.sm,
+	});
 
 	return (
 		<PageSectionLayout sectionId="skills" sectionTitle="Relevant Skills">
@@ -26,7 +34,7 @@ const Skills = ({ skills }) => {
 								<FadeInAndUp
 									key={techName}
 									tag="li"
-									className="skills__list-item"
+									className={skillsListItemClasses}
 									dataTooltip={fullName}
 									useDefaultStyles={false}
 								>

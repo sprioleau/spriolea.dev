@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from "react"
-import { formatJobDates } from "../../utils";
+import { composeClasses, formatJobDates } from "../../utils";
 import TabLabel from "./components/TabLabel";
 import PortableTextBlock from "../PortableTextBlock";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
@@ -47,8 +47,14 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 		return employerName;
 	}
 
+	const tabListClasses = composeClasses({
+		"tab-list": "",
+		expandable: expandByDefault,
+		expanded,
+	});
+
 	return (
-		<div className={["tab-list", expanded ? "expanded" : "", expandByDefault ? "" : "expandable"].join(" ").trimEnd()}>
+		<div className={tabListClasses}>
 			<header className="tab-list__title-wrapper" onClick={handleExpand} tabIndex={0} role="button">
 				<h3 className="tab-list__title">{label} Experience</h3>
 				{!expandByDefault ? <span className="tab-list__expand-collapse icon">{icons.arrowDown}</span> : null}

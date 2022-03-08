@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import React from "react"
-import { formatJobDates, handleKeyDown } from "../../../../utils"
+import { composeClasses, formatJobDates, handleKeyDown } from "../../../../utils"
 
 const TabLabel = ({
   labelData: {
@@ -43,12 +43,17 @@ const TabLabel = ({
     return () => {
       if (hasWindowObject) window.addEventListener("resize", handleUpdate);
     }
-   }, [index, setIndicatorHeight, currentTabIndex])
+  }, [index, setIndicatorHeight, currentTabIndex]);
+
+  const tabListLabelClasses = composeClasses({
+    "tab-list__label": "",
+    active: currentTabIndex === index,
+  });
 
   return (
     <li
       key={_id}
-      className={["tab-list__label", currentTabIndex === index ? "active" : ""].join(" ").trimEnd()}
+      className={tabListLabelClasses}
       onClick={() => handleUpdateCurrentTab(index)}
       onKeyDown={(e) => handleKeyDown(e, () => handleUpdateCurrentTab(index))}
       role="button"
