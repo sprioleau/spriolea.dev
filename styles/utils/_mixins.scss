@@ -134,6 +134,10 @@ $bp-large: 1200px;
     right: 0;
   }
 
+  &.no-hover::after {
+    display: none;
+  }
+
   @include hover-wrapper {
     &:hover {
       &::before, 
