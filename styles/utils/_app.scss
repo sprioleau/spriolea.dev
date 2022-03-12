@@ -145,8 +145,7 @@ em {
   margin-right: 2px;
   padding: 0.125em;
   color: var(--ui-text-hover);
-  outline: 1px solid rgba(var(--ui-accent-1-rgb), 0.7);
-  background-color: rgba(var(--ui-accent-1-rgb), 0.1825);
+  background: linear-gradient(to bottom, var(--ui-accent-1) 0%, var(--ui-accent-1) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.1875) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.1875) calc(100% - 1em / 16), var(--ui-accent-1) calc(100% - 1em / 16), var(--ui-accent-1) 100%);
 }
 
 .app {
