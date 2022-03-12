@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
-import React from "react"
-import { composeClasses, formatJobDates, handleKeyDown } from "../../../../utils"
+import React from "react";
+import { composeClasses, formatJobDates, handleKeyDown } from "../../../../utils";
 
 const TabLabel = ({
   labelData: {
@@ -8,33 +8,33 @@ const TabLabel = ({
     label,
     fromDate,
     toDate,
-    currentlyInRole
+    currentlyInRole,
   },
   index,
   currentTabIndex,
   showSublabel = true,
   subLabelAsDates = true,
   handleUpdateCurrentTab,
-  setIndicatorHeight
+  setIndicatorHeight,
 }) => {
   const tabLabelRef = React.useRef(null);
 
   const getLabelContents = () => {
-    if (!showSublabel) return null; 
+    if (!showSublabel) return null;
     const formattedDates = formatJobDates(fromDate, toDate, currentlyInRole);
     const currentText = currentlyInRole ? "Current" : null;
     const labelContents = subLabelAsDates ? formattedDates : currentText;
     return labelContents;
-  }
+  };
 
   React.useEffect(() => {
     const hasWindowObject = typeof window !== "undefined";
-    
+
     const handleUpdate = () => {
       if (tabLabelRef && currentTabIndex === index) {
         setIndicatorHeight(tabLabelRef.current.clientHeight);
       }
-    }
+    };
 
     handleUpdate();
 
@@ -42,7 +42,7 @@ const TabLabel = ({
 
     return () => {
       if (hasWindowObject) window.addEventListener("resize", handleUpdate);
-    }
+    };
   }, [index, setIndicatorHeight, currentTabIndex]);
 
   const tabListLabelClasses = composeClasses({
@@ -65,7 +65,7 @@ const TabLabel = ({
         {getLabelContents()}
       </span>
     </li>
-  )
-}
+  );
+};
 
-export default TabLabel
+export default TabLabel;

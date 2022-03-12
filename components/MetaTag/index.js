@@ -1,7 +1,7 @@
 const MetaTag = ({ data }) => {
   const getAttributes = ([propertyName, propertyValue], [contentName, contentValue]) => ({
     [propertyName]: propertyValue,
-    [contentName]: contentValue
+    [contentName]: contentValue,
   });
 
   return (
@@ -10,11 +10,11 @@ const MetaTag = ({ data }) => {
         const [property, content] = Object.entries(attribute);
 
         return (
-          <meta key={property} {...getAttributes(property, content)}  />
-        )
+          <meta key={property} {...getAttributes(property, content)} />
+        );
       })}
     </>
-  )
-}
+  );
+};
 
 export default MetaTag;

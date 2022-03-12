@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React from "react"
+import React from "react";
 
 // Reference: https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
 const isTag = (text) => /^[a-z]+$/i.test(text);
@@ -9,20 +9,20 @@ const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => 
     const { _key: key, href } = link;
     links[key] = href;
     return links;
-  }, {})
+  }, {});
 
   const renderText = (text, marks) => {
     const hasLinks = marks.some((mark) => !isTag(mark));
 
     if (!hasLinks && marks.includes("em")) {
-      return <em>{text}</em>
+      return <em>{text}</em>;
     } else if (hasLinks) {
       const link = linkLookup[marks[0]];
-      return <a href={link} target="_blank" rel="noreferrer" className={linksClass}>{text}</a>
+      return <a href={link} target="_blank" rel="noreferrer" className={linksClass}>{text}</a>;
     } else {
-      return <span>{text}</span>
+      return <span>{text}</span>;
     }
-  }
+  };
 
   return (
     <>
@@ -32,7 +32,7 @@ const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => 
         </React.Fragment>
       ))}
     </>
-  )
-}
+  );
+};
 
 export default PortableTextBlock;

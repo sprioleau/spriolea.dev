@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import icons from "../Icons";
 
 const ResumeButton = ({ tabIndex }) => {
@@ -21,7 +21,7 @@ const ResumeButton = ({ tabIndex }) => {
         </button>
       </a>
     </div>
-  )
-}
+  );
+};
 
 export default ResumeButton;

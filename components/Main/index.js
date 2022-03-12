@@ -6,27 +6,27 @@ import Skills from "../Skills";
 import Contact from "../Contact";
 
 const Main = ({ data }) => {
-	if (!data) return null;
+  if (!data) return null;
 
-	const {
-		hero,
-		about,
-		experience,
-		skills,
-		projects,
-		contact,
-	} = data;
-	
-	return (
-		<main className="main">
-			<Hero content={hero} />
-			<About content={about} />
-			<Experience experience={experience} />
-			<Work projects={projects} />
-			<Skills skills={skills} />
-			<Contact content={contact} /> 
-		</main>
-	);
+  const {
+    hero,
+    about,
+    experience,
+    skills,
+    projects,
+    contact,
+  } = data;
+
+  return (
+    <main className="main">
+      <Hero content={hero} />
+      <About content={about} />
+      <Experience experience={experience} />
+      <Work projects={projects} />
+      <Skills skills={skills} />
+      <Contact content={contact} />
+    </main>
+  );
 };
 
 export default Main;

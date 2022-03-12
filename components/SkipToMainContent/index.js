@@ -1,19 +1,19 @@
-import React from "react"
+import React from "react";
 import { useRouter } from "next/router";
 import { handleKeyDown } from "../../utils";
 import icons from "../Icons";
 
 const SkipToMainContent = ({ sectionId = "#about" }) => {
   const router = useRouter();
-  const buttonRef = React.useRef()
+  const buttonRef = React.useRef();
 
   const handleSkipToMainContent = () => {
     router.push(sectionId);
     buttonRef.current.blur();
-  }
+  };
 
   return (
-	<button
+    <button
       ref={buttonRef}
       type="button"
       className="skip-to-main-content"
@@ -21,10 +21,10 @@ const SkipToMainContent = ({ sectionId = "#about" }) => {
       onClick={handleSkipToMainContent}
       onKeyDown={(e) => handleKeyDown(e, handleSkipToMainContent)}
     >
-		<p className="skip-to-main-content__label">Skip to main content</p>
-    {icons.arrowRight}
-	</button>
-  )
-}
+      <p className="skip-to-main-content__label">Skip to main content</p>
+      {icons.arrowRight}
+    </button>
+  );
+};
 
 export default SkipToMainContent;

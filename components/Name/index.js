@@ -1,11 +1,9 @@
-;
-
 const Name = () => {
   return (
-	<>
-		San&apos;Quan Prioleau
-	</>
-  )
-}
+    <>
+      San&apos;Quan Prioleau
+    </>
+  );
+};
 
-export default Name
+export default Name;
