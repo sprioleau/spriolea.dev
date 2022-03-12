@@ -143,9 +143,11 @@ em {
   display: inline;
   font-style: normal;
   margin-right: 2px;
-  padding: 0.125em;
+  padding: 0.125em 0.25em;
   color: var(--ui-text-hover);
-  background: linear-gradient(to bottom, var(--ui-accent-1) 0%, var(--ui-accent-1) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.1875) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.1875) calc(100% - 1em / 16), var(--ui-accent-1) calc(100% - 1em / 16), var(--ui-accent-1) 100%);
+  background: 
+    linear-gradient(to bottom, var(--ui-accent-1) 0%, var(--ui-accent-1) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.09375) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.09375) calc(100% - 1em / 16), var(--ui-accent-1) calc(100% - 1em / 16), var(--ui-accent-1) 100%),
+    linear-gradient(to right, var(--ui-accent-1) 0%, var(--ui-accent-1) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.09375) calc(1em / 16), rgba(var(--ui-accent-1-rgb), 0.09375) calc(100% - 1em / 16), var(--ui-accent-1) calc(100% - 1em / 16), var(--ui-accent-1) 100%);
 }
 
 .app {
