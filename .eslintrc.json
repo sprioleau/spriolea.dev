@@ -1,8 +1,7 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "airbnb",
-    "prettier"
+    "airbnb"
   ],
 	"plugins": ["react"],
 	"parserOptions": {
