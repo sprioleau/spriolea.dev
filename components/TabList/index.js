@@ -53,6 +53,8 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 		expanded,
 	});
 
+	const shouldAnimate = !isSmallScreen;
+
 	return (
 		<div className={tabListClasses}>
 			<header className="tab-list__title-wrapper" onClick={handleExpand} tabIndex={0} role="button">
@@ -86,6 +88,17 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 							</h4>
 							<p className="tab-list__dates">{formattedDates}</p>
 					</header>
+					{isSmallScreen ? (
+						<ul className="tab-list__work-list">
+							{experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }) => (
+								<li key={_key} data-key={_key} className="tab-list__work-list-item">
+									<p key={_key} data-key={_key}> 
+										<PortableTextBlock childrenContent={children} markDefs={markDefs} />
+									</p>
+								</li>
+							))}
+						</ul>
+					) : (
 						<Stagger
 							parent={{ tag: "ul", className: "tab-list__work-list" }}
 							child={{ tag: "li", className: "tab-list__work-list-item" }}
@@ -93,12 +106,13 @@ const TabList = ({ id, label, experience, showSublabel, expandByDefault }) => {
 							staggerDelay={1}
 							delayWithIndex
 						>
-							{experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }, index) => (
+							{experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }) => (
 									<p key={_key} data-key={_key}> 
 										<PortableTextBlock childrenContent={children} markDefs={markDefs} />
 									</p>
 							))}
 						</Stagger>
+					)}
 					</div>
 			</div>
 		</div>
