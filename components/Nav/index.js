@@ -41,21 +41,21 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
             <div className="nav__links-wrapper">
               <Stagger
                 parent={{
-									  tag: "ul",
-									  className: "nav__links",
-									  additionalProps: {
-									    itemScope: true,
-									    itemType: "https://schema.org/SiteNavigationElement",
-									    role: "menu",
-									  },
+                  tag: "ul",
+                  className: "nav__links",
+                  additionalProps: {
+                    itemScope: true,
+                    itemType: "https://schema.org/SiteNavigationElement",
+                    role: "menu",
+                  },
                 }}
                 child={{
-								  tag: "li",
-								  className: "nav__link",
-								  additionalProps: {
-								    itemProp: "name",
-								    role: "menuitem",
-								  },
+                  tag: "li",
+                  className: "nav__link",
+                  additionalProps: {
+                    itemProp: "name",
+                    role: "menuitem",
+                  },
                 }}
                 staggerBy={0.25}
                 staggerDelay={0.5}

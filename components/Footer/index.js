@@ -43,11 +43,11 @@ const Footer = ({ content }) => {
         {shouldDisplayStats ? (
           <ul className="footer__stats">
             {statsData.map(({ key, value, icon }) => (
-						  value ? (
-  <li key={key} className="footer__stat tooltip" data-tooltip={key}>
-    <p className="footer__stat-wrapper"><span>{formatNumber(value)}</span> <span className="icon">{icon}</span></p>
-  </li>
-						  ) : null
+              value ? (
+                <li key={key} className="footer__stat tooltip" data-tooltip={key}>
+                  <p className="footer__stat-wrapper"><span>{formatNumber(value)}</span> <span className="icon">{icon}</span></p>
+                </li>
+              ) : null
             ))}
           </ul>
         ) : null}

@@ -54,8 +54,8 @@ const ProjectTable = ({ projects }) => {
         <div
           className="other-work__image"
           style={{
-				  top: y + 20,
-				  left: x + 10,
+            top: y + 20,
+            left: x + 10,
           }}
         >
           <Image

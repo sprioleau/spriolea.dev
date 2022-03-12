@@ -205,15 +205,15 @@ export const StaggeredReveal = ({
             key={index}
             variants={variants}
             transition={{
-						  delay: adjustedDelay + (index * delayIncrement) / speed,
-						  duration: (delayIncrement * 3) / speed,
-						  type: "spring",
-						  damping: 20,
-						  stiffness: 500,
+              delay: adjustedDelay + (index * delayIncrement) / speed,
+              duration: (delayIncrement * 3) / speed,
+              type: "spring",
+              damping: 20,
+              stiffness: 500,
             }}
             style={{
-						  ...styles.letter,
-						  marginRight: letter === " " ? "0.22em" : null,
+              ...styles.letter,
+              marginRight: letter === " " ? "0.22em" : null,
             }}
           >{letter}
           </m.span>

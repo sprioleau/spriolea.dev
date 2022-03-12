@@ -50,10 +50,10 @@ const DataTable = ({ data: { sectionTitle, employers } }) => {
                   </header>
                   <ul className="data-table__work-list">
                     {works.map((work) => (
-                    <li key={work} className="data-table__work">
-                    <p>{work}</p>
-                  </li>
-                  ))}
+                      <li key={work} className="data-table__work">
+                        <p>{work}</p>
+                      </li>
+                    ))}
                   </ul>
                 </React.Fragment>
               ))}
