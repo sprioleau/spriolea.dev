@@ -19,7 +19,7 @@ const Home = ({ data }) => {
     <div className={appClasses}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>San&apos;Quan Prioleau</title>
+        <title>San&apos;Quan Prioleau - Frontend Web Developer</title>
       </Head>
       <Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
       <InfoRails siteDetails={siteDetails} />
