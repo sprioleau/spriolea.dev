@@ -140,27 +140,13 @@ table {
 }
 
 em {
+  display: inline;
   font-style: normal;
-  display: inline-block;
+  margin-right: 2px;
+  padding: 0.125em;
   color: var(--ui-text-hover);
-  position: relative;
-  margin-inline: 2px;
-  padding-inline: 0.125em;
-  
-  &::before {
-    --inset: 0.25em;
-    content: "";
-    position: absolute;
-    height: 75%;
-    width: 100%;
-    top: 50%;
-    bottom: var(--inset);
-    left: 0;
-    transform: translateY(-50%);
-    background-color: rgba(var(--ui-accent-1-rgb), 0.1825);
-    outline: 1px solid rgba(var(--ui-accent-1-rgb), 0.7);
-    z-index: -1;
-  }
+  outline: 1px solid rgba(var(--ui-accent-1-rgb), 0.7);
+  background-color: rgba(var(--ui-accent-1-rgb), 0.1825);
 }
 
 .app {
