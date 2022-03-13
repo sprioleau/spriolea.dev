@@ -3,15 +3,14 @@
 import getKeyValue from "./getKeyValue";
 
 const organizeByKey = (array, path) => array.reduce((result, item) => {
-  const property = getKeyValue(item, path)
+  const property = getKeyValue(item, path);
 
   if (!result[property]) {
     result[property] = [item];
   } else {
-    result[property].push(item)
+    result[property].push(item);
   }
   return result;
 }, {});
-
 
 export default organizeByKey;

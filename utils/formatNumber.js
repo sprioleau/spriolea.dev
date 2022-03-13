@@ -4,6 +4,6 @@ const formatNumber = (number) => {
     minimumFractionDigits: 0,
     minimumIntegerDigits: 1,
   });
-}
+};
 
 export default formatNumber;

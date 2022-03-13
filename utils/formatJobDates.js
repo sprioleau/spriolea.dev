@@ -7,7 +7,7 @@ const formatJobDates = (start, end = null, isCurrent = false) => {
 
   if (!end && isCurrent) to = "Present";
 
-  return <>{from} <span className="icon p0 mi-2">{icons.arrowRightNarrow}</span> {to}</>
-}
+  return <>{from} <span className="icon p0 mi-2">{icons.arrowRightNarrow}</span> {to}</>;
+};
 
 export default formatJobDates;

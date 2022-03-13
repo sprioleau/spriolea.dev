@@ -6,6 +6,6 @@ const handleScrollToTop = (e, router) => {
   if (window !== undefined) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
-}
+};
 
 export default handleScrollToTop;

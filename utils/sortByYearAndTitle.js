@@ -6,6 +6,6 @@ const sortByYearAndTitle = (a, b) => {
   }
 
   return aYear > bYear ? -1 : 1;
-}
+};
 
 export default sortByYearAndTitle;

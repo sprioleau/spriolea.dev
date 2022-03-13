@@ -3,5 +3,5 @@ const handleKeyDown = (e, actionFunction) => {
   if (e.key === " ") e.preventDefault();
   actionFunction(e);
 };
-  
+
 export default handleKeyDown;
