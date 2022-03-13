@@ -1,10 +1,15 @@
 import React from "react";
+import { getFilenameDate } from "../../utils";
 import icons from "../Icons";
 
 const ResumeButton = ({ tabIndex }) => {
-  const [shouldDownload, setShouldDownload] = React.useState(false);
+  const [download, setDownload] = React.useState(null);
 
-  const handleDownload = () => setShouldDownload(true);
+  const handleDownload = () => {
+    const date = getFilenameDate();
+    const filename = `sanquan_prioleau_resume_${date}.pdf`;
+    setDownload(filename);
+  };
 
   return (
     <div className="resume-button">
@@ -13,7 +18,7 @@ const ResumeButton = ({ tabIndex }) => {
         className="nav__resume-link shadow-link"
         target="_blank"
         rel="noreferrer"
-        download={shouldDownload}
+        download={download}
       >
         <button type="button" className="m0 sm nav__button nav__button--resume resume-button__button" tabIndex={tabIndex}>
           <span className="icon resume-button__file-icon" data-tooltip="View">{icons.file}<span>Resume</span></span>
