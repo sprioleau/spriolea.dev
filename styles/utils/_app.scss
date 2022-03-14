@@ -78,6 +78,7 @@ a, .a {
   color: var(--ui-text);
   text-decoration: none;
   position: relative;
+  display: inline-block;
   
   &::before, &::after {
     @include transition(transform, 0.2s);
@@ -96,7 +97,7 @@ a, .a {
   &::after {
     --scaleX: 1;
     background-color: var(--ui-accent-1);
-    bottom: -0.25rem;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;

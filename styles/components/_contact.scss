@@ -54,6 +54,7 @@
 
     &::after {
       --scaleX: 0;
+      bottom: -0.125em;
     }
 
     @include hover-wrapper {
