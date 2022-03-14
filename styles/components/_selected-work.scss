@@ -29,9 +29,22 @@
   &__image {
     flex: 0 0 45%;
     position: relative;
+    height: 100%;
+    margin-top: 0.85rem;
 
+    a {
+      @include transition(all, 0.25s);
+      filter: brightness(85%);
+      background-blend-mode: multiply;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      margin: 0;
+    }
+    
     a::before {
       --scaleY: 1;
+      background-color: rgba(var(--ui-bg-hover-rgb), 0.7);
+      z-index: 2;
     }
 
     .button {
@@ -39,34 +52,31 @@
     }
     
     @include hover-wrapper {
-      &:hover img {
-        filter: none;
+      &:hover a {
+        filter: brightness(100%);
+
+        &::before {
+          opacity: 0;
+        }
       }
-    }
-    
-    img {
-      object-fit: cover;
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) brightness(85%);
     }
   }
 
   &__link {
     position: relative;
 
-    @include hover-wrapper {
-      &:hover::before {
-        opacity: 0;
-      }
+    span {
+      opacity: 0;
     }
 
     &::before {
       @include transition;
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(var(--ui-bg-hover-rgb), 0.7);
-      z-index: 1;
+    }
+
+    @include hover-wrapper {
+      &:hover::before {
+        opacity: 0;
+      }
     }
   }
 
@@ -156,9 +166,21 @@
       }
     }
 
+    &__link {
+      &::before {
+        display: none;
+      }
+
+    }
+    
     &__image {
       flex-basis: 100%;
+      margin-top: 0;
       margin-bottom: 1rem;
+      
+      a {
+        filter: brightness(100%);
+      }
     }
 
     &__details {

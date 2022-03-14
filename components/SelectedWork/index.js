@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import { urlFor } from "../../libs/sanity";
 import { FadeInWhenVisible } from "../AnimationLibrary";
 import PortableTextBlock from "../PortableTextBlock";
@@ -15,20 +14,22 @@ const SelectedWork = ({ projects }) => {
         }) => (
           <FadeInWhenVisible tag="li" key={_id} className="selected-work__work" useDefaultStyles={false}>
             <div className="selected-work__image">
-              <a href={deployedUrl} className="button selected-work__link" target="_blank" rel="noreferrer">
-                <Image
-                  src={urlFor(mainImage).format("webp").width(800).height(800 * 0.5625)
-                    .url()}
-                  alt={title}
-                  width={800}
-                  height={800 * 0.5625}
-                />
+              <a href={deployedUrl}
+                className="button selected-work__link"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  backgroundImage: `url(${urlFor(mainImage).format("webp").width(800).height(800 * 0.5625)
+                    .url()})`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <span>{title}</span>
               </a>
             </div>
             <div className="selected-work__details">
               <h3 className="selected-work__title">
                 {title}
-                {/* {emoji && <span className="emoji" role="img"> {emoji}</span>} */}
               </h3>
               <p className="selected-work__description">{description.map(({ _key, children, markDefs }) => (
                 <PortableTextBlock key={_key} childrenContent={children} markDefs={markDefs} />
