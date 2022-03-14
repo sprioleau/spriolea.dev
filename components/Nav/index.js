@@ -36,7 +36,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
       </div>
       <div className="nav__main-content">
         <SkipToMainContent />
-        <FocusTrap active={navExpanded && windowSize <= bp.md}>
+        <FocusTrap active={navExpanded && windowSize <= bp.md} focusTrapOptions={{ initialFocus: false }}>
           <div>
             <div className="nav__links-wrapper">
               <Stagger
