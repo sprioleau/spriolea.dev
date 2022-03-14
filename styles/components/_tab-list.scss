@@ -171,14 +171,6 @@
     position: relative;
     padding-left: 1.75rem;
 
-    a {
-      display: inline-block;
-
-      &::after {
-        bottom: 0;
-      }
-    }
-    
     &::before {
       content: "\2736";
       position: absolute;
