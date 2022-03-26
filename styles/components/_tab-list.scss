@@ -3,7 +3,18 @@
 
   &__title-wrapper {
     display: flex;
+    align-items: center;
     margin-bottom: 0.5rem;
+
+    @include hover-wrapper {
+      &:hover {
+        @include cursor-pointer;
+      }
+    }
+
+    & > :not(:last-child) {
+      margin-right: 0.5rem;
+    }
   }
 
   &__title {
@@ -34,15 +45,21 @@
     overflow: visible;
   }
 
-  &.expanded &__expand-collapse {
+  &.expanded &__icon {
     --rotation: 180deg;
   }
 
   &__expand-collapse {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--ui-accent-1);
+  }
+
+  &__icon {
     --rotation: 0;
+    display: inline-flex;
     @include transition;
     transform: rotate(var(--rotation));
-    color: var(--ui-accent-1);
 
     svg {
       animation: float 0.75s ease-in-out alternate infinite;
