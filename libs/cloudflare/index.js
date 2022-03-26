@@ -1,12 +1,12 @@
 import {
   ApolloClient,
   InMemoryCache,
-	gql,
-	createHttpLink
+  gql,
+  createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-export const fetchPageViews = async () => { 
+export const fetchPageViews = async () => {
   const httpLink = createHttpLink({
     uri: "https://api.cloudflare.com/client/v4/graphql",
   });
@@ -17,13 +17,13 @@ export const fetchPageViews = async () => {
         ...headers,
         "X-AUTH-EMAIL": process.env.X_AUTH_EMAIL,
         authorization: `Bearer ${process.env.CLOUDFLARE_ANALYTICS_API_TOKEN}`,
-      }
-    }
+      },
+    };
   });
 
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache(),
   });
 
   const { data } = await client.query({
@@ -40,16 +40,16 @@ export const fetchPageViews = async () => {
         }
       }
   
-    `
+    `,
   });
 
   const { pageViews } = data.viewer.zones[0].httpRequests1dGroups[0].sum;
 
   return { pageViews };
-}
+};
 
 export const fetchClaps = async () => {
   const response = await fetch(process.env.CLOUDFLARE_WORKER_URL);
   const { claps } = await response.json();
   return { claps };
-}
+};
