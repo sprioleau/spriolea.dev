@@ -24,3 +24,4 @@ export { default as ClapButton } from "./ClapButton";
 export { default as ProjectRow } from "./ProjectRow";
 export { default as ResumeButton } from "./ResumeButton";
 export { default as Logo } from "./Logo";
+export { default as ProjectKudos } from "./ProjectKudos";
