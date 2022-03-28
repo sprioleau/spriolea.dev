@@ -25,7 +25,7 @@ export default {
       name: "jobType",
       title: "Job Type",
       type: "reference",
-      to: { type: "jobType" }
+      to: { type: "jobType" },
     },
     {
       name: "fromDate",
@@ -33,7 +33,7 @@ export default {
       type: "date",
       options: {
         dateFormat: "MMM YYYY",
-        calendarTodayLabel: "Today"
+        calendarTodayLabel: "Today",
       },
       validation: (Rule) => Rule.required(),
     },
@@ -43,7 +43,7 @@ export default {
       type: "date",
       options: {
         dateFormat: "MMM YYYY",
-        calendarTodayLabel: "Today"
+        calendarTodayLabel: "Today",
       },
     },
     {
@@ -79,4 +79,4 @@ export default {
       title: "label",
     },
   },
-}
+};
