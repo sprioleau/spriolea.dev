@@ -17,7 +17,7 @@
     --rotation: 0;
     flex: 0 1 45ch;
     max-width: 45ch;
-    margin-inline: 2rem;
+    margin-inline: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,10 +27,6 @@
     overflow: hidden;
     transform: rotate(var(--rotation));
     user-select: none;
-
-    & > :not(:last-child) {
-      margin-bottom: 0.5rem;
-    }
 
     &::before {
       content: "";
@@ -73,15 +69,22 @@
     --opacity: 0.8;
     font-size: 0.8rem;
     @include transition;
+    letter-spacing: 0.3px;
+    padding-inline: 1rem;
     opacity: var(--opacity);
   }
 
-  &__credit p {
-    opacity: var(--opacity);
-    font-family: var(--font-mono);
-    color: var(--ui-accent-1);
-    position: relative;
-    line-height: 1.5;
+  &__credit {
+    margin-bottom: 0.5rem;
+
+    p {
+      opacity: var(--opacity);
+      font-family: var(--font-mono);
+      color: var(--ui-accent-1);
+      position: relative;
+      line-height: 1.5;
+      margin-bottom: 0.125rem;
+    }
   }
 }
 
@@ -91,6 +94,7 @@ p.project-kudos__quote {
   font-size: 0.95rem;
   font-family: var(--font-ss);
   line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 @keyframes marquee {

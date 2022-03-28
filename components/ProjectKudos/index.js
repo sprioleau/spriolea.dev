@@ -11,7 +11,7 @@ const ProjectKudos = ({ kudos = [], delay = 0 }) => {
         gradientColor={[22, 3, 44]}
         gradientWith="calc(10% + var(--section-x-padding))"
         pauseOnClick
-        speed={20}
+        speed={30}
         delay={delay}
         className="project-kudos__marquee-container"
       >
