@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# development data
+/public/data
+
 # production
 /build
 

@@ -1,4 +1,4 @@
-const getData = async (url) => { 
+const getData = async (url) => {
   let data = null;
 
   try {
@@ -7,8 +7,8 @@ const getData = async (url) => {
   } catch (error) {
     console.error(error);
   }
-  
+
   return data;
-}
-    
+};
+
 export default getData;

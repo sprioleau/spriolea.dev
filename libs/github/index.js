@@ -3,12 +3,12 @@
 import {
   ApolloClient,
   InMemoryCache,
-	gql,
-	createHttpLink
+  gql,
+  createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-export const fetchContributions = async () => { 
+export const fetchContributions = async () => {
   const httpLink = createHttpLink({
     uri: "https://api.github.com/graphql",
   });
@@ -18,13 +18,13 @@ export const fetchContributions = async () => {
       headers: {
         ...headers,
         authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
-      }
-    }
+      },
+    };
   });
 
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache(),
   });
 
   const date = new Date();
@@ -42,11 +42,11 @@ export const fetchContributions = async () => {
         }
       }
   
-    `
+    `,
   });
 
   // Contributions in the last year
   const contributions = data.user.contributionsCollection.contributionCalendar.totalContributions;
 
   return { contributions };
-}
+};
