@@ -6,7 +6,6 @@ import PortableTextBlock from "../PortableTextBlock";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 import { Stagger } from "../AnimationLibrary";
 import icons from "../Icons";
-import ProjectKudos from "../ProjectKudos";
 
 const TabList = ({
   id, label, experience, showSublabel, expandByDefault,
@@ -108,7 +107,6 @@ const TabList = ({
           </Stagger>
         </div>
       </div>
-      <ProjectKudos />
     </div>
   );
 };
