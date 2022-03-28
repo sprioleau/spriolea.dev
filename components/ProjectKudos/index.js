@@ -1,11 +1,9 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import PortableTextBlock from "../PortableTextBlock";
 
 const ProjectKudos = ({ kudos = [], delay = 0 }) => {
   if (kudos.length === 0) return null;
-  // const getInitials = (name) => {
-  //   return name.split(" ").map((n) => n[0]).join(".");
-  // };
 
   return (
     <div className="project-kudos">
@@ -15,20 +13,21 @@ const ProjectKudos = ({ kudos = [], delay = 0 }) => {
         pauseOnClick
         speed={20}
         delay={delay}
-        className="kudos__marquee"
+        className="project-kudos__marquee-container"
       >
-        {kudos.map((kudo, index) => (
-          <div key={index}
-            className="project-kudos__kudo"
-            style={{
-              "--rotation": `${((index % 2) - 0.35).toFixed(2)}deg`,
-              flex: "0 1 30rem",
-            }}
-          >
-            <p className="project-kudos__description">{kudo.description}</p>
-            <p className="project-kudos__quote">{kudo.quote}</p>
-            <span className="project-kudos__credit">{kudo.credit.title}, {kudo.credit.company}</span>
-          </div>
+        {kudos.map(({
+          _id, quote, credit, project,
+        }) => (
+          <article key={_id} className="project-kudos__kudo">
+            <p className="project-kudos__quote">
+              <PortableTextBlock childrenContent={quote[0].children} markDefs={quote[0].markDefs} />
+            </p>
+            <div className="project-kudos__credit">
+              <p className="project-kudos__credit-title">{credit.jobTitle}</p>
+              <p className="project-kudos__credit-company">{credit.company}</p>
+            </div>
+            <p className="project-kudos__project-name">Project: {project.name}</p>
+          </article>
         ))}
       </Marquee>
     </div>

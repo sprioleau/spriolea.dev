@@ -1,8 +1,9 @@
 import TabList from "../TabList";
 import PageSectionLayout from "../PageSectionLayout";
 import { organizeByKey } from "../../utils";
+import ProjectKudos from "../ProjectKudos";
 
-const Experience = ({ experience }) => {
+const Experience = ({ experience, kudos }) => {
   if (!experience) return null;
 
   const experienceByType = organizeByKey(experience, "jobType.type");
@@ -36,6 +37,7 @@ const Experience = ({ experience }) => {
           expandByDefault={expandByDefault}
         />
       ))}
+      <ProjectKudos kudos={kudos} />
     </PageSectionLayout>
   );
 };

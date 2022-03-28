@@ -24,6 +24,7 @@ const queries = {
   about: "*[_type == \"about\"]",
   navLinks: "*[_type == \"navLink\"] | order(order asc)",
   projects: "*[_type == \"project\"] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }",
+  kudos: "*[_type==\"kudos\"] { ..., credit->, project->}",
   skills: "*[_type == \"skill\"]",
   siteDetails: "*[_type == \"siteDetails\"]",
   contact: "*[_type == \"contact\"]",

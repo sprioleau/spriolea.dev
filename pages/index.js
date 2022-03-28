@@ -35,9 +35,14 @@ export default Home;
 export const getStaticProps = async (context) => {
   const { data } = await fetchStaticSiteData();
 
+  const alteredData = {
+    ...data,
+    kudos: data.kudos.sort(() => Math.random() - 0.5),
+  };
+
   return {
     props: {
-      data,
+      data: alteredData,
     },
   };
 };

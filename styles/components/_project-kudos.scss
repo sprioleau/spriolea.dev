@@ -2,6 +2,11 @@
   margin-inline: calc(-1 * var(--container-x-padding));
   position: relative;
   overflow: hidden;
+  text-align: center;
+
+  &__marquee-container {
+    margin-block: 1.5rem;
+  }
 
   &__kudos {
     display: flex;
@@ -9,7 +14,7 @@
   }
 
   &__kudo {
-    --rotation: -1.5deg;
+    --rotation: 0;
     flex: 0 1 45ch;
     max-width: 45ch;
     margin-inline: 2rem;
@@ -47,7 +52,6 @@
     p {
       margin-bottom: 0;
       font-family: var(--font-mono);
-      font-size: 0.9rem;
       color: var(--ui-accent-1);
       position: relative;
       line-height: 1.35;
@@ -55,39 +59,29 @@
   }
 
   @include hover-wrapper {
-    &:hover &__quote {
+    &__kudo:hover &__quote {
       color: var(--ui-text-hover);
     }
 
-    &:hover &__description,
-    &:hover &__credit {
+    &:hover &__credit p, 
+    &:hover &__project-name {
       --opacity: 1;
     }
   }
 
-  &__description, &__credit {
+  &__project-name, &__credit p {
     --opacity: 0.8;
+    font-size: 0.8rem;
     @include transition;
     opacity: var(--opacity);
   }
 
-  &__credit {
-    align-self: flex-end;
-    padding-left: 1.5rem;
-    position: relative;
+  &__credit p {
+    opacity: var(--opacity);
     font-family: var(--font-mono);
-    font-size: 0.8rem;
     color: var(--ui-accent-1);
     position: relative;
     line-height: 1.5;
-
-    &::before {
-      content: "\2736";
-      position: absolute;
-      font-size: 0.9rem;
-      top: -0.1rem;
-      left: 0.5rem;
-    }
   }
 }
 
