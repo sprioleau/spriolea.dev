@@ -1,35 +1,36 @@
 import React from "react";
-// import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee";
 
-const ProjectKudos = () => {
-  // const kudos = [
-  //   {
-  //     name: "Susan M. Kelley",
-  //     title: "Senior Software Engineer",
-  //     company: "Dartmouth College",
-  //     projectName: "My Account",
-  //     description: "Account setup and password recovery flow",
-  //     quote: "San'Quan took the lead on developing opportunities for reducing user friction in the account claiming and password reset process. This is really the heart of the project. San'Quan's work on the project has been exceptional.",
-  //   },
-  // ];
+const ProjectKudos = ({ kudos = [], delay = 0 }) => {
+  if (kudos.length === 0) return null;
+  // const getInitials = (name) => {
+  //   return name.split(" ").map((n) => n[0]).join(".");
+  // };
 
   return (
     <div className="project-kudos">
-      <ul className="project-kudos__kudos">
-        <h2>Kudos</h2>
-        {/* <Marquee>
-          {kudos.map((kudo, index) => (
-            <li key={index} className="project-kudos__kudo">
-              <div className="project-kudos__kudo-name">{kudo.name}</div>
-              <div className="project-kudos__kudo-title">{kudo.title}</div>
-              <div className="project-kudos__kudo-company">{kudo.company}</div>
-              <div className="project-kudos__kudo-project-name">{kudo.projectName}</div>
-              <div className="project-kudos__kudo-description">{kudo.description}</div>
-              <div className="project-kudos__kudo-quote">{kudo.quote}</div>
-            </li>
-          ))}
-        </Marquee> */}
-      </ul>
+      <Marquee
+        gradientColor={[22, 3, 44]}
+        gradientWith="calc(10% + var(--section-x-padding))"
+        pauseOnClick
+        speed={20}
+        delay={delay}
+        className="kudos__marquee"
+      >
+        {kudos.map((kudo, index) => (
+          <div key={index}
+            className="project-kudos__kudo"
+            style={{
+              "--rotation": `${((index % 2) - 0.35).toFixed(2)}deg`,
+              flex: "0 1 30rem",
+            }}
+          >
+            <p className="project-kudos__description">{kudo.description}</p>
+            <p className="project-kudos__quote">{kudo.quote}</p>
+            <span className="project-kudos__credit">{kudo.credit.title}, {kudo.credit.company}</span>
+          </div>
+        ))}
+      </Marquee>
     </div>
   );
 };

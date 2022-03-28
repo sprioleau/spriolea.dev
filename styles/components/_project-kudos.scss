@@ -1,0 +1,109 @@
+.project-kudos {
+  margin-inline: calc(-1 * var(--container-x-padding));
+  position: relative;
+  overflow: hidden;
+
+  &__kudos {
+    display: flex;
+    align-items: center;
+  }
+
+  &__kudo {
+    --rotation: -1.5deg;
+    flex: 0 1 45ch;
+    max-width: 45ch;
+    margin-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(1rem, 0.8rem + 4vw, 4rem);
+    background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+    color: var(--ui-text-hover);
+    overflow: hidden;
+    transform: rotate(var(--rotation));
+    user-select: none;
+
+    & > :not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 0.1rem solid var(--ui-accent-1);
+    }
+
+    &::after {
+      content: "\201E";
+      position: absolute;
+      font-family: var(--font-mono);
+      bottom: -0.15em;
+      right: -0.1em;
+      font-size: 12rem;
+      color: rgba(var(--ui-accent-1-rgb), 0.2);
+    }
+
+    p {
+      margin-bottom: 0;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--ui-accent-1);
+      position: relative;
+      line-height: 1.35;
+    }
+  }
+
+  @include hover-wrapper {
+    &:hover &__quote {
+      color: var(--ui-text-hover);
+    }
+
+    &:hover &__description,
+    &:hover &__credit {
+      --opacity: 1;
+    }
+  }
+
+  &__description, &__credit {
+    --opacity: 0.8;
+    @include transition;
+    opacity: var(--opacity);
+  }
+
+  &__credit {
+    align-self: flex-end;
+    padding-left: 1.5rem;
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--ui-accent-1);
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+      content: "\2736";
+      position: absolute;
+      font-size: 0.9rem;
+      top: -0.1rem;
+      left: 0.5rem;
+    }
+  }
+}
+
+p.project-kudos__quote {
+  @include transition;
+  color: var(--ui-text);
+  font-size: 0.95rem;
+  font-family: var(--font-ss);
+  line-height: 1.8;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
