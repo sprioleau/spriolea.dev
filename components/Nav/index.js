@@ -17,8 +17,15 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   const tabIndex = aboveBreakpoint || navExpanded ? 0 : -1;
   const router = useRouter();
 
-  const close = () => setNavExpanded(false);
-  const open = () => setNavExpanded(true);
+  const close = () => {
+    setNavExpanded(false);
+    document.body.style.overflow = "scroll";
+  };
+
+  const open = () => {
+    setNavExpanded(true);
+    document.body.style.overflow = "hidden";
+  };
 
   const navigateToSection = (slug) => {
     close();
