@@ -1,5 +1,5 @@
 .skip-to-main-content {
-  --translateX: calc(-100% - var(--section-x-padding) - 0.5rem);
+  --translateX: calc(-100% - var(--section-x-padding) - 3rem);
 	@include transition;
 	position: fixed;
 	display: flex;
