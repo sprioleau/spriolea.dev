@@ -1,0 +1,54 @@
+:root {
+  --swiper-pagination-color: var(--ui-accent-1);
+  --swiper-navigation-color: var(--ui-accent-1);
+  --swiper-navigation-size: 1rem;
+  --swiper-pagination-bullet-width: 1rem;
+  --swiper-pagination-bullet-size: 0.125rem;
+  --swiper-pagination-bullet-horizontal-gap: 0.25rem;
+  --swiper-pagination-bullet-inactive-color: var(--ui-accent-1);
+  --swiper-pagination-bullet-inactive-opacity: 0.25;
+}
+
+.swiper {
+  padding-block: 1.5rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  &:not(b) { // For added specificity
+    @include cursor-pointer;
+    padding: 1.5rem;
+    border: 0.1rem solid var(--ui-accent-1);
+  
+    &::before, &::after {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.swiper-horizontal {
+  & > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    .swiper-pagination-bullet {
+      @include transition;
+      @include cursor-pointer;
+      border-radius: 0;
+      // padding-top: 0.5rem;
+      position: relative;
+
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      --swiper-pagination-bullet-size: 0.25rem;
+      --swiper-pagination-bullet-width: 2.5rem;
+    }
+  }
+}
