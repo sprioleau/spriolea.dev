@@ -1,5 +1,6 @@
 import "../styles/styles.scss";
 import "react-toastify/dist/ReactToastify.css";
+import "swiper/swiper.scss";
 
 import { ToastContainer } from "react-toastify";
 import { LazyMotion, domAnimation } from "framer-motion";
