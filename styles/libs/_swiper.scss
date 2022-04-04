@@ -13,12 +13,16 @@
   padding-block: 1.5rem;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+[class^="swiper-button"] {
   &:not(b) { // For added specificity
     @include cursor-pointer;
     padding: 1.5rem;
     border: 0.1rem solid var(--ui-accent-1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ui-accent-1);
+    background-color: rgba(var(--ui-accent-1-rgb), 0.1);
   
     &::before, &::after {
       font-size: 1.25rem;
@@ -26,15 +30,42 @@
   }
 }
 
-.swiper-horizontal {
+.swiper-button-next {
+  &:not(b) {
+    right: 0;
+  }
+}
+
+.swiper.swiper-initialized.swiper-horizontal.project-kudos__swiper {
+  padding: 3rem 1rem 1rem;
+  position: relative;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 100%;
+    z-index: 5;
+    background: linear-gradient(to right, rgba(var(--ui-bg-rgb), 1), rgba(var(--ui-bg-rgb), 0));
+  }
+
+  &::after {
+    right: 0;
+    left: auto;
+    transform: rotate(180deg);
+  }
+
   & > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 0.5rem;
+    bottom: auto;
+
     .swiper-pagination-bullet {
       @include transition;
       @include cursor-pointer;
       border-radius: 0;
-      // padding-top: 0.5rem;
       position: relative;
-
 
       &::before {
         content: "";
@@ -49,6 +80,18 @@
     .swiper-pagination-bullet-active {
       --swiper-pagination-bullet-size: 0.25rem;
       --swiper-pagination-bullet-width: 2.5rem;
+    }
+  }
+}
+
+@include md {
+
+}
+
+@include mq(700px) {
+  [class^="swiper-button"] {
+    &:not(b) {
+      display: none;
     }
   }
 }

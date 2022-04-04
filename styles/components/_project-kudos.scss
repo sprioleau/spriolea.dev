@@ -55,14 +55,16 @@
   }
 
   @include hover-wrapper {
-    &__kudo:hover &__quote {
+    &__kudo:hover & {
+      &__quote {
       color: var(--ui-text-hover);
     }
 
-    &:hover &__credit p, 
-    &:hover &__project-name {
+    &__credit p, 
+    &__project-name {
       --opacity: 1;
     }
+  }
   }
 
   &__project-name, &__credit p {
@@ -72,6 +74,15 @@
     letter-spacing: 0.3px;
     padding-inline: 1rem;
     opacity: var(--opacity);
+  }
+
+  &__project-name {
+    display: flex;
+    align-items: center;
+  }
+
+  &__project-icon {
+    font-size: 1.125rem;
   }
 
   &__credit {
