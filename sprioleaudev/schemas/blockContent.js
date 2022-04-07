@@ -40,8 +40,8 @@ export default {
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: "URL",
             name: "link",
+            title: "URL",
             type: "object",
             fields: [
               {
@@ -50,6 +50,17 @@ export default {
                 type: "url",
               },
             ],
+          },
+          {
+            name: "internalProjectReference",
+            title: "Internal Project Reference",
+            type: "reference",
+            to: {
+              type: "internalProject",
+            },
+            blockEditor: {
+              icon: () => "✨ Internal Project",
+            },
           },
         ],
       },
@@ -62,4 +73,4 @@ export default {
     //   options: { hotspot: true },
     // },
   ],
-}
+};
