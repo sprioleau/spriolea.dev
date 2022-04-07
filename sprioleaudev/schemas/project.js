@@ -53,13 +53,13 @@ export default {
           title: "Deployed URL",
           type: "url",
         },
-      ]
+      ],
     },
     {
       name: "builtFor",
       title: "Built For",
       type: "reference",
-      to: { type: "association" }
+      to: { type: "association" },
     },
     {
       name: "builtWith",
@@ -67,7 +67,7 @@ export default {
       type: "array",
       of: [{
         type: "reference",
-        to: { type: "technology" }
+        to: { type: "technology" },
       }],
     },
     {
@@ -76,14 +76,14 @@ export default {
       type: "array",
       of: [{
         type: "reference",
-        to: { type: "tag" }
+        to: { type: "tag" },
       }],
     },
     {
       name: "yearBuilt",
       title: "Year Built",
       type: "date",
-      options: { dateFormat: "MMM YYYY" }
+      options: { dateFormat: "MMM YYYY" },
     },
     {
       name: "publishedAt",
@@ -100,4 +100,4 @@ export default {
       media: "mainImage",
     },
   },
-}
+};
