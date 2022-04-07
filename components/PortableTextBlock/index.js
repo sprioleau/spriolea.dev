@@ -1,10 +1,13 @@
 /* eslint-disable no-param-reassign */
 import React from "react";
 
-// Reference: https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
-const isTag = (text) => /^[a-z]+$/i.test(text);
-
 const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => {
+  const markIds = childrenContent.filter(({ marks }) => marks.length > 0).flatMap(({ marks }) => marks[0]).filter((m) => m.length > 2);
+  const markData = markIds.reduce((data, markId) => {
+    data[markId] = markDefs.find(({ _key }) => _key === markId);
+    return data;
+  }, {});
+
   const linkLookup = markDefs.reduce((links, link) => {
     const { _key: key, href } = link;
     links[key] = href;
@@ -12,16 +15,22 @@ const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => 
   }, {});
 
   const renderText = (text, marks) => {
-    const hasLinks = marks.some((mark) => !isTag(mark));
+    if (marks.length === 0) return <span>{text}</span>;
 
-    if (!hasLinks && marks.includes("em")) {
-      return <em>{text}</em>;
-    } else if (hasLinks) {
+    if (marks.includes("em")) return <em>{text}</em>;
+
+    if (markData[marks[0]]._type === "link") {
       const link = linkLookup[marks[0]];
       return <a href={link} target="_blank" rel="noreferrer" className={linksClass}>{text}</a>;
-    } else {
-      return <span>{text}</span>;
     }
+
+    if (markData[marks[0]]._type === "internalProjectReference") {
+      // Shows formatted project name
+      // return <span className="project-reference">{text.slice(1, text.length - 1)}<span>&#10038;</span></span>;
+      return "";
+    }
+
+    return <span>{text}</span>;
   };
 
   return (
