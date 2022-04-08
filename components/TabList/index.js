@@ -57,6 +57,8 @@ const TabList = ({
     expanded,
   });
 
+  if (!expandByDefault) return null;
+
   return (
     <div className={tabListClasses}>
       <header className="tab-list__title-wrapper" onClick={handleExpand} tabIndex={0} role="button">
