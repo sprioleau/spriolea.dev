@@ -1,5 +1,5 @@
 .project-kudos {
-  margin-inline: calc(-1 * var(--container-x-padding));
+  margin-inline: calc(-1 * calc(var(--container-x-padding) + 0.75rem));
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -8,12 +8,19 @@
     margin-block: 1.5rem;
   }
 
+  &__title {
+    text-align: center;
+    max-width: calc(100vw - var(--container-x-padding));
+    margin-inline: auto;
+  }
+
   &__kudos {
     display: flex;
     align-items: center;
   }
 
   &__kudo {
+    @include cursor-open-hand;
     --rotation: 0;
     flex: 0 1 45ch;
     max-width: 45ch;
@@ -27,6 +34,10 @@
     overflow: hidden;
     transform: rotate(var(--rotation));
     user-select: none;
+
+    &.grabbed {
+      @include cursor-grab;
+    }
 
     &::before {
       content: "";
@@ -108,11 +119,22 @@ p.project-kudos__quote {
   margin-bottom: 1rem;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
+@include mq(700px) {
+  .project-kudos {
+    // margin-inline: -2.5rem;
+    text-align: left;
+    
+    &__kudo {
+      align-items: flex-start;
+      padding: 2.5rem;
+    }
+
+    &__credit p {
+      padding-inline: 0;
+    }
+
+    &__project-name {
+      padding-inline: 0;
+    }
   }
 }
