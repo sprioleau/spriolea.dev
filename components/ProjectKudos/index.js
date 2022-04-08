@@ -8,15 +8,30 @@ import PortableTextBlock from "../PortableTextBlock";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import composeClasses from "../../utils/composeClasses";
 
 const ProjectKudos = ({ kudos = [], delay = 0 }) => {
+  const [isGrabbed, setIsGrabbed] = React.useState(false);
   if (kudos.length === 0) return null;
+
+  const handleGrab = () => {
+    setIsGrabbed(true);
+  };
+
+  const handleRelease = () => {
+    setIsGrabbed(false);
+  };
+
+  const kudoClasses = composeClasses({
+    "project-kudos__kudo": "",
+    grabbed: isGrabbed,
+  });
 
   return (
     <div className="project-kudos">
       <h3 className="project-kudos__title">Project Kudos</h3>
       <Swiper
-        spaceBetween={16}
+        spaceBetween={48}
         slidesPerView={1}
         loop
         pagination={{
@@ -31,12 +46,12 @@ const ProjectKudos = ({ kudos = [], delay = 0 }) => {
           _id, quote, credit, project,
         }) => (
           <SwiperSlide key={_id}>
-            <article className="project-kudos__kudo">
+            <article className={kudoClasses} onMouseEnter={handleGrab} onMouseLeave={handleRelease}>
               <p className="project-kudos__quote">
                 <PortableTextBlock childrenContent={quote[0].children} markDefs={quote[0].markDefs} />
               </p>
               <div className="project-kudos__credit">
-                <p className="project-kudos__credit-title">{credit.jobTitle}</p>
+                <p className="project-kudos__credit-title">{credit.jobTitle},</p>
                 <p className="project-kudos__credit-company">{credit.company}</p>
               </div>
               <p className="project-kudos__project-name"><span className="icon project-kudos__project-icon"><HiOutlinePresentationChartLine /></span>Project: {project.name}</p>

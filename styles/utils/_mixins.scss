@@ -73,10 +73,28 @@ $bp-large: 1200px;
   cursor: url("/images/cursors/cursor-copy.svg"), copy;
 }
 
+@mixin cursor-open-hand {
+  cursor: url("/images/cursors/cursor-open-hand.svg"), grab;
+}
+
+@mixin cursor-grab {
+  cursor: url("/images/cursors/cursor-grab.svg"), grabbing;
+}
+
 @mixin center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin bg-obscure {
+  background-color: transparent;
+  background-image: radial-gradient(
+    rgba(var(--ui-bg-rgb), 0) 1px,
+    var(--ui-bg) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: brightness(100%) blur(3px);
 }
 
 @mixin styled-border {
