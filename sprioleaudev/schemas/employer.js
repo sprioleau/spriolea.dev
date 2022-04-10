@@ -22,7 +22,7 @@ export default {
       name: "alt",
       title: "Alternative Text",
       type: "string",
-      desription: "Describe contents of image. Expecially useful for screen readers and improved accessibility."
+      desription: "Describe contents of image. Expecially useful for screen readers and improved accessibility.",
     },
     {
       name: "publishedAt",
@@ -39,4 +39,4 @@ export default {
       media: "logo",
     },
   },
-}
+};
