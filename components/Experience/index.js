@@ -3,38 +3,24 @@ import PageSectionLayout from "../PageSectionLayout";
 import { organizeByKey } from "../../utils";
 import ProjectKudos from "../ProjectKudos";
 
-const Experience = ({ experience, kudos }) => {
+const Experience = ({ experience, kudos, jobTypes }) => {
   if (!experience) return null;
 
   const experienceByType = organizeByKey(experience, "jobType.type");
 
-  const tabListData = [
-    {
-      label: "Web Development",
-      id: "web-development",
-      showSublabel: true,
-      expandByDefault: true,
-    },
-    {
-      label: "Engineering",
-      id: "engineering",
-      showSublabel: false,
-      expandByDefault: false,
-    },
-  ];
-
   return (
     <PageSectionLayout sectionId="experience" sectionTitle="Experience">
-      {tabListData.map(({
-        id, label, showSublabel, expandByDefault,
+      {jobTypes.sort((a, b) => b.type.localeCompare(a.type)).map(({
+        _id, type, showSublabel, expandByDefault, shouldHide,
       }) => (
         <TabList
-          key={label}
-          id={id}
-          label={label}
-          experience={experienceByType[label]}
+          key={_id}
+          id={_id}
+          label={type}
+          experience={experienceByType[type]}
           showSublabel={showSublabel}
           expandByDefault={expandByDefault}
+          shouldHide={shouldHide}
         />
       ))}
       <ProjectKudos kudos={kudos} />

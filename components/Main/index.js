@@ -12,6 +12,7 @@ const Main = ({ data }) => {
     hero,
     about,
     experience,
+    jobTypes,
     kudos,
     skills,
     projects,
@@ -22,7 +23,7 @@ const Main = ({ data }) => {
     <main className="main">
       <Hero content={hero} />
       <About content={about} />
-      <Experience experience={experience} kudos={kudos} />
+      <Experience experience={experience} kudos={kudos} jobTypes={jobTypes} />
       <Work projects={projects} />
       <Skills skills={skills} />
       <Contact content={contact} />

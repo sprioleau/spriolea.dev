@@ -8,7 +8,7 @@ import { Stagger } from "../AnimationLibrary";
 import icons from "../Icons";
 
 const TabList = ({
-  id, label, experience, showSublabel, expandByDefault,
+  id, label, experience, showSublabel, expandByDefault, shouldHide,
 }) => {
   const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
   const [indicatorHeight, setIndicatorHeight] = React.useState(0);
@@ -57,7 +57,7 @@ const TabList = ({
     expanded,
   });
 
-  if (!expandByDefault) return null;
+  if (shouldHide) return null;
 
   return (
     <div className={tabListClasses}>
