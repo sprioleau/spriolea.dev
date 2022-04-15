@@ -15,6 +15,14 @@ const Home = ({ data }) => {
     "nav-expanded": navExpanded,
   });
 
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      document.querySelector("html").style.scrollBehavior = "smooth";
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div className={appClasses}>
       <Head>
