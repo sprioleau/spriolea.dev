@@ -1,20 +1,15 @@
 import { useRouter } from "next/router";
 import React from "react";
+import { fetchStaticSiteData } from "../libs/sanity";
 
-const PageSection = () => {
+const PageSection = ({ navLinks }) => {
   const router = useRouter();
   const { path } = router.query;
 
   React.useEffect(() => {
-    const pageSectionIds = [
-      "about",
-      "experience",
-      "work",
-      "skills",
-      "contact",
-    ];
+    if (!path || navLinks?.length === 0) return null;
 
-    if (!path) return null;
+    const pageSectionIds = navLinks.map(({ sectionSlug }) => sectionSlug) ?? [];
 
     document.querySelector("html").style.scrollBehavior = "auto";
 
@@ -23,9 +18,32 @@ const PageSection = () => {
       : "/";
 
     return router.push(navigateToPath);
-  }, [path, router]);
+  }, [path, router, navLinks]);
 
   return null;
 };
 
 export default PageSection;
+
+export async function getStaticPaths() {
+  const { data: { navLinks } } = await fetchStaticSiteData();
+
+  const paths = navLinks.map(({ sectionSlug }) => ({
+    params: { path: [sectionSlug] },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+export async function getStaticProps() {
+  const { data: { navLinks } } = await fetchStaticSiteData();
+
+  return {
+    props: {
+      navLinks,
+    },
+  };
+}

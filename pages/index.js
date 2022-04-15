@@ -18,7 +18,7 @@ const Home = ({ data }) => {
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       document.querySelector("html").style.scrollBehavior = "smooth";
-    }, 100);
+    }, 250);
 
     return () => clearTimeout(timeout);
   }, []);
