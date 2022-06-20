@@ -15,6 +15,7 @@ class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <link rel="icon" href="/favicon.png" />
           <meta name="description" content="San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things." />
+          <link rel="manifest" href="/manifest.json" />
           <MetaTag data={titleMeta} />
           <MetaTag data={schemaDotOrgMeta} />
           <MetaTag data={ogMeta} />

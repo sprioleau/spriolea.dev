@@ -1,0 +1,27 @@
+{
+  "background_color": "#16032c",
+  "description": "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "sizes": "512x512",
+      "src": "/images/logo.svg",
+      "type": "image/svg+xml"
+    },
+    {
+      "sizes": "192x192",
+      "src": "/images/logo_192px.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "/images/logo_512px.png",
+      "type": "image/png"
+    }
+  ],
+  "id": "/",
+  "name": "San'Quan Prioleau",
+  "short_name": "sprioleau.dev",
+  "start_url": "/",
+  "theme_color": "#16032c"
+}
