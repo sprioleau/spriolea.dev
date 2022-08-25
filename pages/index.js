@@ -45,7 +45,7 @@ export const getStaticProps = async (context) => {
 
   const alteredData = {
     ...data,
-    kudos: data.kudos.sort(() => Math.random() - 0.5),
+    kudos: data.kudos?.sort(() => Math.random() - 0.5) ?? [],
   };
 
   return {
