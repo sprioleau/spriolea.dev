@@ -9,7 +9,7 @@ import Logo from "../Logo";
 import { Stagger } from "../AnimationLibrary";
 import { handleScrollToTop } from "../../utils";
 import icons from "../Icons";
-import ResumeButton from "../ResumeButton";
+// import ResumeButton from "../ResumeButton";
 
 const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   const { windowSize } = useWindowSize();
@@ -35,8 +35,8 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   return (
     <nav className="nav">
       <div className="nav__logo">
-        <Link passHref href="/" className="nav__logo-link" onClick={(e) => handleScrollToTop(e, router)} aria-label="S. Prioleau Logo">
-          <a>
+        <Link href="" className="nav__logo-link" aria-label="S. Prioleau Logo">
+          <a tabIndex={0} role="button" onClick={(e) => handleScrollToTop(e, router)}>
             <Logo />
           </a>
         </Link>
@@ -81,7 +81,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
                   </a>
                 ))}
               </Stagger>
-              <ResumeButton tabIndex={tabIndex} />
+              {/* <ResumeButton tabIndex={tabIndex} /> */}
               <button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
                 {icons.close}
               </button>

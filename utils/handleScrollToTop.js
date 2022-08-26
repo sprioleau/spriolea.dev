@@ -3,7 +3,7 @@ const handleScrollToTop = (e, router) => {
 
   router.push("/");
 
-  if (window !== undefined) {
+  if (typeof window !== "undefined") {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 };

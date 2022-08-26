@@ -43,10 +43,6 @@
       display: none;
     }
 
-    &:focus {
-      box-shadow: none;
-    }
-
     @include hover-wrapper {
       &:hover {
         --rotation: 45deg;
