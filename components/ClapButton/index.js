@@ -33,7 +33,7 @@ const ClapButton = ({ initialCount, clientClapCount, setClientClapCount }) => {
         count={0}
         countTotal={initialCount}
         theme={{ secondaryColor: "rgba(0,0,0,0)" }}
-        iconComponent={React.forwardRef(() => <Clap size={32} />)}
+        iconComponent={Clap}
         maxCount={MAX_COUNT}
         onCountChange={handleIncrement}
       />
