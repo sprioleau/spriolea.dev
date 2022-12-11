@@ -17,10 +17,10 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   const tabIndex = aboveBreakpoint || navExpanded ? 0 : -1;
   const router = useRouter();
 
-  const close = () => {
+  const close = React.useCallback(() => {
     setNavExpanded(false);
     document.body.style.overflow = "scroll";
-  };
+  }, [setNavExpanded]);
 
   const open = () => {
     setNavExpanded(true);
@@ -31,6 +31,16 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
     close();
     router.push(`#${slug}`);
   };
+
+  React.useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key !== "Escape") return;
+      close();
+    }
+
+    if (navExpanded) document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [navExpanded, close]);
 
   return (
     <nav className="nav">
@@ -43,7 +53,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
       </div>
       <div className="nav__main-content">
         <SkipToMainContent />
-        <FocusTrap active={navExpanded && windowSize <= bp.md} focusTrapOptions={{ initialFocus: false }}>
+        <FocusTrap active={navExpanded} focusTrapOptions={{ initialFocus: true }}>
           <div>
             <div className="nav__links-wrapper">
               <Stagger
@@ -82,13 +92,17 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
                 ))}
               </Stagger>
               {/* <ResumeButton tabIndex={tabIndex} /> */}
-              <button id="close" className="nav__icon nav__icon--close no-frame" type="button" tabIndex={tabIndex} onClick={close}>
+              {navExpanded && (
+              <button id="close" className="nav__icon nav__icon--close no-frame" type="button" onClick={close}>
                 {icons.close}
               </button>
+              )}
             </div>
-            <button id="open" className="nav__icon nav__icon--menu no-frame" type="button" tabIndex={0} onClick={open} aria-label="open menu">
-              {icons.menu}
-            </button>
+            {!navExpanded && (
+              <button id="open" className="nav__icon nav__icon--menu no-frame" type="button" tabIndex={0} onClick={open} aria-label="open menu">
+                {icons.menu}
+              </button>
+            )}
             <div className="nav__dismiss" onClick={close} role="button" tabIndex={-1} aria-label="close menu" />
           </div>
         </FocusTrap>
