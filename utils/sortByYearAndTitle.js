@@ -1,10 +1,8 @@
 const sortByYearAndTitle = (a, b) => {
-  const aYear = parseInt(a.year, 10);
-  const bYear = parseInt(b.year, 10);
-  if (aYear === bYear) {
-    return b.title - a.title;
-  }
+  const aYear = Number(a.yearBuilt.slice(0, 4));
+  const bYear = Number(b.yearBuilt.slice(0, 4));
 
+  if (aYear === bYear) return b.title - a.title;
   return aYear > bYear ? -1 : 1;
 };
 
