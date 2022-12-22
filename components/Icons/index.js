@@ -2,7 +2,7 @@ import {
   FaFigma, FaLinkedinIn, FaGitAlt, FaNodeJs, FaNpm, FaReact, FaSass,
 } from "react-icons/fa";
 import {
-  SiCss3, SiCypress, SiExpress, SiGraphql, SiHtml5, SiJavascript, SiJest, SiNextdotjs, SiRedux, SiTypescript, SiSocketdotio,
+  SiCss3, SiCypress, SiExpress, SiGraphql, SiHtml5, SiJavascript, SiJest, SiNextdotjs, SiRedux, SiTypescript, SiSocketdotio, SiHasura,
 } from "react-icons/si";
 import { TiArrowSync } from "react-icons/ti";
 import { VscJson } from "react-icons/vsc";
@@ -36,6 +36,7 @@ const icons = {
   cypress: <SiCypress />,
   express: <SiExpress />,
   graphql: <SiGraphql />,
+  hasura: <SiHasura />,
   html: <SiHtml5 />,
   es6: <SiJavascript />,
   javascript: <SiJavascript />,
