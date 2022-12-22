@@ -9,7 +9,7 @@ import Logo from "../Logo";
 import { Stagger } from "../AnimationLibrary";
 import { handleScrollToTop } from "../../utils";
 import icons from "../Icons";
-// import ResumeButton from "../ResumeButton";
+import ResumeButton from "../ResumeButton";
 
 const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   const { windowSize } = useWindowSize();
@@ -91,7 +91,7 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
                   </a>
                 ))}
               </Stagger>
-              {/* <ResumeButton tabIndex={tabIndex} /> */}
+              <ResumeButton tabIndex={tabIndex} />
               {navExpanded && (
               <button id="close" className="nav__icon nav__icon--close no-frame" type="button" onClick={close}>
                 {icons.close}

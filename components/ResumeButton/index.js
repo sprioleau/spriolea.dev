@@ -14,7 +14,7 @@ const ResumeButton = ({ tabIndex }) => {
   return (
     <div className="resume-button">
       <a
-        href="/resume/resume.pdf"
+        href="/resume/SanQuan Prioleau - Resume (2022-12).pdf"
         className="nav__resume-link shadow-link"
         target="_blank"
         rel="noreferrer"
