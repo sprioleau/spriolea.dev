@@ -7,7 +7,7 @@ import apiStaticData from "../../data/apiStaticData";
 const client = sanityClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_DATASET,
-  apiVersion: "2021-12-24",
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_VERSION,
   useCdn: true,
 });
 
