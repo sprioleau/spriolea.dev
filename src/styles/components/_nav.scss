@@ -1,0 +1,261 @@
+.nav {
+  @include ff-mono;
+  @include bg-obscure;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  padding: var(--nav-padding) calc(var(--section-x-padding) / 2);
+  margin-top: 2px;
+  width: 100vw;
+  height: var(--nav-height);
+  margin-top: 0;
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: calc(var(--max-width) - var(--section-x-padding));
+  }
+
+  &__logo {
+    @include center;
+  }
+
+  &__logo a {
+    --rotation: 0deg;
+    @include transition;
+    @include center;
+    width: var(--nav-logo-height);
+    height: var(--nav-logo-height);
+    color: var(--ui-accent-1);
+    margin-left: -1rem;
+    transform: rotate(var(--rotation));
+    z-index: 25;
+
+    svg {
+      padding: 1rem;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        --rotation: 45deg;
+        @include cursor-pointer;
+      }
+    }
+  }
+
+  label {
+    @include center;
+    cursor: pointer;
+
+    #open,
+    #close {
+      padding: 0.5em;
+    }
+
+    #close {
+      margin-right: 1.25em;
+    }
+  }
+
+  &__main-content {
+    @include center;
+    z-index: 60;
+  }
+
+  &:has(.nav__menu-toggle:not(:checked)) {
+    label {
+      #close {
+        display: none;
+      }
+    }
+  }
+
+  &:has(.nav__menu-toggle:checked) {
+    label {
+      z-index: 60;
+
+      #open {
+        display: none;
+      }
+    }
+  }
+
+  &__menu-toggle {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__menu-toggle:checked {
+    z-index: 60;
+
+    + .nav__links-wrapper {
+      --translateX: 0;
+      opacity: 1;
+    }
+
+    + .nav__dismiss {
+      display: block;
+    }
+  }
+
+  &__links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    @include center;
+    @include cursor-pointer;
+
+    &__link {
+      padding: 0.5rem 0.25rem;
+    }
+
+    &::before {
+      counter-increment: nav-link;
+      content: "0" counter(nav-link) ". ";
+      font-size: 0.85em;
+      letter-spacing: 1px;
+      color: var(--ui-accent-1);
+    }
+  }
+
+  &__resume-link {
+    &::after {
+      display: none;
+    }
+  }
+
+  &__button {
+    &.sm {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  &__icon {
+    @include center;
+    color: var(--ui-accent-1);
+    font-size: 1.5rem;
+    display: block;
+  }
+
+  #open,
+  #close {
+    display: none;
+  }
+
+  #close {
+    position: absolute;
+    top: 0.5em;
+    right: -0.85em;
+  }
+
+  &__dismiss {
+    @include bg-obscure;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+  }
+}
+
+@include md {
+  .nav {
+    --nav-height: 5rem;
+    --nav-padding: 2rem;
+    --width: 250px;
+    padding-block: 0;
+
+    .nav-expanded & {
+      backdrop-filter: none;
+    }
+
+    &__links-wrapper {
+      --translateX: 100%;
+      @include transition;
+      position: fixed;
+      opacity: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      top: 2px;
+      right: 0;
+      height: 100vh;
+      background-color: var(--ui-bg-hover);
+      padding: 4.5rem calc(2rem + 1vw);
+      width: var(--width);
+      z-index: 50;
+      transform: translateX(var(--translateX));
+      overflow-y: auto;
+
+      & > :not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    &:has(.nav__menu-toggle:checked) &__links-wrapper {
+      --translateX: 0;
+      opacity: 1;
+    }
+
+    &__links {
+      flex-direction: column;
+
+      & > :not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    &__link {
+      margin-bottom: 1.5rem;
+
+      .nav-expanded & {
+        pointer-events: all;
+        color: var(--ui-text-hover);
+      }
+    }
+
+    #open {
+      display: flex;
+
+      .nav-expanded & {
+        pointer-events: none;
+      }
+    }
+
+    #close {
+      display: flex;
+    }
+
+    &__button--resume {
+      margin-top: 1.5rem;
+    }
+
+    &__dismiss {
+      .nav-expanded & {
+        display: block;
+      }
+    }
+  }
+}

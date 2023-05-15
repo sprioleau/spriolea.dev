@@ -4,7 +4,7 @@
 
 # Personal Website of San'Quan Prioleau
 
-San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.
+San'Quan Prioleau is a Frontend Engineer with an eye for good design, who loves combining ideas to create new things.
 
 ## 🔗 Links
 
