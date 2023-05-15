@@ -11,9 +11,16 @@ import {
 import { DefaultMetaTags } from "@/meta";
 import type { Metadata } from "next";
 
+const title = "San'Quan Prioleau - Frontend Engineer";
+const description = "Personal website of San'Quan Prioleau";
+
 export const metadata: Metadata = {
-  title: "San'Quan Prioleau - Frontend Engineer",
-  description: "Personal website of San'Quan Prioleau",
+  title,
+  description,
+  openGraph: {
+    description,
+    title,
+  },
 };
 
 export default async function Home() {

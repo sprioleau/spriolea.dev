@@ -12,6 +12,8 @@ type Props = {
   skills: Skill[];
 };
 
+type SkillsObject = Omit<Skill, "category"> & { category: string };
+
 export default function SkillsList({ skills }: Props) {
   const { windowSize } = useWindowSize();
 
@@ -25,7 +27,7 @@ export default function SkillsList({ skills }: Props) {
         acc[skill.category].push(skill);
       }
       return acc;
-    }, {} as Record<string, (Omit<Skill, "category"> & { category: string })[]>);
+    }, {} as Record<string, SkillsObject[]>);
 
   const skillsListItemClasses = composeClasses({
     "skills__list-item": true,
@@ -39,7 +41,7 @@ export default function SkillsList({ skills }: Props) {
           <h3 className="skills__category-name">{category}</h3>
           <ul className="skills__list">
             {skillsData
-              .sort((a, b) => sortAlphaByKey(a, b, "techName"))
+              .sort((a, b) => sortAlphaByKey<SkillsObject>(a, b, "techName"))
               .map(({ techName, fullName, iconKey }) => (
                 <FadeInAndUp
                   key={techName}

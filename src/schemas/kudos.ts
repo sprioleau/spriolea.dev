@@ -1,3 +1,9 @@
+type PrepareSelection = {
+  title: { children: { text: string }[] }[];
+  creditName: string;
+  projectName: string;
+};
+
 export default {
   name: "kudos",
   title: "Kudos",
@@ -27,9 +33,12 @@ export default {
       creditName: "credit.name",
       projectName: "project.name",
     },
-    prepare(selection) {
+    prepare(selection: PrepareSelection) {
       const { title, creditName, projectName } = selection;
-      const newTitle = title[0].children[0].text.split(" ").slice(0, 6).join(" ");
+      const newTitle = title[0].children[0].text
+        .split(" ")
+        .slice(0, 6)
+        .join(" ");
       return {
         title: newTitle,
         subtitle: `${projectName}, ${creditName}`,

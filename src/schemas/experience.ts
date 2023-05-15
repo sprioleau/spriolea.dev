@@ -1,3 +1,5 @@
+const requiredValidation = (Rule: any) => Rule.required();
+
 export default {
   name: "experience",
   title: "Experience",
@@ -13,13 +15,13 @@ export default {
       name: "label",
       title: "Tab Label",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: requiredValidation,
     },
     {
       name: "jobTitle",
       title: "Job Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: requiredValidation,
     },
     {
       name: "jobType",
@@ -35,7 +37,7 @@ export default {
         dateFormat: "MMM YYYY",
         calendarTodayLabel: "Today",
       },
-      validation: (Rule) => Rule.required(),
+      validation: requiredValidation,
     },
     {
       name: "toDate",
@@ -71,7 +73,7 @@ export default {
       title: "Published at",
       type: "datetime",
       readOnly: true,
-      initialValue: (new Date()).toISOString(),
+      initialValue: new Date().toISOString(),
     },
   ],
   preview: {
