@@ -1,8 +1,11 @@
 import "../styles/styles.scss";
 import "react-toastify/dist/ReactToastify.css";
 
-import { ToastContainer } from "react-toastify";
 import { LazyMotion, domAnimation } from "framer-motion";
+
+// eslint-disable-next-line import/no-unresolved
+import { Analytics } from "@vercel/analytics/react";
+import { ToastContainer } from "react-toastify";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -12,6 +15,7 @@ const MyApp = ({ Component, pageProps }) => {
         position="top-center"
         autoClose={3000}
       />
+      <Analytics />
     </LazyMotion>
   );
 };
