@@ -8,7 +8,7 @@ import { FooterData } from "@/schemas/types";
 export default async function Footer() {
   const footerContent = await client.fetch<FooterData[]>(queries.footer);
   const { contributions } = (await fetch(
-    `${process.env.VERCEL_URL}/api/get-contributions`
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/get-contributions`
   ).then((res) => res.json())) as ContributionsData;
 
   const { body } = footerContent[0];
