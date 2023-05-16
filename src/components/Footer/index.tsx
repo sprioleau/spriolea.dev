@@ -1,17 +1,15 @@
 import { client, queries } from "@/libs/sanity";
 
-// import { BASE_URL } from "@/contants";
-// import { ContributionsData } from "@/libs/github";
+import { BASE_URL } from "@/contants";
+import { ContributionsData } from "@/libs/github";
 import { FooterContent } from "@/components";
 import { FooterData } from "@/schemas/types";
 
-const contributions = 1234;
-
 export default async function Footer() {
   const footerContent = await client.fetch<FooterData[]>(queries.footer);
-  // const { contributions } = (await fetch(`/api/get-contributions`).then((res) =>
-  //   res.json()
-  // )) as ContributionsData;
+  const { contributions } = (await fetch(
+    `${BASE_URL}/api/get-contributions`
+  ).then((res) => res.json())) as ContributionsData;
 
   const { body } = footerContent[0];
 
