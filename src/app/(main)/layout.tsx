@@ -5,14 +5,12 @@ import { IBM_Plex_Mono, Inter, Quattrocento } from "next/font/google";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 
 import { Analytics } from "@vercel/analytics/react";
-// import { BASE_URL } from "@/contants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "San'Quan Prioleau - Frontend Engineeer",
   description: "Personal website of San'Quan Prioleau",
   applicationName: "sprioleau.dev",
-  // metadataBase: new URL(BASE_URL),
 };
 
 // Local fonts reference: https://beta.nextjs.org/docs/optimizing/fonts

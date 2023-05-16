@@ -1,6 +1,5 @@
 import { client, queries } from "@/libs/sanity";
 
-// import { BASE_URL } from "@/contants";
 import { ContributionsData } from "@/libs/github";
 import { FooterContent } from "@/components";
 import { FooterData } from "@/schemas/types";
@@ -11,11 +10,9 @@ console.log("🚀 ~ file: index.tsx:10 ~ url:", url);
 
 export default async function Footer() {
   const footerContent = await client.fetch<FooterData[]>(queries.footer);
-  const { contributions } = (await fetch(url).then((res) =>
-    res.json()
-  )) as ContributionsData;
-
-  console.log("🚀 ~ file: index.tsx:14 ~ Footer ~ url:", url);
+  const { contributions = 10 } = (await fetch(url)
+    .then((res) => res.json())
+    .catch((reason) => console.error(reason))) as ContributionsData;
 
   const { body } = footerContent[0];
 
