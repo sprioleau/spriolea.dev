@@ -9,10 +9,12 @@ export default async function Footer() {
   const footerContent = await client.fetch<FooterData[]>(queries.footer);
   const { contributions } = (await fetchContributions()) as ContributionsData;
   const claps = (await get<number>("claps")) ?? 0;
+  console.log("🚀 ~ file: index.tsx:12 ~ Footer ~ claps:", claps);
 
   const { body } = footerContent[0];
 
   // TODO: Implement way to update claps
+  // Reference: https://vercel.com/docs/storage/edge-config/vercel-api#update-your-edge-config-items
   // async function handleIncrementClaps(by: number) {}
 
   return (
