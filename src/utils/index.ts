@@ -3,6 +3,7 @@ export { default as handleKeyDown } from "./handleKeyDown";
 export { default as formatIsoDate } from "./formatIsoDate";
 export { default as formatJobDates } from "./formatJobDates";
 export { default as organizeByKey } from "./organizeByKey";
+export { default as getClaps } from "./getClaps";
 export { default as getKeyValue } from "./getKeyValue";
 export { default as toastMessage } from "./toastMessage";
 export { default as formatNumber } from "./formatNumber";

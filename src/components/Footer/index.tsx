@@ -3,13 +3,12 @@ import { client, queries } from "@/libs/sanity";
 
 import { FooterContent } from "@/components";
 import { FooterData } from "@/schemas/types";
-import { get } from "@vercel/edge-config";
+import { getClaps } from "@/utils";
 
 export default async function Footer() {
   const footerContent = await client.fetch<FooterData[]>(queries.footer);
   const { contributions } = (await fetchContributions()) as ContributionsData;
-  const claps = (await get<number>("claps")) ?? 0;
-  console.log("🚀 ~ file: index.tsx:12 ~ Footer ~ claps:", claps);
+  const { data: claps } = await getClaps();
 
   const { body } = footerContent[0];
 
@@ -23,7 +22,7 @@ export default async function Footer() {
         <FooterContent
           content={body}
           contributions={contributions}
-          claps={claps}
+          claps={claps ?? 0}
         />
       </div>
     </footer>

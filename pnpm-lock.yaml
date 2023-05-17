@@ -34,9 +34,6 @@ dependencies:
   '@vercel/analytics':
     specifier: ^1.0.1
     version: 1.0.1
-  '@vercel/edge-config':
-    specifier: ^0.1.10
-    version: 0.1.10
   eslint:
     specifier: 8.36.0
     version: 8.36.0
@@ -2758,11 +2755,6 @@ packages:
 
   /@vercel/analytics@1.0.1:
     resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
-    dev: false
-
-  /@vercel/edge-config@0.1.10:
-    resolution: {integrity: sha512-QdahUjvtpnnKD/vd79Gre7OVoEwjspktCFvOI6IXUqQ45e/Sk3In/rLOySF0dg4XHDWEuy+DRIK0SIOW2/C1FQ==}
-    engines: {node: '>=14.6'}
     dev: false
 
   /@vitejs/plugin-react@3.1.0(vite@4.1.4):
