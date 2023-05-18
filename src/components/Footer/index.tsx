@@ -4,17 +4,15 @@ import { client, queries } from "@/libs/sanity";
 import { FooterContent } from "@/components";
 import { FooterData } from "@/schemas/types";
 import { getClaps } from "@/utils";
+import { incrementClaps } from "@/actions";
 
 export default async function Footer() {
   const footerContent = await client.fetch<FooterData[]>(queries.footer);
   const { contributions } = (await fetchContributions()) as ContributionsData;
   const { data: claps } = await getClaps();
+  const serverClapCount = claps ?? 0;
 
   const { body } = footerContent[0];
-
-  // TODO: Implement way to update claps
-  // Reference: https://vercel.com/docs/storage/edge-config/vercel-api#update-your-edge-config-items
-  // async function handleIncrementClaps(by: number) {}
 
   return (
     <footer className="footer">
@@ -22,7 +20,8 @@ export default async function Footer() {
         <FooterContent
           content={body}
           contributions={contributions}
-          claps={claps ?? 0}
+          serverClapCount={serverClapCount}
+          incrementClaps={incrementClaps}
         />
       </div>
     </footer>

@@ -1,9 +1,4 @@
-type ReturnData = {
-  data: number | null;
-  error: Error | null;
-};
-
-export default async function getClaps(): Promise<ReturnData> {
+export default async function getClaps() {
   // Cannot use this approach due to known network error bug
   // const claps = (await get<number>("claps")) ?? 0;
   // Reference: https://github.com/vercel/storage/issues/119
@@ -12,11 +7,14 @@ export default async function getClaps(): Promise<ReturnData> {
 
   // prettier-ignore
   let data = null,
-      error = null;
+    error = null;
+
+  const requestOptions = { next: { revalidate: 0 } };
+  // const requestOptions = {};
 
   try {
-    const response = await fetch(url);
-    data = await response.json();
+    const response = await fetch(url, requestOptions);
+    data = (await response.json()) as number;
   } catch (caughtError) {
     error = caughtError as Error;
   }
