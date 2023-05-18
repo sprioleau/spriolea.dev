@@ -1,7 +1,5 @@
-"use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { FadeInWhenVisible } from "../AnimationLibrary";
 import PortableTextBlock from "../PortableTextBlock";
 import { Project } from "@/schemas/types";
 import icons from "../Icons";
@@ -20,11 +18,9 @@ const SelectedWork = ({ projects }: { projects: Project[] }) => {
             description,
             links: { gitHubUrl, vsCodeUrl, deployedUrl },
           }) => (
-            <FadeInWhenVisible
-              tag="li"
+            <li
               key={_id}
               className="selected-work__work"
-              useDefaultStyles={false}
             >
               <div className="selected-work__image">
                 <a
@@ -113,7 +109,7 @@ const SelectedWork = ({ projects }: { projects: Project[] }) => {
                   )}
                 </div>
               </div>
-            </FadeInWhenVisible>
+            </li>
           )
         )}
       </ul>
