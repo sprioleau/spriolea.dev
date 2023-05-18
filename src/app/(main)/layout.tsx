@@ -1,7 +1,9 @@
 import "@/styles/styles.scss";
 
 import { Footer, InfoRails, Nav, StructuredData } from "@/components";
+import { NavLink, SiteDetails } from "@/schemas/types";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
+import { client, queries } from "@/libs/sanity";
 
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
@@ -17,14 +19,19 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [navLinks, siteDetails] = await Promise.all([
+    client.fetch<NavLink[]>(queries.navLinks),
+    client.fetch<SiteDetails[]>(queries.siteDetails),
+  ]);
+
   return (
     <html lang="en">
       <body>
         <div className="app">
           {/* @ts-expect-error Async Server Component */}
-          <Nav />
+          <Nav navLinks={navLinks} />
           {/* @ts-expect-error Async Server Component */}
-          <InfoRails />
+          <InfoRails siteDetails={siteDetails} />
           <main className="main">{children}</main>
           {/* @ts-expect-error Async Server Component */}
           <Footer />

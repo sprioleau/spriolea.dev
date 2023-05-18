@@ -1,11 +1,13 @@
-import { client, queries } from "@/libs/sanity";
-
 import { Project } from "@/schemas/types";
 import ProjectTable from "../ProjectTable";
 import SelectedWork from "../SelectedWork";
 
-export default async function Work() {
-  const projects = await client.fetch<Project[]>(queries.projects);
+type Props = {
+  projects: Project[];
+};
+
+export default async function Work({ projects }: Props) {
+  // const projects = await client.fetch<Project[]>(queries.projects);
 
   const allProjects = projects.reduce(
     (result, project) => {

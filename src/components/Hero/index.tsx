@@ -3,12 +3,15 @@ import {
   CallToActionButton,
   PortableTextBlock,
 } from "@/components";
-import { client, queries } from "@/libs/sanity";
 
 import { HeroData } from "@/schemas/types";
 
-export default async function Hero() {
-  const heroContent = await client.fetch<HeroData[]>(queries.hero);
+type Props = {
+  heroContent: HeroData[];
+};
+
+export default async function Hero({ heroContent }: Props) {
+  // const heroContent = await client.fetch<HeroData[]>(queries.hero);
   const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } =
     heroContent[0];
 

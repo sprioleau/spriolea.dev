@@ -1,11 +1,15 @@
 import { Logo, PortableTextBlock } from "@/components";
-import { client, queries, urlFor } from "@/libs/sanity";
 
 import { AboutData } from "@/schemas/types";
 import Image from "next/image";
+import { urlFor } from "@/libs/sanity";
 
-export default async function About() {
-  const aboutContent = await client.fetch<AboutData[]>(queries.about);
+type Props = {
+  aboutContent: AboutData[];
+};
+
+export default async function About({ aboutContent }: Props) {
+  // const aboutContent = await client.fetch<AboutData[]>(queries.about);
   const { body, mainImage } = aboutContent[0];
 
   return (

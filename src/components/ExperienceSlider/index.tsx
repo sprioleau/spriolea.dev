@@ -1,13 +1,15 @@
-import { client, queries } from "@/libs/sanity";
-
 import { type Experience } from "@/schemas/types";
 import TabList from "../TabList";
 import { organizeByKey } from "@/utils";
 
-export default async function ExperienceSlider() {
-  const experience = await client.fetch<Experience[]>(queries.experience);
+type Props = {
+  experiences: Experience[];
+};
 
-  const experienceByJobType = organizeByKey(experience, "jobType.type");
+export default async function ExperienceSlider({ experiences }: Props) {
+  // const experience = await client.fetch<Experience[]>(queries.experience);
+
+  const experiencesByJobType = organizeByKey(experiences, "jobType.type");
 
   const type = "Web Development";
 
@@ -16,7 +18,7 @@ export default async function ExperienceSlider() {
       key={type}
       id={type}
       label={type}
-      experience={experienceByJobType[type]}
+      experience={experiencesByJobType[type]}
       showSublabel={false}
       expandByDefault={true}
       shouldHide={false}

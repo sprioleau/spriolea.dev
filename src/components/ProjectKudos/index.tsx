@@ -1,10 +1,12 @@
-import { client, queries } from "@/libs/sanity";
-
 import { Kudos } from "@/schemas/types";
 import { ProjectKudosList } from "@/components";
 
-export default async function ProjectKudos() {
-  const kudos = await client.fetch<Kudos[]>(queries.kudos);
+type Props = {
+  kudos: Kudos[];
+};
+
+export default async function ProjectKudos({ kudos }: Props) {
+  // const kudos = await client.fetch<Kudos[]>(queries.kudos);
 
   return (
     <div className="project-kudos">

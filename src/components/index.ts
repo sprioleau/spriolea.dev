@@ -4,7 +4,7 @@ export { default as AdvanceToNextSectionButton } from "./AdvanceToNextSectionBut
 export { default as CallToActionButton } from "./CallToActionButton";
 export { default as Contact } from "./Contact";
 export { default as CopyEmailButton } from "./CopyEmailButton";
-export { default as Experience } from "./Experience";
+export { default as Experiences } from "./Experiences";
 export { default as ExperienceSlider } from "./ExperienceSlider";
 export { default as Footer } from "./Footer";
 export { default as FooterContent } from "./FooterContent";

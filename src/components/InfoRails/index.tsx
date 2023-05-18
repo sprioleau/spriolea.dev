@@ -1,11 +1,13 @@
-import { client, queries } from "@/libs/sanity";
-
 import CopyEmailButton from "../CopyEmailButton";
 import { SiteDetails } from "@/schemas/types";
 import icons from "../Icons";
 
-export default async function InfoRails() {
-  const siteDetails = await client.fetch<SiteDetails[]>(queries.siteDetails);
+type Props = {
+  siteDetails: SiteDetails[];
+};
+
+export default async function InfoRails({ siteDetails }: Props) {
+  // const siteDetails = await client.fetch<SiteDetails[]>(queries.siteDetails);
 
   const {
     creator: {

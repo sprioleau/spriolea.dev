@@ -1,13 +1,15 @@
-import { client, queries } from "@/libs/sanity";
-
 import Link from "next/link";
 import Logo from "../Logo";
 import { NavLink } from "@/schemas/types";
 import ResumeButton from "../ResumeButton";
 import icons from "../Icons";
 
-export default async function Nav() {
-  const navLinks = await client.fetch<NavLink[]>(queries.navLinks);
+type Props = {
+  navLinks: NavLink[];
+};
+
+export default async function Nav({ navLinks }: Props) {
+  // const navLinks = await client.fetch<NavLink[]>(queries.navLinks);
 
   return (
     <nav className="nav">
