@@ -5,7 +5,7 @@ import { SiteDetails } from "@/schemas/types";
 import icons from "../Icons";
 
 export default async function InfoRails() {
-  const siteDetails = await client.fetch<SiteDetails[]>(queries.siteDetails);
+  const siteDetails = await client.fetch<SiteDetails>(queries.siteDetails);
 
   const {
     creator: {
@@ -13,7 +13,7 @@ export default async function InfoRails() {
       links: { gitHubUrl },
     },
     meta: { vsCodeUrl },
-  } = siteDetails[0];
+  } = siteDetails;
 
   return (
     <>

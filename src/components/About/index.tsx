@@ -5,8 +5,8 @@ import { AboutData } from "@/schemas/types";
 import Image from "next/image";
 
 export default async function About() {
-  const aboutContent = await client.fetch<AboutData[]>(queries.about);
-  const { body, mainImage } = aboutContent[0];
+  const aboutContent = await client.fetch<AboutData>(queries.about);
+  const { body, mainImage } = aboutContent;
 
   return (
     <>
