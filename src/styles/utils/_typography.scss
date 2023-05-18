@@ -1,7 +1,51 @@
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  // prettier-ignore
+  src: url("/fonts/inter-latin-regular.woff2") format("woff2"),
+       url("/fonts/inter-latin-regular.woff") format("woff");
+}
+
+/* quattrocento-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Quattrocento";
+  font-style: normal;
+  font-weight: 700;
+  // prettier-ignore
+  src: url("/fonts/quattrocento-latin-700.woff2") format("woff2"),
+       url("/fonts/quattrocento-latin-700.woff") format("woff");
+}
+
+/* ibm-plex-mono-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 300;
+  // prettier-ignore
+  src: url('/fonts/ibm-plex-mono-latin-300.woff2') format('woff2'),
+       url('/fonts/ibm-plex-mono-latin-300.woff') format('woff');
+}
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  // prettier-ignore
+  src: url('/fonts/ibm-plex-mono-v19-latin-regular.woff2') format('woff2'),
+       url('/fonts/ibm-plex-mono-v19-latin-regular.woff') format('woff');
+}
+
 :root {
-  // --font-body: "p22-mackinac-pro", serif;
-  // --font-ss: "Inter", sans-serif;
+  --font-ss: Inter, sans-serif;
+  --font-body: Quattrocento, serif;
+  --font-mono: IBMPlexMono, monospace;
   --font-weight-light: 300;
   --font-weight-bold: 700;
-  // --font-mono: "IBM Plex Mono", serif;
 }
