@@ -39,6 +39,7 @@
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",
     "@sanity/types": "^3.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "sass": "^1.59.2"
   }
 }
