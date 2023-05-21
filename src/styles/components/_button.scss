@@ -22,7 +22,7 @@ button,
   &:not(.clap) {
     padding: 1.25rem 2rem;
     @include styled-border;
-    
+
     &::after {
       @include transition;
     }
@@ -82,7 +82,8 @@ button,
     }
 
     @include hover-wrapper {
-      &:hover, &:active {
+      &:hover,
+      &:active {
         transform: none;
         background-color: transparent;
         color: var(--ui-accent-1);
@@ -96,7 +97,7 @@ button,
 }
 
 @include md {
-  button, 
+  button,
   .button {
     &:not(.clap) {
       padding: 1rem 1.5rem;

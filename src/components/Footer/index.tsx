@@ -4,7 +4,6 @@ import { client, queries } from "@/libs/sanity";
 import { FooterContent } from "@/components";
 import { FooterData } from "@/schemas/types";
 import { getClaps } from "@/utils";
-import { incrementClaps } from "@/actions";
 
 export default async function Footer() {
   const footerContent = await client.fetch<FooterData>(queries.footer);
@@ -21,7 +20,6 @@ export default async function Footer() {
           content={body}
           contributions={contributions}
           serverClapCount={serverClapCount}
-          incrementClaps={incrementClaps}
         />
       </div>
     </footer>

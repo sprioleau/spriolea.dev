@@ -1,27 +1,23 @@
 "use client";
 
+import { ClapButton, PortableTextBlock } from "@/components";
 import { formatNumber, getClaps } from "@/utils";
 
-import ClapButton from "../ClapButton";
 import { ContributionsData } from "@/libs/github";
 import { FooterData } from "@/schemas/types";
-import { PortableTextBlock } from "@/components";
 import icons from "../Icons";
-import { incrementClaps } from "@/actions";
 import { useState } from "react";
 
 type Props = {
   content: FooterData["body"];
   contributions: ContributionsData["contributions"];
   serverClapCount: NonNullable<Awaited<ReturnType<typeof getClaps>>["data"]>;
-  incrementClaps: typeof incrementClaps;
 };
 
 export default function FooterContent({
   content,
   contributions,
   serverClapCount,
-  incrementClaps,
 }: Props) {
   const [clientClapCount, setClientClapCount] = useState(0);
 
@@ -48,7 +44,6 @@ export default function FooterContent({
         serverClapCount={serverClapCount}
         clientClapCount={clientClapCount}
         setClientClapCount={setClientClapCount}
-        incrementClaps={incrementClaps}
       />
       {content.map(({ _key, children, markDefs }) => (
         <p
@@ -65,7 +60,7 @@ export default function FooterContent({
       {shouldDisplayStats && (
         <ul className="footer__stats">
           {statsData.map(({ key, value, icon }) =>
-            value ? (
+            value > 0 ? (
               <li
                 key={key}
                 className="footer__stat tooltip"

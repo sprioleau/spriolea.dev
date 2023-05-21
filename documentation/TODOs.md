@@ -7,9 +7,10 @@
 - [x] Add [JSON-LD structured data](https://nextjs.org/docs/app/building-your-application/optimizing/metadata#json-ld)
 - [x] Integrate with Vercel Analytics to get view count
 - [x] Use local fonts
+- [x] Use Vercel Edge Config for clap button
+- [x] Create custom clap button
+- [x] Use app directory APIs (`route.ts` files)
 - [ ] Add metadata
-- [ ] Use Vercel Edge Config for clap button
 - [ ] Remove unused packages
-- [ ] Use app directory APIs (`route.ts` files)
 - [ ] Add toast message
 - [ ] Make menu a modal dialog?

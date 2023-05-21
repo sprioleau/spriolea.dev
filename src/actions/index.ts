@@ -1,6 +1,10 @@
 "use server";
 
-export async function incrementClaps(newClapsTotal: any) {
+export async function persistClaps({
+  newClapsTotal,
+}: {
+  newClapsTotal: number;
+}) {
   const headers = new Headers();
 
   // prettter-ignore

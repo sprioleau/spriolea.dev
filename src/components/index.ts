@@ -2,6 +2,7 @@ export { default as About } from "./About";
 export { default as ActionIndicator } from "./ActionIndicator";
 export { default as AdvanceToNextSectionButton } from "./AdvanceToNextSectionButton";
 export { default as CallToActionButton } from "./CallToActionButton";
+export { default as ClapButton } from "./ClapButton";
 export { default as Contact } from "./Contact";
 export { default as CopyEmailButton } from "./CopyEmailButton";
 export { default as Experience } from "./Experience";
