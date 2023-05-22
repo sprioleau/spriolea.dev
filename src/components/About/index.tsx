@@ -29,6 +29,7 @@ export default async function About() {
           width={400}
           height={400}
           quality={100}
+          priority
         />
         <div className="about__logo">
           <Logo
