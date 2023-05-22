@@ -4,7 +4,6 @@ import { schemaTypes } from "./src/schemas";
 import { visionTool } from "@sanity/vision";
 
 export default defineConfig({
-  basePath: "/studio",
   name: "sprioleaudotdev",
   title: "Personal Site - San'Quan Prioleau",
 
