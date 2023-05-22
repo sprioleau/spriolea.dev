@@ -71,6 +71,11 @@
     bottom: 3rem;
     right: 5rem;
     padding: 0.5rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 
