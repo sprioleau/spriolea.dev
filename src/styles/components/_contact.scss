@@ -1,4 +1,8 @@
 .contact {
+  &.section {
+    padding-bottom: 0;
+  }
+
   &__card {
     @include cursor-copy;
     @include center;
@@ -28,12 +32,8 @@
         .contact__card-email {
           color: var(--ui-text-hover);
 
-          &::before {
-            display: none;
-          }
-
           &::after {
-            --scaleX: 1;
+            --scaleY: 1;
           }
         }
       }
@@ -45,25 +45,35 @@
   }
 
   &__spotlight {
-    opacity: 0;
     position: absolute;
     inset: 0;
-    z-index: -1;
+    opacity: 0;
     margin-bottom: 0;
+    pointer-events: none;
+    z-index: -1;
   }
 
   &__card-heading {
     @include ff-mono;
+    user-select: none;
   }
 
   &__card-email {
+    --scaleX: 100%;
     @include ff-body;
     font-size: clamp(1rem, 0.6rem + 2vw, 1.5rem);
     line-height: 1.2;
 
+    &::before {
+      display: none;
+    }
+
     &::after {
-      --scaleX: 0;
+      --scaleY: 0;
+      transform: scaleY(var(--scaleY));
+      transform-origin: bottom;
       bottom: -0.125em;
+      opacity: 1;
     }
 
     @include hover-wrapper {
