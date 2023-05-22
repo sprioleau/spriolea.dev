@@ -11,7 +11,7 @@
 - [x] Create custom clap button
 - [x] Use app directory APIs (`route.ts` files)
 - [x] Add [spotlight animation](https://buildui.com/recipes/spotlight) to contact card
-- [ ] Add metadata
+- [x] Add metadata
 - [ ] Remove unused packages
 - [ ] Add toast message
 - [ ] Make menu a modal dialog?

@@ -6,10 +6,50 @@ import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
+const fullName = "San'Quan Prioleau";
+const title = `${fullName} - Frontend Engineer`;
+const description = `Personal website of ${fullName}`;
+const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+const baseUrl = `${protocol}://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+
+console.log("🚀 ~ file: layout.tsx:15 ~ baseUrl:", { protocol, baseUrl });
+const baseOgConfig = {
+  title,
+  description,
+  images: [
+    {
+      url: "/images/sprioleau-social-card.png",
+      width: 1200,
+      height: 628,
+      alt: description,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "San'Quan Prioleau - Frontend Engineeer",
-  description: "Personal website of San'Quan Prioleau",
+  title,
+  description,
   applicationName: "sprioleau.dev",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  keywords: [fullName, "Portfolio", "Web Development", "Frontend Engineer"],
+  authors: [{ name: fullName, url: baseUrl }],
+  colorScheme: "dark",
+  creator: fullName,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL(baseUrl),
+  openGraph: {
+    ...baseOgConfig,
+    url: baseUrl,
+    siteName: title,
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: baseOgConfig,
 };
 
 export default async function RootLayout({
