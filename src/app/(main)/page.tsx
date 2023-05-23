@@ -10,6 +10,7 @@ import {
 } from "@/components";
 
 import { DefaultMetaTags } from "@/meta";
+import ToastContainer from "@/components/ToastContainer";
 
 type PageSection = {
   id: string;
@@ -49,6 +50,7 @@ export default async function Home() {
   return (
     <>
       <DefaultMetaTags />
+      <ToastContainer />
       {/* @ts-expect-error Async Server Component */}
       <Hero />
       {pageSections.map(({ id, title, component: Component }) => (
