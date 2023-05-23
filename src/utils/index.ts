@@ -11,4 +11,5 @@ export { default as handleKeyDown } from "./handleKeyDown";
 export { default as organizeByKey } from "./organizeByKey";
 export { default as randomNumberBetween } from "./randomNumberBetween";
 export { default as sortAlphaByKey } from "./sortAlphaByKey";
+export { default as scrollToTop } from "./scrollToTop";
 export { default as toastMessage } from "./toastMessage";

@@ -9,7 +9,7 @@ type Props = {
   sectionId: string;
 };
 
-const SkipToMainContent = ({ sectionId = "about" }: Props) => {
+export default function SkipToMainContent({ sectionId = "about" }: Props) {
   const router = useRouter();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -31,6 +31,4 @@ const SkipToMainContent = ({ sectionId = "about" }: Props) => {
       {icons.arrowRight}
     </button>
   );
-};
-
-export default SkipToMainContent;
+}
