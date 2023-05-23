@@ -25,6 +25,7 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
   };
 
   const projectTableRef = React.useRef(null);
+
   const { clientX, clientY } = useMouse(projectTableRef, {
     enterDelay: 50,
     leaveDelay: 200,
@@ -67,8 +68,8 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
         <div
           className="other-work__image"
           style={{
-            top: (clientY ?? 0) + 20,
-            left: (clientX ?? 0) + 10,
+            top: clientY ? clientY + 20 : "unset",
+            left: clientX ? clientX + 10 : "unset",
           }}
         >
           <Image
