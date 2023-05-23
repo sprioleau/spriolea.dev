@@ -17,7 +17,7 @@ export default async function InfoRails() {
 
   return (
     <div className="info-rails">
-      <div className="info-rails left">
+      <div className="info-rails__left">
         <ul className="info-rails__link-list">
           <li className="info-rails__link-list-item">
             <a
@@ -55,7 +55,7 @@ export default async function InfoRails() {
         </ul>
         <div className="info-rails__accent-line" />
       </div>
-      <div className="info-rails right">
+      <div className="info-rails__right">
         <ul className="info-rails__link-list">
           <li className="info-rails__link-list-item">
             <CopyEmailButton

@@ -12,28 +12,12 @@
     flex: 1 0;
     position: relative;
   }
-  
+
   &__bio-text {
     margin-bottom: 1.5rem;
 
     p {
       font-size: 1rem;
-    }
-  } 
-
-  &__logo {
-    @include center;
-    position: absolute;
-    color: rgba(var(--ui-bg-hover-rgb), 1);
-    width: 110%;
-    height: 110%;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-
-    svg {
-      padding: 1rem;
     }
   }
 }

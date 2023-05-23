@@ -7,4 +7,9 @@
   max-width: calc(var(--max-width) + var(--section-x-padding));
   margin-top: var(--nav-height);
   width: 100%;
+
+  @include mq(1050px) {
+    padding-left: var(--gutter-width);
+    margin-top: 5rem;
+  }
 }

@@ -27,8 +27,8 @@ $bp-large: 1200px;
   }
 }
 
-@mixin mq($width: #{$bp-large}) {
-  @media (max-width: $width) {
+@mixin mq($size: #{$bp-large}, $type: width) {
+  @media (max-#{$type}: $size) {
     @content;
   }
 }
@@ -121,7 +121,7 @@ $bp-large: 1200px;
 @mixin tooltip {
   position: relative;
   --scale: 0;
-  
+
   &::before {
     @include ff-mono;
     @include transition;
@@ -158,7 +158,7 @@ $bp-large: 1200px;
 
   @include hover-wrapper {
     &:hover {
-      &::before, 
+      &::before,
       &::after {
         --scale: 1;
         opacity: 1;

@@ -4,20 +4,19 @@
   letter-spacing: 1px;
   padding: var(--nav-padding) 5vw;
   background-color: rgba(var(--ui-bg-rgb), 0.8);
-  border-bottom: 2px solid var(--ui-accent-1);
   width: 100%;
 
   p {
     @include ff-mono;
     font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
   }
-  
+
   .container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
+
   &__message {
     margin-bottom: 0;
 

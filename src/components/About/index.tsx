@@ -1,8 +1,8 @@
-import { Logo, PortableTextBlock } from "@/components";
 import { client, queries, urlFor } from "@/libs/sanity";
 
 import { AboutData } from "@/schemas/types";
 import Image from "next/image";
+import { PortableTextBlock } from "@/components";
 
 export default async function About() {
   const aboutContent = await client.fetch<AboutData>(queries.about);
@@ -31,13 +31,6 @@ export default async function About() {
           quality={100}
           priority
         />
-        <div className="about__logo">
-          <Logo
-            fill="transparent"
-            stroke="currentColor"
-            strokeWidth={2}
-          />
-        </div>
       </div>
     </>
   );

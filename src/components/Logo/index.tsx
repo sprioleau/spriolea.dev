@@ -9,7 +9,7 @@ const Logo = ({
   fill = "currentColor",
   stroke = "transparent",
   strokeWidth = 0,
-  size = "4rem",
+  size = "1em",
 }: Props) => {
   return (
     <svg

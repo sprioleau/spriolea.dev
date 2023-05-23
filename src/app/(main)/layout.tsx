@@ -1,6 +1,6 @@
 import "@/styles/styles.scss";
 
-import { Footer, InfoRails, Nav, StructuredData } from "@/components";
+import { InfoRails, Nav, StructuredData } from "@/components";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -65,8 +65,6 @@ export default async function RootLayout({
           {/* @ts-expect-error Async Server Component */}
           <InfoRails />
           <main className="main">{children}</main>
-          {/* @ts-expect-error Async Server Component */}
-          <Footer />
         </div>
         <section>
           <StructuredData data={logoSchema} />
