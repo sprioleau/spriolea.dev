@@ -63,6 +63,7 @@ export default function ProjectRow({
     if (smallerThanSmall) return;
     setCurrentImage(mainImage);
   };
+
   const handleMouseLeave = () => {
     setCurrentImage(undefined);
   };

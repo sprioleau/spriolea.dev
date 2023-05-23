@@ -3,7 +3,6 @@
 import { composeClasses, sortAlphaByKey } from "@/utils";
 import useWindowSize, { breakpoints as bp } from "@/hooks/useWindowSize";
 
-import { FadeInAndUp } from "../AnimationLibrary";
 import React from "react";
 import { Skill } from "@/schemas/types";
 import icons from "../Icons";
@@ -43,18 +42,16 @@ export default function SkillsList({ skills }: Props) {
             {skillsData
               .sort((a, b) => sortAlphaByKey<SkillsObject>(a, b, "techName"))
               .map(({ techName, fullName, iconKey }) => (
-                <FadeInAndUp
+                <li
                   key={techName}
-                  tag="li"
                   className={skillsListItemClasses}
-                  dataTooltip={fullName}
-                  useDefaultStyles={false}
+                  data-tooltip={fullName}
                 >
                   {iconKey && (
                     <div className="skills__icon">{icons[iconKey]}</div>
                   )}
                   <p className="skills__label">{techName}</p>
-                </FadeInAndUp>
+                </li>
               ))}
           </ul>
         </React.Fragment>
