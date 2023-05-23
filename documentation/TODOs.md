@@ -14,7 +14,6 @@
 - [x] Add metadata
 - [x] Use info rail on small devices
 - [x] Add toast message
-- [ ] Simplify nav link elements
+- [x] Simplify nav link elements
+- [x] Remove unused packages
 - [ ] Remove `useMouse` hook, use Framer `useMotionValue` hook instead
-- [ ] Remove unused packages
-- [ ] Make menu a modal dialog?
