@@ -13,7 +13,7 @@
 - [x] Add [spotlight animation](https://buildui.com/recipes/spotlight) to contact card
 - [x] Add metadata
 - [x] Use info rail on small devices
+- [x] Add toast message
 - [ ] Simplify nav link elements
 - [ ] Remove unused packages
-- [ ] Add toast message
 - [ ] Make menu a modal dialog?
