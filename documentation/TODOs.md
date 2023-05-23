@@ -12,7 +12,7 @@
 - [x] Use app directory APIs (`route.ts` files)
 - [x] Add [spotlight animation](https://buildui.com/recipes/spotlight) to contact card
 - [x] Add metadata
-- [ ] Use info rail on small devices
+- [x] Use info rail on small devices
 - [ ] Simplify nav link elements
 - [ ] Remove unused packages
 - [ ] Add toast message
