@@ -25,6 +25,8 @@ const baseOgConfig = {
   ],
 };
 
+const metadataBase = new URL(baseUrl);
+
 export const metadata: Metadata = {
   title,
   description,
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(baseUrl),
+  metadataBase,
   openGraph: {
     ...baseOgConfig,
     url: baseUrl,

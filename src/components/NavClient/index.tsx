@@ -55,7 +55,7 @@ export default function NavClient({ navLinks }: Props) {
       <div className="nav__main-content">
         <SkipToMainContent sectionId="about" />
         <FocusTrap active={isExpanded}>
-          <div>
+          <div className="nav__focus-trap">
             <div className="nav__links-wrapper">
               <ul className="nav__links">
                 {navLinks.map(({ _id, navLabel, sectionSlug }) => (

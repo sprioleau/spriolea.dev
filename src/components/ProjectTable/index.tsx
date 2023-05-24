@@ -45,7 +45,7 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
       <table>
         <thead>
           <tr className="other-work__header-row">
-            <th>Year</th>
+            {!smallerThanSmall && <th>Year</th>}
             <th>Project</th>
             {!smallerThanMedium && <th>Built for</th>}
             {!smallerThanSmall && <th>Built with</th>}

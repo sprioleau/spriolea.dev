@@ -32,10 +32,11 @@
   --tab-list-width: 235px;
   --tab-list-gap: 2rem;
   --section-x-padding: clamp(2.5rem, 5vw, 6rem);
+  --section-y-padding: clamp(4.5rem, 5vw, 6rem);
   --h1: clamp(1.75rem, 0.11rem + 6.55vw, 4rem);
   --h2: clamp(1.25rem, 1.1rem + 3vw, 2.25rem);
   --h3: clamp(1.125rem, 1.8rem + 3vw, 1.25rem);
   --curve: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --p-max-width: 500px;
-  --gutter-width: 4rem;
+  --gutter-width: 3rem;
 }

@@ -74,7 +74,9 @@ export default function ProjectRow({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
+      {!smallerThanSmall && (
+        <td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
+      )}
       <td>{title}</td>
       {!smallerThanMedium && (
         <td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>
