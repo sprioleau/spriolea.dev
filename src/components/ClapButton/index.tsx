@@ -14,8 +14,8 @@ type Props = {
   setClientClapCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const particleCount = 20;
-const maxClapCount = 15;
+const PARTICLE_COUNT = 5;
+const MAX_CLAP_COUNT = 15;
 
 export default function ClapButton({
   serverClapCount,
@@ -29,10 +29,9 @@ export default function ClapButton({
     persistClaps({ newClapsTotal: serverClapCount + clientClapCount });
   }, 3000);
 
-  const particleAnimationProps = getParticleAnimationProps(particleCount);
-
   function handleTouch(e: React.MouseEvent<HTMLButtonElement>) {
-    if (!e.altKey && clientClapCount >= maxClapCount) {
+    if (!e.altKey && clientClapCount >= MAX_CLAP_COUNT) {
+      if (hasSeenToast) return;
       toastMessage("Thanks for the claps");
       return;
     }
@@ -43,7 +42,7 @@ export default function ClapButton({
       const newClapCount = clientClapCount - 1;
       const countAnimationProps = getCountAnimationProps();
       const fillanimationProps = getFillAnimationProps(
-        newClapCount / maxClapCount
+        newClapCount / MAX_CLAP_COUNT
       );
 
       animate([...fillanimationProps, ...countAnimationProps]);
@@ -54,20 +53,48 @@ export default function ClapButton({
     }
 
     const newClapCount = clientClapCount + 1;
-    const countAnimationProps = getCountAnimationProps(0.02 * newClapCount);
+    const countAnimationProps = getCountAnimationProps();
     const fillAnimationProps = getFillAnimationProps(
-      newClapCount / maxClapCount
+      newClapCount / MAX_CLAP_COUNT
     );
 
-    if (newClapCount === maxClapCount && !hasSeenToast) {
+    if (newClapCount === MAX_CLAP_COUNT && !hasSeenToast) {
+      if (hasSeenToast) return;
       toastMessage("Thanks for the claps!");
       setHasSeenToast(true);
     }
 
+    const angleOffset = randomNumberBetween(0, 1); // radians
+
+    const particleAnimationProps = getParticleAnimationProps({
+      selectorPrefix: ".particle-",
+      particleCount: PARTICLE_COUNT,
+      angleOffset,
+    });
+
+    const particleResetAnimationProps = getParticleResetAnimationProps({
+      selectorPrefix: ".particle-",
+      particleCount: PARTICLE_COUNT,
+    });
+
+    const followParticleProps = getParticleAnimationProps({
+      selectorPrefix: ".follow-",
+      particleCount: PARTICLE_COUNT,
+      angleOffset: angleOffset + degreesToRadians(360 / PARTICLE_COUNT / 2 + 5),
+      distance: 65,
+    });
+    const followParticleResetAnimationProps = getParticleResetAnimationProps({
+      selectorPrefix: ".follow-",
+      particleCount: PARTICLE_COUNT,
+    });
+
     animate([
       ...particleAnimationProps,
+      ...followParticleProps,
       ...fillAnimationProps,
       ...countAnimationProps,
+      ...particleResetAnimationProps,
+      ...followParticleResetAnimationProps,
     ]);
 
     setClientClapCount(newClapCount);
@@ -83,16 +110,20 @@ export default function ClapButton({
       }}
     >
       <motion.button
-        onClick={handleTouch}
+        onMouseDown={handleTouch}
         className="clap-button__button clap"
-        whileTap={{ scale: clientClapCount === maxClapCount ? 1 : 1.2 }}
+        whileHover={{
+          scale: 1.1,
+          transition: { type: "spring", duration: 0.2 },
+        }}
+        whileTap={{ scale: clientClapCount === MAX_CLAP_COUNT ? 0.9 : 1 }}
       >
         <Clap />
         <div className="clap-button__fill" />
       </motion.button>
       <div className="clap-button__count">{clientClapCount}</div>
       <div className="particles">
-        {emptyArrayOfLength(particleCount).map((index) => (
+        {emptyArrayOfLength(PARTICLE_COUNT).map((index) => (
           <svg
             className={`clap-button__particle particle-${index}`}
             key={index}
@@ -104,6 +135,19 @@ export default function ClapButton({
             <path d="M64.39,2,80.11,38.76,120,42.33a3.2,3.2,0,0,1,1.83,5.59h0L91.64,74.25l8.92,39a3.2,3.2,0,0,1-4.87,3.4L61.44,96.19,27.09,116.73a3.2,3.2,0,0,1-4.76-3.46h0l8.92-39L1.09,47.92A3.2,3.2,0,0,1,3,42.32l39.74-3.56L58.49,2a3.2,3.2,0,0,1,5.9,0Z" />
           </svg>
         ))}
+        {emptyArrayOfLength(PARTICLE_COUNT).map((index) => (
+          <svg
+            className={`clap-button__particle follow-${index}`}
+            key={index}
+            viewBox="0 0 122 117"
+            width="10"
+            height="10"
+            fill="var(--ui-accent-1)"
+            fillOpacity={0.5}
+          >
+            <path d="M64.39,2,80.11,38.76,120,42.33a3.2,3.2,0,0,1,1.83,5.59h0L91.64,74.25l8.92,39a3.2,3.2,0,0,1-4.87,3.4L61.44,96.19,27.09,116.73a3.2,3.2,0,0,1-4.76-3.46h0l8.92-39L1.09,47.92A3.2,3.2,0,0,1,3,42.32l39.74-3.56L58.49,2a3.2,3.2,0,0,1,5.9,0Z" />
+          </svg>
+        ))}
       </div>
     </div>
   );
@@ -111,69 +155,85 @@ export default function ClapButton({
 
 type AnimationSequence = Parameters<typeof animateImport>[0];
 
+function degreesToRadians(degrees: number) {
+  return Math.PI * (degrees / 180);
+}
+
 function getFillAnimationProps(fillPercentage: number): AnimationSequence {
   return [
     [
       ".clap-button__fill",
-      {
-        scaleY: fillPercentage.toFixed(2),
-      },
-      {
-        at: "<",
-        type: "spring",
-        stiffness: 100,
-        mass: 0.7,
-      },
+      { scaleY: fillPercentage.toFixed(2) },
+      { at: "<", type: "spring", stiffness: 100, mass: 0.7 },
     ],
   ];
 }
 
-function getCountAnimationProps(nudgeScaleBy: number = 0): AnimationSequence {
+function getCountAnimationProps(): AnimationSequence {
   return [
     [
       ".clap-button__count",
       {
         y: [0, -40],
         x: "-50%",
-        scale: [0.05, 1 + nudgeScaleBy ?? 0],
+        scale: [0.05, 1],
         opacity: [0, 1],
       },
-      {
-        at: "<",
-      },
+      { at: "<" },
     ],
-    [
-      ".clap-button__count",
-      {
-        opacity: 0,
-      },
-      {
-        duration: 0.2,
-        delay: 0.4,
-      },
-    ],
+    [".clap-button__count", { opacity: 0 }, { duration: 0.2, delay: 0.4 }],
   ];
 }
 
-function getParticleAnimationProps(particleCount: number) {
-  const particleAnimations: AnimationSequence = emptyArrayOfLength(
-    particleCount
-  ).map((index) => {
-    const x2 = randomNumberBetween(-100, 100) + 30;
-    const y2 = randomNumberBetween(-100, 100) + 30;
-    const scale2 = randomNumberBetween(0.5, 1.3);
+function getParticleAnimationProps({
+  selectorPrefix,
+  particleCount,
+  angleOffset = 0,
+  distance = 80,
+}: {
+  selectorPrefix: string;
+  particleCount: number;
+  angleOffset?: number;
+  distance?: number;
+}) {
+  const particles = emptyArrayOfLength(particleCount);
+  const angle = (2 * Math.PI) / particleCount; // radians
+
+  const particleAnimations: AnimationSequence = particles.map((index) => {
+    const x = Math.cos(angle * index + angleOffset);
+    const y = Math.sin(angle * index + angleOffset);
 
     return [
-      `.particle-${index}`,
+      `${selectorPrefix}${index}`,
       {
-        x: [0, x2 * 0.7, x2],
-        y: [0, y2 * 0.7, y2],
-        scale: [0.01, scale2, scale2],
-        opacity: [0, 1, 0],
+        x: [0, x * distance],
+        y: [0, y * distance],
+        scale: [2, 1],
+        opacity: [0, 1],
       },
-      { duration: 0.3, at: "<", ease: "linear" },
+      { duration: 0.2, at: "<" },
     ];
   });
 
   return particleAnimations;
+}
+
+function getParticleResetAnimationProps({
+  selectorPrefix,
+  particleCount,
+}: {
+  selectorPrefix: string;
+  particleCount: number;
+}) {
+  const particles = emptyArrayOfLength(particleCount);
+
+  const particleReset: AnimationSequence = particles.map((index) => {
+    return [
+      `${selectorPrefix}${index}`,
+      { opacity: [1, 0] },
+      { duration: 0.2, at: "<" },
+    ];
+  });
+
+  return particleReset;
 }
