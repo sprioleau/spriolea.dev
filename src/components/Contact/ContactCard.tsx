@@ -48,8 +48,8 @@ export default function ContactCard({ contact: { email, overline } }: Props) {
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              500px circle at ${mouseX}px ${mouseY}px,
-              rgba(255, 196, 0, 0.1),
+              120px circle at ${mouseX}px ${mouseY}px,
+              rgba(255, 196, 0, 0.5),
               transparent 80%
             )
           `,

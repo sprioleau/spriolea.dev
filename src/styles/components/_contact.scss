@@ -16,8 +16,9 @@
     color: var(--ui-text-hover);
     position: relative;
 
-    &::before {
+    &::after {
       content: "";
+      display: block;
       position: absolute;
       inset: 1rem;
       border: 0.1rem solid var(--ui-accent-1);
@@ -38,10 +39,6 @@
         }
       }
     }
-
-    &::after {
-      display: none;
-    }
   }
 
   &__spotlight {
@@ -51,6 +48,13 @@
     margin-bottom: 0;
     pointer-events: none;
     z-index: -1;
+
+    &::before {
+      @include bg-obscure;
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
   }
 
   &__card-heading {
