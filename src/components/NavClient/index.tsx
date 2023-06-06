@@ -39,7 +39,10 @@ export default function NavClient({ navLinks }: Props) {
   }, [isExpanded, close]);
 
   return (
-    <nav className={["nav", isExpanded ? "nav-expanded" : ""].join(" ")}>
+    <nav
+      className={["nav", isExpanded ? "nav-expanded" : ""].join(" ")}
+      aria-label="main navigation"
+    >
       <div className="nav__logo">
         <Link
           href="/"

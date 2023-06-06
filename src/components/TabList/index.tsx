@@ -105,7 +105,10 @@ export default function TabList({
         id={id}
         className="tab-list__main-content"
       >
-        <nav className="tab-list__tabs">
+        <nav
+          className="tab-list__tabs"
+          aria-label="experiences"
+        >
           <ul className="tab-list__labels">
             {experience.map((labelData, index) => (
               <TabLabel
