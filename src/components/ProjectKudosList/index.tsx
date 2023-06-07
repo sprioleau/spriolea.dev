@@ -71,7 +71,7 @@ const ProjectKudosList = ({ kudos }: Props) => {
               </div>
               <p className="project-kudos__project-name">
                 <span className="icon project-kudos__project-icon">
-                  project-icon 2{/* <HiOutlinePresentationChartLine /> */}
+                  {/* <HiOutlinePresentationChartLine /> */}
                 </span>
                 Project: {project.name}
               </p>
