@@ -12,7 +12,6 @@ const description = `Personal website of ${fullName}`;
 const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
 const baseUrl = `${protocol}://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
 
-console.log("🚀 ~ file: layout.tsx:15 ~ baseUrl:", baseUrl);
 const baseOgConfig = {
   title,
   description,
