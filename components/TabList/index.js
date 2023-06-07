@@ -1,14 +1,20 @@
-/* eslint-disable react/no-danger */
 import React from "react";
 import { composeClasses, formatJobDates } from "../../utils";
-import TabLabel from "./components/TabLabel";
-import PortableTextBlock from "../PortableTextBlock";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
+
+import PortableTextBlock from "../PortableTextBlock";
+/* eslint-disable react/no-danger */
 import { Stagger } from "../AnimationLibrary";
+import TabLabel from "./components/TabLabel";
 import icons from "../Icons";
 
 const TabList = ({
-  id, label, experience, showSublabel, expandByDefault, shouldHide,
+  id,
+  label,
+  experience,
+  showSublabel,
+  expandByDefault,
+  shouldHide,
 }) => {
   const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
   const [indicatorHeight, setIndicatorHeight] = React.useState(0);
@@ -24,7 +30,10 @@ const TabList = ({
 
   const handleSelect = (index) => setCurrentTabIndex(index);
 
-  const handleUpdateCurrentTab = React.useCallback((index) => handleSelect(index), []);
+  const handleUpdateCurrentTab = React.useCallback(
+    (index) => handleSelect(index),
+    [],
+  );
 
   const {
     jobTitle, fromDate, toDate, currentlyInRole, employer,
@@ -38,7 +47,12 @@ const TabList = ({
     if (employer.webAddress) {
       employerName = (
         <span className="tab-list__employer-link-wrapper">
-          <a href={employerObject.webAddress} target="_blank" rel="noreferrer" className="tab-list__employer-link shadow-link">
+          <a
+            href={employerObject.webAddress}
+            target="_blank"
+            rel="noreferrer"
+            className="tab-list__employer-link shadow-link"
+          >
             <span>{employer.name}</span>
             <span className="icon p0">{icons.externalLink}</span>
           </a>
@@ -61,12 +75,28 @@ const TabList = ({
 
   return (
     <div className={tabListClasses}>
-      <header className="tab-list__title-wrapper" onClick={handleExpand} tabIndex={0} role="button">
+      <header
+        className="tab-list__title-wrapper"
+        onClick={handleExpand}
+        tabIndex={0}
+        role="button"
+      >
         <h3 className="tab-list__title">{label} Experience</h3>
-        {!expandByDefault ? <span className="tab-list__expand-collapse">{!expanded ? "Expand" : "Collapse"} <span className="tab-list__icon">{icons.arrowDown}</span></span> : null}
+        {!expandByDefault ? (
+          <span className="tab-list__expand-collapse">
+            {!expanded ? "Expand" : "Collapse"}{" "}
+            <span className="tab-list__icon">{icons.arrowDown}</span>
+          </span>
+        ) : null}
       </header>
-      <div id={id} className="tab-list__main-content">
-        <nav className="tab-list__tabs">
+      <div
+        id={id}
+        className="tab-list__main-content"
+      >
+        <nav
+          className="tab-list__tabs"
+          aria-label="work experience"
+        >
           <ul className="tab-list__labels">
             {experience.map((labelData, index) => (
               <TabLabel
@@ -80,9 +110,12 @@ const TabList = ({
               />
             ))}
           </ul>
-          <div className="tab-list__tabs-indicator"
+          <div
+            className="tab-list__tabs-indicator"
             style={{
-              transform: isSmallScreen ? "none" : `translateY(${indicatorHeight * (currentTabIndex)}px)`,
+              transform: isSmallScreen
+                ? "none"
+                : `translateY(${indicatorHeight * currentTabIndex}px)`,
               height: indicatorHeight,
             }}
           />
@@ -90,7 +123,10 @@ const TabList = ({
         <div className="tab-list__details">
           <header className="tab-list__header">
             <h4 className="tab-list__header-title">
-              <span className="tab-list__role">{jobTitle}</span> <span className="tab-list__employer">@ {renderEmployerName(employer)}</span>
+              <span className="tab-list__role">{jobTitle}</span>{" "}
+              <span className="tab-list__employer">
+                @ {renderEmployerName(employer)}
+              </span>
             </h4>
             <p className="tab-list__dates">{formattedDates}</p>
           </header>
@@ -101,11 +137,19 @@ const TabList = ({
             staggerDelay={1}
             delayWithIndex
           >
-            {experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }) => (
-              <p key={_key} data-key={_key}>
-                <PortableTextBlock childrenContent={children} markDefs={markDefs} />
-              </p>
-            ))}
+            {experience[currentTabIndex].workHighlights.map(
+              ({ _key, children, markDefs }) => (
+                <p
+                  key={_key}
+                  data-key={_key}
+                >
+                  <PortableTextBlock
+                    childrenContent={children}
+                    markDefs={markDefs}
+                  />
+                </p>
+              ),
+            )}
           </Stagger>
         </div>
       </div>

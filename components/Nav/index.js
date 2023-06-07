@@ -1,15 +1,16 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import FocusTrap from "focus-trap-react";
+import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
-import SkipToMainContent from "../SkipToMainContent";
+
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Logo from "../Logo";
+import ResumeButton from "../ResumeButton";
+import SkipToMainContent from "../SkipToMainContent";
 import { Stagger } from "../AnimationLibrary";
 import { handleScrollToTop } from "../../utils";
 import icons from "../Icons";
-import ResumeButton from "../ResumeButton";
 
 const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   const { windowSize } = useWindowSize();
@@ -43,17 +44,31 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
   }, [navExpanded, close]);
 
   return (
-    <nav className="nav">
+    <nav
+      className="nav"
+      aria-label="main navigation"
+    >
       <div className="nav__logo">
-        <Link href="" className="nav__logo-link" aria-label="S. Prioleau Logo">
-          <a tabIndex={0} role="button" onClick={(e) => handleScrollToTop(e, router)}>
+        <Link
+          href=""
+          className="nav__logo-link"
+          aria-label="S. Prioleau Logo"
+        >
+          <a
+            tabIndex={0}
+            role="button"
+            onClick={(e) => handleScrollToTop(e, router)}
+          >
             <Logo />
           </a>
         </Link>
       </div>
       <div className="nav__main-content">
         <SkipToMainContent />
-        <FocusTrap active={navExpanded} focusTrapOptions={{ initialFocus: true }}>
+        <FocusTrap
+          active={navExpanded}
+          focusTrapOptions={{ initialFocus: true }}
+        >
           <div>
             <div className="nav__links-wrapper">
               <Stagger
@@ -93,17 +108,35 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
               </Stagger>
               <ResumeButton tabIndex={tabIndex} />
               {navExpanded && (
-              <button id="close" className="nav__icon nav__icon--close no-frame" type="button" onClick={close}>
-                {icons.close}
-              </button>
+                <button
+                  id="close"
+                  className="nav__icon nav__icon--close no-frame"
+                  type="button"
+                  onClick={close}
+                >
+                  {icons.close}
+                </button>
               )}
             </div>
             {!navExpanded && (
-              <button id="open" className="nav__icon nav__icon--menu no-frame" type="button" tabIndex={0} onClick={open} aria-label="open menu">
+              <button
+                id="open"
+                className="nav__icon nav__icon--menu no-frame"
+                type="button"
+                tabIndex={0}
+                onClick={open}
+                aria-label="open menu"
+              >
                 {icons.menu}
               </button>
             )}
-            <div className="nav__dismiss" onClick={close} role="button" tabIndex={-1} aria-label="close menu" />
+            <div
+              className="nav__dismiss"
+              onClick={close}
+              role="button"
+              tabIndex={-1}
+              aria-label="close menu"
+            />
           </div>
         </FocusTrap>
       </div>
