@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { HiOutlinePresentationChartLine } from "react-icons/hi";
 import { Kudos } from "@/schemas/types";
 import PortableTextBlock from "../PortableTextBlock";
 import { composeClasses } from "@/utils";
@@ -72,7 +71,7 @@ const ProjectKudosList = ({ kudos }: Props) => {
               </div>
               <p className="project-kudos__project-name">
                 <span className="icon project-kudos__project-icon">
-                  <HiOutlinePresentationChartLine />
+                  project-icon 2{/* <HiOutlinePresentationChartLine /> */}
                 </span>
                 Project: {project.name}
               </p>

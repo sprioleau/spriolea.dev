@@ -12,6 +12,11 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
-}
+  // modularizeImports: {
+  //   "react-icons": {
+  //     transform: "react-icons/{{member}}",
+  //   },
+  // },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
