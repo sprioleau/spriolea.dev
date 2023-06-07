@@ -1,5 +1,7 @@
-import React from "react";
+import { useEffect, useState } from "react";
+
 import { m } from "framer-motion";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 const defaultStyles = {
   display: "block",
@@ -136,7 +138,10 @@ export const Stagger = ({
     initial: "initial",
     animate: "animate",
     whileInView: "whileInView",
-    transition: { staggerChildren: !delayWithIndex ? staggerBy : null, delay: staggerDelay },
+    transition: {
+      staggerChildren: !delayWithIndex ? staggerBy : null,
+      delay: staggerDelay,
+    },
     className: parent.className,
     ...parent.additionalProps,
   };
@@ -170,8 +175,8 @@ export const StaggeredReveal = ({
   animate = true,
   altTextOnHover = null,
 }) => {
-  const [animationComplete, setAnimationComplete] = React.useState(false);
-
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const handleAnimationComplete = () => setAnimationComplete(true);
 
   const variants = variantsLibrary.staggeredReveal;
@@ -189,7 +194,34 @@ export const StaggeredReveal = ({
   const adjustedDelay = subtitle ? 0.5 + delay : delay;
 
   if (animationComplete || !animate) {
-    return <Tag className={wrapperClass} data-alt-text={altTextOnHover ?? null}><span>{text}</span></Tag>;
+    return (
+      <Tag
+        className={wrapperClass}
+        data-alt-text={altTextOnHover ?? null}
+      >
+        <span>{text}</span>
+      </Tag>
+    );
+  }
+
+  if (prefersReducedMotion) {
+    return (
+      <Tag className={wrapperClass}>
+        <span style={styles.wrapperSpan}>
+          {text.split("").map((letter, index) => (
+            <span
+              key={index}
+              style={{
+                ...styles.letter,
+                marginRight: letter === " " ? "0.22em" : null,
+              }}
+            >
+              {letter}
+            </span>
+          ))}
+        </span>
+      </Tag>
+    );
   }
 
   return (
@@ -215,7 +247,8 @@ export const StaggeredReveal = ({
               ...styles.letter,
               marginRight: letter === " " ? "0.22em" : null,
             }}
-          >{letter}
+          >
+            {letter}
           </m.span>
         ))}
       </m.span>
