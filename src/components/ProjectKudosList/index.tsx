@@ -17,7 +17,7 @@ type Props = {
   kudos: Kudos[];
 };
 
-export default function KudosList({ kudos }: Props) {
+const ProjectKudosList = ({ kudos }: Props) => {
   const [isGrabbed, setIsGrabbed] = useState(false);
 
   if (kudos.length === 0) return null;
@@ -82,4 +82,6 @@ export default function KudosList({ kudos }: Props) {
       </Swiper>
     </>
   );
-}
+};
+
+export default ProjectKudosList;

@@ -17,11 +17,11 @@ type Props = {
 const PARTICLE_COUNT = 5;
 const MAX_CLAP_COUNT = 15;
 
-export default function ClapButton({
+const ClapButton = ({
   serverClapCount,
   clientClapCount,
   setClientClapCount,
-}: Props) {
+}: Props) => {
   const [scope, animate] = useAnimate();
   const [hasSeenToast, setHasSeenToast] = useState(false);
 
@@ -151,7 +151,7 @@ export default function ClapButton({
       </div>
     </div>
   );
-}
+};
 
 type AnimationSequence = Parameters<typeof animateImport>[0];
 
@@ -237,3 +237,5 @@ function getParticleResetAnimationProps({
 
   return particleReset;
 }
+
+export default ClapButton;

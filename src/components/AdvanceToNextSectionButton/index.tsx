@@ -5,10 +5,10 @@ type Props = {
   className: string;
 };
 
-export default function AdvanceToNextSectionButton({
+const AdvanceToNextSectionButton = ({
   advanceToSectionSlug,
   className,
-}: Props) {
+}: Props) => {
   return (
     <a
       className={className}
@@ -20,4 +20,6 @@ export default function AdvanceToNextSectionButton({
       />
     </a>
   );
-}
+};
+
+export default AdvanceToNextSectionButton;

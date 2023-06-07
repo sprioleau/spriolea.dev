@@ -14,11 +14,7 @@ type Props = {
   serverClapCount: NonNullable<Awaited<ReturnType<typeof getClaps>>["data"]>;
 };
 
-export default function FooterContent({
-  content,
-  contributions,
-  serverClapCount,
-}: Props) {
+const FooterContent = ({ content, contributions, serverClapCount }: Props) => {
   const [clientClapCount, setClientClapCount] = useState(0);
 
   const shouldDisplayStats = Object.values({ contributions }).some(
@@ -77,4 +73,6 @@ export default function FooterContent({
       )}
     </>
   );
-}
+};
+
+export default FooterContent;

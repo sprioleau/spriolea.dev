@@ -7,7 +7,7 @@ type Props = {
   className: string;
 };
 
-export default function CopyEmailButton({ email, className }: Props) {
+const CopyEmailButton = ({ email, className }: Props) => {
   return (
     <span
       className={className}
@@ -18,4 +18,6 @@ export default function CopyEmailButton({ email, className }: Props) {
       {email}
     </span>
   );
-}
+};
+
+export default CopyEmailButton;

@@ -13,7 +13,7 @@ type Props = {
 
 type SkillsObject = Omit<Skill, "category"> & { category: string };
 
-export default function SkillsList({ skills }: Props) {
+const SkillsList = ({ skills }: Props) => {
   const { windowSize } = useWindowSize();
 
   const skillsListObject = skills
@@ -58,4 +58,6 @@ export default function SkillsList({ skills }: Props) {
       ))}
     </div>
   );
-}
+};
+
+export default SkillsList;

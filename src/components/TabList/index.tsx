@@ -19,14 +19,14 @@ type Props = {
   shouldHide: boolean;
 };
 
-export default function TabList({
+const TabList = ({
   id,
   label,
   experience,
   showSublabel,
   expandByDefault,
   shouldHide,
-}: Props) {
+}: Props) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
   const [indicatorHeight, setIndicatorHeight] = useState(0);
   const [expanded, setExpanded] = useState(expandByDefault);
@@ -167,4 +167,6 @@ export default function TabList({
       </div>
     </div>
   );
-}
+};
+
+export default TabList;

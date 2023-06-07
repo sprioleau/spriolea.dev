@@ -15,7 +15,7 @@ type Props = {
   navLinks: NavLink[];
 };
 
-export default function NavClient({ navLinks }: Props) {
+const NavClient = ({ navLinks }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const close = useCallback(() => {
@@ -115,4 +115,6 @@ export default function NavClient({ navLinks }: Props) {
       </div>
     </nav>
   );
-}
+};
+
+export default NavClient;

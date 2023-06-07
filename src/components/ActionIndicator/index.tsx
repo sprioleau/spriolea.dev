@@ -6,13 +6,16 @@ type Props = {
   variant: "lg" | "sm";
 };
 
-export default function ActionIndicator({
+const ActionIndicator = ({
   rotation = "0deg",
   size = "1em",
   variant = "sm",
-}: Props) {
+}: Props) => {
   return (
-    <div className="action-indicator" style={{ fontSize: size }}>
+    <div
+      className="action-indicator"
+      style={{ fontSize: size }}
+    >
       <div
         style={{
           display: "flex",
@@ -44,4 +47,6 @@ export default function ActionIndicator({
       </div>
     </div>
   );
-}
+};
+
+export default ActionIndicator;

@@ -10,7 +10,7 @@ type Props = {
   contact: ContactData;
 };
 
-export default function ContactCard({ contact: { email, overline } }: Props) {
+const ContactCard = ({ contact: { email, overline } }: Props) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -60,4 +60,6 @@ export default function ContactCard({ contact: { email, overline } }: Props) {
       <p className="a contact__card-email">{getFormattedEmail(email)}</p>
     </div>
   );
-}
+};
+
+export default ContactCard;

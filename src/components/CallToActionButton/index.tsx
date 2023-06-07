@@ -1,7 +1,8 @@
 "use client";
 
 import { CallToAction } from "@/schemas/types";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 type Props = {
   cta: CallToAction;
@@ -9,19 +10,20 @@ type Props = {
 };
 
 export default function CallToActionButton({ cta, className }: Props) {
-  const router = useRouter();
+  // const router = useRouter();
 
-  function handleClick() {
-    router.push(`#${cta.linkTarget}`);
-  }
+  // function handleClick() {
+  //   router.push(`#${cta.linkTarget}`);
+  // }
 
   return (
-    <button
+    <Link
+      href={`/#${cta.linkTarget}`}
       type="button"
       className={`${className} button`}
-      onClick={handleClick}
+      // onClick={handleClick}
     >
       {cta.label}
-    </button>
+    </Link>
   );
 }
