@@ -1,9 +1,9 @@
 import { FadeInWhenVisible } from "../AnimationLibrary";
 import SectionHeader from "../SectionHeader";
 
-const PageSectionLayout = ({
+function PageSectionLayout({
   sectionId, sectionTitle, center = false, offset, children,
-}) => {
+}) {
   return (
     <section className={`${sectionId} section`}>
       <div id={sectionId} className="marker" />
@@ -17,6 +17,6 @@ const PageSectionLayout = ({
       </FadeInWhenVisible>
     </section>
   );
-};
+}
 
 export default PageSectionLayout;

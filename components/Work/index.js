@@ -2,7 +2,7 @@ import SelectedWork from "../SelectedWork";
 import ProjectTable from "../ProjectTable";
 import PageSectionLayout from "../PageSectionLayout";
 
-const Work = ({ projects }) => {
+function Work({ projects }) {
   const allProjects = projects.reduce((result, project) => {
     if (project.isFeatured) {
       result.isFeatured.push(project);
@@ -21,6 +21,6 @@ const Work = ({ projects }) => {
       <ProjectTable projects={allProjects.notFeatured} />
     </PageSectionLayout>
   );
-};
+}
 
 export default Work;

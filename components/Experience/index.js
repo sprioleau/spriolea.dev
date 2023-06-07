@@ -3,7 +3,7 @@ import PageSectionLayout from "../PageSectionLayout";
 import { organizeByKey } from "../../utils";
 import ProjectKudos from "../ProjectKudos";
 
-const Experience = ({ experience, kudos, jobTypes }) => {
+function Experience({ experience, kudos, jobTypes }) {
   if (!experience) return null;
 
   const experienceByType = organizeByKey(experience, "jobType.type");
@@ -26,6 +26,6 @@ const Experience = ({ experience, kudos, jobTypes }) => {
       <ProjectKudos kudos={kudos} />
     </PageSectionLayout>
   );
-};
+}
 
 export default Experience;

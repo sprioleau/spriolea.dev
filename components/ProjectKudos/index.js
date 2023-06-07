@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import composeClasses from "../../utils/composeClasses";
 
-const ProjectKudos = ({ kudos = [], delay = 0 }) => {
+function ProjectKudos({ kudos = [], delay = 0 }) {
   const [isGrabbed, setIsGrabbed] = React.useState(false);
   if (kudos.length === 0) return null;
 
@@ -61,6 +61,6 @@ const ProjectKudos = ({ kudos = [], delay = 0 }) => {
       </Swiper>
     </div>
   );
-};
+}
 
 export default ProjectKudos;

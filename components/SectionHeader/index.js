@@ -1,7 +1,7 @@
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 import { composeClasses } from "../../utils";
 
-const SectionHeader = ({ sectionTitle, center }) => {
+function SectionHeader({ sectionTitle, center }) {
   const { windowSize } = useWindowSize();
   const isSmallScreen = windowSize <= bp.md;
 
@@ -16,6 +16,6 @@ const SectionHeader = ({ sectionTitle, center }) => {
       <div className="section-header__accent-line" />
     </header>
   );
-};
+}
 
 export default SectionHeader;

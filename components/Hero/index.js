@@ -4,11 +4,9 @@ import { FadeInAndUp, StaggeredReveal } from "../AnimationLibrary";
 import { handleKeyDown } from "../../utils";
 import PortableTextBlock from "../PortableTextBlock";
 
-const Hero = ({ content }) => {
+function Hero({ content }) {
   const router = useRouter();
-  const {
-    brief, overline, heading, subHeading, cta, advanceToSectionSlug,
-  } = content[0];
+  const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } = content[0];
 
   const handleAdvanceSection = () => router.push(`#${advanceToSectionSlug}`);
 
@@ -42,14 +40,24 @@ const Hero = ({ content }) => {
             tag="h2"
             subtitle
           />
-          <FadeInAndUp delay={sectionDelay + 1.5} distanct={50}>
+          <FadeInAndUp
+            delay={sectionDelay + 1.5}
+            distanct={50}
+          >
             <p className="hero__brief">
-              <PortableTextBlock childrenContent={brief[0].children} markDefs={brief[0].markDefs} />
+              <PortableTextBlock
+                childrenContent={brief[0].children}
+                markDefs={brief[0].markDefs}
+              />
             </p>
           </FadeInAndUp>
         </header>
         <FadeInAndUp delay={sectionDelay + 1.75}>
-          <button type="button" className="hero__cta-button button" onClick={() => router.push(`#${cta.linkTarget}`)}>
+          <button
+            type="button"
+            className="hero__cta-button button"
+            onClick={() => router.push(`#${cta.linkTarget}`)}
+          >
             {cta.label}
           </button>
         </FadeInAndUp>
@@ -62,10 +70,13 @@ const Hero = ({ content }) => {
         onClick={handleAdvanceSection}
         onKeyDown={(e) => handleKeyDown(e, handleAdvanceSection)}
       >
-        <ActionIndicator size="5rem" variant="big" />
+        <ActionIndicator
+          size="5rem"
+          variant="big"
+        />
       </div>
     </section>
   );
-};
+}
 
 export default Hero;

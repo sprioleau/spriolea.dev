@@ -2,7 +2,7 @@ import PageSectionLayout from "../PageSectionLayout";
 import icons from "../Icons";
 import { handleCopyEmailToClipboard } from "../../utils";
 
-const Contact = ({ content }) => {
+function Contact({ content }) {
   const { email, overline } = content[0];
 
   const getFormattedEmail = () => {
@@ -23,6 +23,6 @@ const Contact = ({ content }) => {
       </div>
     </PageSectionLayout>
   );
-};
+}
 
 export default Contact;

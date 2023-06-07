@@ -6,7 +6,7 @@ import icons from "../Icons";
 import { FadeInAndUp } from "../AnimationLibrary";
 import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 
-const Skills = ({ skills }) => {
+function Skills({ skills }) {
   const { windowSize } = useWindowSize();
 
   const skillsListObject = skills.map((skill) => ({ ...skill, category: skill.category[0] })).sort((a, b) => ((b.category > a.category) ? 1 : -1)).reduce((skillsObject, skill) => {
@@ -48,6 +48,6 @@ const Skills = ({ skills }) => {
       </div>
     </PageSectionLayout>
   );
-};
+}
 
 export default Skills;

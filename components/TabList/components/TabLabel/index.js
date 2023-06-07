@@ -2,7 +2,7 @@
 import React from "react";
 import { composeClasses, formatJobDates, handleKeyDown } from "../../../../utils";
 
-const TabLabel = ({
+function TabLabel({
   labelData: {
     _id,
     label,
@@ -16,7 +16,7 @@ const TabLabel = ({
   subLabelAsDates = true,
   handleUpdateCurrentTab,
   setIndicatorHeight,
-}) => {
+}) {
   const tabLabelRef = React.useRef(null);
 
   const getLabelContents = () => {
@@ -66,6 +66,6 @@ const TabLabel = ({
       </span>
     </li>
   );
-};
+}
 
 export default TabLabel;

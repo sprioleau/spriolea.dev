@@ -6,7 +6,7 @@ import {
 import { fetchStaticSiteData } from "../libs/sanity";
 import { composeClasses } from "../utils";
 
-const Home = ({ data }) => {
+function Home({ data }) {
   const { navLinks, footer, siteDetails } = data;
   const [navExpanded, setNavExpanded] = React.useState(false);
 
@@ -36,7 +36,7 @@ const Home = ({ data }) => {
       <div className="accent-line" />
     </div>
   );
-};
+}
 
 export default Home;
 

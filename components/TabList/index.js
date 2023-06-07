@@ -8,14 +8,14 @@ import { Stagger } from "../AnimationLibrary";
 import TabLabel from "./components/TabLabel";
 import icons from "../Icons";
 
-const TabList = ({
+function TabList({
   id,
   label,
   experience,
   showSublabel,
   expandByDefault,
   shouldHide,
-}) => {
+}) {
   const [currentTabIndex, setCurrentTabIndex] = React.useState(0);
   const [indicatorHeight, setIndicatorHeight] = React.useState(0);
   const [expanded, setExpanded] = React.useState(expandByDefault);
@@ -155,6 +155,6 @@ const TabList = ({
       </div>
     </div>
   );
-};
+}
 
 export default TabList;

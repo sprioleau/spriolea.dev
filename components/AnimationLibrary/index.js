@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { m } from "framer-motion";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
@@ -31,14 +31,14 @@ const variantsLibrary = {
   },
 };
 
-export const FadeInWhenVisible = ({
+export function FadeInWhenVisible({
   tag = "div",
   className,
   useDefaultStyles = true,
   offset = "-30%",
   distance = 100,
   children,
-}) => {
+}) {
   const variants = variantsLibrary.fadeInWhenVisible;
   variants.initial.translateY = distance;
 
@@ -59,9 +59,9 @@ export const FadeInWhenVisible = ({
       {children}
     </Tag>
   );
-};
+}
 
-export const FadeInAndUp = ({
+export function FadeInAndUp({
   tag = "div",
   className,
   children,
@@ -69,7 +69,7 @@ export const FadeInAndUp = ({
   useDefaultStyles = true,
   distance = 20,
   dataTooltip = null,
-}) => {
+}) {
   const Tag = m[tag];
 
   const styles = useDefaultStyles ? defaultStyles : null;
@@ -94,14 +94,9 @@ export const FadeInAndUp = ({
       {children}
     </Tag>
   );
-};
+}
 
-export const FadeInAndDown = ({
-  tag = "div",
-  children,
-  delay,
-  distance = 20,
-}) => {
+export function FadeInAndDown({ tag = "div", children, delay, distance = 20 }) {
   const Tag = m[tag];
 
   const variants = variantsLibrary.fadeInAndDown;
@@ -118,9 +113,9 @@ export const FadeInAndDown = ({
       {children}
     </Tag>
   );
-};
+}
 
-export const Stagger = ({
+export function Stagger({
   parent = { tag: "ul", className: null, additionalProps: {} },
   child = { tag: "li", className: null, additionalProps: {} },
   style = null,
@@ -129,7 +124,7 @@ export const Stagger = ({
   delayWithIndex = false,
   indexDelay = 0.15,
   children,
-}) => {
+}) {
   const ParentTag = m[parent.tag];
   const ChildTag = m[child.tag];
 
@@ -162,9 +157,9 @@ export const Stagger = ({
       ))}
     </ParentTag>
   );
-};
+}
 
-export const StaggeredReveal = ({
+export function StaggeredReveal({
   tag: Tag = "h1",
   text,
   wrapperClass = null,
@@ -174,7 +169,7 @@ export const StaggeredReveal = ({
   subtitle = false,
   animate = true,
   altTextOnHover = null,
-}) => {
+}) {
   const [animationComplete, setAnimationComplete] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
   const handleAnimationComplete = () => setAnimationComplete(true);
@@ -254,4 +249,4 @@ export const StaggeredReveal = ({
       </m.span>
     </Tag>
   );
-};
+}

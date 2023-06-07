@@ -3,7 +3,7 @@ import { FadeInAndUp, Stagger } from "../AnimationLibrary";
 import { composeClasses, handleKeyDown } from "../../utils";
 import icons from "../Icons";
 
-const DataTable = ({ data: { sectionTitle, employers } }) => {
+function DataTable({ data: { sectionTitle, employers } }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpand = () => setExpanded(!expanded);
@@ -63,6 +63,6 @@ const DataTable = ({ data: { sectionTitle, employers } }) => {
       ))}
     </div>
   );
-};
+}
 
 export default DataTable;

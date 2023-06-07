@@ -1,8 +1,8 @@
 import React from "react";
 
-const Logo = ({
+function Logo({
   fill = "currentColor", stroke = "transparent", strokeWidth = 0, size = "4rem",
-}) => {
+}) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 522 557.4" width={size} height={size}>
       <path
@@ -14,6 +14,6 @@ const Logo = ({
       />
     </svg>
   );
-};
+}
 
 export default Logo;

@@ -3,15 +3,14 @@ import { formatIsoDate } from "../../utils";
 import sortAlphaByKey from "../../utils/sortAlphaByKey";
 import icons from "../Icons";
 
-const ProjectRow = ({
+function ProjectRow({
   project, smallerThanSmall, smallerThanMedium, setCurrentImage,
-}) => {
+}) {
   const {
     yearBuilt, title, builtFor, builtWith, links, mainImage,
   } = project;
 
-  const renderLinks = (linksList) => {
-    return Object.entries(linksList).map(([key, url]) => {
+  const renderLinks = (linksList) => Object.entries(linksList).map(([key, url]) => {
       if (!url) return null;
 
       let icon = null;
@@ -26,7 +25,6 @@ const ProjectRow = ({
         </li>
       );
     });
-  };
 
   const handleMouseEnter = () => {
     if (smallerThanSmall) return;
@@ -53,6 +51,6 @@ const ProjectRow = ({
       </td>
     </tr>
   );
-};
+}
 
 export default ProjectRow;

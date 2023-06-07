@@ -7,7 +7,7 @@ import { LazyMotion, domAnimation } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 
-const MyApp = ({ Component, pageProps }) => {
+function MyApp({ Component, pageProps }) {
   return (
     <LazyMotion features={domAnimation}>
       <Component {...pageProps} />
@@ -18,6 +18,6 @@ const MyApp = ({ Component, pageProps }) => {
       <Analytics />
     </LazyMotion>
   );
-};
+}
 
 export default MyApp;

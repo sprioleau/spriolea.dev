@@ -5,7 +5,7 @@ import { FadeInWhenVisible } from "../AnimationLibrary";
 import PortableTextBlock from "../PortableTextBlock";
 import icons from "../Icons";
 
-const SelectedWork = ({ projects }) => {
+function SelectedWork({ projects }) {
   return (
     <div className="selected-work">
       <ul className="selected-work__works">
@@ -57,6 +57,6 @@ const SelectedWork = ({ projects }) => {
       </ul>
     </div>
   );
-};
+}
 
 export default SelectedWork;

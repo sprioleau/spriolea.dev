@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { fetchStaticSiteData } from "../libs/sanity";
 
-const PageSection = ({ navLinks }) => {
+function PageSection({ navLinks }) {
   const router = useRouter();
   const { path } = router.query;
 
@@ -21,7 +21,7 @@ const PageSection = ({ navLinks }) => {
   }, [path, router, navLinks]);
 
   return null;
-};
+}
 
 export default PageSection;
 

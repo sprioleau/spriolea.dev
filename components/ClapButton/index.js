@@ -8,7 +8,7 @@ import Clap from "../Icons/Clap";
 
 const MAX_COUNT = 15;
 
-const ClapButton = ({ initialCount, clientClapCount, setClientClapCount }) => {
+function ClapButton({ initialCount, clientClapCount, setClientClapCount }) {
   const [serverClapCount, setServerClapCount] = React.useState(0);
 
   const incrementClaps = async () => {
@@ -39,6 +39,6 @@ const ClapButton = ({ initialCount, clientClapCount, setClientClapCount }) => {
       />
     </div>
   );
-};
+}
 
 export default ClapButton;

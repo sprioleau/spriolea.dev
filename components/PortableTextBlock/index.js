@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React from "react";
 
-const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => {
+function PortableTextBlock({ childrenContent, markDefs, linksClass = null }) {
   const markIds = childrenContent.filter(({ marks }) => marks.length > 0).flatMap(({ marks }) => marks[0]).filter((m) => m.length > 2);
   const markData = markIds.reduce((data, markId) => {
     data[markId] = markDefs.find(({ _key }) => _key === markId);
@@ -42,6 +42,6 @@ const PortableTextBlock = ({ childrenContent, markDefs, linksClass = null }) => 
       ))}
     </>
   );
-};
+}
 
 export default PortableTextBlock;

@@ -1,4 +1,4 @@
-const MetaTag = ({ data }) => {
+function MetaTag({ data }) {
   const getAttributes = ([propertyName, propertyValue], [contentName, contentValue]) => ({
     [propertyName]: propertyValue,
     [contentName]: contentValue,
@@ -15,6 +15,6 @@ const MetaTag = ({ data }) => {
       })}
     </>
   );
-};
+}
 
 export default MetaTag;

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { handleKeyDown } from "../../utils";
 import icons from "../Icons";
 
-const SkipToMainContent = ({ sectionId = "#about" }) => {
+function SkipToMainContent({ sectionId = "#about" }) {
   const router = useRouter();
   const buttonRef = React.useRef();
 
@@ -25,6 +25,6 @@ const SkipToMainContent = ({ sectionId = "#about" }) => {
       {icons.arrowRight}
     </button>
   );
-};
+}
 
 export default SkipToMainContent;

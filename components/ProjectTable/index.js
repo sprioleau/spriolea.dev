@@ -6,7 +6,7 @@ import { sortByYearAndTitle } from "../../utils";
 import { urlFor } from "../../libs/sanity/index";
 import ProjectRow from "../ProjectRow";
 
-const ProjectTable = ({ projects }) => {
+function ProjectTable({ projects }) {
   const [currentImage, setCurrentImage] = React.useState(null);
   const { windowSize } = useWindowSize();
   const smallerThanSmall = windowSize <= bp.sm;
@@ -71,6 +71,6 @@ const ProjectTable = ({ projects }) => {
       ) : null }
     </div>
   );
-};
+}
 
 export default ProjectTable;

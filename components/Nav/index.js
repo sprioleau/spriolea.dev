@@ -12,7 +12,7 @@ import { Stagger } from "../AnimationLibrary";
 import { handleScrollToTop } from "../../utils";
 import icons from "../Icons";
 
-const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
+function Nav({ navLinks, navExpanded, setNavExpanded }) {
   const { windowSize } = useWindowSize();
   const aboveBreakpoint = windowSize > bp.md;
   const tabIndex = aboveBreakpoint || navExpanded ? 0 : -1;
@@ -142,6 +142,6 @@ const Nav = ({ navLinks, navExpanded, setNavExpanded }) => {
       </div>
     </nav>
   );
-};
+}
 
 export default Nav;

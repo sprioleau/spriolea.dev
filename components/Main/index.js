@@ -5,7 +5,7 @@ import Work from "../Work";
 import Skills from "../Skills";
 import Contact from "../Contact";
 
-const Main = ({ data }) => {
+function Main({ data }) {
   if (!data) return null;
 
   const {
@@ -29,6 +29,6 @@ const Main = ({ data }) => {
       <Contact content={contact} />
     </main>
   );
-};
+}
 
 export default Main;

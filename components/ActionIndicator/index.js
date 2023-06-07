@@ -2,7 +2,7 @@
 import React from "react";
 import icons from "../Icons";
 
-const ActionIndicator = ({ rotation = "0deg", size = "1em", variant = "" }) => {
+function ActionIndicator({ rotation = "0deg", size = "1em", variant = "" }) {
   return (
     <div className="action-indicator" style={{ fontSize: size }}>
       <div style={{
@@ -23,6 +23,6 @@ const ActionIndicator = ({ rotation = "0deg", size = "1em", variant = "" }) => {
       </div>
     </div>
   );
-};
+}
 
 export default ActionIndicator;

@@ -2,7 +2,7 @@ import React from "react";
 import { getFilenameDate } from "../../utils";
 import icons from "../Icons";
 
-const ResumeButton = ({ tabIndex }) => {
+function ResumeButton({ tabIndex }) {
   const [download, setDownload] = React.useState(null);
 
   const handleDownload = () => {
@@ -27,6 +27,6 @@ const ResumeButton = ({ tabIndex }) => {
       </a>
     </div>
   );
-};
+}
 
 export default ResumeButton;

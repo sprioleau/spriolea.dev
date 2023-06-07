@@ -4,7 +4,7 @@ import PageSectionLayout from "../PageSectionLayout";
 import PortableTextBlock from "../PortableTextBlock";
 import Logo from "../Logo";
 
-const About = ({ content }) => {
+function About({ content }) {
   const { body, mainImage } = content[0];
 
   return (
@@ -36,6 +36,6 @@ const About = ({ content }) => {
       </div>
     </PageSectionLayout>
   );
-};
+}
 
 export default About;

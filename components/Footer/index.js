@@ -5,7 +5,7 @@ import icons from "../Icons";
 import { formatNumber } from "../../utils";
 import { getStats } from "../../_api";
 
-const Footer = ({ content }) => {
+function Footer({ content }) {
   const [clientClapCount, setClientClapCount] = React.useState(0);
   const [stats, setStats] = React.useState({
     pageViews: 0,
@@ -54,6 +54,6 @@ const Footer = ({ content }) => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

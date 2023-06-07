@@ -1,7 +1,7 @@
 import { handleCopyEmailToClipboard } from "../../utils";
 import icons from "../Icons";
 
-const InfoRails = ({ siteDetails }) => {
+function InfoRails({ siteDetails }) {
   const { creator: { email, links: { gitHubUrl } }, meta: { vsCodeUrl } } = siteDetails[0];
 
   return (
@@ -30,6 +30,6 @@ const InfoRails = ({ siteDetails }) => {
       </div>
     </>
   );
-};
+}
 
 export default InfoRails;
