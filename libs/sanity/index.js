@@ -1,13 +1,12 @@
-/* eslint-disable no-param-reassign */
-import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from "@sanity/client";
 import CONFIG from "../../config";
 import apiStaticData from "../../data/apiStaticData";
 
 const client = sanityClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_DATASET,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_VERSION,
+  projectId: "76u9ka0u",
+  dataset: "production",
+  apiVersion: "2022-11-15",
   useCdn: true,
 });
 
@@ -18,18 +17,20 @@ export const urlFor = (source) => {
 };
 
 const queries = {
-  employers: "*[_type == \"employer\"]",
-  experience: "*[_type == \"experience\"] | order(fromDate desc, order asc) { ..., employer->, jobType-> }",
-  jobTypes: "*[_type == \"jobType\"]",
-  hero: "*[_type == \"hero\"]",
-  about: "*[_type == \"about\"]",
-  navLinks: "*[_type == \"navLink\"] | order(order asc)",
-  projects: "*[_type == \"project\"] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }",
-  kudos: "*[_type==\"kudos\"] { ..., credit->, project->}",
-  skills: "*[_type == \"skill\"]",
-  siteDetails: "*[_type == \"siteDetails\"]",
-  contact: "*[_type == \"contact\"]",
-  footer: "*[_type == \"footer\"]",
+  employers: '*[_type == "employer"]',
+  experience:
+    '*[_type == "experience"] | order(fromDate desc, order asc) { ..., employer->, jobType-> }',
+  jobTypes: '*[_type == "jobType"]',
+  hero: '*[_type == "hero"]',
+  about: '*[_type == "about"]',
+  navLinks: '*[_type == "navLink"] | order(order asc)',
+  projects:
+    '*[_type == "project"] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }',
+  kudos: '*[_type=="kudos"] { ..., credit->, project->}',
+  skills: '*[_type == "skill"]',
+  siteDetails: '*[_type == "siteDetails"]',
+  contact: '*[_type == "contact"]',
+  footer: '*[_type == "footer"]',
 };
 
 const getDataByKey = async (query, key) => {
@@ -48,10 +49,13 @@ const getDataByKey = async (query, key) => {
 };
 
 export const getData = async () => {
-  const promises = Object.entries(queries).map(([key, query]) => getDataByKey(query, key));
+  const promises = Object.entries(queries).map(([key, query]) => {
+    return getDataByKey(query, key);
+  });
   const unformattedData = await Promise.all(promises);
 
   const data = unformattedData.reduce((result, dataset) => {
+    // eslint-disable-next-line no-param-reassign
     result[dataset.key] = dataset.data;
     return result;
   }, {});
