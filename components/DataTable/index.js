@@ -1,5 +1,4 @@
 import React from "react";
-import { FadeInAndUp, Stagger } from "../AnimationLibrary";
 import { composeClasses, handleKeyDown } from "../../utils";
 import icons from "../Icons";
 
@@ -27,40 +26,42 @@ function DataTable({ data: { sectionTitle, employers } }) {
           <span className="data-table__expand-collapse icon">{icons.arrowDown}</span>
         </div>
       </header>
-      {expanded && employers.map(({ name, roles, employerLogo }) => (
-        <FadeInAndUp key={name}>
-          <section className="data-table__employer-wrapper">
+      {expanded &&
+        employers.map(({ name, roles, employerLogo }) => (
+          <section
+            key={name}
+            className="data-table__employer-wrapper"
+          >
             <div className="data-table__employer-name">
               <span className="data-table__employer-logo">{employerLogo}</span>
               <h4>{name}</h4>
             </div>
-            <Stagger
-              parent={{ tag: "ul", className: "data-table__list" }}
-              child={{ tag: "li", className: "data-table__list-item" }}
-              staggerBy={0.15}
-              staggerDelay={0}
-            >
-              {roles.map(({
-                id, works, dates, title, location,
-              }) => (
-                <React.Fragment key={id}>
-                  <header className="data-table__list-header">
-                    <h4 className="data-table__title">{title}, <span className="data-table__location">{location}</span></h4>
-                    <p className="data-table__dates">{dates}</p>
-                  </header>
-                  <ul className="data-table__work-list">
-                    {works.map((work) => (
-                      <li key={work} className="data-table__work">
-                        <p>{work}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </React.Fragment>
+            <ul className="data-table__list">
+              {roles.map(({ id, works, dates, title, location }) => (
+                <li className="data-table__list-item">
+                  <React.Fragment key={id}>
+                    <header className="data-table__list-header">
+                      <h4 className="data-table__title">
+                        {title}, <span className="data-table__location">{location}</span>
+                      </h4>
+                      <p className="data-table__dates">{dates}</p>
+                    </header>
+                    <ul className="data-table__work-list">
+                      {works.map((work) => (
+                        <li
+                          key={work}
+                          className="data-table__work"
+                        >
+                          <p>{work}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </React.Fragment>
+                </li>
               ))}
-            </Stagger>
+            </ul>
           </section>
-        </FadeInAndUp>
-      ))}
+        ))}
     </div>
   );
 }
