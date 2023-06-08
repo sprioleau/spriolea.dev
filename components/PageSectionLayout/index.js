@@ -1,20 +1,19 @@
-import { FadeInWhenVisible } from "../AnimationLibrary";
 import SectionHeader from "../SectionHeader";
 
-function PageSectionLayout({
-  sectionId, sectionTitle, center = false, offset, children,
-}) {
+function PageSectionLayout({ sectionId, sectionTitle, center = false, children }) {
   return (
     <section className={`${sectionId} section`}>
-      <div id={sectionId} className="marker" />
-      <FadeInWhenVisible offset={offset}>
-        <div className="container">
-          <SectionHeader sectionTitle={sectionTitle} center={center} />
-          <div className={`${sectionId}__main-content`}>
-            {children}
-          </div>
-        </div>
-      </FadeInWhenVisible>
+      <div
+        id={sectionId}
+        className="marker"
+      />
+      <div className="container">
+        <SectionHeader
+          sectionTitle={sectionTitle}
+          center={center}
+        />
+        <div className={`${sectionId}__main-content`}>{children}</div>
+      </div>
     </section>
   );
 }
