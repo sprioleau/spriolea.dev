@@ -2,6 +2,7 @@
   &__main-content {
     display: flex;
     width: 100%;
+    gap: 1.5rem;
   }
 
   &__image {
@@ -11,15 +12,19 @@
     justify-content: center;
     flex: 1 0;
     position: relative;
+
+    > span {
+      border-radius: 0.5em;
+    }
   }
-  
+
   &__bio-text {
     margin-bottom: 1.5rem;
 
     p {
       font-size: 1rem;
     }
-  } 
+  }
 
   &__logo {
     @include center;

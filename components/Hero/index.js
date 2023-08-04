@@ -6,7 +6,14 @@ import PortableTextBlock from "../PortableTextBlock";
 
 function Hero({ content }) {
   const router = useRouter();
-  const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } = content[0];
+  const {
+    brief,
+    // overline,
+    heading,
+    subHeading,
+    cta,
+    advanceToSectionSlug,
+  } = content[0];
 
   const handleAdvanceSection = () => router.push(`#${advanceToSectionSlug}`);
 
@@ -16,14 +23,14 @@ function Hero({ content }) {
     <section className="hero section">
       <div className="container">
         <header className="hero__header">
-          <FadeInAndUp
+          {/* <FadeInAndUp
             className="hero__overline"
             tag="p"
             useDefaultStyles={false}
             delay={sectionDelay}
           >
             <span className="hero__greeting"> {overline}</span>
-          </FadeInAndUp>
+          </FadeInAndUp> */}
           <StaggeredReveal
             text={heading}
             speed={4}
