@@ -21,6 +21,6 @@ export { default as PortableTextBlock } from "./PortableTextBlock";
 export { default as StructuredData } from "./StructuredData";
 export { default as MetaTag } from "./MetaTag";
 export { default as ProjectRow } from "./ProjectRow";
-export { default as ResumeButton } from "./ResumeButton";
+// export { default as ResumeButton } from "./ResumeButton";
 export { default as Logo } from "./Logo";
 export { default as ProjectKudos } from "./ProjectKudos";

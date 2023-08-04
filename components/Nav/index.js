@@ -6,7 +6,6 @@ import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Logo from "../Logo";
-import ResumeButton from "../ResumeButton";
 import SkipToMainContent from "../SkipToMainContent";
 import { Stagger } from "../AnimationLibrary";
 import { handleScrollToTop } from "../../utils";
@@ -106,7 +105,6 @@ function Nav({ navLinks, navExpanded, setNavExpanded }) {
                   </a>
                 ))}
               </Stagger>
-              {/* <ResumeButton tabIndex={tabIndex} /> */}
               {navExpanded && (
                 <button
                   id="close"
