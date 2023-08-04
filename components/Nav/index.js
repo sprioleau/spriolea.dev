@@ -106,7 +106,7 @@ function Nav({ navLinks, navExpanded, setNavExpanded }) {
                   </a>
                 ))}
               </Stagger>
-              <ResumeButton tabIndex={tabIndex} />
+              {/* <ResumeButton tabIndex={tabIndex} /> */}
               {navExpanded && (
                 <button
                   id="close"
