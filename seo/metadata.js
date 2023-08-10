@@ -1,10 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 
 export const META = {
-  DESCRIPTION: "San'Quan Prioleau is a frontend web developer with an eye for good design, who loves combining ideas to create new things.",
+  DESCRIPTION: "San'Quan Prioleau is a frontend engineer who is passionate about making software that delights.",
   IMAGE_URL: "http://sprioleau.dev/images/sprioleau-social-card.png",
   URL: "http://sprioleau.dev",
-  TITLE: "San'Quan Prioleau - Frontend Web Developer",
+  TITLE: "San'Quan Prioleau - Frontend Engineer",
 };
 
 export const twitterMeta = [
