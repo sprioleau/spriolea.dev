@@ -1,10 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import {
-  InfoRails, Nav, Main, Footer,
-} from "../components";
+import { InfoRails, Nav, Main, Footer } from "../components";
 import { fetchStaticSiteData } from "../libs/sanity";
 import { composeClasses } from "../utils";
+import { META } from "../seo/metadata";
 
 function Home({ data }) {
   const { navLinks, footer, siteDetails } = data;
@@ -26,10 +25,17 @@ function Home({ data }) {
   return (
     <div className={appClasses}>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>San&apos;Quan Prioleau - Frontend Web Developer</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        />
+        <title>{META.TITLE}</title>
       </Head>
-      <Nav navLinks={navLinks} navExpanded={navExpanded} setNavExpanded={setNavExpanded} />
+      <Nav
+        navLinks={navLinks}
+        navExpanded={navExpanded}
+        setNavExpanded={setNavExpanded}
+      />
       <InfoRails siteDetails={siteDetails} />
       <Main data={data} />
       <Footer content={footer} />
