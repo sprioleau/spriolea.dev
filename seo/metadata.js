@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
 export const META = {
-  DESCRIPTION: "San'Quan Prioleau is a frontend engineer who is passionate about making software that delights.",
+  DESCRIPTION: "San'Quan Prioleau is a Frontend Engineer who is passionate about making software that delights.",
   IMAGE_URL: "http://sprioleau.dev/images/sprioleau-social-card.png",
   URL: "http://sprioleau.dev",
   TITLE: "San'Quan Prioleau - Frontend Engineer",
