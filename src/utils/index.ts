@@ -1,5 +1,4 @@
 export { default as composeClasses } from "./composeClasses";
-export { default as emptyArrayOfLength } from "./emptyArrayOfLength";
 export { default as formatIsoDate } from "./formatIsoDate";
 export { default as formatJobDates } from "./formatJobDates";
 export { default as formatNumber } from "./formatNumber";

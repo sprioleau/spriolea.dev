@@ -1,8 +1,25 @@
 .clap-button {
-  --bg-offset: 0;
-  @include center;
-  overflow: visible;
-  position: relative;
+  @include transition;
+  transition-property: box-shadow;
+  box-shadow: 0 0 0 0 rgba(var(--ui-accent-1-rgb), 0.5);
+  border: 2px solid rgba(var(--ui-accent-1-rgb), 1);
+  border-radius: 50%;
+  margin: 0.5em 1em 2em;
+
+  &.pulse {
+    animation: pulse 1.5s infinite;
+
+    @media (prefers-reduced-motion) {
+      animation: none;
+    }
+  }
+
+  &__wrapper {
+    --bg-offset: 0;
+    @include center;
+    overflow: visible;
+    position: relative;
+  }
 
   &__fill {
     @include transition;
@@ -71,5 +88,14 @@
       left: 0;
       pointer-events: none;
     }
+  }
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 25px rgba(var(--ui-accent-1-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--ui-accent-1-rgb), 0);
   }
 }
