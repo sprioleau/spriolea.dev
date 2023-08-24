@@ -17,8 +17,14 @@ export default async function InfoRails() {
 
   return (
     <div className="info-rails">
-      <div className="info-rails__left">
+      <div className="info-rails__rail">
         <ul className="info-rails__link-list">
+          <li className="info-rails__link-list-item">
+            <CopyEmailButton
+              email={email}
+              className="info-rails__link text-link"
+            />
+          </li>
           <li className="info-rails__link-list-item">
             <a
               aria-label="link"
@@ -51,17 +57,6 @@ export default async function InfoRails() {
             >
               <span className="icon">{icons.linkedIn}</span>
             </a>
-          </li>
-        </ul>
-        <div className="info-rails__accent-line" />
-      </div>
-      <div className="info-rails__right">
-        <ul className="info-rails__link-list">
-          <li className="info-rails__link-list-item">
-            <CopyEmailButton
-              email={email}
-              className="info-rails__link text-link"
-            />
           </li>
         </ul>
         <div className="info-rails__accent-line" />

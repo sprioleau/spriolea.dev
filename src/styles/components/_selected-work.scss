@@ -1,15 +1,15 @@
 .selected-work {
   margin: 1.5rem 0 3rem;
-  
+
   &__works {
     display: flex;
     flex-direction: column;
   }
-  
+
   &__work {
     display: flex;
     margin-bottom: 3rem;
-    
+
     &:nth-child(even) {
       flex-direction: row-reverse;
     }
@@ -40,24 +40,14 @@
       width: 100%;
       margin: 0;
     }
-    
-    a::before {
-      --scaleY: 1;
-      background-color: rgba(var(--ui-bg-hover-rgb), 0.7);
-      z-index: 2;
-    }
 
     .button {
       padding: 0;
     }
-    
+
     @include hover-wrapper {
       &:hover a {
         filter: brightness(100%);
-
-        &::before {
-          opacity: 0;
-        }
       }
     }
   }
@@ -82,7 +72,7 @@
 
   &__deployed-url {
     display: flex;
-    
+
     .icon {
       color: var(--ui-accent-1);
       margin-right: 0.5rem;
@@ -170,14 +160,13 @@
       &::before {
         display: none;
       }
-
     }
-    
+
     &__image {
       flex-basis: 100%;
       margin-top: 0;
       margin-bottom: 1rem;
-      
+
       a {
         filter: brightness(100%);
       }
@@ -226,4 +215,4 @@
       margin-left: -0.5rem;
     }
   }
-} 
+}
