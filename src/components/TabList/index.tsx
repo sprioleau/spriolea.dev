@@ -11,8 +11,6 @@ import TabLabel from "./components/TabLabel";
 import icons from "../Icons";
 
 type Props = {
-  id: string;
-  label: string;
   experience: Experience[];
   showSublabel: boolean;
   expandByDefault: boolean;
@@ -20,8 +18,6 @@ type Props = {
 };
 
 const TabList = ({
-  id,
-  label,
   experience,
   showSublabel,
   expandByDefault,
@@ -93,7 +89,6 @@ const TabList = ({
         tabIndex={0}
         role="button"
       >
-        <h3 className="tab-list__title">{label} Experience</h3>
         {!expandByDefault ? (
           <span className="tab-list__expand-collapse">
             {!expanded ? "Expand" : "Collapse"}{" "}
@@ -101,10 +96,7 @@ const TabList = ({
           </span>
         ) : null}
       </header>
-      <div
-        id={id}
-        className="tab-list__main-content"
-      >
+      <div className="tab-list__main-content">
         <nav
           className="tab-list__tabs"
           aria-label="experiences"
