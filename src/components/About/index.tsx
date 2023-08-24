@@ -22,16 +22,17 @@ export default async function About() {
           ))}
         </div>
       </div>
-      <div className="about__image">
-        <Image
-          src={urlFor(mainImage).format("webp").width(400).height(400).url()}
-          alt="San'Quan Prioleau headshot"
-          width={400}
-          height={400}
-          quality={100}
-          priority
-        />
-      </div>
+      {/* <div className="about__image"> */}
+      <Image
+        className="about__image"
+        src={urlFor(mainImage).format("webp").width(400).height(400).url()}
+        alt="San'Quan Prioleau headshot"
+        width={400}
+        height={400}
+        quality={100}
+        priority
+      />
+      {/* </div> */}
     </>
   );
 }

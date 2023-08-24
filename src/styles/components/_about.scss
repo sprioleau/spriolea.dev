@@ -1,16 +1,36 @@
 .about {
   &__main-content {
     display: flex;
+    align-items: center;
+    gap: 2em;
     width: 100%;
+
+    @include sm {
+      gap: 0;
+    }
   }
 
   &__image {
+    --rotation-deg: -3;
     @include transition;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex: 1 0;
-    position: relative;
+    transition-property: transform;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    height: auto;
+    max-width: 100%;
+    border-radius: 1em;
+    margin: 0 auto;
+    transform: rotate(calc(1deg * var(--rotation-deg)));
+
+    @include sm {
+      --rotation-deg: 0;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        --rotation-deg: 0;
+      }
+    }
   }
 
   &__bio-text {
