@@ -1,11 +1,13 @@
 .hero {
   min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100dvh - var(--nav-height));
   display: flex;
   position: relative;
 
   .container {
     align-items: flex-start;
     margin-bottom: 10vh;
+    margin-bottom: 10dvh;
   }
 
   &__headline-wrapper {

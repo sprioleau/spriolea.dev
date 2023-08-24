@@ -136,6 +136,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     z-index: 20;
   }
 }
@@ -187,6 +188,7 @@
       justify-content: flex-start;
       right: 0;
       height: 100vh;
+      height: 100dvh;
       background-color: var(--ui-bg-hover);
       padding: 4.5rem calc(2rem + 1vw);
       width: var(--width);
