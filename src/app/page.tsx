@@ -2,6 +2,7 @@ import {
   About,
   Contact,
   Experience,
+  Footer,
   Hero,
   PageSectionLayout,
   Skills,
@@ -62,7 +63,8 @@ export default async function Home() {
           <Component />
         </PageSectionLayout>
       ))}
-      {/* <Footer /> */}
+      {/* @ts-expect-error Async Server Component */}
+      <Footer />
     </>
   );
 }
