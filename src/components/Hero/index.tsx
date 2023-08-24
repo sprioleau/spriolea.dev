@@ -9,16 +9,12 @@ import { HeroData } from "@/schemas/types";
 
 export default async function Hero() {
   const heroContent = await client.fetch<HeroData>(queries.hero);
-  const { brief, overline, heading, subHeading, cta, advanceToSectionSlug } =
-    heroContent;
+  const { brief, heading, subHeading, cta, advanceToSectionSlug } = heroContent;
 
   return (
     <section className="hero section">
       <div className="container">
         <header className="hero__header">
-          <p className="hero__overline">
-            <span className="hero__greeting"> {overline}</span>
-          </p>
           <div className="hero__headline-wrapper">
             <h1
               className="hero__headline"

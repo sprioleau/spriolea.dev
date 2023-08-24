@@ -8,21 +8,12 @@
     margin-bottom: 10vh;
   }
 
-  &__overline {
-    @include ff-mono;
-    display: flex;
-    align-items: center;
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-    color: var(--ui-accent-1);
-    margin-bottom: 0.25rem;
-  }
-
   &__headline-wrapper {
     overflow: hidden;
     display: inline-flex;
     flex-direction: column;
     height: var(--h1);
-    // display: inline-block;
+    margin-bottom: 0.25em;
   }
 
   &__headline-wrapper:hover &__headline,
@@ -82,6 +73,14 @@
 @include sm {
   .hero {
     &__view-more {
+      display: none;
+    }
+
+    &__headline-wrapper {
+      height: unset;
+    }
+
+    &__phonetic {
       display: none;
     }
   }
