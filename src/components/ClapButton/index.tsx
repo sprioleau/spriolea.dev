@@ -40,11 +40,11 @@ const ClapButton = ({
     if (e.altKey && clientClapCount > 0) {
       const newClapCount = clientClapCount - 1;
       const countAnimationProps = getCountAnimationProps();
-      const fillanimationProps = getFillAnimationProps(
+      const fillAnimationProps = getFillAnimationProps(
         newClapCount / MAX_CLAP_COUNT
       );
 
-      animate([...fillanimationProps, ...countAnimationProps]);
+      animate([...fillAnimationProps, ...countAnimationProps]);
 
       setClientClapCount(newClapCount);
       debouncedHandleClaps();
@@ -70,31 +70,33 @@ const ClapButton = ({
   }
 
   return (
-    <div
-      className={composeClasses({
-        "clap-button": true,
-        pulse: clientClapCount < MAX_CLAP_COUNT,
-      })}
-    >
+    <>
       <div
-        ref={scope}
-        className="clap-button__wrapper"
+        className={composeClasses({
+          "clap-button": true,
+          pulse: clientClapCount < MAX_CLAP_COUNT,
+        })}
       >
-        <motion.button
-          className="clap-button__button clap no-frame"
-          onMouseDown={handleTouch}
-          whileHover={{
-            scale: 1.1,
-            transition: { type: "spring", duration: 0.2 },
-          }}
-          whileTap={{ scale: clientClapCount === MAX_CLAP_COUNT ? 0.9 : 1 }}
+        <div
+          ref={scope}
+          className="clap-button__wrapper"
         >
-          <Clap />
-          <div className="clap-button__fill" />
-        </motion.button>
-        <div className="clap-button__count">{clientClapCount}</div>
+          <motion.button
+            className="clap-button__button clap no-frame"
+            onMouseDown={handleTouch}
+            whileHover={{
+              scale: 1.1,
+              transition: { type: "spring", duration: 0.2 },
+            }}
+            whileTap={{ scale: clientClapCount === MAX_CLAP_COUNT ? 0.9 : 1 }}
+          >
+            <Clap />
+            <div className="clap-button__fill" />
+          </motion.button>
+          <div className="clap-button__count">{clientClapCount}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
