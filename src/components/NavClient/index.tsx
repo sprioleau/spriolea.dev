@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
-
+import { useCallback, useEffect, useState } from "react";
 import FocusTrap from "focus-trap-react";
 import Link from "next/link";
 import Logo from "../Logo";
 import { NavLink } from "@/schemas/types";
-import ResumeButton from "../ResumeButton";
 import { SkipToMainContent } from "@/components";
 import icons from "../Icons";
 import { scrollToTop } from "@/utils";
@@ -79,7 +77,7 @@ const NavClient = ({ navLinks }: Props) => {
                   </li>
                 ))}
               </ul>
-              <ResumeButton />
+              {/* <ResumeButton /> */}
               {isExpanded && (
                 <button
                   id="close"
