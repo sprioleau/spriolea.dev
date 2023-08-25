@@ -26,5 +26,6 @@ export { default as SectionHeader } from "./SectionHeader";
 export { default as Skills } from "./Skills";
 export { default as SkillsList } from "./SkillsList";
 export { default as SkipToMainContent } from "./SkipToMainContent";
+export { default as Spotlight } from "./Spotlight";
 export { default as StructuredData } from "./StructuredData";
 export { default as Work } from "./Work";

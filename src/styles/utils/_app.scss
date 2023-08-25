@@ -22,27 +22,6 @@
   color: var(--ui-bg);
 }
 
-/* Works on Firefox */
-// * {
-//   scrollbar-width: thin;
-//   scrollbar-color: var(--ui-bg) var(--ui-accent-1);
-// }
-
-// /* Works on Chrome, Edge, and Safari */
-// *::-webkit-scrollbar {
-//   width: 12px;
-// }
-
-// *::-webkit-scrollbar-track {
-//   background: var(--ui-accent-1);
-// }
-
-// *::-webkit-scrollbar-thumb {
-//   background-color: var(--ui-bg);
-//   // border-radius: 20px;
-//   border: 3px solid var(--ui-accent-1);
-// }
-
 html,
 body,
 #__next {
