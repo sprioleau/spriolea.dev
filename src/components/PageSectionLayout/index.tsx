@@ -1,30 +1,40 @@
+import { composeClasses } from "@/utils";
 import SectionHeader from "../SectionHeader";
 
 type Props = {
-  sectionId: string;
   sectionTitle: string;
-  shouldCenter?: boolean;
   children: React.ReactNode;
+  sectionId?: string;
+  shouldCenter?: boolean;
 };
 
 export default function PageSectionLayout({
-  sectionId,
   sectionTitle,
-  shouldCenter,
   children,
+  sectionId = "",
+  shouldCenter = false,
 }: Props) {
+  const pageSectionLayoutClasses = composeClasses({
+    section: true,
+    [sectionId]: Boolean(sectionId),
+  });
+
   return (
-    <section className={`${sectionId} section`}>
-      <div
-        id={sectionId}
-        className="marker"
-      />
+    <section className={pageSectionLayoutClasses}>
+      {Boolean(sectionId) && (
+        <div
+          id={sectionId}
+          className="marker"
+        />
+      )}
       <div className="container">
         <SectionHeader
           sectionTitle={sectionTitle}
           shouldCenter={shouldCenter}
         />
-        <div className={`${sectionId}__main-content`}>{children}</div>
+        <div className={sectionId ? `${sectionId}__main-content` : undefined}>
+          {children}
+        </div>
       </div>
     </section>
   );
