@@ -6,6 +6,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://sprioleau.dev",
       lastModified: new Date(),
     },
+    {
+      url: "https://sprioleau.dev/projects/all",
+      lastModified: new Date(),
+    },
     // {
     //   url: "https://sprioleau.dev/about",
     //   lastModified: new Date(),
