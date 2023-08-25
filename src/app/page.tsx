@@ -51,7 +51,6 @@ export default async function Home() {
     <>
       <DefaultMetaTags />
       <ToastContainer />
-      {/* @ts-expect-error Async Server Component */}
       <Hero />
       {pageSections.map(({ id, title, component: Component }) => (
         <PageSectionLayout
@@ -59,11 +58,9 @@ export default async function Home() {
           sectionId={id}
           sectionTitle={title}
         >
-          {/* @ts-expect-error Async Server Component */}
           <Component />
         </PageSectionLayout>
       ))}
-      {/* @ts-expect-error Async Server Component */}
       <Footer />
     </>
   );

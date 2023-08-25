@@ -62,9 +62,7 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <div className="app">
-          {/* @ts-expect-error Async Server Component */}
           <Nav />
-          {/* @ts-expect-error Async Server Component */}
           <InfoRail />
           <main className="main">{children}</main>
         </div>
