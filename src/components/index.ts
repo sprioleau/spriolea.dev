@@ -11,7 +11,7 @@ export { default as Footer } from "./Footer";
 export { default as FooterContent } from "./FooterContent";
 export { default as Hero } from "./Hero";
 export { default as Icons } from "./Icons";
-export { default as InfoRails } from "./InfoRails";
+export { default as InfoRail } from "./InfoRail";
 export { default as Logo } from "./Logo";
 export { default as NavClient } from "./NavClient";
 export { default as Nav } from "./Nav";

@@ -1,4 +1,4 @@
-.info-rails {
+.info-rail {
   --accent-line-length: clamp(80px, 15vh, 180px);
   --accent-line-length: clamp(80px, 15dvh, 180px);
   --denominator: 2;
@@ -9,16 +9,21 @@
   height: 100vh;
   height: 100dvh;
   z-index: 10;
+  width: var(--gutter-width);
+  left: var(--nav-padding);
 
   &__rail {
     @include center;
-    position: fixed;
+    gap: 0.5rem;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
     bottom: 0;
-    width: var(--gutter-width);
-    left: var(--nav-padding);
+  }
+
+  &__link-list {
+    @include center;
+    flex-direction: column;
+    gap: 0.5em;
   }
 
   &__link-list-item {
@@ -55,7 +60,6 @@
       writing-mode: vertical-rl;
       text-orientation: mixed;
       padding: 0.5rem;
-      margin-block-end: 0.5em;
     }
   }
 
@@ -68,7 +72,7 @@
 }
 
 @include mq(1050px) {
-  .info-rails {
+  .info-rail {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +91,6 @@
       font-size: 1.25rem;
 
       &.text-link {
-        margin-block-end: 0.25em;
         font-size: 0.8rem;
       }
     }
