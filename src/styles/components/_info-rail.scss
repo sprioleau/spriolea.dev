@@ -52,6 +52,12 @@
       display: none;
     }
 
+    @include hover-wrapper {
+      &:hover {
+        color: var(--ui-accent-1);
+      }
+    }
+
     &.text-link {
       display: flex;
       align-items: center;
