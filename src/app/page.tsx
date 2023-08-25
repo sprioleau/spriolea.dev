@@ -6,6 +6,7 @@ import {
   Hero,
   PageSectionLayout,
   Skills,
+  Spotlight,
   Work,
 } from "@/components";
 
@@ -61,6 +62,7 @@ export default async function Home() {
           <Component />
         </PageSectionLayout>
       ))}
+      <Spotlight />
       <Footer />
     </>
   );

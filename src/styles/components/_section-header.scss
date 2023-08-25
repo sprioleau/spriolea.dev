@@ -7,9 +7,9 @@
 
   &__title {
     color: var(--ui-text-hover);
-    background-color: var(--ui-bg);
     padding-right: 1.5rem;
     position: relative;
+    flex-shrink: 0;
 
     &::before {
       @include ff-mono;
@@ -43,7 +43,7 @@
   }
 
   &__accent-line {
-    position: absolute;
+    // position: absolute;
     left: 0;
     height: 2px;
     width: 70%;

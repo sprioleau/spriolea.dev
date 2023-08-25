@@ -1,0 +1,28 @@
+@import "../../styles/utils/mixins";
+
+.spotlight {
+  position: absolute;
+  inset: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  :global(body:hover) & {
+    opacity: 1;
+  }
+
+  &::before {
+    @include bg-obscure;
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  @include hover-wrapper {
+    &:hover {
+      display: none;
+    }
+  }
+}
