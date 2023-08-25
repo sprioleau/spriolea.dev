@@ -28,7 +28,6 @@
 
   &__link-list-item {
     @include transition;
-
     @include hover-wrapper {
       &:hover {
         transform: translateY(-0.25rem);
@@ -59,13 +58,19 @@
     }
 
     &.text-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1em;
+      display: inline-block;
+      -webkit-writing-mode: vertical-rl;
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      padding: 0.5rem;
+      line-height: 1.5;
+      font-size: 1em;
+      margin-inline-end: 1em;
+
+      @include sm {
+        position: absolute;
+        left: 1.5em;
+        bottom: 9rem;
+      }
     }
   }
 

@@ -43,7 +43,6 @@
   }
 
   &__accent-line {
-    // position: absolute;
     left: 0;
     height: 2px;
     width: 70%;
@@ -100,6 +99,14 @@
           padding-inline: 5vw;
         }
       }
+    }
+  }
+}
+
+@include sm {
+  .section-header {
+    &__accent-line {
+      display: none;
     }
   }
 }

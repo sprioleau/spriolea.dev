@@ -7,19 +7,20 @@ export default {
       name: "techName",
       title: "Tech Name",
       type: "string",
-      description: "Shortened version of technology name used in the tech industry, such as NPM"
+      description:
+        "Shortened version of technology name used in the tech industry, such as NPM",
     },
     {
       name: "fullName",
       title: "Full Name",
       type: "string",
-      description: "Longform version of name"
+      description: "Longform version of name",
     },
     {
       name: "experienceYears",
       title: "Years of experience",
       type: "number",
-      description: "Longform version of name"
+      description: "Longform version of name",
     },
     {
       name: "category",
@@ -30,7 +31,7 @@ export default {
         list: [
           {
             title: "Web Design",
-            value: "Web Design"
+            value: "Web Design",
           },
           {
             title: "Technologies",
@@ -45,8 +46,8 @@ export default {
             value: "Core Concepts",
           },
         ],
-        layout: "grid"
-      }
+        layout: "grid",
+      },
     },
     {
       name: "iconKey",
@@ -58,7 +59,7 @@ export default {
       title: "Published at",
       type: "datetime",
       readOnly: true,
-      initialValue: (new Date()).toISOString(),
+      initialValue: new Date().toISOString(),
     },
   ],
 
@@ -67,4 +68,4 @@ export default {
       title: "techName",
     },
   },
-}
+};
