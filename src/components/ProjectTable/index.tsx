@@ -31,14 +31,6 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
     leaveDelay: 200,
   });
 
-  function sortByYearAndTitle(a: Project, b: Project) {
-    const aYear = Number(a.yearBuilt.slice(0, 4));
-    const bYear = Number(b.yearBuilt.slice(0, 4));
-
-    if (aYear === bYear) return b.title.localeCompare(a.title);
-    return aYear > bYear ? -1 : 1;
-  }
-
   return (
     <div className="other-work">
       <h3 className="other-work__section-title">Other Work</h3>
@@ -53,7 +45,7 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
           </tr>
         </thead>
         <tbody ref={projectTableRef}>
-          {projects.sort(sortByYearAndTitle).map((project) => (
+          {projects.map((project) => (
             <ProjectRow
               key={project._id}
               project={project}

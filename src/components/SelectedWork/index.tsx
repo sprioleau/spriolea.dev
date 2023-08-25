@@ -4,6 +4,7 @@ import PortableTextBlock from "../PortableTextBlock";
 import { Project } from "@/schemas/types";
 import icons from "../Icons";
 import { urlFor } from "../../libs/sanity";
+import Link from "next/link";
 
 const SelectedWork = ({ projects }: { projects: Project[] }) => {
   return (
@@ -113,6 +114,12 @@ const SelectedWork = ({ projects }: { projects: Project[] }) => {
           )
         )}
       </ul>
+      <Link
+        href="/projects/all"
+        className="selected-work__view-all-projects-link"
+      >
+        <button>View All Projects</button>
+      </Link>
     </div>
   );
 };

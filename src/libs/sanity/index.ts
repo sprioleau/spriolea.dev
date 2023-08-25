@@ -16,18 +16,18 @@ export const urlFor = (source: SanityImageSource) => {
   return builder.image(source);
 };
 
+// prettier-ignore
 export const queries = {
   hero: '*[_type == "hero"][0]',
   siteDetails: '*[_type == "siteDetails"][0]',
   about: '*[_type == "about"][0]',
   employers: '*[_type == "employer"]',
-  experience:
-    '*[_type == "experience"] | order(fromDate desc, order asc) { ..., employer->, jobType-> }',
+  experience: '*[_type == "experience"] | order(fromDate desc, order asc) { ..., employer->, jobType-> }',
   kudos: '*[_type=="kudos"] { ..., credit->, project->}',
   jobTypes: '*[_type == "jobType"]',
   navLinks: '*[_type == "navLink"] | order(order asc)',
-  projects:
-    '*[_type == "project"] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }',
+  allProjects: '*[_type == "project"] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }',
+  featuredProjects: '*[_type == "project" && isFeatured == true] | order(isFeatured desc, yearBuilt desc) | order(order asc) { ..., builtWith[]->, builtFor->, tags[]-> }',
   skills: '*[_type == "skill"]',
   contact: '*[_type == "contact"][0]',
   footer: '*[_type == "footer"][0]',

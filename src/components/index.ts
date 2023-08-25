@@ -1,6 +1,7 @@
 export { default as About } from "./About";
 export { default as ActionIndicator } from "./ActionIndicator";
 export { default as AdvanceToNextSectionButton } from "./AdvanceToNextSectionButton";
+export { default as BackButton } from "./BackButton";
 export { default as CallToActionButton } from "./CallToActionButton";
 export { default as ClapButton } from "./ClapButton";
 export { default as Contact } from "./Contact";
@@ -19,6 +20,7 @@ export { default as PageSectionLayout } from "./PageSectionLayout";
 export { default as PortableTextBlock } from "./PortableTextBlock";
 export { default as ProjectKudos } from "./ProjectKudos";
 export { default as ProjectKudosList } from "./ProjectKudosList";
+export { default as ProjectTable } from "./ProjectTable";
 export { default as ResumeButton } from "./ResumeButton";
 export { default as SectionHeader } from "./SectionHeader";
 export { default as Skills } from "./Skills";

@@ -1,6 +1,4 @@
 .selected-work {
-  margin: 1.5rem 0 3rem;
-
   &__works {
     display: flex;
     flex-direction: column;
@@ -135,6 +133,15 @@
       }
     }
 
+    &::after {
+      display: none;
+    }
+  }
+
+  &__view-all-projects-link {
+    @include center;
+
+    &::before,
     &::after {
       display: none;
     }
