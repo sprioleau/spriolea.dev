@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
+// TODO: Review to see what is needed
+
 export const logoSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -11,7 +13,8 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "S. Prioleau",
-  about: "San'Quan Prioleau is a Frontend Engineer with an eye for good design, who loves combining ideas to create new things.",
+  about:
+    "San'Quan Prioleau is a Frontend Engineer with an eye for good design, who loves combining ideas to create new things.",
   creator: {
     "@type": "Person",
     givenName: "San'Quan",

@@ -1,76 +1,62 @@
-/* eslint-disable import/prefer-default-export */
+import { Metadata } from "next";
 
-export const META = {
-  DESCRIPTION: "San'Quan Prioleau is a Frontend Engineer with an eye for good design, who loves combining ideas to create new things.",
-  IMAGE_URL: "http://sprioleau.dev/images/sprioleau-social-card.png",
-  URL: "http://sprioleau.dev",
-  TITLE: "San'Quan Prioleau - Frontend Engineer",
+const fullName = "San'Quan Prioleau";
+const title = `${fullName} - Frontend Engineer`;
+const description = `Personal website of ${fullName}`;
+const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+const baseUrl = `${protocol}://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+const keywords = [
+  fullName,
+  "Portfolio",
+  "Work",
+  "Projects",
+  "Web Development",
+  "Frontend Engineer",
+  "Software Engineer",
+  "Full-Stack",
+  "Full-Stack Engineer",
+  "React",
+  "TypeScript",
+  "Atlanta",
+];
+
+const baseOgConfig = {
+  title,
+  description,
+  images: [
+    {
+      url: "/images/sprioleau-social-card.png",
+      width: 1200,
+      height: 628,
+      alt: description,
+    },
+  ],
 };
 
-export const twitterMeta = [
-  {
-    property: "twitter:card",
-    content: "summary_large_image",
-  },
-  {
-    property: "twitter:url",
-    content: META.URL,
-  },
-  {
-    property: "twitter:title",
-    content: META.TITLE,
-  },
-  {
-    property: "twitter:description",
-    content: META.DESCRIPTION,
-  },
-  {
-    property: "twitter:image",
-    content: META.IMAGE_URL,
-  },
-];
+const metadataBase = new URL(baseUrl);
 
-export const ogMeta = [
-  {
-    property: "og:url",
-    content: META.URL,
+export const homepageMetadata: Metadata = {
+  title,
+  description,
+  applicationName: "sprioleau.dev",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  keywords,
+  authors: [{ name: fullName, url: baseUrl }],
+  colorScheme: "dark",
+  creator: fullName,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
-  {
-    property: "og:type",
-    content: "website",
+  metadataBase,
+  openGraph: {
+    ...baseOgConfig,
+    url: baseUrl,
+    siteName: title,
+    locale: "en-US",
+    type: "website",
   },
-  {
-    property: "og:title",
-    content: META.TITLE,
-  },
-  {
-    property: "og:description",
-    content: META.DESCRIPTION,
-  },
-  {
-    property: "og:image",
-    content: META.IMAGE_URL,
-  },
-];
-
-export const schemaDotOrgMeta = [
-  {
-    itemProp: "name",
-    content: META.TITLE,
-  },
-  {
-    itemProp: "description",
-    content: META.DESCRIPTION,
-  },
-  {
-    itemProp: "image",
-    content: META.IMAGE_URL,
-  },
-];
-
-export const titleMeta = [
-  {
-    name: "description",
-    content: META.DESCRIPTION,
-  },
-];
+  twitter: baseOgConfig,
+};

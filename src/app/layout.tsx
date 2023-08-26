@@ -1,57 +1,12 @@
 import "@/styles/styles.scss";
 
-import { InfoRail, Nav, StructuredData } from "@/components";
+import { InfoRail, Nav, SkipToMainContent, StructuredData } from "@/components";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
+import { homepageMetadata } from "@/seo";
 
-const fullName = "San'Quan Prioleau";
-const title = `${fullName} - Frontend Engineer`;
-const description = `Personal website of ${fullName}`;
-const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-const baseUrl = `${protocol}://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-
-const baseOgConfig = {
-  title,
-  description,
-  images: [
-    {
-      url: "/images/sprioleau-social-card.png",
-      width: 1200,
-      height: 628,
-      alt: description,
-    },
-  ],
-};
-
-const metadataBase = new URL(baseUrl);
-
-export const metadata: Metadata = {
-  title,
-  description,
-  applicationName: "sprioleau.dev",
-  generator: "Next.js",
-  referrer: "origin-when-cross-origin",
-  keywords: [fullName, "Portfolio", "Web Development", "Frontend Engineer"],
-  authors: [{ name: fullName, url: baseUrl }],
-  colorScheme: "dark",
-  creator: fullName,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase,
-  openGraph: {
-    ...baseOgConfig,
-    url: baseUrl,
-    siteName: title,
-    locale: "en-US",
-    type: "website",
-  },
-  twitter: baseOgConfig,
-};
+export const metadata = homepageMetadata;
 
 export default async function RootLayout({
   children,
@@ -62,6 +17,7 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <div className="app">
+          <SkipToMainContent route="/#about" />
           <Nav />
           <InfoRail />
           <main className="main">{children}</main>
