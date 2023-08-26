@@ -1,11 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 
 import React, { useEffect, useRef } from "react";
-import {
-  composeClasses,
-  formatJobDates,
-  handleKeyDown,
-} from "../../../../utils";
+import { composeClasses, formatJobDates, handleKeyDown } from "../../../../utils";
 
 import { Experience } from "@/schemas/types";
 

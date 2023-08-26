@@ -5,12 +5,7 @@ type Props = {
   size?: string;
 };
 
-const Logo = ({
-  fill = "currentColor",
-  stroke = "transparent",
-  strokeWidth = 0,
-  size = "1em",
-}: Props) => {
+const Logo = ({ fill = "currentColor", stroke = "transparent", strokeWidth = 0, size = "1em" }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

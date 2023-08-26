@@ -15,11 +15,7 @@ type Props = {
   linksClass?: string;
 };
 
-const PortableTextBlock = ({
-  childrenContent,
-  markDefs,
-  linksClass,
-}: Props) => {
+const PortableTextBlock = ({ childrenContent, markDefs, linksClass }: Props) => {
   const markIds = childrenContent
     .filter(({ marks }) => marks.length > 0)
     .flatMap(({ marks }) => marks[0])
@@ -44,7 +40,12 @@ const PortableTextBlock = ({
     if (markData[marks[0]]._type === "link") {
       const link = linkLookup[marks[0]];
       return (
-        <a href={link} target="_blank" rel="noreferrer" className={linksClass}>
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className={linksClass}
+        >
           {text}
         </a>
       );

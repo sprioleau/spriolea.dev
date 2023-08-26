@@ -10,9 +10,7 @@ import { urlFor } from "../../libs/sanity/index";
 import useMouse from "@react-hook/mouse-position";
 
 const ProjectTable = ({ projects }: { projects: Project[] }) => {
-  const [currentImage, setCurrentImage] = React.useState<
-    Project["mainImage"] | undefined
-  >();
+  const [currentImage, setCurrentImage] = React.useState<Project["mainImage"] | undefined>();
   const { windowSize } = useWindowSize();
   const smallerThanSmall = windowSize ? windowSize <= bp.sm : false;
   const smallerThanMedium = windowSize ? windowSize <= bp.md : false;
