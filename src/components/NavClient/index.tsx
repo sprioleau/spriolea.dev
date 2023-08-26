@@ -5,9 +5,8 @@ import FocusTrap from "focus-trap-react";
 import Link from "next/link";
 import Logo from "../Logo";
 import { NavLink } from "@/schemas/types";
-import { SkipToMainContent } from "@/components";
 import icons from "../Icons";
-import { scrollToTop } from "@/utils";
+import { composeClasses, scrollToTop } from "@/utils";
 
 type Props = {
   navLinks: NavLink[];
@@ -38,7 +37,7 @@ const NavClient = ({ navLinks }: Props) => {
 
   return (
     <nav
-      className={["nav", isExpanded ? "nav-expanded" : ""].join(" ")}
+      className={composeClasses({ nav: true, "nav-expanded": isExpanded })}
       aria-label="main navigation"
     >
       <div className="nav__logo">
@@ -54,7 +53,6 @@ const NavClient = ({ navLinks }: Props) => {
         </Link>
       </div>
       <div className="nav__main-content">
-        <SkipToMainContent sectionId="about" />
         <FocusTrap active={isExpanded}>
           <div className="nav__focus-trap">
             <div className="nav__links-wrapper">

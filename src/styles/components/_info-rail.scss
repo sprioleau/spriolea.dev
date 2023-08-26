@@ -6,11 +6,12 @@
   @include center;
   position: fixed;
   align-items: flex-end;
-  height: 100vh;
-  height: 100dvh;
+  height: calc(100vh - var(--nav-height));
+  height: calc(100dvh - var(--nav-height));
   z-index: 10;
   width: var(--gutter-width);
   left: var(--nav-padding);
+  bottom: 0;
 
   &__rail {
     @include center;

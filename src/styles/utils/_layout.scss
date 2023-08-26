@@ -24,7 +24,7 @@
 
 .marker {
   position: absolute;
-  top: -2rem;
+  top: calc(-1.5 * var(--section-y-padding));
 }
 
 .accent-line {

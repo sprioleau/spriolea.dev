@@ -9,7 +9,8 @@
   z-index: 10;
   font-size: 0.8em;
   letter-spacing: 1px;
-  padding: var(--nav-padding) calc(var(--section-x-padding) / 2);
+  padding: var(--nav-padding);
+  padding-right: calc(var(--nav-padding) * 2);
   width: 100vw;
   height: var(--nav-height);
 
@@ -29,9 +30,9 @@
     @include transition;
     @include center;
     width: var(--gutter-width);
-    height: var(--nav-logo-height);
+    height: var(--gutter-width);
+    border-radius: 50%;
     color: var(--ui-accent-1);
-    margin-left: -1rem;
     transform: rotate(var(--rotation));
     z-index: 25;
 
