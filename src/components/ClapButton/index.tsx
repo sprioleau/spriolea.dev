@@ -26,7 +26,40 @@ const ClapButton = ({
 
   const debouncedHandleClaps = useDebouncedCallback(() => {
     persistClaps({ newClapsTotal: serverClapCount + clientClapCount });
-  }, 3000);
+  }, 1500);
+
+  function decrementClaps() {
+    const newClapCount = clientClapCount - 1;
+    const countAnimationProps = getCountAnimationProps();
+    const fillAnimationProps = getFillAnimationProps(
+      newClapCount / MAX_CLAP_COUNT
+    );
+
+    animate([...fillAnimationProps, ...countAnimationProps]);
+
+    setClientClapCount(newClapCount);
+    debouncedHandleClaps();
+  }
+
+  function incrementClaps() {
+    const newClapCount = clientClapCount + 1;
+    const countAnimationProps = getCountAnimationProps();
+    const fillAnimationProps = getFillAnimationProps(
+      newClapCount / MAX_CLAP_COUNT
+    );
+
+    if (newClapCount >= MAX_CLAP_COUNT) {
+      if (hasSeenToast) return;
+      toastMessage("Thanks for the claps!");
+      setHasSeenToast(true);
+      return;
+    }
+
+    animate([...fillAnimationProps, ...countAnimationProps]);
+
+    setClientClapCount(newClapCount);
+    debouncedHandleClaps();
+  }
 
   function handleTouch(e: React.MouseEvent<HTMLButtonElement>) {
     if (!e.altKey && clientClapCount >= MAX_CLAP_COUNT) {
@@ -38,35 +71,22 @@ const ClapButton = ({
     if (e.altKey && clientClapCount === 0) return;
 
     if (e.altKey && clientClapCount > 0) {
-      const newClapCount = clientClapCount - 1;
-      const countAnimationProps = getCountAnimationProps();
-      const fillAnimationProps = getFillAnimationProps(
-        newClapCount / MAX_CLAP_COUNT
-      );
-
-      animate([...fillAnimationProps, ...countAnimationProps]);
-
-      setClientClapCount(newClapCount);
-      debouncedHandleClaps();
+      decrementClaps();
       return;
     }
 
-    const newClapCount = clientClapCount + 1;
-    const countAnimationProps = getCountAnimationProps();
-    const fillAnimationProps = getFillAnimationProps(
-      newClapCount / MAX_CLAP_COUNT
-    );
+    incrementClaps();
+  }
 
-    if (newClapCount === MAX_CLAP_COUNT && !hasSeenToast) {
-      if (hasSeenToast) return;
-      toastMessage("Thanks for the claps!");
-      setHasSeenToast(true);
+  function handleKeydown(e: React.KeyboardEvent<HTMLButtonElement>) {
+    if (![" ", "Enter"].includes(e.key)) return;
+
+    if (e.altKey) {
+      decrementClaps();
+      return;
     }
 
-    animate([...fillAnimationProps, ...countAnimationProps]);
-
-    setClientClapCount(newClapCount);
-    debouncedHandleClaps();
+    incrementClaps();
   }
 
   return (
@@ -84,6 +104,7 @@ const ClapButton = ({
           <motion.button
             className="clap-button__button clap no-frame"
             onMouseDown={handleTouch}
+            onKeyDown={(e) => handleKeydown(e)}
             whileHover={{
               scale: 1.1,
               transition: { type: "spring", duration: 0.2 },
