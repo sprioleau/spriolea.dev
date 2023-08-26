@@ -3,9 +3,9 @@ import { TiArrowSync } from "react-icons/ti";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { CgFileDocument, CgSoftwareDownload } from "react-icons/cg";
 import { HiOutlineCode, HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { FiGithub, FiExternalLink, FiGitCommit, FiThumbsUp, FiArrowDown, FiArrowLeft, } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiGitCommit, FiThumbsUp, FiArrowDown, FiArrowLeft, FiArrowRight, } from "react-icons/fi";
 import { FaFigma, FaGitAlt, FaNodeJs, FaNpm, FaReact, FaSass, FaLinkedinIn, } from "react-icons/fa";
-import { MdOutlineRemoveRedEye, MdOutlineArrowRightAlt, MdOutlineMarkEmailRead, } from "react-icons/md";
+import { MdOutlineRemoveRedEye, MdOutlineMarkEmailRead } from "react-icons/md";
 import { SiCss3, SiCypress, SiExpress, SiGraphql, SiHasura, SiHtml5, SiJavascript, SiJest, SiNextdotjs, SiRedux, SiTypescript, SiSocketdotio, } from "react-icons/si";
 
 import AdobeIllustrator from "./AdobeIllustrator";
@@ -52,7 +52,7 @@ const icons = {
   thumbsUp: <FiThumbsUp />,
   arrowDown: <FiArrowDown />,
   arrowLeft: <FiArrowLeft />,
-  arrowRight: <MdOutlineArrowRightAlt />,
+  arrowRight: <FiArrowRight />,
   arrowRightNarrow: <HiOutlineArrowNarrowRight />,
   email: <MdOutlineMarkEmailRead />,
 } as const;

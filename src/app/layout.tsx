@@ -1,6 +1,11 @@
 import "@/styles/styles.scss";
 
-import { InfoRail, Nav, SkipToMainContent, StructuredData } from "@/components";
+import {
+  InfoRail,
+  Nav,
+  SkipToMainContentLink,
+  StructuredData,
+} from "@/components";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -17,7 +22,7 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <div className="app">
-          <SkipToMainContent route="/#about" />
+          <SkipToMainContentLink route="/#about" />
           <Nav />
           <InfoRail />
           <main className="main">{children}</main>
