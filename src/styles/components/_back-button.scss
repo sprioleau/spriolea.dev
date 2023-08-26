@@ -8,6 +8,7 @@
   padding-left: 0.75em;
   display: inline-flex;
   align-self: flex-start;
+  border-radius: 0.5em;
 
   button {
     padding: 0;
@@ -17,8 +18,12 @@
     display: none;
   }
 
+  &:focus::before {
+    --scaleY: 1;
+  }
+
   &::before {
-    border-radius: 0.5em;
+    border-radius: inherit;
     background-color: rgba(var(--ui-accent-1-rgb), 0.15);
   }
 
