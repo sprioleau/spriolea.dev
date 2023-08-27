@@ -6,8 +6,8 @@
   @include center;
   position: fixed;
   align-items: flex-end;
-  height: calc(100vh - var(--nav-height));
-  height: calc(100dvh - var(--nav-height));
+  height: 100vh;
+  height: 100dvh;
   z-index: 10;
   width: var(--gutter-width);
   left: var(--nav-padding);
