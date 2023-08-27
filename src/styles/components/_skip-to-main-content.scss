@@ -1,0 +1,24 @@
+.skip-to-main-content {
+  --translateX: calc(-100% - var(--section-x-padding) - 3rem);
+  @include transition;
+  @include center;
+  position: fixed;
+  display: flex;
+  top: var(--nav-height);
+  left: var(--section-x-padding);
+  background-color: var(--ui-bg);
+  transform: translateX(var(--translateX));
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  z-index: 50;
+
+  &__label {
+    margin: 0;
+    margin-right: 0.5rem;
+  }
+
+  &:focus {
+    --translateX: 0;
+    box-shadow: 0 0 0 0.35rem rgba(var(--ui-accent-1-rgb), 0.8);
+  }
+}

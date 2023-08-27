@@ -1,0 +1,60 @@
+.footer {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: var(--nav-padding) 5vw;
+  width: 100%;
+
+  p {
+    @include ff-mono;
+    font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__message {
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__stats {
+    @include center;
+
+    & > :not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      display: none;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        color: var(--ui-accent-1);
+      }
+    }
+  }
+
+  &__stat-wrapper {
+    @include center;
+    margin-bottom: 0;
+  }
+
+  .views-icon {
+    padding: 0;
+    margin-left: 0.5rem;
+    font-size: 1.1em;
+  }
+}

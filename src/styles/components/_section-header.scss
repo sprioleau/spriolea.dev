@@ -1,0 +1,112 @@
+.section-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &__title {
+    color: var(--ui-text-hover);
+    padding-right: 1.5rem;
+    position: relative;
+    flex-shrink: 0;
+
+    &::before {
+      @include ff-mono;
+      counter-increment: section;
+      content: "0" counter(section) ". ";
+      font-size: 0.8em;
+      letter-spacing: 1px;
+      color: var(--ui-accent-1);
+    }
+
+    &::after {
+      --opacity: 0;
+      @include transition;
+      content: "#";
+      position: absolute;
+      top: 55%;
+      left: -1.5rem;
+      font-size: 1.25em;
+      font-weight: 500;
+      color: rgba(var(--ui-text-rgb), 0.5);
+      transform: translate(-50%, -50%);
+      opacity: var(--opacity);
+    }
+
+    @include hover-wrapper {
+      &:hover::after,
+      &:focus::after {
+        --opacity: 1;
+      }
+    }
+  }
+
+  &__accent-line {
+    left: 0;
+    height: 2px;
+    width: 70%;
+    padding-right: 1rem;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.8);
+    z-index: -1;
+  }
+
+  &.center {
+    flex-direction: column;
+
+    .section-header {
+      &__title {
+        text-align: center;
+        padding: 0 3rem 1rem;
+        border-bottom: 2px solid var(--ui-accent-1);
+        margin-bottom: 1rem;
+      }
+
+      &__accent-line {
+        display: none;
+      }
+
+      &__title {
+        &::after {
+          top: -1.5rem;
+          left: 50%;
+          font-size: 1.25em;
+          font-weight: 500;
+          color: rgba(var(--ui-text-rgb), 0.5);
+          transform: translate(-50%, -50%);
+          opacity: var(--opacity);
+        }
+      }
+    }
+  }
+}
+
+@include md {
+  .section-header {
+    max-width: var(--p-max-width);
+
+    &__title {
+      padding: 0 5vw;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &.center {
+      .section-header {
+        &__title {
+          padding-inline: 5vw;
+        }
+      }
+    }
+  }
+}
+
+@include sm {
+  .section-header {
+    &__accent-line {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.contact {
+  &.section {
+    padding-bottom: 0;
+  }
+
+  &__card {
+    @include cursor-copy;
+    @include center;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: clamp(1rem, 0.8rem + 5vw, 6rem);
+    width: min-content;
+    margin: 0 auto;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+    color: var(--ui-text-hover);
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 1rem;
+      border: 0.1rem solid var(--ui-accent-1);
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        .contact__spotlight {
+          opacity: 1;
+        }
+
+        .contact__card-email {
+          color: var(--ui-text-hover);
+
+          &::after {
+            --scaleY: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__spotlight {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    &::before {
+      @include bg-obscure;
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__card-heading {
+    @include ff-mono;
+    user-select: none;
+  }
+
+  &__card-email {
+    --scaleX: 100%;
+    @include ff-body;
+    font-size: clamp(1rem, 0.6rem + 2vw, 1.5rem);
+    line-height: 1.2;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      --scaleY: 0;
+      transform: scaleY(var(--scaleY));
+      transform-origin: bottom;
+      bottom: -0.125em;
+      opacity: 1;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        @include cursor-copy;
+      }
+    }
+  }
+
+  .mail-icon {
+    font-size: 1.25rem;
+    display: block;
+    color: var(--ui-accent-1);
+  }
+}
+
+@include sm {
+  .contact {
+    &__card {
+      width: 100%;
+    }
+
+    &__card-email {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+  }
+}

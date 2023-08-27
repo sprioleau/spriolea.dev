@@ -1,0 +1,107 @@
+.clap-button {
+  @include transition;
+  transition-property: box-shadow;
+  border-radius: 50%;
+  margin: 1em 0.5em 2em;
+
+  &.pulse {
+    animation: pulse 2s infinite;
+
+    @media (prefers-reduced-motion) {
+      animation: none;
+    }
+  }
+
+  &__wrapper {
+    --bg-offset: 0;
+    @include center;
+    overflow: visible;
+    position: relative;
+  }
+
+  &__fill {
+    @include transition;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.2);
+  }
+
+  &__count {
+    font-family: var(--font-mono);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  &__button {
+    @include transition;
+    --size: 4em;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100vmax;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    z-index: 1;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &.no-frame {
+      box-shadow: 0 0 0 2px rgba(var(--ui-accent-1-rgb), 0.5);
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(var(--ui-accent-1-rgb), 1);
+      }
+    }
+
+    &:active {
+      transform: scale(1.05);
+    }
+
+    @include hover-wrapper {
+      @include cursor-pointer;
+    }
+
+    svg {
+      @include center;
+      font-size: 1.75em;
+      transform: translate(3%, 4%);
+      color: var(--ui-accent-1);
+    }
+  }
+
+  &__particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    svg {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 25px rgba(var(--ui-accent-1-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--ui-accent-1-rgb), 0);
+  }
+}

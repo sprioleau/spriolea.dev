@@ -1,0 +1,42 @@
+.back-button {
+  @include center;
+  @include ff-ss;
+  gap: 0.5em;
+  text-decoration: none;
+  color: var(--ui-accent-1);
+  padding: 0.25em 0.5em;
+  padding-left: 0.75em;
+  display: inline-flex;
+  align-self: flex-start;
+  border-radius: 0.5em;
+
+  button {
+    padding: 0;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:focus::before {
+    --scaleY: 1;
+  }
+
+  &::before {
+    border-radius: inherit;
+    background-color: rgba(var(--ui-accent-1-rgb), 0.15);
+  }
+
+  &__icon {
+    --translateX: 0;
+    @include center;
+    transform: translateX(var(--translateX));
+    transition: transform 0.15s ease-out;
+  }
+
+  @include hover-wrapper {
+    &:hover &__icon {
+      --translateX: -0.25em;
+    }
+  }
+}

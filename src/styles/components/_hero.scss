@@ -1,0 +1,89 @@
+.hero {
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100dvh - var(--nav-height));
+  display: flex;
+  position: relative;
+
+  .container {
+    align-items: flex-start;
+    margin-bottom: 10vh;
+    margin-bottom: 10dvh;
+  }
+
+  &__headline-wrapper {
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    height: var(--h1);
+    margin-bottom: 0.25em;
+  }
+
+  &__headline-wrapper:hover &__headline,
+  &__headline-wrapper:hover &__phonetic {
+    transform: perspective(2000px) translateY(calc(-1 * var(--h1)));
+  }
+
+  &__phonetic {
+    @include transition;
+    font-size: calc(var(--h1) * 0.775);
+    color: var(--ui-text-hover);
+  }
+
+  &__headline {
+    @include transition;
+    max-width: 25ch;
+    color: var(--ui-text-hover);
+    line-height: 1.1;
+  }
+
+  &__headline,
+  &__vocation {
+    @include ff-body-bold;
+  }
+
+  &__vocation {
+    color: var(--ui-text);
+    font-size: calc(0.6 * var(--h1));
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
+
+  &__brief {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: var(--ui-text);
+    line-height: 2;
+  }
+
+  &__cta-button {
+    margin-top: 2rem;
+  }
+
+  &__view-more {
+    @include cursor-pointer;
+    position: absolute;
+    bottom: 3rem;
+    right: 5rem;
+    padding: 0.5rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@include sm {
+  .hero {
+    &__view-more {
+      display: none;
+    }
+
+    &__headline-wrapper {
+      height: unset;
+    }
+
+    &__phonetic {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.info-rail {
+  --accent-line-length: clamp(80px, 15vh, 180px);
+  --accent-line-length: clamp(80px, 15dvh, 180px);
+  --denominator: 2;
+  @include ff-mono;
+  @include center;
+  position: fixed;
+  align-items: flex-end;
+  height: calc(100vh - var(--nav-height));
+  height: calc(100dvh - var(--nav-height));
+  z-index: 10;
+  width: var(--gutter-width);
+  left: var(--nav-padding);
+  bottom: 0;
+
+  &__rail {
+    @include center;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    bottom: 0;
+  }
+
+  &__link-list {
+    @include center;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  &__link-list-item {
+    @include transition;
+    @include hover-wrapper {
+      &:hover {
+        transform: translateY(-0.25rem);
+
+        .info-rails__link {
+          color: var(--ui-accent-1);
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include transition;
+    @include cursor-copy;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 1.5rem;
+
+    &::after {
+      display: none;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        color: var(--ui-accent-1);
+      }
+    }
+
+    &.text-link {
+      display: inline-block;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      line-height: 1.5;
+      font-size: 1em;
+      margin-inline-end: 1em;
+
+      @include sm {
+        position: absolute;
+        left: 1.5em;
+        bottom: 9rem;
+      }
+    }
+  }
+
+  &__accent-line {
+    height: var(--accent-line-length);
+    width: 2px;
+    bottom: 0;
+    background-color: var(--ui-accent-1);
+  }
+}
+
+@include mq(1050px) {
+  .info-rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.25rem;
+    width: var(--gutter-width);
+    left: 0;
+    border-right: 2px solid var(--ui-accent-1);
+    padding-bottom: 1em;
+
+    &__accent-line {
+      display: none;
+    }
+
+    &__link {
+      font-size: 1.25rem;
+
+      &.text-link {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

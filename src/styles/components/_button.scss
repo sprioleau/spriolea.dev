@@ -1,0 +1,106 @@
+button,
+.button {
+  @include center;
+  @include ff-ss;
+  @include transition(all, 0.2s);
+  position: relative;
+  color: var(--ui-accent-1);
+  border: none;
+  appearance: none;
+  box-shadow: 0 5px 10px -5px rgba(var(--ui-accent-1-rgb), 0.3);
+  margin: 0.5rem 0;
+  transform: scale(1);
+  border: 1px solid var(--ui-accent-1);
+  background-color: transparent;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  z-index: 1;
+
+  &:not(.clap) {
+    padding: 1.25rem 2rem;
+    @include styled-border;
+
+    &::after {
+      @include transition;
+    }
+
+    @include hover-wrapper {
+      &:hover {
+        @include cursor-pointer;
+        color: var(--ui-text-hover);
+        background-color: rgba(var(--ui-accent-1-rgb), 0.2);
+        transform: translate(-0.25rem, -0.25rem);
+      }
+    }
+
+    &:active {
+      transform: translate(0.5rem, 0.5rem);
+    }
+
+    @include hover-wrapper {
+      &:hover::after {
+        transform: translate(0.75rem, 0.75rem);
+      }
+    }
+
+    &:active::after {
+      transform: translate(0, 0);
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.15rem rgba(var(--ui-accent-1-rgb), 0.8);
+    }
+  }
+
+  &.sm {
+    padding: 0.5rem 1.5rem;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+  }
+
+  &.no-frame {
+    @include center;
+    border: 0;
+    margin: 0;
+    padding: 1rem;
+    box-shadow: none;
+
+    &::after {
+      display: none;
+    }
+
+    @include hover-wrapper {
+      &:hover,
+      &:active {
+        transform: none;
+        background-color: transparent;
+        color: var(--ui-accent-1);
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.15rem rgba(var(--ui-accent-1-rgb), 0.8);
+    }
+  }
+}
+
+@include md {
+  button,
+  .button {
+    &:not(.clap) {
+      padding: 1rem 1.5rem;
+    }
+  }
+}
