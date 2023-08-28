@@ -14,13 +14,9 @@ type Props = {
   setClientClapCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const MAX_CLAP_COUNT = 15;
+const MAX_CLAP_COUNT = 5;
 
-const ClapButton = ({
-  serverClapCount,
-  clientClapCount,
-  setClientClapCount,
-}: Props) => {
+const ClapButton = ({ serverClapCount, clientClapCount, setClientClapCount }: Props) => {
   const [scope, animate] = useAnimate();
   const [hasSeenToast, setHasSeenToast] = useState(false);
 
@@ -31,9 +27,7 @@ const ClapButton = ({
   function decrementClaps() {
     const newClapCount = clientClapCount - 1;
     const countAnimationProps = getCountAnimationProps();
-    const fillAnimationProps = getFillAnimationProps(
-      newClapCount / MAX_CLAP_COUNT
-    );
+    const fillAnimationProps = getFillAnimationProps(newClapCount / MAX_CLAP_COUNT);
 
     animate([...fillAnimationProps, ...countAnimationProps]);
 
@@ -43,17 +37,14 @@ const ClapButton = ({
 
   function incrementClaps() {
     const newClapCount = clientClapCount + 1;
-    const countAnimationProps = getCountAnimationProps();
-    const fillAnimationProps = getFillAnimationProps(
-      newClapCount / MAX_CLAP_COUNT
-    );
 
-    if (newClapCount >= MAX_CLAP_COUNT) {
-      if (hasSeenToast) return;
+    if (newClapCount === MAX_CLAP_COUNT && !hasSeenToast) {
       toastMessage("Thanks for the claps!");
       setHasSeenToast(true);
-      return;
     }
+
+    const countAnimationProps = getCountAnimationProps();
+    const fillAnimationProps = getFillAnimationProps(newClapCount / MAX_CLAP_COUNT);
 
     animate([...fillAnimationProps, ...countAnimationProps]);
 
