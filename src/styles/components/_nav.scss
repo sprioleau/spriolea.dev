@@ -162,7 +162,8 @@
 
     &__logo {
       position: absolute;
-      left: calc(-1 * var(--gutter-width));
+      top: 2px;
+      left: calc(-1 * (var(--gutter-width) + 2px));
     }
 
     &__logo a {
