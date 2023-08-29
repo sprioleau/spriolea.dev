@@ -1,0 +1,102 @@
+@import "../../styles/utils/mixins.scss";
+
+.carousel {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1rem 7.5em;
+  position: relative;
+}
+
+.slides-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  overflow-x: auto;
+
+  button {
+    --button-offset: 4em;
+    position: absolute;
+    top: 13em;
+    padding: 1em;
+    left: var(--button-offset);
+
+    &:last-child {
+      left: unset;
+      right: var(--button-offset);
+    }
+  }
+}
+
+.slides {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.slide {
+  flex-shrink: 0;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  max-width: 100%;
+}
+
+.navigation-item {
+  --opacity: 0.25;
+  position: relative;
+  height: 2rem;
+  width: 1rem;
+
+  &:not(.clap),
+  &:not(.clap):not(:last-child) {
+    margin: 0;
+    padding: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    height: 2px;
+    background-color: var(--ui-accent-1);
+    opacity: var(--opacity);
+    transition: 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    transition-property: width height;
+  }
+
+  &:global(.active) {
+    --opacity: 1;
+    width: 2.5em;
+  }
+}
+
+@include mq(700px) {
+  .slides-buttons-wrapper {
+    padding: 0;
+
+    button {
+      display: none;
+    }
+  }
+
+  .slides {
+    width: calc(100vw - var(--gutter-width) - 2 * var(--section-x-padding));
+    gap: var(--section-x-padding);
+  }
+
+  .slide {
+    // Tty "building in" the margin into the slide
+    // margin-left: calc(-0.5 * var(--s ection-x-padding));
+    width: 100%;
+  }
+}

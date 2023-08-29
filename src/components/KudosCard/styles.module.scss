@@ -1,0 +1,64 @@
+@import "../../styles/utils/mixins";
+
+.kudo {
+  --rotation: 0;
+  flex: 0 1 45ch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+  max-width: 45ch;
+  margin-inline: auto;
+  padding: clamp(1rem, 0.8rem + 4vw, 4rem);
+  background-color: rgba(var(--ui-accent-1-rgb), 0.05);
+  color: rgba(var(--ui-text-hover-rgb), 0.9);
+  overflow: hidden;
+  transform: rotate(var(--rotation));
+  user-select: none;
+
+  @include hover-wrapper {
+    &:hover .quote {
+      color: rgba(var(--ui-text-hover-rgb), 1);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    border: 0.1rem solid var(--ui-accent-1);
+  }
+
+  :global(p) {
+    margin: 0;
+  }
+}
+
+.quote {
+  @include transition;
+  color: var(--ui-text);
+  font-size: 0.95rem;
+  font-family: var(--font-ss);
+  line-height: 1.8;
+}
+
+.credit,
+.project-name {
+  font-size: 0.8em;
+  font-family: var(--font-mono);
+  color: rgba(var(--ui-accent-1-rgb), 0.8);
+}
+
+.project-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: rgba(var(--ui-accent-1-rgb), 0.8);
+}
+
+@include mq(900px) {
+  .kudo {
+    align-items: flex-start;
+    padding: 2.5rem;
+  }
+}
