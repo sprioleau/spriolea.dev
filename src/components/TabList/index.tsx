@@ -6,7 +6,6 @@ import useWindowSize, { breakpoints as bp } from "../../hooks/useWindowSize";
 
 import { Experience } from "@/schemas/types";
 import PortableTextBlock from "../PortableTextBlock";
-import { Stagger } from "../AnimationLibrary";
 import TabLabel from "./components/TabLabel";
 import icons from "../Icons";
 
@@ -17,12 +16,7 @@ type Props = {
   shouldHide: boolean;
 };
 
-const TabList = ({
-  experience,
-  showSublabel,
-  expandByDefault,
-  shouldHide,
-}: Props) => {
+const TabList = ({ experience, showSublabel, expandByDefault, shouldHide }: Props) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
   const [indicatorHeight, setIndicatorHeight] = useState(0);
   const [expanded, setExpanded] = useState(expandByDefault);
@@ -37,15 +31,11 @@ const TabList = ({
 
   const handleSelect = (index: number) => setCurrentTabIndex(index);
 
-  const handleUpdateCurrentTab = useCallback(
-    (index: number) => handleSelect(index),
-    []
-  );
+  const handleUpdateCurrentTab = useCallback((index: number) => handleSelect(index), []);
 
   if (!experience) return null;
 
-  const { jobTitle, fromDate, toDate, currentlyInRole, employer } =
-    experience[currentTabIndex];
+  const { jobTitle, fromDate, toDate, currentlyInRole, employer } = experience[currentTabIndex];
 
   const formattedDates = formatJobDates(fromDate, toDate, currentlyInRole);
 
@@ -91,8 +81,7 @@ const TabList = ({
       >
         {!expandByDefault ? (
           <span className="tab-list__expand-collapse">
-            {!expanded ? "Expand" : "Collapse"}{" "}
-            <span className="tab-list__icon">{icons.arrowDown}</span>
+            {!expanded ? "Expand" : "Collapse"} <span className="tab-list__icon">{icons.arrowDown}</span>
           </span>
         ) : null}
       </header>
@@ -117,9 +106,7 @@ const TabList = ({
           <div
             className="tab-list__tabs-indicator"
             style={{
-              transform: isSmallScreen
-                ? "none"
-                : `translateY(${indicatorHeight * currentTabIndex}px)`,
+              transform: isSmallScreen ? "none" : `translateY(${indicatorHeight * currentTabIndex}px)`,
               height: indicatorHeight,
             }}
           />
@@ -128,33 +115,25 @@ const TabList = ({
           <header className="tab-list__header">
             <h4 className="tab-list__header-title">
               <span className="tab-list__role">{jobTitle}</span>{" "}
-              <span className="tab-list__employer">
-                @ {renderEmployerName(employer)}
-              </span>
+              <span className="tab-list__employer">@ {renderEmployerName(employer)}</span>
             </h4>
             <p className="tab-list__dates">{formattedDates}</p>
           </header>
-          <Stagger
-            parent={{ tag: "ul", className: "tab-list__work-list" }}
-            child={{ tag: "li", className: "tab-list__work-list-item" }}
-            staggerBy={0.5}
-            staggerDelay={1}
-            delayWithIndex
-          >
-            {experience[currentTabIndex].workHighlights.map(
-              ({ _key, children, markDefs }) => (
-                <p
-                  key={_key}
-                  data-key={_key}
-                >
+          <ul className="tab-list__work-list">
+            {experience[currentTabIndex].workHighlights.map(({ _key, children, markDefs }) => (
+              <li
+                key={_key}
+                className="tab-list__work-list-item"
+              >
+                <p key={_key}>
                   <PortableTextBlock
                     childrenContent={children}
                     markDefs={markDefs}
                   />
                 </p>
-              )
-            )}
-          </Stagger>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
