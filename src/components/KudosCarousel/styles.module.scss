@@ -31,12 +31,6 @@
   }
 }
 
-.slides {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
-
 .slide {
   flex-shrink: 0;
 }
@@ -53,11 +47,22 @@
   position: relative;
   height: 2rem;
   width: 1rem;
+  transition: 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  transition-property: width;
 
   &:not(.clap),
   &:not(.clap):not(:last-child) {
     margin: 0;
     padding: 0;
+  }
+
+  &:global(.no-frame):focus {
+    background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+    box-shadow: 0 0 0 2px rgba(var(--ui-accent-1-rgb), 0.8);
+  }
+
+  &:not(.clap):active {
+    transform: none;
   }
 
   &::before {
@@ -66,37 +71,30 @@
     top: 50%;
     left: 0;
     width: 100%;
-    transform: translateY(-50%);
     height: 2px;
+    transform: translateY(-50%);
     background-color: var(--ui-accent-1);
     opacity: var(--opacity);
     transition: 0.3s cubic-bezier(0.32, 0.72, 0, 1);
-    transition-property: width height;
+    transition-property: height;
   }
 
   &:global(.active) {
     --opacity: 1;
     width: 2.5em;
+
+    &::before {
+      height: 0.325em;
+    }
   }
 }
 
-@include mq(700px) {
+@include mq(900px) {
   .slides-buttons-wrapper {
     padding: 0;
 
     button {
       display: none;
     }
-  }
-
-  .slides {
-    width: calc(100vw - var(--gutter-width) - 2 * var(--section-x-padding));
-    gap: var(--section-x-padding);
-  }
-
-  .slide {
-    // Tty "building in" the margin into the slide
-    // margin-left: calc(-0.5 * var(--s ection-x-padding));
-    width: 100%;
   }
 }
