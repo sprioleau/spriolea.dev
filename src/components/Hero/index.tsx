@@ -1,8 +1,4 @@
-import {
-  AdvanceToNextSectionButton,
-  CallToActionButton,
-  PortableTextBlock,
-} from "@/components";
+import { AdvanceToNextSectionButton, CallToActionButton, PortableTextBlock } from "@/components";
 import { client, queries } from "@/libs/sanity";
 
 import { HeroData } from "@/schemas/types";
@@ -24,7 +20,6 @@ export default async function Hero() {
             </h1>
             <span className="hero__phonetic">san-KWON pry-OH-low</span>
           </div>
-
           <h2 className="hero__vocation">{subHeading}</h2>
           <p className="hero__brief">
             <PortableTextBlock

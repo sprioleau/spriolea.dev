@@ -18,9 +18,11 @@
     margin-bottom: 0.25em;
   }
 
-  &__headline-wrapper:hover &__headline,
-  &__headline-wrapper:hover &__phonetic {
-    transform: perspective(2000px) translateY(calc(-1 * var(--h1)));
+  @include hover-wrapper {
+    &__headline-wrapper:hover &__headline,
+    &__headline-wrapper:hover &__phonetic {
+      transform: perspective(2000px) translateY(calc(-1 * var(--h1)));
+    }
   }
 
   &__phonetic {
@@ -77,6 +79,10 @@
     &__phonetic {
       display: none;
     }
+
+    &__headline-wrapper {
+      height: unset;
+    }
   }
 }
 
@@ -84,10 +90,6 @@
   .hero {
     &__view-more {
       display: none;
-    }
-
-    &__headline-wrapper {
-      height: unset;
     }
   }
 }
