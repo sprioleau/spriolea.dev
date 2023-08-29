@@ -45,7 +45,7 @@
     color: var(--ui-text);
     font-size: calc(0.6 * var(--h1));
     margin-bottom: 1.25rem;
-    line-height: 1.1;
+    line-height: 1.3;
   }
 
   &__brief {
@@ -72,6 +72,14 @@
   }
 }
 
+@include md {
+  .hero {
+    &__phonetic {
+      display: none;
+    }
+  }
+}
+
 @include sm {
   .hero {
     &__view-more {
@@ -80,10 +88,6 @@
 
     &__headline-wrapper {
       height: unset;
-    }
-
-    &__phonetic {
-      display: none;
     }
   }
 }

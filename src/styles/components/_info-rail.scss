@@ -92,7 +92,8 @@
     gap: 0.25rem;
     width: var(--gutter-width);
     left: 0;
-    border-right: 2px solid var(--ui-accent-1);
+    box-shadow: 2px 0 0 0 var(--ui-accent-1);
+    background-color: var(--ui-bg);
     padding-bottom: 1em;
 
     &__accent-line {

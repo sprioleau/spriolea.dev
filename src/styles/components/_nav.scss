@@ -151,7 +151,7 @@
   .nav {
     --nav-padding: 2rem;
     --width: 250px;
-    margin-left: var(--gutter-width);
+    margin-left: calc(var(--gutter-width) + 2px);
     padding: 0;
     width: calc(100% - var(--gutter-width));
     justify-content: flex-end;
