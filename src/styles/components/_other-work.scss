@@ -49,6 +49,20 @@
     display: flex;
   }
 
+  &__link {
+    &[data-key^="gitHub"] {
+      order: 1;
+    }
+
+    &[data-key^="vsCode"] {
+      order: 2;
+    }
+
+    &[data-key^="deployed"] {
+      order: 3;
+    }
+  }
+
   &__icon-link {
     display: flex;
     align-items: center;
@@ -65,7 +79,7 @@
         transform: translatey(-3px);
       }
     }
-    
+
     &:not(:last-child) {
       margin-right: 0.5rem;
     }

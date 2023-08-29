@@ -10,17 +10,10 @@ type Props = {
   project: Project;
   smallerThanSmall: boolean;
   smallerThanMedium: boolean;
-  setCurrentImage: React.Dispatch<
-    React.SetStateAction<Project["mainImage"] | undefined>
-  >;
+  setCurrentImage: React.Dispatch<React.SetStateAction<Project["mainImage"] | undefined>>;
 };
 
-export default function ProjectRow({
-  project,
-  smallerThanSmall,
-  smallerThanMedium,
-  setCurrentImage,
-}: Props) {
+export default function ProjectRow({ project, smallerThanSmall, smallerThanMedium, setCurrentImage }: Props) {
   const { yearBuilt, title, builtFor, builtWith, links, mainImage } = project;
 
   const imageWidth = 325;
@@ -44,6 +37,7 @@ export default function ProjectRow({
         <li
           key={key}
           className="other-work__link"
+          data-key={key}
         >
           <a
             aria-label="link"
@@ -74,13 +68,9 @@ export default function ProjectRow({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {!smallerThanSmall && (
-        <td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>
-      )}
+      {!smallerThanSmall && <td className="other-work__year">{formatIsoDate(yearBuilt, "YYYY")}</td>}
       <td>{title}</td>
-      {!smallerThanMedium && (
-        <td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>
-      )}
+      {!smallerThanMedium && <td>{builtFor ? builtFor.name : <span>&mdash;</span>}</td>}
       {!smallerThanSmall && (
         <td>
           {builtWith
