@@ -14,7 +14,7 @@ type Props = {
   setClientClapCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const MAX_CLAP_COUNT = 5;
+const MAX_CLAP_COUNT = 15;
 
 const ClapButton = ({ serverClapCount, clientClapCount, setClientClapCount }: Props) => {
   const [scope, animate] = useAnimate();
