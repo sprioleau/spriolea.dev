@@ -1,11 +1,6 @@
 import "@/styles/styles.scss";
 
-import {
-  InfoRail,
-  Nav,
-  SkipToMainContentLink,
-  StructuredData,
-} from "@/components";
+import { InfoRail, Nav, SkipToMainContentLink, StructuredData } from "@/components";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -13,13 +8,13 @@ import { homepageMetadata } from "@/seo";
 
 export const metadata = homepageMetadata;
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <link
+        rel="manifest"
+        href="/manifest.json"
+      />
       <body>
         <div className="app">
           <SkipToMainContentLink route="/#about" />
