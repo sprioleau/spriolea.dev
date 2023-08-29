@@ -54,7 +54,7 @@
     overflow: hidden;
 
     &.no-frame {
-      box-shadow: 0 0 0 2px rgba(var(--ui-accent-1-rgb), 0.5);
+      box-shadow: 0 0 0 var(--accent-line-width) rgba(var(--ui-accent-1-rgb), 0.5);
 
       &:focus {
         box-shadow: 0 0 0 3px rgba(var(--ui-accent-1-rgb), 1);

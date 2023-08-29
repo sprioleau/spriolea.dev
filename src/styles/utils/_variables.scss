@@ -4,7 +4,6 @@
 
 :root {
   $ui-bg: #16032c;
-  // $ui-bg: #0e021d;
   --ui-bg: #{$ui-bg};
   --ui-bg-rgb: #{get-rgb($ui-bg)};
 
@@ -39,4 +38,5 @@
   --curve: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --p-max-width: 500px;
   --gutter-width: 3.5rem;
+  --accent-line-width: 2px;
 }

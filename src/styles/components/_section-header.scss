@@ -44,7 +44,7 @@
 
   &__accent-line {
     left: 0;
-    height: 2px;
+    height: var(--accent-line-width);
     width: 70%;
     padding-right: 1rem;
     background-color: rgba(var(--ui-accent-1-rgb), 0.8);
@@ -58,7 +58,7 @@
       &__title {
         text-align: center;
         padding: 0 3rem 1rem;
-        border-bottom: 2px solid var(--ui-accent-1);
+        border-bottom: var(--accent-line-width) solid var(--ui-accent-1);
         margin-bottom: 1rem;
       }
 

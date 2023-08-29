@@ -76,7 +76,7 @@
 
   &__accent-line {
     height: var(--accent-line-length);
-    width: 2px;
+    width: var(--accent-line-width);
     bottom: 0;
     background-color: var(--ui-accent-1);
   }
@@ -91,7 +91,7 @@
     gap: 0.25rem;
     width: var(--gutter-width);
     left: 0;
-    box-shadow: 2px 0 0 0 var(--ui-accent-1);
+    box-shadow: var(--accent-line-width) 0 0 0 var(--ui-accent-1);
     background-color: var(--ui-bg);
     padding-bottom: 1em;
 

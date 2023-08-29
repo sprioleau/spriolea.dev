@@ -151,7 +151,7 @@
   .nav {
     --nav-padding: 2rem;
     --width: 250px;
-    margin-left: calc(var(--gutter-width) + 2px);
+    margin-left: calc(var(--gutter-width) + var(--accent-line-width));
     padding: 0;
     width: calc(100% - var(--gutter-width));
     justify-content: flex-end;
@@ -162,8 +162,8 @@
 
     &__logo {
       position: absolute;
-      top: 2px;
-      left: calc(-1 * (var(--gutter-width) + 2px));
+      top: var(--accent-line-width);
+      left: calc(-1 * (var(--gutter-width) + var(--accent-line-width)));
     }
 
     &__logo a {

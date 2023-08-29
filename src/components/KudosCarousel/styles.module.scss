@@ -58,7 +58,7 @@
 
   &:global(.no-frame):focus {
     background-color: rgba(var(--ui-accent-1-rgb), 0.1);
-    box-shadow: 0 0 0 2px rgba(var(--ui-accent-1-rgb), 0.8);
+    box-shadow: 0 0 0 var(--accent-line-width) rgba(var(--ui-accent-1-rgb), 0.8);
   }
 
   &:not(.clap):active {
@@ -71,7 +71,7 @@
     top: 50%;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: var(--accent-line-width);
     transform: translateY(-50%);
     background-color: var(--ui-accent-1);
     opacity: var(--opacity);
