@@ -5,17 +5,16 @@
   align-items: center;
   flex-direction: column;
   gap: 2em;
-  padding: 1rem 7.5em;
   position: relative;
+  width: 100%;
 }
 
 .slides-buttons-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  padding: 1rem 7.5em;
   width: 100%;
-  overflow-x: auto;
 
   button {
     --button-offset: 4em;
@@ -33,6 +32,7 @@
 
 .slide {
   flex-shrink: 0;
+  max-width: 100%;
 }
 
 .navigation {
