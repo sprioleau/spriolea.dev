@@ -48,8 +48,8 @@ export default function Spotlight() {
           ? useMotionTemplate`none`
           : useMotionTemplate`
             radial-gradient(
-              400px circle at ${mouseX}px ${mouseY}px,
-              rgba(255, 196, 0, 0.2),
+              300px circle at ${mouseX}px ${mouseY}px,
+              rgba(255, 196, 0, 0.25),
               transparent 80%
             )
           `,
