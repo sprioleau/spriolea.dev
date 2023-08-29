@@ -1,6 +1,6 @@
 import { ExperienceSlider, ProjectKudos } from "@/components";
 
-export default function Experience() {
+export default async function Experience() {
   return (
     <>
       <ExperienceSlider />
