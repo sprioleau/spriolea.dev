@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
+module.exports = {
   reactStrictMode: false,
+  output: "export", // enable static export
   experimental: {
     serverActions: true,
   },
@@ -13,5 +14,3 @@ const nextConfig = {
     domains: ["cdn.sanity.io"],
   },
 };
-
-module.exports = nextConfig;
