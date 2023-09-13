@@ -2,7 +2,6 @@
 
 module.exports = {
   reactStrictMode: false,
-  output: "export", // enable static export
   experimental: {
     serverActions: true,
   },
