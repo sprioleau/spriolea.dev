@@ -3,7 +3,6 @@
 import { animate as animateImport, motion, useAnimate } from "framer-motion";
 import { composeClasses, toastMessage } from "@/utils";
 
-import { persistClaps } from "@/actions";
 import { useDebouncedCallback } from "use-debounce";
 import { useState } from "react";
 import Clap from "../Icons/Clap";
@@ -20,8 +19,14 @@ const ClapButton = ({ serverClapCount, clientClapCount, setClientClapCount }: Pr
   const [scope, animate] = useAnimate();
   const [hasSeenToast, setHasSeenToast] = useState(false);
 
-  const debouncedHandleClaps = useDebouncedCallback(() => {
-    persistClaps({ newClapsTotal: serverClapCount + clientClapCount });
+  const debouncedHandleClaps = useDebouncedCallback(async () => {
+    await fetch("/claps", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ newClapsTotal: serverClapCount + clientClapCount }),
+    });
   }, 1500);
 
   function decrementClaps() {
