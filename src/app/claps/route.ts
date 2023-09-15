@@ -1,14 +1,7 @@
 import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const headers = new Headers();
-
-  headers.append("Authorization", `Bearer ${process.env.VERCEL_API_TOKEN}`);
-  headers.append("Content-Type", "application/json");
-
-  const requestBody = await request.json();
-  const newClapsTotal = requestBody?.newClapsTotal;
-  console.log("🚀 ~ file: route.ts:12 ~ POST ~ newClapsTotal:", newClapsTotal);
+  const { newClapsTotal } = await request.json();
 
   if (!newClapsTotal) {
     return new Response(JSON.stringify({ data: null, error: "Invalid request" }), {
@@ -18,7 +11,10 @@ export async function POST(request: NextRequest) {
 
   const requestOptions = {
     method: "PATCH",
-    headers: headers,
+    headers: {
+      Authorization: `Bearer ${process.env.VERCEL_API_TOKEN}`,
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       items: [
         {
