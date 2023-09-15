@@ -41,6 +41,14 @@ export const homepageMetadata: Metadata = {
   applicationName: "sprioleau.dev",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
+  icons: {
+    icon: "/favicon.png",
+  },
+  viewport: {
+    initialScale: 1,
+    width: "device-width",
+  },
+  manifest: "/manifest.json",
   keywords,
   authors: [{ name: fullName, url: baseUrl }],
   colorScheme: "dark",
