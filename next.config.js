@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+module.exports = withBundleAnalyzer({
   reactStrictMode: false,
   i18n: {
     locales: ["en-US"],
@@ -9,4 +12,4 @@ module.exports = {
   images: {
     domains: ["cdn.sanity.io"],
   },
-};
+});
