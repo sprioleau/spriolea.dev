@@ -11,10 +11,6 @@ export const metadata = homepageMetadata;
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <link
-        rel="manifest"
-        href="/manifest.json"
-      />
       <body>
         <div className="app">
           <SkipToMainContentLink route="/#about" />
@@ -22,12 +18,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <InfoRail />
           <main className="main">{children}</main>
         </div>
-        <section>
-          <StructuredData data={logoSchema} />
-          <StructuredData data={websiteSchema} />
-          <StructuredData data={breadCrumbSchema} />
-        </section>
         <Analytics />
+        <StructuredData structuredData={[logoSchema, websiteSchema, breadCrumbSchema]} />
       </body>
     </html>
   );

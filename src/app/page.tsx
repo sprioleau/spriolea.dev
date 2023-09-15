@@ -1,16 +1,4 @@
-import {
-  About,
-  Contact,
-  Experience,
-  Footer,
-  Hero,
-  PageSectionLayout,
-  Skills,
-  Spotlight,
-  Work,
-} from "@/components";
-
-import { DefaultMetaTags } from "@/meta";
+import { About, Contact, Experience, Footer, Hero, PageSectionLayout, Skills, Spotlight, Work } from "@/components";
 import ToastContainer from "@/components/ToastContainer";
 
 type PageSection = {
@@ -47,10 +35,9 @@ const pageSections: PageSection[] = [
   },
 ];
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
-      <DefaultMetaTags />
       <ToastContainer />
       <Hero />
       {pageSections.map(({ id, title, component: Component }) => (
