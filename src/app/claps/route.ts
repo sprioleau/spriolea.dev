@@ -33,7 +33,6 @@ export async function POST(request: NextRequest) {
       requestOptions
     ).then((response) => response.json());
 
-    console.log("🚀 ~ file: route.ts:37 ~ POST ~ data:", data);
     return new Response(JSON.stringify({ data, error: null }), {
       status: 200,
     });

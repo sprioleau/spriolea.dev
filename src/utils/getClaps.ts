@@ -9,11 +9,10 @@ export default async function getClaps() {
   let data = null,
     error = null;
 
-  const requestOptions = { next: { revalidate: 0 } };
-  // const requestOptions = {};
-
   try {
-    const response = await fetch(url, requestOptions);
+    const response = await fetch(url, {
+      next: { revalidate: 60 },
+    });
     data = (await response.json()) as number;
   } catch (caughtError) {
     error = caughtError as Error;
