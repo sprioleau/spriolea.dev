@@ -17,9 +17,7 @@ type Props = {
 const FooterContent = ({ content, contributions, serverClapCount }: Props) => {
   const [clientClapCount, setClientClapCount] = useState(0);
 
-  const shouldDisplayStats = Object.values({ contributions }).some(
-    (stat) => stat > 0
-  );
+  const shouldDisplayStats = Object.values({ contributions }).some((stat) => stat > 0);
 
   const statsData = [
     {
@@ -63,8 +61,7 @@ const FooterContent = ({ content, contributions, serverClapCount }: Props) => {
                 data-tooltip={key}
               >
                 <p className="footer__stat-wrapper">
-                  <span>{formatNumber(value)}</span>{" "}
-                  <span className="icon">{icon}</span>
+                  <span>{formatNumber(value)}</span> <span className="icon">{icon}</span>
                 </p>
               </li>
             ) : null
