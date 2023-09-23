@@ -47,9 +47,7 @@ const SkillsList = ({ skills }: Props) => {
                   className={skillsListItemClasses}
                   data-tooltip={fullName}
                 >
-                  {iconKey && (
-                    <div className="skills__icon">{icons[iconKey]}</div>
-                  )}
+                  {icons[iconKey] && <div className="skills__icon">{icons[iconKey]}</div>}
                   <p className="skills__label">{techName}</p>
                 </li>
               ))}
