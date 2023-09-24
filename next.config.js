@@ -5,6 +5,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 module.exports = withBundleAnalyzer({
   reactStrictMode: false,
+  experimental: {
+    optimizePackageImports: ["react-icons"],
+  },
   i18n: {
     locales: ["en-US"],
     defaultLocale: "en-US",
