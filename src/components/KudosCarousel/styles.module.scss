@@ -56,9 +56,10 @@
     padding: 0;
   }
 
-  &:global(.no-frame):focus {
-    background-color: rgba(var(--ui-accent-1-rgb), 0.1);
-    box-shadow: 0 0 0 var(--accent-line-width) rgba(var(--ui-accent-1-rgb), 0.8);
+  &:global(.no-frame) {
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   &:not(.clap):active {

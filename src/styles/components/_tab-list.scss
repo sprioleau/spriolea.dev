@@ -83,11 +83,13 @@
     padding: 1rem 1.5rem;
     font-size: 0.9em;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 1em;
 
     &.active {
       color: var(--ui-text-hover);
       background-color: rgba(var(--ui-text-hover-rgb), 0.05);
-      padding-left: 2rem;
       position: relative;
 
       .tab-list__label-title {
@@ -103,6 +105,10 @@
         padding-left: 2rem;
       }
     }
+  }
+
+  &__employer-logo {
+    filter: invert(0.9);
   }
 
   &__sublabel {

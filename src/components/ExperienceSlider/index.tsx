@@ -6,13 +6,10 @@ import TabList from "../TabList";
 export default async function ExperienceSlider() {
   const experience = await client.fetch<Experience[]>(queries.experience);
 
-  const type = "Web Development";
-
   return (
     <TabList
-      key={type}
       experience={experience}
-      showSublabel={false}
+      showSublabel
       expandByDefault={true}
       shouldHide={false}
     />

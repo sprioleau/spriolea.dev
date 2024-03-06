@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import { composeClasses, formatJobDates, handleKeyDown } from "../../../../utils";
 
 import { Experience } from "@/schemas/types";
+import Image from "next/image";
+import { urlFor } from "@/libs/sanity";
 
 type Props = {
   labelData: Experience;
@@ -18,7 +20,7 @@ type Props = {
 };
 
 export default function TabLabel({
-  labelData: { _id, label, fromDate, toDate, currentlyInRole },
+  labelData: { _id, label, fromDate, toDate, currentlyInRole, employer },
   index,
   currentTabIndex,
   showSublabel = true,
@@ -70,8 +72,17 @@ export default function TabLabel({
       tabIndex={0}
       ref={tabLabelRef}
     >
-      <h4 className="tab-list__label-title">{label}</h4>
-      <span className="tab-list__sublabel">{getLabelContents()}</span>
+      <Image
+        src={urlFor(employer.logo).format("png").quality(100).width(24).height(24).fit("scale").auto("format").url()}
+        alt={`${employer.name} logo`}
+        width={24}
+        height={24}
+        className="tab-list__employer-logo"
+      />
+      <div>
+        <h4 className="tab-list__label-title">{label}</h4>
+        <span className="tab-list__sublabel">{getLabelContents()}</span>
+      </div>
     </li>
   );
 }
