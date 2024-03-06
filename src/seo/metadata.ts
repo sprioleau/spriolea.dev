@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const fullName = "San'Quan Prioleau";
 const title = `${fullName} - Frontend Engineer`;
@@ -35,6 +35,13 @@ const baseOgConfig = {
 
 const metadataBase = new URL(baseUrl);
 
+export const homepageViewport: Viewport = {
+  initialScale: 1,
+  width: "device-width",
+  themeColor: "#16032c",
+  colorScheme: "dark",
+};
+
 export const homepageMetadata: Metadata = {
   title,
   description,
@@ -44,14 +51,9 @@ export const homepageMetadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
-  viewport: {
-    initialScale: 1,
-    width: "device-width",
-  },
   manifest: "/manifest.json",
   keywords,
   authors: [{ name: fullName, url: baseUrl }],
-  colorScheme: "dark",
   creator: fullName,
   formatDetection: {
     email: false,

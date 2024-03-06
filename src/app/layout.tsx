@@ -4,9 +4,10 @@ import { InfoRail, Nav, SkipToMainContentLink, StructuredData } from "@/componen
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 
 import { Analytics } from "@vercel/analytics/react";
-import { homepageMetadata } from "@/seo";
+import { homepageMetadata, homepageViewport } from "@/seo";
 
 export const metadata = homepageMetadata;
+export const viewport = homepageViewport;
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
