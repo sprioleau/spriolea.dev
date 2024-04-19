@@ -3,22 +3,31 @@
   font-display: swap;
   font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   // prettier-ignore
   src: url("/fonts/inter-latin-regular.woff2") format("woff2"),
        url("/fonts/inter-latin-regular.woff") format("woff");
 }
 
-/* quattrocento-700 - latin */
+/* quando-400 - latin */
 @font-face {
   font-display: swap;
-  font-family: "Quattrocento";
+  font-family: "Quando";
   font-style: normal;
-  font-weight: 700;
-  // prettier-ignore
-  src: url("/fonts/quattrocento-latin-700.woff2") format("woff2"),
-       url("/fonts/quattrocento-latin-700.woff") format("woff");
+  font-weight: var(--font-weight-regular);
+  src: url("/fonts/quando-latin-regular.woff2") format("woff2");
 }
+
+// /* quattrocento-700 - latin */
+// @font-face {
+//   font-display: swap;
+//   font-family: "Quattrocento";
+//   font-style: normal;
+//   font-weight: 700;
+//   // prettier-ignore
+//   src: url("/fonts/quattrocento-latin-700.woff2") format("woff2"),
+//        url("/fonts/quattrocento-latin-700.woff") format("woff");
+// }
 
 /* ibm-plex-mono-300 - latin */
 @font-face {
@@ -36,7 +45,7 @@
   font-display: swap;
   font-family: "IBM Plex Mono";
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   // prettier-ignore
   src: url('/fonts/ibm-plex-mono-v19-latin-regular.woff2') format('woff2'),
        url('/fonts/ibm-plex-mono-v19-latin-regular.woff') format('woff');
@@ -44,8 +53,9 @@
 
 :root {
   --font-ss: Inter, sans-serif;
-  --font-body: Quattrocento, serif;
+  --font-body: Quando, serif;
   --font-mono: IBMPlexMono, monospace;
   --font-weight-light: 300;
+  --font-weight-regular: 400;
   --font-weight-bold: 700;
 }

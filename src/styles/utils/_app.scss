@@ -46,14 +46,15 @@ html {
   scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3 {
-  @include ff-body-bold;
-}
+// h1,
+// h2,
+// h3 {
+//   @include ff-body-bold;
+// }
 
 h1,
 .h1 {
+  font-weight: var(--font-weight-regular);
   font-size: var(--h1);
   color: var(--ui-text-hover);
 }

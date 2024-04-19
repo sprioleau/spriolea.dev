@@ -7,8 +7,7 @@ export default {
       name: "techName",
       title: "Tech Name",
       type: "string",
-      description:
-        "Shortened version of technology name used in the tech industry, such as NPM",
+      description: "Shortened version of technology name used in the tech industry, such as NPM",
     },
     {
       name: "fullName",
@@ -44,6 +43,10 @@ export default {
           {
             title: "Core Concepts",
             value: "Core Concepts",
+          },
+          {
+            title: "Languages",
+            value: "Languages",
           },
         ],
         layout: "grid",

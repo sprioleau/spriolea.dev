@@ -80,7 +80,7 @@
 
   &__label {
     @include transition;
-    padding: 1rem 1.5rem;
+    padding: 1.25em 1.25em;
     font-size: 0.9em;
     white-space: nowrap;
     display: flex;
@@ -154,6 +154,8 @@
   &__role {
     color: var(--ui-text-hover);
     margin-right: 0.5em;
+    font-weight: var(--font-weight-regular);
+    font-size: 1.25em;
   }
 
   &__employer {

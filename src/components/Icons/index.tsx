@@ -1,33 +1,43 @@
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { CgSoftwareDownload } from "react-icons/cg";
-import { HiOutlineCode, HiOutlineArrowNarrowRight, HiOutlinePresentationChartLine } from "react-icons/hi";
-import { FiGithub, FiExternalLink, FiGitCommit, FiArrowDown, FiArrowLeft, FiArrowRight, } from "react-icons/fi";
 import { FaFigma, FaLinkedinIn, FaNodeJs, FaReact, FaSass, } from "react-icons/fa";
+import { FiArrowDown, FiArrowLeft, FiArrowRight, FiExternalLink, FiGitCommit, FiGithub, } from "react-icons/fi";
+import { HiOutlineArrowNarrowRight, HiOutlineCode, HiOutlinePresentationChartLine } from "react-icons/hi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
-import {SiExpress, SiGraphql, SiHasura, SiJavascript, SiNextdotjs, SiTypescript} from "react-icons/si"
+import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
+import { SiAmazonaws, SiAntdesign, SiAwslambda, SiCircleci, SiCypress, SiExpress, SiGraphql, SiHasura, SiJavascript, SiJest, SiNextdotjs, SiRedux, SiTypescript } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
-import Clap from "./Clap";
 import AdobeIllustrator from "./AdobeIllustrator";
 import AdobePhotoshop from "./AdobePhotoshop";
+import Clap from "./Clap";
+import ReactTestingLibrary from "./ReactTestingLibrary";
 
 const icons = { 
+  "ant-design": <SiAntdesign />,
   arrowDown: <FiArrowDown />,
   arrowLeft: <FiArrowLeft />,
   arrowRight: <FiArrowRight />,
   arrowRightNarrow: <HiOutlineArrowNarrowRight />,
+  "aws-lambda": <SiAwslambda />,
   chart: <HiOutlinePresentationChartLine />,
+  "circle-ci": <SiCircleci />,
   clap: <Clap />,
   close: <RiCloseLine />,
   code: <HiOutlineCode />,
   commit: <FiGitCommit />, 
+  "cypress": <SiCypress />,
   download: <CgSoftwareDownload />,
   email: <MdOutlineMarkEmailRead />,
   express: <SiExpress />,
   externalLink: <FiExternalLink />,
   figma: <FaFigma />,
+  "framer-motion": <TbBrandFramerMotion />,
   gitHub: <FiGithub />,
   graphql: <SiGraphql />,
   hasura: <SiHasura />,
+  "jest": <SiJest />,
+  "react-testing-library": <ReactTestingLibrary />,
+  aws: <SiAmazonaws />,
   illustrator: <AdobeIllustrator />,
   javascript: <SiJavascript />,
   linkedIn: <FaLinkedinIn />,
@@ -36,6 +46,7 @@ const icons = {
   node: <FaNodeJs />,
   photoshop: <AdobePhotoshop />,
   react: <FaReact />,
+  redux: <SiRedux />,
   sass: <FaSass />,
   typescript: <SiTypescript />,
 } as const;
