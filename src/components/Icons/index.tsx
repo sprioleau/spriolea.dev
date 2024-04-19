@@ -1,5 +1,5 @@
 import { CgSoftwareDownload } from "react-icons/cg";
-import { FaFigma, FaLinkedinIn, FaNodeJs, FaReact, FaSass, } from "react-icons/fa";
+import { FaFigma, FaLinkedinIn, FaNodeJs, FaReact, FaSass, FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { FiArrowDown, FiArrowLeft, FiArrowRight, FiExternalLink, FiGitCommit, FiGithub, } from "react-icons/fi";
 import { HiOutlineArrowNarrowRight, HiOutlineCode, HiOutlinePresentationChartLine } from "react-icons/hi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
@@ -25,6 +25,7 @@ const icons = {
   close: <RiCloseLine />,
   code: <HiOutlineCode />,
   commit: <FiGitCommit />, 
+  css: <FaCss3Alt />, 
   "cypress": <SiCypress />,
   download: <CgSoftwareDownload />,
   email: <MdOutlineMarkEmailRead />,
@@ -35,6 +36,7 @@ const icons = {
   gitHub: <FiGithub />,
   graphql: <SiGraphql />,
   hasura: <SiHasura />,
+  html: <FaHtml5 />,
   "jest": <SiJest />,
   "react-testing-library": <ReactTestingLibrary />,
   aws: <SiAmazonaws />,
