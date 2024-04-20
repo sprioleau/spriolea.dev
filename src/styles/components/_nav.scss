@@ -1,6 +1,10 @@
 .nav {
   @include ff-mono;
-  @include bg-obscure;
+  background-image: linear-gradient(
+    180deg,
+    rgba(var(--ui-bg-light-rgb), 1) 0%,
+    rgba(var(--ui-bg-light-rgb), 0.05) 100%
+  );
   display: flex;
   justify-content: space-between;
   position: fixed;
