@@ -40,17 +40,12 @@ body {
   color: var(--ui-text);
   counter-reset: nav-link section;
   position: relative;
+  touch-action: pan-y;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
-// h1,
-// h2,
-// h3 {
-//   @include ff-body-bold;
-// }
 
 h1,
 .h1 {

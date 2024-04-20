@@ -65,6 +65,7 @@
       line-height: 1.5;
       font-size: 1em;
       margin-inline-end: 0.5em;
+      letter-spacing: 0.125em;
 
       @include sm {
         position: absolute;
@@ -92,7 +93,6 @@
     width: var(--gutter-width);
     left: 0;
     box-shadow: var(--accent-line-width) 0 0 0 var(--ui-accent-1);
-    background-color: var(--ui-bg-light);
     padding-bottom: 1em;
 
     &__accent-line {
