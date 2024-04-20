@@ -19,6 +19,7 @@
   &__list-item {
     @include ff-mono;
     @include transition;
+    transition-duration: 0.2s;
     display: flex;
     flex: 0 0 max-content;
     margin: 0;
@@ -31,7 +32,7 @@
     @include hover-wrapper {
       &:hover {
         transform: translateY(-3px);
-        background-color: rgba(var(--ui-accent-1-rgb), 0.1);
+        background-color: rgba(var(--ui-bg-rgb), 0.8);
 
         .skills__label {
           color: var(--ui-text-hover);

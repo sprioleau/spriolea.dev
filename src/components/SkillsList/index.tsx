@@ -18,7 +18,7 @@ const SkillsList = ({ skills }: Props) => {
 
   const skillsListObject = skills
     .map((skill) => ({ ...skill, category: skill.category[0] }))
-    .sort((a, b) => (b.category > a.category ? 1 : -1))
+    .sort((a, b) => (b.category > a.category ? -1 : 1))
     .reduce((acc, skill) => {
       if (!acc[skill.category]) {
         acc[skill.category] = [skill];
