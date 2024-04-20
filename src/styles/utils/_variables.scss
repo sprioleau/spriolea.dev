@@ -4,8 +4,11 @@
 
 :root {
   $ui-bg: #16032c;
+  $ui-bg-light: rgb(36, 4, 69);
   --ui-bg: #{$ui-bg};
   --ui-bg-rgb: #{get-rgb($ui-bg)};
+  --ui-bg-light: #{$ui-bg-light};
+  --ui-bg-light-rgb: #{get-rgb($ui-bg-light)};
 
   $ui-bg-hover: lighten(saturate($ui-bg, 10%), 10%);
   --ui-bg-hover: #{$ui-bg-hover};

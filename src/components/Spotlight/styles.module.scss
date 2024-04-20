@@ -9,15 +9,8 @@
   opacity: 0;
   transition: opacity 0.3s;
 
-  :global(body:hover) & {
+  :global(body:has(:hover)) & {
     opacity: 1;
-  }
-
-  &::before {
-    @include bg-obscure;
-    content: "";
-    position: absolute;
-    inset: 0;
   }
 
   @include hover-wrapper {
