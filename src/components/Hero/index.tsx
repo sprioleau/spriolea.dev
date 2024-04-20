@@ -18,7 +18,12 @@ export default async function Hero() {
             >
               {heading}
             </h1>
-            <span className="hero__phonetic">san-KWON pry-OH-low</span>
+            <span
+              className="hero__phonetic"
+              aria-hidden
+            >
+              san-KWON pry-OH-low
+            </span>
           </div>
           <h2 className="hero__vocation">{subHeading}</h2>
           <p className="hero__brief">
