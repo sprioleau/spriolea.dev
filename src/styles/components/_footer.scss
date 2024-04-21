@@ -5,6 +5,15 @@
   padding: var(--nav-padding) 5vw;
   width: 100%;
 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    transform: translateX(-50%);
+    border-bottom: var(--accent-line-width) solid var(--ui-accent-1);
+  }
+
   p {
     @include ff-mono;
     font-size: clamp(0.7em, 0.5rem + 1vw, 0.9rem);
