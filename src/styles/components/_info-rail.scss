@@ -27,6 +27,7 @@
   }
 
   &__link-list-item {
+    @include center;
     @include transition;
     @include hover-wrapper {
       &:hover {
