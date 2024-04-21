@@ -7,7 +7,7 @@
   width: 100%;
 
   @include mq(1050px) {
-    padding-left: calc(var(--gutter-width) + var(--accent-line-width));
+    padding-left: calc(var(--gutter-width) + var(--accent-line-width) + var(--inline-padding));
   }
 
   &::after {
