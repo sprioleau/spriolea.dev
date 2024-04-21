@@ -31,7 +31,6 @@ const ProjectTable = ({ projects }: { projects: Project[] }) => {
 
   return (
     <div className="other-work">
-      <h3 className="other-work__section-title">Other Work</h3>
       <table>
         <thead>
           <tr className="other-work__header-row">

@@ -1,8 +1,4 @@
 .other-work {
-  &__section-title {
-    margin-bottom: 1.5rem;
-  }
-
   &__header-row {
     @include hover-wrapper {
       &:hover {
@@ -38,6 +34,8 @@
   &__header-row {
     th {
       white-space: nowrap;
+      font-weight: var(--font-weight-regular);
+      color: var(--ui-text-hover);
     }
   }
 
