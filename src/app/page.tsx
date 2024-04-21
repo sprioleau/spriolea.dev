@@ -1,8 +1,6 @@
 import { About, Contact, Experience, Footer, Hero, PageSectionLayout, Skills, Spotlight, Work } from "@/components";
 import ToastContainer from "@/components/ToastContainer";
 
-import styles from "./page.module.scss";
-
 // prettier-ignore
 const pageSections = [
   { id: "about"     , title: "My Story"       , component: About      },
@@ -15,7 +13,6 @@ const pageSections = [
 export default function HomePage() {
   return (
     <>
-      <div className={styles["page-background"]} />
       <ToastContainer />
       <Hero />
       {pageSections.map(({ id, title, component: Component }) => (

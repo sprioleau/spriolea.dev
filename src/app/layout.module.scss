@@ -1,6 +1,6 @@
 @import "../styles/utils/mixins";
 
-.page-background {
+.layout-background {
   @include bg-obscure;
   background-image: radial-gradient(rgba(var(--ui-bg-light-rgb), 0) 1px, var(--ui-bg-light) 1px);
   position: fixed;

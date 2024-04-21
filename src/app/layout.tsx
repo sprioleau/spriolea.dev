@@ -6,6 +6,8 @@ import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import styles from "./layout.module.scss";
+
 export const metadata = homepageMetadata;
 export const viewport = homepageViewport;
 
@@ -14,6 +16,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <body>
         <div className="app">
+          <div className={styles["layout-background"]} />
           <SkipToMainContentLink route="/#about" />
           <Nav />
           <InfoRail />
