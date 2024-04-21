@@ -1,5 +1,4 @@
-import { About, Contact, Experience, Footer, Hero, PageSectionLayout, Skills, Spotlight, Work } from "@/components";
-import ToastContainer from "@/components/ToastContainer";
+import { About, Contact, Experience, Hero, PageSectionLayout, Skills, Work } from "@/components";
 
 // prettier-ignore
 const pageSections = [
@@ -13,7 +12,6 @@ const pageSections = [
 export default function HomePage() {
   return (
     <>
-      <ToastContainer />
       <Hero />
       {pageSections.map(({ id, title, component: Component }) => (
         <PageSectionLayout
@@ -24,8 +22,6 @@ export default function HomePage() {
           <Component />
         </PageSectionLayout>
       ))}
-      <Spotlight />
-      <Footer />
     </>
   );
 }

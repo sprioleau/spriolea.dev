@@ -1,11 +1,11 @@
-import "@/styles/styles.scss";
-
-import { InfoRail, Nav, SkipToMainContentLink, StructuredData } from "@/components";
+import { Footer, InfoRail, Nav, SkipToMainContentLink, Spotlight, StructuredData } from "@/components";
+import ToastContainer from "@/components/ToastContainer";
 import { homepageMetadata, homepageViewport } from "@/seo";
 import { breadCrumbSchema, logoSchema, websiteSchema } from "@/seo/schemas";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import "@/styles/styles.scss";
 import styles from "./layout.module.scss";
 
 export const metadata = homepageMetadata;
@@ -21,7 +21,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Nav />
           <InfoRail />
           <main className="main">{children}</main>
+          <Footer />
         </div>
+        <ToastContainer />
+        <Spotlight />
         <Analytics />
         <SpeedInsights />
         <StructuredData structuredData={[logoSchema, websiteSchema, breadCrumbSchema]} />

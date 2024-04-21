@@ -1,8 +1,8 @@
-import { BackButton, Footer, ProjectTable } from "@/components";
-
-import styles from "./styles.module.scss";
+import { BackButton, ProjectTable } from "@/components";
 import { client, queries } from "@/libs/sanity";
 import { Project } from "@/schemas/types";
+
+import styles from "./styles.module.scss";
 
 export default async function ProjectsArchive() {
   const projects = await client.fetch<Project[]>(queries.allProjects);
@@ -17,7 +17,6 @@ export default async function ProjectsArchive() {
         <h1>All Projects</h1>
         <ProjectTable projects={projects} />
       </div>
-      <Footer />
     </>
   );
 }
