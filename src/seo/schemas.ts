@@ -14,7 +14,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   name: "S. Prioleau",
   about:
-    "San'Quan Prioleau is a Frontend Engineer with an eye for good design, who loves combining ideas to create new things.",
+    "San'Quan Prioleau is a Senior Frontend Engineer with an eye for good design, who loves combining ideas to create new things.",
   creator: {
     "@type": "Person",
     givenName: "San'Quan",

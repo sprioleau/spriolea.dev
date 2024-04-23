@@ -1,7 +1,7 @@
 import { Metadata, Viewport } from "next";
 
 const fullName = "San'Quan Prioleau";
-const title = `${fullName} - Frontend Engineer`;
+const title = `${fullName} - Senior Frontend Engineer`;
 const description = `Personal website of ${fullName}`;
 const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
 const baseUrl = `${protocol}://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
