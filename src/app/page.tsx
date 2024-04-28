@@ -1,5 +1,7 @@
 import { About, Contact, Experience, Hero, PageSectionLayout, Skills, Work } from "@/components";
 
+export const dynamic = "force-dynamic";
+
 // prettier-ignore
 const pageSections = [
   { id: "about"     , title: "My Story"       , component: About      },
