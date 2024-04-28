@@ -28,5 +28,6 @@ export { default as Skills } from "./Skills";
 export { default as SkillsList } from "./SkillsList";
 export { default as SkipToMainContentLink } from "./SkipToMainContentLink";
 export { default as Spotlight } from "./Spotlight";
+export { default as Star } from "./Star";
 export { default as StructuredData } from "./StructuredData";
 export { default as Work } from "./Work";

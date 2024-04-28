@@ -17,6 +17,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <div className="app">
           <div className={styles["layout-background"]} />
+          {/* <div className={styles["little-star"]}>
+            <Star />
+          </div> */}
           <SkipToMainContentLink route="/#about" />
           <Nav />
           <InfoRail />

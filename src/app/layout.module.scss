@@ -11,3 +11,26 @@
   height: 110dvh; // for iOS Safari
   z-index: -1;
 }
+
+// .little-star {
+//   --offset: 30;
+//   --cell-size: 4px;
+//   width: 2px;
+//   aspect-ratio: 1;
+//   position: fixed;
+//   left: calc(var(--offset) * var(--cell-size));
+//   top: calc(var(--offset) * var(--cell-size));
+//   transform: translate(50%, 50%);
+//   animation: twinkle-twiznkle 2s infinite;
+//   color: var(--ui-accent-1);
+// }
+
+// @keyframes twinkle-twinkle {
+//   0%,
+//   100% {
+//     opacity: 0;
+//   }
+//   50% {
+//     opacity: 8;
+//   }
+// }
