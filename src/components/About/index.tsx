@@ -1,8 +1,7 @@
+import { PortableTextBlock } from "@/components";
 import { client, queries, urlFor } from "@/libs/sanity";
-
 import { AboutData } from "@/schemas/types";
 import Image from "next/image";
-import { PortableTextBlock } from "@/components";
 
 export default async function About() {
   const aboutContent = await client.fetch<AboutData>(queries.about);
@@ -22,17 +21,15 @@ export default async function About() {
           ))}
         </div>
       </div>
-      {/* <div className="about__image"> */}
       <Image
         className="about__image"
-        src={urlFor(mainImage).format("webp").width(400).height(400).url()}
+        src={urlFor(mainImage).format("webp").width(350).height(350).url()}
         alt="San'Quan Prioleau headshot"
-        width={400}
-        height={400}
+        width={350}
+        height={350}
         quality={100}
         priority
       />
-      {/* </div> */}
     </>
   );
 }
