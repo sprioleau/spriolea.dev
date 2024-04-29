@@ -1,7 +1,6 @@
+import { FooterContent } from "@/components";
 import { ContributionsData, fetchContributions } from "@/libs/github";
 import { client, queries } from "@/libs/sanity";
-
-import { FooterContent } from "@/components";
 import { FooterData } from "@/schemas/types";
 import { getClaps } from "@/utils";
 
