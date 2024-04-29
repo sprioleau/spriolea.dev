@@ -19,6 +19,7 @@ export { default as Logo } from "./Logo";
 export { default as NavClient } from "./NavClient";
 export { default as Nav } from "./Nav";
 export { default as PageSectionLayout } from "./PageSectionLayout";
+export { default as ParticleLogo } from "./ParticleLogo";
 export { default as PortableTextBlock } from "./PortableTextBlock";
 export { default as ProjectKudos } from "./ProjectKudos";
 export { default as ProjectTable } from "./ProjectTable";
