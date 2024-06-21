@@ -49,6 +49,11 @@ export default {
           type: "url",
         },
         {
+          name: "figmaUrl",
+          title: "Figma URL",
+          type: "url",
+        },
+        {
           name: "deployedUrl",
           title: "Deployed URL",
           type: "url",
@@ -65,19 +70,23 @@ export default {
       name: "builtWith",
       title: "Built With",
       type: "array",
-      of: [{
-        type: "reference",
-        to: { type: "technology" },
-      }],
+      of: [
+        {
+          type: "reference",
+          to: { type: "technology" },
+        },
+      ],
     },
     {
       name: "tags",
       title: "Tags",
       type: "array",
-      of: [{
-        type: "reference",
-        to: { type: "tag" },
-      }],
+      of: [
+        {
+          type: "reference",
+          to: { type: "tag" },
+        },
+      ],
     },
     {
       name: "yearBuilt",
@@ -90,7 +99,7 @@ export default {
       title: "Published at",
       type: "datetime",
       readOnly: true,
-      initialValue: (new Date()).toISOString(),
+      initialValue: new Date().toISOString(),
     },
   ],
 

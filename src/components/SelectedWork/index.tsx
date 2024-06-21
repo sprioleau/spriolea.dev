@@ -11,14 +11,7 @@ const SelectedWork = ({ projects }: { projects: Project[] }) => {
     <div className="selected-work">
       <ul className="selected-work__works">
         {projects.map(
-          ({
-            _id,
-            mainImage,
-            title,
-            tags,
-            description,
-            links: { gitHubUrl, vsCodeUrl, deployedUrl },
-          }) => (
+          ({ _id, mainImage, title, tags, description, links: { gitHubUrl, vsCodeUrl, figmaUrl, deployedUrl } }) => (
             <li
               key={_id}
               className="selected-work__work"
@@ -65,7 +58,7 @@ const SelectedWork = ({ projects }: { projects: Project[] }) => {
                       ))}
                     </ul>
                   )}
-                  {(gitHubUrl || vsCodeUrl || deployedUrl) && (
+                  {(gitHubUrl || vsCodeUrl || figmaUrl || deployedUrl) && (
                     <ul className="selected-work__icon-links">
                       {gitHubUrl && (
                         <li>
@@ -90,6 +83,19 @@ const SelectedWork = ({ projects }: { projects: Project[] }) => {
                             target="_blank"
                           >
                             {icons.code}
+                          </a>
+                        </li>
+                      )}
+                      {figmaUrl && (
+                        <li>
+                          <a
+                            aria-label="link"
+                            href={figmaUrl}
+                            rel="noreferrer"
+                            className="selected-work__icon-link shadow-link"
+                            target="_blank"
+                          >
+                            {icons.figma}
                           </a>
                         </li>
                       )}

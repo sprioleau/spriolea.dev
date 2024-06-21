@@ -134,9 +134,10 @@ export type Experience = {
   order: number;
 } & BaseSchema;
 
-type LinksObject = {
+export type LinksObject = {
   gitHubUrl: string;
   deployedUrl: string;
+  figmaUrl: string;
   vsCodeUrl: string;
 };
 

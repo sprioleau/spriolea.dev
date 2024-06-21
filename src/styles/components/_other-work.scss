@@ -48,17 +48,7 @@
   }
 
   &__link {
-    &[data-key^="gitHub"] {
-      order: 1;
-    }
-
-    &[data-key^="vsCode"] {
-      order: 2;
-    }
-
-    &[data-key^="deployed"] {
-      order: 3;
-    }
+    flex: 0 0 2rem;
   }
 
   &__icon-link {

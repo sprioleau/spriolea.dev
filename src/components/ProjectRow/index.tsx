@@ -1,16 +1,23 @@
+import { urlFor } from "@/libs/sanity";
+import type { LinksObject, Project } from "@/schemas/types";
 import Image from "next/image";
-import { Project } from "@/schemas/types";
 import React from "react";
 import { formatIsoDate } from "../../utils";
-import icons from "../Icons";
 import sortAlphaByKey from "../../utils/sortAlphaByKey";
-import { urlFor } from "@/libs/sanity";
+import icons from "../Icons";
 
 type Props = {
   project: Project;
   smallerThanSmall: boolean;
   smallerThanMedium: boolean;
   setCurrentImage: React.Dispatch<React.SetStateAction<Project["mainImage"] | undefined>>;
+};
+
+const iconsMap: Record<keyof LinksObject, React.ReactNode> = {
+  gitHubUrl: icons.gitHub,
+  vsCodeUrl: icons.code,
+  figmaUrl: icons.figma,
+  deployedUrl: icons.externalLink,
 };
 
 export default function ProjectRow({ project, smallerThanSmall, smallerThanMedium, setCurrentImage }: Props) {
@@ -21,36 +28,6 @@ export default function ProjectRow({ project, smallerThanSmall, smallerThanMediu
   const imageDimensions = {
     width: imageWidth,
     height: Math.floor(imageWidth * 0.5625),
-  };
-
-  const renderLinks = (linksList: Project["links"]) => {
-    return Object.entries(linksList).map(([key, url]) => {
-      if (!url) return null;
-
-      let icon = null;
-
-      if (key.includes("gitHub")) icon = icons.gitHub;
-      if (key.includes("vsCode")) icon = icons.code;
-      if (key.includes("deployed")) icon = icons.externalLink;
-
-      return (
-        <li
-          key={key}
-          className="other-work__link"
-          data-key={key}
-        >
-          <a
-            aria-label="link"
-            href={url}
-            rel="noreferrer"
-            className="other-work__icon-link shadow-link"
-            target="_blank"
-          >
-            {icon}
-          </a>
-        </li>
-      );
-    });
   };
 
   const handleMouseEnter = () => {
@@ -101,7 +78,31 @@ export default function ProjectRow({ project, smallerThanSmall, smallerThanMediu
         />
       </td>
       <td>
-        <ul className="other-work__links">{renderLinks(links)}</ul>
+        <ul className="other-work__links">
+          {Object.keys(iconsMap).map((key) => {
+            const url = links?.[key as keyof LinksObject];
+
+            return (
+              <li
+                key={key}
+                className="other-work__link"
+                data-key={key}
+              >
+                {url && (
+                  <a
+                    aria-label="link"
+                    href={url}
+                    rel="noreferrer"
+                    className="other-work__icon-link shadow-link"
+                    target="_blank"
+                  >
+                    {iconsMap[key as keyof LinksObject]}
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </td>
     </tr>
   );
