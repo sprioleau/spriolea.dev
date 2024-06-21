@@ -8,6 +8,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*,
+*:hover {
+  @include cursor-default;
+}
+
 @include hover-wrapper {
   *:focus {
     border-color: var(--ui-accent-1);
